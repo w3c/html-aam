@@ -1394,6 +1394,53 @@
                 <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
                 <td class="comments"></td>
             </tr>
+             <tr tabindex="-1" id="el-form">
+                  <th><a href="https://www.w3.org/TR/html/sec-forms.html#the-form-element"><code>form</code></a></th>
+                  <td class="aria">
+                    <a class="core-mapping" href="#role-map-form "><code>form</code></a> role if the <a href="https://www.w3.org/TR/html/sec-forms.html#the-form-element"><code>form</code></a> element has an <a class="termref">accessible name</a>. Otherwise, no corresponding role.
+                  </td>
+                  <td class="ia2">
+                    <div class="general">If the <a href="https://www.w3.org/TR/html/sec-forms.html#the-form-element"><code>form</code></a> element has an <a class="termref">accessible name</a>, use WAI-ARIA mapping. Otherwise:</div>
+                    <div class="role">
+                      <span class="type">Roles: </span><code>ROLE_SYSTEM_GROUPING</code>; <code>IA2_ROLE_SECTION</code>
+                    </div>
+                    <div class="ifaces">
+                      <span class="type">Interfaces: </span><code>IAccessibleText2</code>; <code>IAccessibleHypertext2</code>;
+                    </div>
+                  </td>
+                  <td class="uia">
+                    <div class="general">If the <a href="https://www.w3.org/TR/html/sec-forms.html#the-form-element"><code>form</code></a> element has an <a class="termref">accessible name</a>:</div>
+                    <div class="ctrltype"><span class="type">Control Type: </span><code>Group</code></div>
+                    <div class="ctrltype"><span class="type">Localized Control Type:</span> <code>"form"</code> (all lower-case)</div>
+                    <div class="ctrltype"><span class="type">Landmark Type:</span> <code>Custom</code></div>
+                    <div class="ctrltype"><span class="type">Localized Landmark Type:</span> <code>"form"</code> (all lower-case)</div>
+                    <div class="general">Otherwise:</div>
+                    <div class="ctrltype"><span class="type">Control Type: </span><code>Group</code></div>
+                  </td>
+                  <td class="atk">
+                    <div class="general">If the <a href="https://www.w3.org/TR/html/sec-forms.html#the-form-element"><code>form</code></a> element has an <a class="termref">accessible name</a>, use WAI-ARIA mapping. Otherwise:</div>
+                    <div class="role">
+                      <span class="type">Role: </span>
+                      <code>ATK_ROLE_SECTION</code>
+                     </div>
+                     <div class="ifaces">
+                      <span class="type">Interfaces: </span><code>AtkText</code>; <code>AtkHypertext</code>
+                    </div>
+                  </td>
+                  <td class="ax">
+                    <div class="general">If the <a href="https://www.w3.org/TR/html/sec-forms.html#the-form-element"><code>form</code></a> element has an <a class="termref">accessible name</a>, use WAI-ARIA mapping. Otherwise:</div>
+                    <div class="role">
+                      <span class="type">AXRole: </span><code>AXGroup</code>
+                    </div>
+                    <div class="subrole">
+                      <span class="type">AXSubrole: </span><code>(nil)</code>
+                    </div>
+                    <div class="roledesc">
+                      <span class="type">AXRoleDescription: </span><code>"group"</code>
+                    </div>
+                  </td>
+                  <td class="comments"></td>
+              </tr>
             <tr tabindex="-1" id="el-h1-h6">
                 <th><a href="https://www.w3.org/TR/html/sections.html#the-h1-h2-h3-h4-h5-and-h6-elements"><code>h1</code></a>, <a href="https://www.w3.org/TR/html/sections.html#the-h1-h2-h3-h4-h5-and-h6-elements"><code>h2</code></a>, <a href="https://www.w3.org/TR/html/sections.html#the-h1-h2-h3-h4-h5-and-h6-elements"><code>h3</code></a>, <a href="https://www.w3.org/TR/html/sections.html#the-h1-h2-h3-h4-h5-and-h6-elements"><code>h4</code></a>, <a href="https://www.w3.org/TR/html/sections.html#the-h1-h2-h3-h4-h5-and-h6-elements"><code>h5</code></a>, <a href="https://www.w3.org/TR/html/sections.html#the-h1-h2-h3-h4-h5-and-h6-elements"><code>h6</code></a></th>
                 <td class="aria"><a class="core-mapping" href="#role-map-heading"><code>heading</code></a> role, with the <a class="core-mapping" href="#ariaLevel"><code>aria-level</code></a> property set to the element's <a href="https://www.w3.org/TR/html/sections.html#outline-depth">outline depth</a></td>
