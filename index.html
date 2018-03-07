@@ -5498,87 +5498,68 @@
     <h2>Accessible Name and Description Computation</h2>
     <p>The terms <a class="termref">accessible name</a> and <a class="termref">accessible description</a> are properties provided in all <a class="termref" data-lt="accessibility API">accessibility APIs</a>. The name of the properties may differ across APIs but they serve the same function: as a container for a short (name) or longer (description) string of text. </p>
     <p>The <a href="#mapping_additional_nd_te" class="accname">text alternative computation</a> is used to generate both the <a class="termref">accessible name</a> and <a class="termref">accessible description</a>. There are different rules provided for several different types of <a class="termref" data-lt="element">elements</a>, <a class="termref" data-lt="node">nodes</a>, and combinations of markup.</p>
-    <section>
-      <h3><code>input type="text"</code>, <code>input type="password"</code>,<code> input type="search"</code>,<code> input type="tel"</code>, <code>input type="url"</code> and <code>textarea</code> Element</h3>
+     <section>
+      <h3><a href="https://www.w3.org/TR/html/sec-forms.html#labelable-element">Labelable Elements</a></h3>
+      <p><a href="https://www.w3.org/TR/html/sec-forms.html#elementdef-button"><code>button</code></a>, <a href="https://www.w3.org/TR/html/sec-forms.html#elementdef-input"><code>input</code></a> (if the <a href="https://www.w3.org/TR/html/sec-forms.html#element-attrdef-input-type"><code>type</code></a> attribute is not in the <a href="https://www.w3.org/TR/html/sec-forms.html#element-statedef-input-hidden">Hidden</a> state), <a href="https://www.w3.org/TR/html/sec-forms.html#elementdef-meter"><code>meter</code></a>, <a href="https://www.w3.org/TR/html/sec-forms.html#elementdef-output"><code>output</code></a>, <a href="https://www.w3.org/TR/html/sec-forms.html#elementdef-progress"><code>progress</code></a>, <a href="https://www.w3.org/TR/html/sec-forms.html#elementdef-select"><code>select</code></a>, <a href="https://www.w3.org/TR/html/sec-forms.html#elementdef-textarea"><code>textarea</code></a></p>
       <section>
-        <h4><code>input type="text"</code>, <code>input type="password"</code>,<code> input type="search"</code>,<code> input type="tel"</code>, <code>input type="email"</code>, <code>input type="url"</code> and <code>textarea</code> Element Accessible Name Computation</h4>
+        <h4><a href="https://www.w3.org/TR/html/sec-forms.html#labelable-element">Labelable Element</a> Accessible Name Computation</h4>
         <ol>
-          <li>If the control has an <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-label"><code>aria-label</code></a> or an <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-labelledby"><code>aria-labelledby</code></a> attribute the <a class="termref">accessible name</a> is to be calculated using the algorithm  defined in <a href="" class="accname" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>. </li>
-          <li>Otherwise use the associated <code>label</code> element(s) <a class="termref">accessible name</a>(s) - if more than one label is associated; concatenate by DOM order, delimited by spaces.</li>
+          <li>
+           If the <code>a</code> element  has an <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-label"><code>aria-label</code></a> or an <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-labelledby"><code>aria-labelledby</code></a> attribute the <a class="termref">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.
+          </li>
+          <li>Otherwise use the associated <code>label</code> element(s)' <a class="termref">accessible name</a>(s) — if more than one <code>label</code> is associated, concatenate by DOM order, delimited by spaces.</li>
+          <li>Otherwise,
+            <ul>
+              <li>if <code>input type="image"</code>
+                <ol type="lower-roman">
+                  <li>use the <code>alt</code> attribute</li>
+                  <li>otherwise use the <code>value</code> attribute</li>
+                  <li>otherwise the user agent <strong class="rfc2119">may</strong> use a localized version of string "submit"</li>
+                </ol>
+              </li>
+              <li>if <code>input type="button|reset|submit"</code>
+                <ol type="lower-roman">
+                  <li>use the <code>value</code> attribute</li>
+                  <li>otherwise the user agent <strong class="rfc2119">must</strong> use a localized version of string "reset" if <code>type="reset"</code>, and a localized version of string "submit" if <code>type="submit"</code></li>
+                </ol>
+              </li>
+              <li>if <code>button</code>, <code>meter</code>, <code>output</code>, or <code>progress</code>, use the element's subtree</li>
+            </ul>
+          </li>
+          <li>Otherwise use the <code>title</code> attribute</li>
+          <li>If none of the above yield a usable text string, there is no <a class="termref">accessible name</a></li>
+        </ol>
+      </section>
+      <section>
+        <h4><a href="https://www.w3.org/TR/html/sec-forms.html#labelable-element">Labelable Element</a> Accessible Description Computation</h4>
+        <ol>
+          <li>If the element has an <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-describedby"><code>aria-describedby</code></a> attribute the <a class="termref">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.</li>
+          <li>Otherwise, if <code>input type="button|reset|submit"</code>, use the <code>value</code> attribute if it wasn't used as the <a class="termref">accessible name</a></li>
+          <li>Otherwise use the <code>title</code> attribute if it wasn't used as the <a class="termref">accessible name</a></li>
+          <li>If none of the above yield a usable text string there is no <a class="termref">accessible description</a></li>
+        </ol>
+      </section>
+    </section>
+
+    <section>
+      <h3><code>a</code> Element</h3>
+      <section>
+        <h4><code>a</code> Element Accessible Name Computation</h4>
+        <ol>
+          <li>
+           If the <code>a</code> element  has an <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-label"><code>aria-label</code></a> or an <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-labelledby"><code>aria-labelledby</code></a> attribute the <a class="termref">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.
+          </li>
+          <li>Otherwise use <code>a</code> element subtree</li>
           <li>Otherwise use the <code>title</code> attribute</li>
           <li>If none of the above yield a usable text string there is no <a class="termref">accessible name</a></li>
         </ol>
       </section>
       <section>
-        <h4><code>input type="text"</code>, <code>input type="password"</code>,<code> input type="search"</code>,<code> input type="tel"</code>, <code>input type="email"</code>, <code>input type="url"</code> and <code>textarea</code> Element Accessible Description Computation</h4>
+        <h4><code>a</code> Element Accessible Description Computation</h4>
         <ol>
           <li>If the element has an <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-describedby"><code>aria-describedby</code></a> attribute the <a class="termref">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.</li>
-          <li>Otherwise use the <code>title</code> attribute if it wasn't used as the <a class="termref">accessible name</a>.</li>
-          <li>If none of the above yield a usable text string there is no <a class="termref">accessible description</a></li>
-        </ol>
-      </section>
-    </section>
-    <section>
-      <h3><code>input type="button"</code>, <code>input type="submit"</code> and <code>input type="reset"</code></h3>
-      <section>
-        <h4><code>input type="button"</code> ,<code> input type="submit"</code> and <code>input type="reset"</code> Accessible Name Computation</h4>
-        <ol>
-          <li>If the control has an <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-label"><code>aria-label</code></a> or an <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-labelledby"><code>aria-labelledby</code></a> attribute the <a class="termref">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.</li>
-          <li>Otherwise use the <code>value</code> attribute</li>
-          <li>For <code>input type=submit</code>: If steps 1 to 2 do not yield a usable text string, the <a class="termref">accessible name</a> is a localized string of the word &quot;submit&quot;</li>
-          <li>For <code>input type=reset</code>: If steps 1 to 2 do not yield a usable text string, the <a class="termref">accessible name</a> is a localized string of the word &quot;reset&quot;</li>
-          <li>Otherwise use <code>title</code> attribute</li>
-          <li> If none of the above yield a usable text string there is no <a class="termref">accessible name</a></li>
-        </ol>
-      </section>
-      <section>
-        <h4><code>input type="button"</code> ,<code> input type="submit"</code> and <code>input type="reset"</code> Accessible Description Computation</h4>
-        <ol>
-          <li>If the element has an <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-describedby"><code>aria-describedby</code></a> attribute the <a class="termref">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.</li>
-          <li>Otherwise use the <code>value</code> attribute if it wasn't used as the <a class="termref">accessible name</a></li>
           <li>Otherwise use the <code>title</code> attribute if it wasn't used as the <a class="termref">accessible name</a></li>
-          <li>If none of the above yield a usable text string there is no <a class="termref">accessible description</a>  </li>
-        </ol>
-      </section>
-    </section>
-    <section>
-      <h3><code>input type="image"</code></h3>
-      <section>
-        <h4><code>input type="image"</code> Accessible Name Computation</h4>
-        <ol>
-          <li>If the control  has an <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-label"><code>aria-label</code></a> or an <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-labelledby"><code>aria-labelledby</code></a> attribute the <a class="termref">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.</li>
-          <li>Otherwise use <code>alt</code> attribute</li>
-          <li>Otherwise use <code>value</code> attribute </li>
-          <li>Otherwise the user agent may provide an <a class="termref">accessible name</a> via a localized string of the phrase &quot;Submit Query&quot;</li>
-          <li>Otherwise use <code>title</code> attribute</li>
-          <li>If none of the above yield a usable text string there is no <a class="termref">accessible name</a></li>
-        </ol>
-      </section>
-      <section>
-        <h4><code>input type="image"</code> Accessible Description Computation</h4>
-        <ol>
-          <li>If the element has an <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-describedby"><code>aria-describedby</code></a> attribute the <a class="termref">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.</li>
-          <li>Otherwise use the <code>title</code> attribute if it wasn't used as the <a class="termref">accessible name</a>.</li>
-          <li>If none of the above yield a usable text string there is no <a class="termref">accessible description</a> </li>
-        </ol>
-      </section>
-    </section>
-    <section>
-      <h3><code>button</code> Element</h3>
-      <section>
-        <h4><code>button</code> Element Accessible Name Computation</h4>
-        <ol>
-          <li> If the <code>button</code> element has an <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-label"><code>aria-label</code></a> or an <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-labelledby"><code>aria-labelledby</code></a> attribute the <a class="termref">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>. </li>
-          <li>Otherwise use the <code>button</code> element subtree</li>
-          <li>Otherwise use <code>title</code> attribute</li>
-          <li>If none of the above yield a usable text string there is no <a class="termref">accessible name</a></li>
-        </ol>
-      </section>
-      <section>
-        <h4><code>button</code> Element Accessible Description Computation</h4>
-        <ol>
-          <li>use <code>aria-describedby</code></li>
-          <li> Otherwise use the <code>title</code> attribute if it wasn't used as the <a class="termref">accessible name</a>.</li>
+          <li>If none of the above yield a usable text string there is no <a class="termref">accessible description</a></li>
         </ol>
       </section>
     </section>
@@ -5603,67 +5584,6 @@
       </section>
     </section>
     <section>
-      <h3><code>output</code> Element</h3>
-      <section>
-        <h4><code>output</code> Element Accessible Name Computation</h4>
-        <ol>
-          <li> If the <code>output</code> element has an <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-label"><code>aria-label</code></a> or an <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-labelledby"><code>aria-labelledby</code></a> attribute the <a class="termref">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>. </li>
-          <li>Otherwise use the <code>output</code> element subtree</li>
-          <li>Otherwise use <code>title</code> attribute</li>
-          <li>If none of the above yield a usable text string there is no <a class="termref">accessible name</a></li>
-        </ol>
-      </section>
-      <section>
-        <h4><code>output</code> Element Accessible Description Computation</h4>
-        <ol>
-          <li>use <code>aria-describedby</code></li>
-          <li> Otherwise use the <code>title</code> attribute if it wasn't used as the <a class="termref">accessible name</a>.</li>
-          <li>If none of the above yield a usable text string there is no <a class="termref">accessible description</a> </li>
-        </ol>
-      </section>
-    </section>
-    <section>
-      <h3>Other Form Elements</h3>
-      <section>
-        <h4>Other Form Elements Accessible Name Computation</h4>
-        <ol>
-          <li>If the control has an <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-label"><code>aria-label</code></a> or an <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-labelledby"><code>aria-labelledby</code></a> attribute the <a class="termref">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>. </li>
-          <li>Otherwise use <code>label</code> element</li>
-          <li>Otherwise use <code>title</code> attribute</li>
-          <li>If none of the above yield a usable text string there is no <a class="termref">accessible name</a></li>
-        </ol>
-      </section>
-      <section>
-        <h4>Other Form Elements Accessible Description Computation</h4>
-        <ol>
-          <li>If the element has an <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-describedby"><code>aria-describedby</code></a> attribute the <a class="termref">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.</li>
-          <li>Otherwise use the <code>title</code> attribute if it wasn't used as the <a class="termref">accessible name</a>.</li>
-          <li>If none of the above yield a usable text string there is no <a class="termref">accessible description</a> </li>
-        </ol>
-      </section>
-    </section>
-    <section>
-      <h3><code>summary</code> Element</h3>
-      <section>
-        <h4><code>summary</code> Element Accessible Name Computation</h4>
-        <ol>
-          <li>If the <code>summary</code> element has an <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-label"><code>aria-label</code></a> or an <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-labelledby"><code>aria-labelledby</code></a> attribute the <a class="termref">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>. </li>
-          <li>Otherwise use <code>summary</code> element subtree</li>
-          <li>Otherwise use <code>title</code> attribute</li>
-          <li>If none of the above yield a usable text string the user agent should provide its own    text string (e.g. "Details")</li>
-        </ol>
-      </section>
-      <section>
-        <h4><code>summary</code> Element Accessible Description Computation</h4>
-        <ol>
-          <li>If the element has an <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-describedby"><code>aria-describedby</code></a> attribute the <a class="termref">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.</li>
-          <li>Otherwise use <code>summary</code> element subtree if not used as the <a class="termref">accessible name</a></li>
-          <li>Otherwise use the <code>title</code> attribute if it wasn't used as the <a class="termref">accessible name</a></li>
-          <li>If none of the above yield a usable text string there is no <a class="termref">accessible description</a>    </li>
-        </ol>
-      </section>
-    </section>
-    <section>
       <h3><code>figure</code> and <code>figcaption</code> Elements</h3>
       <section>
         <h4><code>figure</code> Element Accessible Name Computation</h4>
@@ -5676,70 +5596,6 @@
       </section>
       <section>
         <h4><code>figure</code> Element Accessible Description Computation</h4>
-        <ol>
-          <li>If the element has an <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-describedby"><code>aria-describedby</code></a> attribute the <a class="termref">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.</li>
-          <li>Otherwise use the <code>title</code> attribute if it wasn't used as the <a class="termref">accessible name</a></li>
-          <li>If none of the above yield a usable text string there is no <a class="termref">accessible description</a></li>
-        </ol>
-      </section>
-    </section>
-    <section>
-      <h3><code>img</code> Element</h3>
-      <section>
-        <h4><code>img</code> Element Accessible Name Computation</h4>
-        <ol>
-          <li>If the <code>img</code> element  has an <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-label"><code>aria-label</code></a> or an <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-labelledby"><code>aria-labelledby</code></a> attribute the <a class="termref">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>. </li>
-          <li>Otherwise use <code>alt</code> attribute</li>
-          <li>Otherwise use <code>title</code> attribute</li>
-          <li>If none of the above yield a usable text string there is no <a class="termref">accessible name</a></li>
-        </ol>
-        <!--<p class="note">If the <code>img</code> element is exposed in the <a class="termref">accessibility tree</a> and the computed text alternative is empty, then check for the presence of <code>role="presentation"</code> or any labeling attribute that specifies an empty label, specifically <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-label"><code>aria-label</code></a>, <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-labelledby"><code>aria-labelledby</code></a>, <code>alt</code> or <code>title</code>. The presence of any of these indicates the author's intention to indicate that the <code>img</code> is decorative or redundant. In this case, the user agent <strong class="rfc2119">must</strong> set the name to an empty string. If none of these attributes are present, this indicates the author simply did not provide an accessible label for the image, and the implementation <strong class="rfc2119">must</strong> return an <a class="termref">accessible name</a> of NULL instead of an empty string if the <a class="termref">accessibility API</a> supports it. This hints to the <a class="termref" data-lt="Assistive Technologies">assistive technology</a> to do its own heuristic processing to repair the missing <a class="termref">accessible name</a>.</p>-->
-      </section>
-      <section>
-        <h4><code>img</code> Element Accessible Description Computation</h4>
-        <ol>
-          <li>If the element has an <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-describedby"><code>aria-describedby</code></a> attribute the <a class="termref">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.</li>
-          <li> Otherwise use the <code>title</code> attribute if it wasn't used as the <a class="termref">accessible name</a></li>
-          <li>If none of the above yield a usable text string there is no <a class="termref">accessible description</a></li>
-        </ol>
-      </section>
-    </section>
-    <section>
-      <h3><code>table</code> Element</h3>
-      <section>
-        <h4><code>table</code> Element Accessible Name Computation</h4>
-        <ol>
-          <li>If the table element has an <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-label"><code>aria-label</code></a> or an <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-labelledby"><code>aria-labelledby</code></a> attribute the <a class="termref">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>. </li>
-          <li>Otherwise use  <code>caption</code> element</li>
-          <li>Otherwise use the <code>title</code> attribute</li>
-          <li>If none of the above yield a usable text string there is no <a class="termref">accessible name</a></li>
-        </ol>
-      </section>
-      <section>
-        <h4><code>table</code> Element Accessible Description Computation</h4>
-        <ol>
-          <li>If the element has an <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-describedby"><code>aria-describedby</code></a> attribute the <a class="termref">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.</li>
-          <li>Otherwise use the <code>caption</code> element if it wasn't used as the <a class="termref">accessible name</a></li>
-          <li>Otherwise use the <code>title</code> attribute if it wasn't used as the <a class="termref">accessible name</a></li>
-          <li>If none of the above yield a usable text string there is no <a class="termref">accessible description</a></li>
-        </ol>
-      </section>
-    </section>
-    <section>
-      <h3><code>a</code> Element</h3>
-      <section>
-        <h4><code>a</code> Element Accessible Name Computation</h4>
-        <ol>
-          <li>
-           If the <code>a</code> element  has an <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-label"><code>aria-label</code></a> or an <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-labelledby"><code>aria-labelledby</code></a> attribute the <a class="termref">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.
-          </li>
-          <li>Otherwise use <code>a</code> element subtree</li>
-          <li>Otherwise use the <code>title</code> attribute</li>
-          <li>If none of the above yield a usable text string there is no <a class="termref">accessible name</a></li>
-        </ol>
-      </section>
-      <section>
-        <h4><code>a</code> Element Accessible Description Computation</h4>
         <ol>
           <li>If the element has an <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-describedby"><code>aria-describedby</code></a> attribute the <a class="termref">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.</li>
           <li>Otherwise use the <code>title</code> attribute if it wasn't used as the <a class="termref">accessible name</a></li>
@@ -5768,7 +5624,74 @@
       </section>
     </section>
     <section>
-      <h3><a href="https://www.w3.org/TR/html/sections.html#sections">Section</a> Elements and <a href="https://www.w3.org/TR/html/grouping-content.html#grouping-content">Grouping Content</a> Elements Not listed Elsewhere</h3>
+      <h3><code>img</code> Element</h3>
+      <section>
+        <h4><code>img</code> Element Accessible Name Computation</h4>
+        <ol>
+          <li>If the <code>img</code> element  has an <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-label"><code>aria-label</code></a> or an <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-labelledby"><code>aria-labelledby</code></a> attribute the <a class="termref">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>. </li>
+          <li>Otherwise use <code>alt</code> attribute</li>
+          <li>Otherwise use <code>title</code> attribute</li>
+          <li>If none of the above yield a usable text string there is no <a class="termref">accessible name</a></li>
+        </ol>
+        <!--<p class="note">If the <code>img</code> element is exposed in the <a class="termref">accessibility tree</a> and the computed text alternative is empty, then check for the presence of <code>role="presentation"</code> or any labeling attribute that specifies an empty label, specifically <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-label"><code>aria-label</code></a>, <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-labelledby"><code>aria-labelledby</code></a>, <code>alt</code> or <code>title</code>. The presence of any of these indicates the author's intention to indicate that the <code>img</code> is decorative or redundant. In this case, the user agent <strong class="rfc2119">must</strong> set the name to an empty string. If none of these attributes are present, this indicates the author simply did not provide an accessible label for the image, and the implementation <strong class="rfc2119">must</strong> return an <a class="termref">accessible name</a> of NULL instead of an empty string if the <a class="termref">accessibility API</a> supports it. This hints to the <a class="termref" data-lt="Assistive Technologies">assistive technology</a> to do its own heuristic processing to repair the missing <a class="termref">accessible name</a>.</p>-->
+      </section>
+      <section>
+        <h4><code>img</code> Element Accessible Description Computation</h4>
+        <ol>
+          <li>If the element has an <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-describedby"><code>aria-describedby</code></a> attribute the <a class="termref">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.</li>
+          <li> Otherwise use the <code>title</code> attribute if it wasn't used as the <a class="termref">accessible name</a></li>
+          <li>If none of the above yield a usable text string there is no <a class="termref">accessible description</a></li>
+        </ol>
+      </section>
+    </section>    
+    
+    <section>
+      <h3><code>summary</code> Element</h3>
+      <section>
+        <h4><code>summary</code> Element Accessible Name Computation</h4>
+        <ol>
+          <li>If the <code>summary</code> element has an <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-label"><code>aria-label</code></a> or an <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-labelledby"><code>aria-labelledby</code></a> attribute the <a class="termref">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>. </li>
+          <li>Otherwise use <code>summary</code> element subtree</li>
+          <li>Otherwise use <code>title</code> attribute</li>
+          <li>If none of the above yield a usable text string the user agent should provide its own    text string (e.g. "Details")</li>
+        </ol>
+      </section>
+      <section>
+        <h4><code>summary</code> Element Accessible Description Computation</h4>
+        <ol>
+          <li>If the element has an <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-describedby"><code>aria-describedby</code></a> attribute the <a class="termref">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.</li>
+          <li>Otherwise use <code>summary</code> element subtree if not used as the <a class="termref">accessible name</a></li>
+          <li>Otherwise use the <code>title</code> attribute if it wasn't used as the <a class="termref">accessible name</a></li>
+          <li>If none of the above yield a usable text string there is no <a class="termref">accessible description</a>    </li>
+        </ol>
+      </section>
+    </section>
+    
+    <section>
+      <h3><code>table</code> Element</h3>
+      <section>
+        <h4><code>table</code> Element Accessible Name Computation</h4>
+        <ol>
+          <li>If the table element has an <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-label"><code>aria-label</code></a> or an <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-labelledby"><code>aria-labelledby</code></a> attribute the <a class="termref">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>. </li>
+          <li>Otherwise use  <code>caption</code> element</li>
+          <li>Otherwise use the <code>title</code> attribute</li>
+          <li>If none of the above yield a usable text string there is no <a class="termref">accessible name</a></li>
+        </ol>
+      </section>
+      <section>
+        <h4><code>table</code> Element Accessible Description Computation</h4>
+        <ol>
+          <li>If the element has an <a href="http://www.w3.org/TR/wai-aria-1.1/#aria-describedby"><code>aria-describedby</code></a> attribute the <a class="termref">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.</li>
+          <li>Otherwise use the <code>caption</code> element if it wasn't used as the <a class="termref">accessible name</a></li>
+          <li>Otherwise use the <code>title</code> attribute if it wasn't used as the <a class="termref">accessible name</a></li>
+          <li>If none of the above yield a usable text string there is no <a class="termref">accessible description</a></li>
+        </ol>
+      </section>
+    </section>
+    
+    
+    <section>
+      <h3><a href="https://www.w3.org/TR/html/sections.html#sections">Section</a> Elements and <a href="https://www.w3.org/TR/html/grouping-content.html#grouping-content">Grouping Content</a> Elements Not Listed Elsewhere</h3>
       <section>
         <h4>Section and Grouping Element Accessible Name Computation</h4>
         <ol>
