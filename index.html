@@ -3665,33 +3665,44 @@
                 <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-checked">
-                <th><code>checked</code> (if present)</th>
-                <td class="elements"><a href="https://www.w3.org/TR/html/interactive-elements.html#element-attrdef-menuitem-checked"><code>menuitem</code></a>; <a href="https://www.w3.org/TR/html/sec-forms.html#element-attrdef-input-checked"><code>input</code></a></td>
-                <td class="aria"><a class="core-mapping" href="#ariaCheckedTrue"><code>aria-checked</code></a> (state)="true"</td>
-                <td class="ia2">
-                  <div class="states">
-                    <span class="type">States: </span><code>STATE_SYSTEM_CHECKED</code>
-                  </div>
-                </td>
-                <td class="uia">Expose as <code>ToggleState</code> property in <code>Toggle</code> control pattern</td>
-                <td class="atk">
-                  <div class="states">
-                    <span class="type">States: </span>
-                    <code>ATK_STATE_CHECKED</code>
-                  </div>
-                </td>
-                <td class="ax"><code>AXValue: 1</code></td>
-                <td class="comments">If the element includes both the <code>checked</code> attribute and the <code>aria-checked</code> attribute with a valid value, User Agents MUST expose only the <code>checked</code> attribute value.</td>
+              <th>
+                `checked` (if present)
+              </th>
+              <td class="elements">
+                <a href="https://www.w3.org/TR/html/sec-forms.html#element-attrdef-input-checked">`input`</a>
+              </td>
+              <td class="aria">
+                <a class="core-mapping" href="#ariaCheckedTrue">`aria-checked`</a> (state)="true"
+              </td>
+              <td class="ia2">
+                <div class="states">
+                  <span class="type">States:</span> `STATE_SYSTEM_CHECKED`
+                </div>
+              </td>
+              <td class="uia">Expose as `ToggleState` property in `Toggle` control pattern</td>
+              <td class="atk">
+                <div class="states">
+                  <span class="type">States:</span> `ATK_STATE_CHECKED`
+                </div>
+              </td>
+              <td class="ax">`AXValue: 1`</td>
+              <td class="comments">
+                If the element includes both the `checked` attribute and the `aria-checked` attribute with a valid value, User Agents MUST expose only the `checked` attribute value.
+              </td>
             </tr>
             <tr tabindex="-1" id="att-checked-absent">
-                <th><code>checked</code> (if absent)</th>
-                <td class="elements"><a href="https://www.w3.org/TR/html/interactive-elements.html#element-attrdef-menuitem-checked"><code>menuitem</code></a>; <a href="https://www.w3.org/TR/html/sec-forms.html#element-attrdef-input-checked"><code>input</code></a></td>
-                <td class="aria"><a class="core-mapping" href="#ariaCheckedFalse"><code>aria-checked</code></a> (state)="false"</td>
-                <td class="ia2"><div class="general">Not mapped</div></td>
-                <td class="uia">Expose as <code>ToggleState</code> property in <code>Toggle</code> control pattern.</td>
-                <td class="atk"><div class="general">Not mapped</div></td>
-                <td class="ax"><code>AXValue: 0</code></td>
-                <td class="comments"></td>
+              <th>`checked` (if absent)</th>
+              <td class="elements">
+                <a href="https://www.w3.org/TR/html/sec-forms.html#element-attrdef-input-checked">`input`</a>
+              </td>
+              <td class="aria">
+                <a class="core-mapping" href="#ariaCheckedFalse">`aria-checked`</a> (state)="false"
+              </td>
+              <td class="ia2">Not mapped</td>
+              <td class="uia">Expose as `ToggleState` property in `Toggle` control pattern.</td>
+              <td class="atk">Not mapped</td>
+              <td class="ax">`AXValue: 0`</td>
+              <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-cite">
                 <th><code>cite</code></th>
@@ -3941,7 +3952,7 @@
             </tr>
             <tr tabindex="-1" id="att-disabled">
                 <th><code>disabled</code></th>
-                <td class="elements"><a href="https://www.w3.org/TR/html/sec-forms.html#element-attrdef-disabledformelements-disabled"><code>button</code></a>; <a href="https://www.w3.org/TR/html/sec-forms.html#element-attrdef-fieldset-disabled"><code>fieldset</code></a>; <a href="https://www.w3.org/TR/html/sec-forms.html#element-attrdef-disabledformelements-disabled"><code>input</code></a>; <a href="https://www.w3.org/TR/html/interactive-elements.html#element-attrdef-menuitem-disabled"><code>menuitem</code></a>; <a href="https://www.w3.org/TR/html/sec-forms.html#element-attrdef-optgroup-disabled"><code>optgroup</code></a>; <a href="https://www.w3.org/TR/html/sec-forms.html#element-attrdef-option-disabled"><code>option</code></a>; <a href="https://www.w3.org/TR/html/sec-forms.html#element-attrdef-disabledformelements-disabled"><code>select</code></a>; <a href="https://www.w3.org/TR/html/sec-forms.html#element-attrdef-disabledformelements-disabled"><code>textarea</code></a></td>
+                <td class="elements"><a href="https://www.w3.org/TR/html/sec-forms.html#element-attrdef-disabledformelements-disabled"><code>button</code></a>; <a href="https://www.w3.org/TR/html/sec-forms.html#element-attrdef-fieldset-disabled"><code>fieldset</code></a>; <a href="https://www.w3.org/TR/html/sec-forms.html#element-attrdef-disabledformelements-disabled"><code>input</code></a>; <a href="https://www.w3.org/TR/html/sec-forms.html#element-attrdef-optgroup-disabled"><code>optgroup</code></a>; <a href="https://www.w3.org/TR/html/sec-forms.html#element-attrdef-option-disabled"><code>option</code></a>; <a href="https://www.w3.org/TR/html/sec-forms.html#element-attrdef-disabledformelements-disabled"><code>select</code></a>; <a href="https://www.w3.org/TR/html/sec-forms.html#element-attrdef-disabledformelements-disabled"><code>textarea</code></a></td>
                 <td class="aria"><a class="core-mapping" href="#ariaDisabledTrue"><code>aria-disabled</code></a>="true"</td>
                 <td class="ia2">
                   <div class="states">
@@ -4238,16 +4249,6 @@
                 <td class="ax"><div class="general">Not mapped</div></td>
                 <td class="comments"></td>
             </tr>
-            <tr tabindex="-1" id="att-icon">
-                <th><code>icon</code></th>
-                <td class="elements"><a href="https://www.w3.org/TR/html/interactive-elements.html#element-attrdef-menuitem-icon"><code>menuitem</code></a></td>
-                <td class="aria"><div class="general">Not mapped</div></td>
-                <td class="ia2"><div class="general">Not mapped</div></td>
-                <td class="uia"><div class="general">Not mapped</div></td>
-                <td class="atk"><div class="general">Not mapped</div></td>
-                <td class="ax"><div class="general">Not mapped</div></td>
-                <td class="comments"></td>
-            </tr>
             <tr tabindex="-1" id="att-id">
                 <th><code>id</code></th>
                 <td class="elements"><a href="https://www.w3.org/TR/html/dom.html#element-attrdef-global-id">HTML elements</a></td>
@@ -4260,13 +4261,13 @@
             </tr>
             <tr tabindex="-1" id="att-indeterminate">
                 <th><code>indeterminate [IDL]</code></th>
-                <td class="elements">HTML elements; <a href="https://www.w3.org/TR/html/interactive-elements.html#element-attrdef-menuitem-checked"><code>menuitem</code></a>; <a href="https://www.w3.org/TR/html/sec-forms.html#element-attrdef-input-checked"><code>input</code></a></td>
+                <td class="elements">HTML elements; <a href="https://www.w3.org/TR/html/sec-forms.html#element-attrdef-input-checked"><code>input</code></a></td>
                 <td class="aria"><a class="core-mapping" href="#ariaCheckedTrue"><code>aria-checked</code></a> (state)="mixed"</td>
-                <td class="ia2"><div class="general">Use WAI-ARIA mapping</div></td>
-                <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
-                <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
-                <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
-                <td class="comments">If the element has the <code>indeterminate [IDL]</code>  set and the <code>aria-checked</code> attribute set, User Agents MUST expose only the<code>indeterminate [IDL]</code>state.</td>
+                <td class="ia2">Use WAI-ARIA mapping</td>
+                <td class="uia">Use WAI-ARIA mapping</td>
+                <td class="atk">Use WAI-ARIA mapping</td>
+                <td class="ax">Use WAI-ARIA mapping</td>
+                <td class="comments">If the element has the `indeterminate [IDL]` set and the `aria-checked` attribute set, User Agents MUST expose only the`indeterminate [IDL]` state.</td>
             </tr>
             <tr tabindex="-1" id="att-ismap">
                 <th><code>ismap</code></th>
@@ -4289,22 +4290,30 @@
                 <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-label">
-                <th><code>label</code></th>
-                <td class="elements"><a href="https://www.w3.org/TR/html/interactive-elements.html#element-attrdef-menuitem-label"><code>menuitem</code></a>; <a href="https://www.w3.org/TR/html/interactive-elements.html#element-attrdef-menu-label"><code>menu</code></a>; <a href="https://www.w3.org/TR/html/sec-forms.html#element-attrdef-optgroup-label"><code>optgroup</code></a>; <a href="https://www.w3.org/TR/html/sec-forms.html#element-attrdef-option-label"><code>option</code></a>; <a href="https://www.w3.org/TR/html/semantics-embedded-content.html#element-attrdef-track-label"><code>track</code></a></td>
-                <td class="aria">?</td>
-                <td class="ia2">
-                  <div class="name">
-                    Associates the <a class="termref">accessible name</a>
-                  </div>
-                </td>
-                <td class="uia">The target element of the <code>label</code> attribute has a <code>LabeledBy</code> property pointing to the element with the <code>label</code> atrribute. Participates in <a href="#other-form-elements">name computation</a></td>
-                <td class="atk">
-                  <div class="name">
-                    Associates the <a class="termref">accessible name</a>
-                  </div>
-                </td>
-                <td class="ax"><code>AXTitle</code>:<code> &lt;value&gt;</code></td>
-                <td class="comments">See Also: <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a> </td>
+              <th>`label`</th>
+              <td class="elements">
+                <a data-cite="html/#attr-optgroup-label">`optgroup`</a>;
+                <a data-cite="html/#attr-option-label">`option`</a>;
+                <a data-cite="html/#attr-track-label">`track`</a>
+              </td>
+              <td class="aria">?</td>
+              <td class="ia2">
+                <div class="name">
+                  Associates the <a class="termref">accessible name</a>
+                </div>
+              </td>
+              <td class="uia">
+                The target element of the `label` attribute has a `LabeledBy` property pointing to the element with the `label` attribute. Participates in <a href="#other-form-elements">name computation.</a>
+              </td>
+              <td class="atk">
+                <div class="name">
+                  Associates the <a class="termref">accessible name</a>
+                </div>
+              </td>
+              <td class="ax">`AXTitle`: `&lt;value&gt;`</td>
+              <td class="comments">
+                See Also: <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>
+              </td>
             </tr>
             <tr tabindex="-1" id="att-lang">
                 <th><code>lang</code></th>
@@ -4701,16 +4710,6 @@
             <tr tabindex="-1" id="att-preload">
                 <th><code>preload</code></th>
                 <td class="elements"><a href="https://www.w3.org/TR/html/semantics-embedded-content.html#element-attrdef-media-preload"><code>audio</code></a>; <a href="https://www.w3.org/TR/html/semantics-embedded-content.html#element-attrdef-media-preload"><code>video</code></a></td>
-                <td class="aria"><div class="general">Not mapped</div></td>
-                <td class="ia2"><div class="general">Not mapped</div></td>
-                <td class="uia"><div class="general">Not mapped</div></td>
-                <td class="atk"><div class="general">Not mapped</div></td>
-                <td class="ax"><div class="general">Not mapped</div></td>
-                <td class="comments"></td>
-            </tr>
-            <tr tabindex="-1" id="att-radiogroup">
-                <th><code>radiogroup</code></th>
-                <td class="elements"><a href="https://www.w3.org/TR/html/interactive-elements.html#element-attrdef-menuitem-radiogroup"><code>menuitem</code></a></td>
                 <td class="aria"><div class="general">Not mapped</div></td>
                 <td class="ia2"><div class="general">Not mapped</div></td>
                 <td class="uia"><div class="general">Not mapped</div></td>
@@ -5120,32 +5119,7 @@
                     Associates the <a class="termref">accessible name</a>
                   </div>
                 </td>
-                <td class="ax"><code>AXExpandedTextValue: &lt;value&gt;</code></td>
-                <td class="comments"></td>
-            </tr>
-            <tr tabindex="-1" id="att-title-menuitem">
-                <th><code>title</code></th>
-                <td class="elements"><a href="https://www.w3.org/TR/html/interactive-elements.html#element-attrdef-menuitem-title"><code>menuitem</code></a></td>
-                <td class="aria">?</td>
-                <td class="ia2">
-                  <div class="name">
-                    Associates the <a class="termref">accessible name</a> or if it was provided otherwise then
-                    <a class="termref">accessible description</a>
-                  </div>
-                </td>
-                <td class="uia">
-                  <div class="name">
-                    Associates the <a class="termref">accessible name</a> or if it was provided otherwise then
-                    <a class="termref">accessible description</a>
-                  </div>
-                </td>
-                <td class="atk">
-                  <div class="name">
-                    Associates the <a class="termref">accessible name</a> or if it was provided otherwise then
-                    <a class="termref">accessible description</a>
-                  </div>
-                </td>
-                <td class="ax"><code>AXHelp: &lt;value&gt;</code></td>
+                <td class="ax">`AXExpandedTextValue: &lt;value&gt;`</td>
                 <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-title-link">
@@ -5261,31 +5235,7 @@
                 <td class="ax">?</td>
                 <td class="comments"></td>
             </tr>
-            <tr tabindex="-1" id="att-type-menuitem">
-                <th><code>type</code></th>
-                <td class="elements"><a href="https://www.w3.org/TR/html/interactive-elements.html#element-attrdef-menuitem-type"><code>menuitem</code></a></td>
-                <td class="aria">?</td>
-                <td class="ia2">
-                  <div class="general">
-                    Defines the accessible role and states, refer to
-                    type="<a href="#el-menuitem-command"><code>command</code></a>"
-                  </div>
-                </td>
-                <td class="uia">
-                  <div class="general">
-                    Defines the accessible role and states, refer to
-                    type="<a href="#el-menuitem-command"><code>command</code></a>"
-                  </div>
-                </td>
-                <td class="atk">
-                  <div class="general">
-                    Defines the accessible role and states:
-                    type="<a href="#el-menuitem-command"><code>command</code></a>"
-                  </div>
-                </td>
-                <td class="ax">?</td>
-                <td class="comments"></td>
-            </tr>
+
             <tr tabindex="-1" id="att-type-ol">
                 <th><code>type</code></th>
                 <td class="elements"><a href="https://www.w3.org/TR/html/grouping-content.html#element-attrdef-ol-type"><code>ol</code></a></td>
