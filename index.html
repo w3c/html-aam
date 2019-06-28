@@ -5834,7 +5834,7 @@
         <h4>`summary` Element Accessible Name Computation</h4>
         <ol>
           <li>
-            If the `summary` element has an <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-label">`aria-label`</a> or an <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-labelledby">`aria-labelledby`</a> attribute the <a class="termref">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.
+            If the first `summary` element, which is a direct child of the `details` element, has an <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-label">`aria-label`</a> or an <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-labelledby">`aria-labelledby`</a> attribute the <a class="termref">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.
           </li>
           <li>Otherwise use `summary` element subtree.</li>
           <li>Otherwise use `title` attribute.</li>
