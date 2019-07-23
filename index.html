@@ -200,23 +200,43 @@
       <h3>HTML Element Role Mappings</h3>
     	<p><strong>Notes:</strong></p>
     	<ul>
-    		<li>HTML elements with default WAI-ARIA role semantics MUST be mapped to platform <a class="termref">accessibility APIs</a> according to those WAI-ARIA roles' mappings as defined in the [[core-aam-1.2]] specification.</li>
-        <li>A '?' in a cell indicates the data has yet to be provided.</li>
-    		<li>"Not mapped" (Not Applicable) means the element does not need to be exposed via an <a class="termref">accessibility API</a>. This is usually because the element is not displayed as part of the user interface.</li>
-        <li>Where applicable, how an element participates in the computation of its own or another element's <a class="termref">accessible name</a> and/or <a class="termref">accessible description</a> is described in the <a href="#accessible-name-and-description-computation">Accessible Name and Description Computation</a> section below.</li>
-        <li>Where an element is indicated as having &quot;No corresponding [WAI-ARIA] role&quot;, user agents MUST NOT expose the <a class="core-mapping" href="#ariaRoleDescription"><code>aria-roledescription</code></a> property value in the <a class="termref">accessibility tree</a> unless the element has an explicit, conforming `role` attribute value.</li>
-        <li><strong>IAccessible2:</strong>
+    		<li>
+          HTML elements with default WAI-ARIA role semantics MUST be mapped to platform <a class="termref">accessibility APIs</a> according to those WAI-ARIA roles' mappings as defined in the [[core-aam-1.2]] specification.
+        </li>
+        <li>
+          A '?' in a cell indicates the data has yet to be provided.
+        </li>
+    		<li>
+          "Not mapped" means the element does not need to be exposed via an <a class="termref">accessibility API</a>. This is usually due to the element not being displayed as part of the user interface.
+        </li>
+        <li>
+          "If mapped" means the element is conditionally exposed in the accessibility tree. User agents MUST map the element if it is interactive or has semantic meaning. User agents MAY also include this element in the accessibility tree for implementation-specific reasons.
+        </li>
+        <li>
+          Where applicable, how an element participates in the computation of its own or another element's <a class="termref">accessible name</a> and/or <a class="termref">accessible description</a> is described in the <a href="#accessible-name-and-description-computation">Accessible Name and Description Computation</a> section below.
+        </li>
+        <li>
+          Where an element is indicated as having &quot;No corresponding [WAI-ARIA] role&quot;, user agents MUST NOT expose the <a class="core-mapping" href="#ariaRoleDescription"><code>aria-roledescription</code></a> property value in the <a class="termref">accessibility tree</a> unless the element has an explicit, conforming `role` attribute value.
+        </li>
+        <li>
+          <strong>IAccessible2:</strong>
           <ul>
             <li>All elements with accessible objects should implement the IAccessible, IAccessible2 and IAccessible2_2 interfaces.</li>
           </ul>
         </li>
-        <li><strong>UIA:</strong>
+        <li>
+          <strong>UIA:</strong>
           <ul>
-            <li>When a <a href="https://www.w3.org/TR/html/sec-forms.html#labelable-element">labelable element</a> is referenced by a `label` element's `for` attribute, or a descendant of a `label` element, the labelable element's UIA `LabeledBy` property points to the UIA element for the `label` element.</li>
-            <li>Elements mapped to the `Text` Control Type are not generally represented as <a class="termref" data-lt="accessible object">accessible objects</a> in the <a class="termref">accessibility tree</a>, but are just part of the `Text` Control Pattern implemented for the whole HTML document. However, if they have any `aria-` attributes or an explicit `tabindex` specified, elements mapped to the `Text` Control Type will be represented as <a class="termref" data-lt="accessible object">accessible objects</a> in the <a class="termref">accessibility tree</a>.</li>
+            <li>
+              When a <a href="https://www.w3.org/TR/html/sec-forms.html#labelable-element">labelable element</a> is referenced by a `label` element's `for` attribute, or a descendant of a `label` element, the labelable element's UIA `LabeledBy` property points to the UIA element for the `label` element.
+            </li>
+            <li>
+              Elements mapped to the `Text` Control Type are not generally represented as <a class="termref" data-lt="accessible object">accessible objects</a> in the <a class="termref">accessibility tree</a>, but are just part of the `Text` Control Pattern implemented for the whole HTML document. However, if they have any `aria-` attributes or an explicit `tabindex` specified, elements mapped to the `Text` Control Type will be represented as <a class="termref" data-lt="accessible object">accessible objects</a> in the <a class="termref">accessibility tree</a>.
+            </li>
           </ul>
         </li>
-    		<li><strong>AXAPI:</strong>
+    		<li>
+          <strong>AXAPI:</strong>
           <ul>
             <li>User agents should return a user-presentable, localized string value for the Mac Accessibility AXRoleDescription.</li>
           </ul>
@@ -283,12 +303,10 @@
               </td>
               <td class="atk">
                 <div class="role">
-                  <span class="type">Role:</span>
-                  `ATK_ROLE_STATIC`
+                  <span class="type">Role:</span> `ATK_ROLE_STATIC`
                 </div>
                 <div class="ifaces">
-                  <span class="type">Interfaces:</span>
-                  `AtkText`; `AtkHypertext`
+                  <span class="type">Interfaces:</span> `AtkText`; `AtkHypertext`
                 </div>
               </td>
               <td class="ax">
@@ -502,18 +520,23 @@
               </th>
               <td class="aria">No corresponding role</td>
               <td class="ia2">
+                <!-- TODO add if mapped -->
                 <div class="general">
                   No accessible object. Exposed as "font-weight" text attribute on the text container. The value depends on the platform.
                 </div>
               </td>
               <td class="uia">
+                <!-- TODO add if mapped -->
                 <div class="general">
                   No accessible object. Exposed by the `FontWeight` attribute of the `TextRange` Control Pattern implemented on a parent accessible object.
                 </div>
               </td>
               <td class="atk">
+                <div class="role">
+                  <span class="type">Role:</span> `ATK_ROLE_STATIC` (if mapped)
+                </div>
                 <div class="general">
-                  No accessible object. Exposed as "font-weight" text attribute on the text container. The value depends on the platform.
+                  Otherwise no accessible object. Exposed as "font-weight" text attribute on the text container. The value depends on the platform.
                 </div>
               </td>
               <td class="ax">
@@ -546,6 +569,7 @@
               </th>
               <td class="aria">No corresponding role</td>
               <td class="ia2">
+                <!-- TODO add if mapped -->
                 <div class="general">
                   No accessible object. May affect on "writing-mode" text attribute on its text container.
                 </div>
@@ -556,8 +580,11 @@
                 </div>
               </td>
               <td class="atk">
+                <div class="role">
+                  <span class="type">Role:</span> `ATK_ROLE_STATIC` (if mapped)
+                </div>
                 <div class="general">
-                  No accessible object. May affect on "writing-mode" text attribute on its text container.
+                  Otherwise no accessible object. May affect on "writing-mode" text attribute on its text container.
                 </div>
               </td>
               <td class="ax"></td>
@@ -582,8 +609,11 @@
                 </div>
               </td>
               <td class="atk">
+                <div class="role">
+                  <span class="type">Role:</span> `ATK_ROLE_STATIC` (if mapped)
+                </div>
                 <div class="general">
-                  No accessible object. Exposed as "writing-mode" text attribute on its text container.
+                  Otherwise no accessible object. Exposed as "writing-mode" text attribute on its text container.
                 </div>
               </td>
               <td class="ax">
@@ -804,18 +834,23 @@
               </th>
               <td class="aria">No corresponding role</td>
               <td class="ia2">
+                <!-- TODO add if mapped -->
                 <div class="general">
                   No accessible object. Styles used are mapped into text attributes on its text container.
                 </div>
               </td>
               <td class="uia">
+                <!-- TODO add if mapped -->
                 <div class="general">
                   No accessible object. Styles used are exposed by UIA text attributes of the `TextRange` Control Pattern implemented on a parent accessible object.
                 </div>
               </td>
               <td class="atk">
+                <div class="role">
+                  <span class="type">Role:</span> `ATK_ROLE_STATIC` (if mapped)
+                </div>
                 <div class="general">
-                  No accessible object. Styles used are mapped into text attributes on its text container.
+                  Otherwise no accessible object. Styles used are mapped into text attributes on its text container.
                 </div>
               </td>
               <td class="ax">
@@ -837,18 +872,23 @@
               </th>
               <td class="aria">No corresponding role</td>
               <td class="ia2">
+                <!-- TODO add if mapped -->
                 <div class="general">
                   No accessible object. Styles used are mapped into text attributes on its text container.
                 </div>
               </td>
               <td class="uia">
+                <!-- TODO add if mapped -->
                 <div class="general">
                   No accessible object. Styles used are exposed by UIA text attributes of the `TextRange` Control Pattern implemented on a parent accessible object.
                 </div>
               </td>
               <td class="atk">
+                <div class="role">
+                  <span class="type">Role:</span> `ATK_ROLE_STATIC` (if mapped)
+                </div>
                 <div class="general">
-                  No accessible object. Styles used are mapped into text attributes on its text container.
+                  Otherwise no accessible object. Styles used are mapped into text attributes on its text container.
                 </div>
               </td>
               <td class="ax">
@@ -1168,18 +1208,23 @@
               </th>
               <td class="aria">No corresponding role</td>
               <td class="ia2">
+                <!-- TODO add if mapped -->
                 <div class="general">
                   No accessible object. Styles used are mapped into text attributes on its text container.
                 </div>
               </td>
               <td class="uia">
+                <!-- TODO add if mapped -->
                 <div class="general">
                   No accessible object. Styles used are exposed by UIA text attributes of the `TextRange` Control Pattern implemented on a parent accessible object.
                 </div>
               </td>
               <td class="atk">
+                <div class="role">
+                  <span class="type">Role:</span> `ATK_ROLE_STATIC` (if mapped)
+                </div>
                 <div class="general">
-                  No accessible object. Styles used are mapped into text attributes on its text container.
+                  Otherwise no accessible object. Styles used are mapped into text attributes on its text container.
                 </div>
               </td>
               <td class="ax">
@@ -1575,18 +1620,23 @@
               </th>
               <td class="aria">No corresponding role</td>
               <td class="ia2">
+                <!-- TODO add if mapped -->
                 <div class="general">No accessible object.</div>
                 <div class="properties">
                   <span class="type">Text attributes: </span><code>font-style:italic</code> on the text container
                 </div>
               </td>
               <td class="uia">
+                <!-- TODO add if mapped -->
                 <div class="general">No accessible object. Exposed by the <code>IsItalic</code> attribute of the <code>TextRange</code> Control Pattern implemented on a parent accessible object.
                 </div>
               </td>
               <td class="atk">
+                <div class="role">
+                  <span class="type">Role:</span> `ATK_ROLE_STATIC` (if mapped)
+                </div>
                 <div class="general">
-                  No accessible object. Exposed as "font-style:italic" text attribute on its text container.
+                  Otherwise no accessible object. Exposed as "font-style:italic" text attribute on its text container.
                 </div>
               </td>
               <td class="ax">
@@ -2259,20 +2309,23 @@
                 <th><a data-cite="HTML">`kbd`</a></th>
                 <td class="aria">No corresponding role</td>
                 <td class="ia2">
+                  <!-- TODO add if mapped -->
                   <div class="general">No accessible object.</div>
                   <div class="properties">
                     <span class="type">Text attributes: </span><code>font-family:monospace</code> on the text container
                   </div>
                 </td>
                 <td class="uia">
+                  <!-- TODO add if mapped -->
                   <div class="general">No accessible object. Styles used are exposed by UIA text attribute identifiers of the <code>TextRange</code> Control Pattern implemented on a parent accessible object.
                   </div>
                 </td>
                 <td class="atk">
+                  <div class="role">
+                    <span class="type">Role:</span> `ATK_ROLE_STATIC` (if mapped)
+                  </div>
                   <div class="general">
-                    No accessible object. Mapped into
-                    "font-family:monospace" text attribute on its text
-                    container.
+                    Otherwise no accessible object. Mapped into "font-family:monospace" text attribute on its text container.
                   </div>
                 </td>
                 <td class="ax">
@@ -2778,8 +2831,7 @@
                 </td>
                 <td class="atk">
                   <div class="role">
-                    <span class="type">Role: </span>
-                    <code>ATK_ROLE_SECTION</code>
+                    <span class="type">Role:</span> `ATK_ROLE_SECTION`
                   </div>
                   <div class="general">
                     Styles used are mapped to text attributes on the accessible object.
@@ -2974,30 +3026,36 @@
                 <th><a data-cite="HTML">`s`</a></th>
                 <td class="aria">No corresponding role</td>
                 <td class="ia2">
+                  <!-- TODO add if mapped -->
                   <div class="general">No accessible object.</div>
                   <div class="properties">
-                        <span class="type">Text attributes: </span><code>text-line-through-style:solid</code> on the text container
+                    <span class="type">Text attributes: </span><code>text-line-through-style:solid</code> on the text container
                   </div>
                 </td>
                 <td class="uia">
+                  <!-- TODO add if mapped -->
                   <div class="general">No accessible object. Styles used are exposed by UIA text attribute identifiers of the <code>TextRange</code> Control Pattern implemented on a parent accessible object.
                   </div>
                 </td>
                 <td class="atk">
-                  <div class="general">No accessible object. Exposed as
+                  <div class="role">
+                    <span class="type">Role:</span> `ATK_ROLE_STATIC` (if mapped)
+                  </div>
+                  <div class="general">
+                    Otherwise no accessible object. Exposed as
                     "text-line-through-style:solid" text attribute on the text container.
                   </div>
                 </td>
                 <td class="ax">
-                    <div class="role">
-                        <span class="type">AXRole: </span><code>AXGroup</code>
-                    </div>
-                    <div class="subrole">
-                        <span class="type">AXSubrole: </span><code>(nil)</code>
-                    </div>
-                    <div class="roledesc">
-                        <span class="type">AXRoleDescription: </span><code>"group"</code>
-                    </div>
+                  <div class="role">
+                    <span class="type">AXRole: </span><code>AXGroup</code>
+                  </div>
+                  <div class="subrole">
+                    <span class="type">AXSubrole: </span><code>(nil)</code>
+                  </div>
+                  <div class="roledesc">
+                    <span class="type">AXRoleDescription: </span><code>"group"</code>
+                  </div>
                 </td>
                 <td class="comments"></td>
             </tr>
@@ -3005,18 +3063,22 @@
                 <th><a data-cite="HTML">`samp`</a></th>
                 <td class="aria">No corresponding role</td>
                 <td class="ia2">
+                  <!-- TODO add if mapped -->
                   <div class="general">
                     No accessible object. Styles are mapped into text attributes on its text container.
                   </div>
                 </td>
                 <td class="uia">
+                  <!-- TODO add if mapped -->
                   <div class="general">No accessible object. Styles used are exposed by UIA text attribute identifiers of the <code>TextRange</code> Control Pattern implemented on a parent accessible object.
                   </div>
                 </td>
                 <td class="atk">
+                  <div class="role">
+                    <span class="type">Role:</span> `ATK_ROLE_STATIC` (if mapped)
+                  </div>
                   <div class="general">
-                    No accessible object. Styles are mapped into
-                    text attributes on its text container.
+                    Otherwise no accessible object. Styles are mapped into text attributes on its text container.
                   </div>
                 </td>
                 <td class="ax">
@@ -3122,31 +3184,35 @@
                 <th><a data-cite="HTML">`small`</a></th>
                 <td class="aria">No corresponding role</td>
                 <td class="ia2">
+                  <!-- add iff mapped -->
                   <div class="general">No accessible object.</div>
                   <div class="properties">
                     <span class="type">Text attributes: </span><code>font-size</code> on the text container
                   </div>
                 </td>
                 <td class="uia">
+                  <!-- TODO add if mapped -->
                   <div class="general">No accessible object. Exposed by <code>FontSize</code> attribute of the <code>TextRange</code> Control Pattern implemented on a parent accessible object.
                   </div>
                 </td>
                 <td class="atk">
+                  <div class="role">
+                    <span class="type">Role:</span> `ATK_ROLE_STATIC` (if mapped)
+                  </div>
                   <div class="general">
-                    No accessible object. Exposed as "font-size"
-                    text attribute on the text container.
+                    Otherwise no accessible object. Exposed as "font-size" text attribute on the text container.
                   </div>
                 </td>
                 <td class="ax">
-                    <div class="role">
-                        <span class="type">AXRole: </span><code>AXGroup</code>
-                    </div>
-                    <div class="subrole">
-                        <span class="type">AXSubrole: </span><code>(nil)</code>
-                    </div>
-                    <div class="roledesc">
-                        <span class="type">AXRoleDescription: </span><code>"group"</code>
-                    </div>
+                  <div class="role">
+                    <span class="type">AXRole: </span><code>AXGroup</code>
+                  </div>
+                  <div class="subrole">
+                    <span class="type">AXSubrole: </span><code>(nil)</code>
+                  </div>
+                  <div class="roledesc">
+                    <span class="type">AXRoleDescription: </span><code>"group"</code>
+                  </div>
                 </td>
                 <td class="comments"></td>
             </tr>
@@ -3160,44 +3226,55 @@
                 <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-span">
-                <th><a data-cite="HTML">`span`</a></th>
-                <td class="aria">No corresponding role</td>
-                <td class="ia2"><div class="general">Not mapped</div></td>
-                <td class="uia">
-                    <div class="ctrltype">
-                        <span class="type">Control Type: </span><code>Group</code>
-                    </div>
-                </td>
-                <td class="atk"><div class="general">Not mapped</div></td>
-                <td class="ax">
-                    <div class="role">
-                        <span class="type">AXRole: </span><code>AXGroup</code>
-                    </div>
-                    <div class="subrole">
-                        <span class="type">AXSubrole: </span><code>(nil)</code>
-                    </div>
-                    <div class="roledesc">
-                        <span class="type">AXRoleDescription: </span><code>"group"</code>
-                    </div>
-                </td>
-                <td class="comments"></td>
+              <th>
+                <a data-cite="HTML">`span`</a>
+              </th>
+              <td class="aria">No corresponding role</td>
+              <td class="ia2">
+                <!-- TODO add if mapped -->
+                <div class="general">Not mapped</div>
+              </td>
+              <td class="uia">
+                <div class="ctrltype">
+                  <span class="type">Control Type:</span> `Group`
+                </div>
+              </td>
+              <td class="atk">
+                <span class="type">Role:</span> `ATK_ROLE_STATIC` (if mapped)
+              </td>
+              <td class="ax">
+                <div class="role">
+                  <span class="type">AXRole:</span> `AXGroup`
+                </div>
+                <div class="subrole">
+                  <span class="type">AXSubrole:</span> `(nil)`
+                </div>
+                <div class="roledesc">
+                  <span class="type">AXRoleDescription:</span> `"group"`
+                </div>
+              </td>
+              <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-strong">
                 <th><a data-cite="HTML">`strong`</a></th>
                 <td class="aria">No corresponding role</td>
                 <td class="ia2">
+                  <!-- TODO add if mapped -->
                   <div class="general">
                     No accessible object. Styles used are mapped into text attributes on its text container.
                   </div>
                 </td>
                 <td class="uia">
+                  <!-- TODO add if mapped -->
                   <div class="general">No accessible object. Styles used are exposed by UIA text attribute identifiers of the <code>TextRange</code> Control Pattern implemented on a parent accessible object.
                   </div>
                 </td>
                 <td class="atk">
+                  <div class="role">
+                    <span class="type">Role:</span> `ATK_ROLE_STATIC` (if mapped)
+                  </div>
                   <div class="general">
-                    No accessible object. Styles used are mapped
-                    into text attributes on its text container.
+                    No accessible object. Styles used are mapped into text attributes on its text container.
                   </div>
                 </td>
                 <td class="ax">
@@ -3239,7 +3316,7 @@
                 </td>
                 <td class="uia">
                   <div class="ctrltype">
-                      <span class="type">Control Type: </span><code>Text</code>
+                    <span class="type">Control Type: </span><code>Text</code>
                   </div>
                   <div class="general">Styles used are exposed by <code>IsSubscript</code> attribute of the <code>TextRange</code> Control Pattern implemented on the accessible object.
                   </div>
@@ -3317,7 +3394,7 @@
                 </td>
                 <td class="uia">
                   <div class="ctrltype">
-                      <span class="type">Control Type: </span><code>Text</code>
+                    <span class="type">Control Type: </span><code>Text</code>
                   </div>
                   <div class="general">Styles used are exposed by <code>IsSuperscript</code> attribute of the <code>TextRange</code> Control Pattern implemented on the accessible object.
                   </div>
@@ -3538,16 +3615,21 @@
                 <th><a data-cite="HTML">`u`</a></th>
                 <td class="aria">No corresponding role</td>
                 <td class="ia2">
+                  <!-- TODO add if mapped -->
                   <div class="general">No accessible object. Exposed as "text-underline-style:solid" text attribute on its text container.
                   </div>
                 </td>
                 <td class="uia">
+                  <!-- TODO add if mapped -->
                   <div class="general">No accessible object. Exposed by <code>UnderlineStyle</code> attribute of the <code>TextRange</code> Control Pattern implemented on a parent accessible object.
                   </div>
                 </td>
                 <td class="atk">
-                  <div class="general">No accessible object. Exposed as
-                    "text-underline-style:solid" text attribute on its text container.
+                  <div class="role">
+                    <span class="type">Role:</span> `ATK_ROLE_STATIC` (if mapped)
+                  </div>
+                  <div class="general">
+                    Otherwise no accessible object. Exposed as "text-underline-style:solid" text attribute on its text container.
                   </div>
                 </td>
                 <td class="ax">?</td>
@@ -3566,25 +3648,32 @@
                 <th><a data-cite="HTML">`var`</a></th>
                 <td class="aria">No corresponding role</td>
                 <td class="ia2">
+                  <!-- TODO add if mapped -->
                   <div class="general">No accessible object. Styles used are mapped to text attributes on its text container.</div>
                 </td>
                 <td class="uia">
+                  <!-- TODO add if mapped -->
                   <div class="general">No accessible object. Styles used are exposed by UIA text attribute identifiers of the <code>TextRange</code> Control Pattern implemented on a parent accessible object.
                   </div>
                 </td>
                 <td class="atk">
-                  <div class="general">No accessible object. Styles used are mapped to text attributes on its text container.</div>
+                  <div class="role">
+                    <span class="type">Role:</span> `ATK_ROLE_STATIC` (if mapped)
+                  </div>
+                  <div class="general">
+                    Otherwise no accessible object. Styles used are mapped to text attributes on its text container.
+                  </div>
                 </td>
                 <td class="ax">
-                    <div class="role">
-                        <span class="type">AXRole: </span><code>AXGroup</code>
-                    </div>
-                    <div class="subrole">
-                        <span class="type">AXSubrole: </span><code>(nil)</code>
-                    </div>
-                    <div class="roledesc">
-                        <span class="type">AXRoleDescription: </span><code>"group"</code>
-                    </div>
+                  <div class="role">
+                    <span class="type">AXRole: </span><code>AXGroup</code>
+                  </div>
+                  <div class="subrole">
+                    <span class="type">AXSubrole: </span><code>(nil)</code>
+                  </div>
+                  <div class="roledesc">
+                    <span class="type">AXRoleDescription: </span><code>"group"</code>
+                  </div>
                 </td>
                 <td class="comments"></td>
             </tr>
@@ -3598,7 +3687,7 @@
               </td>
               <td class="uia">
                   <div class="ctrltype">
-                      <span class="type">Control Type: </span><code>Group</code>
+                    <span class="type">Control Type: </span><code>Group</code>
                   </div>
                   <div class="ctrltype"><span class="type">Localized Control Type:</span> <code>"group"</code></div>
                   <div class="general"><b>Note:</b> If the <a href="https://www.w3.org/TR/html/semantics.html#attr-media-controls"><code>controls</code></a> attribute is present, UI controls (e.g. play, volume) are exposed as children of the <a href="https://www.w3.org/TR/html/semantics-embedded-content.html#the-video-element"><code>video</code></a> element in the <a class="termref">accessibility tree</a>, and mapped as appropriate for the type of control (e.g. <a class="core-mapping" href="#role-map-button"><code>button</code></a> or <a class="core-mapping" href="#role-map-slider"><code>slider</code></a>).</div>
@@ -3629,25 +3718,25 @@
                 <td class="aria">No corresponding role</td>
                 <td class="ia2">
                   <div class="general">
-                    If a line break is added, expose it with <code>IAccessibleText</code> on the text container
+                    If a line break is added, expose it with <code>IAccessibleText</code> on the text container.
                   </div>
                 </td>
                 <td class="uia"><div class="general">Not mapped</div></td>
                 <td class="atk">
                   <div class="general">
-                    A line break if added is exposed via Text interface on its text container
+                    A line break, if added, is exposed via Text interface on its text container.
                   </div>
                 </td>
                 <td class="ax">
-                    <div class="role">
-                        <span class="type">AXRole: </span><code>AXGroup</code>
-                    </div>
-                    <div class="subrole">
-                        <span class="type">AXSubrole: </span><code>(nil)</code>
-                    </div>
-                    <div class="roledesc">
-                        <span class="type">AXRoleDescription: </span><code>"group"</code>
-                    </div>
+                  <div class="role">
+                    <span class="type">AXRole: </span><code>AXGroup</code>
+                  </div>
+                  <div class="subrole">
+                    <span class="type">AXSubrole: </span><code>(nil)</code>
+                  </div>
+                  <div class="roledesc">
+                    <span class="type">AXRoleDescription: </span><code>"group"</code>
+                  </div>
                 </td>
                 <td class="comments"></td>
             </tr>
@@ -3659,10 +3748,18 @@
       <h3>HTML Attribute State and Property Mappings</h3>
       <p><strong>Notes:</strong> </p>
       <ul>
-        <li>HTML attributes with default WAI-ARIA state and property semantics MUST be mapped to platform <a class="termref">accessibility APIs</a> according to those WAI-ARIA state and property mappings as defined in the [[core-aam-1.2]] specification.</li>
-        <li>A '?' in a cell indicates the data has yet to be provided.</li>
-        <li>"Not mapped" (Not Applicable) means the attribute does not need to be exposed via an <a class="termref">accessibility API</a>. This is usually because the attribute is not displayed as part of the user interface.</li>
-        <li>All elements having an accessible object in IAccessible2 mapping are supposed to implement IAccessible, IAccessible2 and IAccessible2_2 interfaces.</li>
+        <li>
+          HTML attributes with default WAI-ARIA state and property semantics MUST be mapped to platform <a class="termref">accessibility APIs</a> according to those WAI-ARIA state and property mappings as defined in the [[core-aam-1.2]] specification.
+        </li>
+        <li>
+          A '?' in a cell indicates the data has yet to be provided.
+        </li>
+        <li>
+          "Not mapped" (Not Applicable) means the attribute does not need to be exposed via an <a class="termref">accessibility API</a>. This is usually because the attribute is not displayed as part of the user interface.
+        </li>
+        <li>
+          All elements having an accessible object in IAccessible2 mapping are supposed to implement IAccessible, IAccessible2 and IAccessible2_2 interfaces.
+        </li>
       </ul>
       <div class="table-container">
         <table class="map-table attributes" id="attribute-mapping-table">
