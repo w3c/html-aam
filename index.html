@@ -369,7 +369,9 @@
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-address">
-              <th><a data-cite="HTML">`address`</a></th>
+              <th>
+                <a data-cite="HTML">`address`</a>
+              </th>
               <td class="aria">No corresponding role</td>
               <td class="ia2">
                 <div class="role">
@@ -442,7 +444,9 @@
                   <span class="type">Role:</span> `ATK_ROLE_STATIC`
                 </div>
               </td>
-              <td class="ax"><div class="general">Not mapped</div></td>
+              <td class="ax">
+                <div class="general">Not mapped</div>
+              </td>
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-article">
@@ -486,12 +490,12 @@
                 </div>
               </td>
               <td class="uia">
-                    <div class="ctrltype">
-                        <span class="type">Control Type: </span><code>Group</code>
-                    </div>
-                    <div class="ctrltype"><span class="type">Localized Control Type:</span> <code>"audio"</code></div>
-                    <div class="general"><b>Note:</b> If the <a href="https://www.w3.org/TR/html/semantics.html#attr-media-controls"><code>controls</code></a> attribute is present, UI controls (e.g. play, volume) are exposed as children of the <a href="https://www.w3.org/TR/html/semantics-embedded-content.html#the-audio-element"><code>audio</code></a> element in the <a class="termref">accessibility tree</a>, and mapped as appropriate for the type of control (e.g. <a class="core-mapping" href="#role-map-button"><code>button</code></a> or <a class="core-mapping" href="#role-map-slider"><code>slider</code></a>).</div>
-                    <div class="general">Text objects associated with loading or error messages, and any UI control not currently displayed, MAY be present in the <a class="termref">accessibility tree</a> and marked as hidden or off-screen.</div>
+                <div class="ctrltype">
+                    <span class="type">Control Type: </span><code>Group</code>
+                </div>
+                <div class="ctrltype"><span class="type">Localized Control Type:</span> <code>"audio"</code></div>
+                <div class="general"><b>Note:</b> If the <a href="https://www.w3.org/TR/html/semantics.html#attr-media-controls"><code>controls</code></a> attribute is present, UI controls (e.g. play, volume) are exposed as children of the <a href="https://www.w3.org/TR/html/semantics-embedded-content.html#the-audio-element"><code>audio</code></a> element in the <a class="termref">accessibility tree</a>, and mapped as appropriate for the type of control (e.g. <a class="core-mapping" href="#role-map-button"><code>button</code></a> or <a class="core-mapping" href="#role-map-slider"><code>slider</code></a>).</div>
+                <div class="general">Text objects associated with loading or error messages, and any UI control not currently displayed, MAY be present in the <a class="termref">accessibility tree</a> and marked as hidden or off-screen.</div>
               </td>
               <td class="atk">
                 <div class="role">
@@ -647,10 +651,12 @@
                   </div>
                 </td>
                 <td class="uia">
-                    <div class="ctrltype">
-                        <span class="type">Control Type: </span><code>Group</code>
-                    </div>
-                    <div class="ctrltype"><span class="type">Localized Control Type:</span> <code>"blockquote"</code></div>
+                  <div class="ctrltype">
+                    <span class="type">Control Type: </span><code>Group</code>
+                  </div>
+                  <div class="ctrltype">
+                    <span class="type">Localized Control Type:</span> <code>"blockquote"</code>
+                  </div>
                 </td>
                 <td class="atk">
                   <div class="role">
@@ -663,15 +669,15 @@
                   </div>
                 </td>
                 <td class="ax">
-                    <div class="role">
-                        <span class="type">AXRole: </span><code>AXGroup</code>
-                    </div>
-                    <div class="subrole">
-                        <span class="type">AXSubrole: </span><code>(nil)</code>
-                    </div>
-                    <div class="roledesc">
-                        <span class="type">AXRoleDescription: </span><code>"group"</code>
-                    </div>
+                  <div class="role">
+                    <span class="type">AXRole:</span> `AXGroup`
+                  </div>
+                  <div class="subrole">
+                    <span class="type">AXSubrole:</span> `(nil)`
+                  </div>
+                  <div class="roledesc">
+                    <span class="type">AXRoleDescription:</span> `"group"`
+                  </div>
                 </td>
                 <td class="comments"></td>
             </tr>
@@ -1122,15 +1128,17 @@
                   May not have an accessible object if has no semantic meaning. Otherwise,
                 </div>
                 <div class="role">
-                  <span class="type">Roles:</span> <code>ROLE_SYSTEM_GROUPING</code>; <code>IA2_ROLE_SECTION</code>
+                  <span class="type">Roles:</span> `ROLE_SYSTEM_GROUPING`; `IA2_ROLE_SECTION`
                 </div>
                 <div class="ifaces">
                   <span class="type">Interfaces: </span>
-                  <code>IAccessibleText2</code>; <code>IAccessibleHypertext2</code>;
+                  `IAccessibleText2`; `IAccessibleHypertext2`;
                 </div>
               </td>
               <td class="uia">
-                <div class="ctrltype"><span class="type">Control Type:</span> <code>Group</code></div>
+                <div class="ctrltype">
+                  <span class="type">Control Type:</span> `Group`
+                </div>
               </td>
               <td class="atk">
                 <div class="general">
@@ -1482,7 +1490,7 @@
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="comments"></td>
             </tr>
-            <tr id="el-header2" tabindex="-1">
+            <tr tabindex="-1" id="el-form-noname">
               <th>
                 <a data-cite="HTML">`form`</a> without an <a class="termref">accessible name</a>
               </th>
@@ -1792,8 +1800,8 @@
                 </td>
             </tr>
             <tr tabindex="-1" id="el-input-date">
-                <th>
-                  <a href="https://www.w3.org/TR/html/sec-forms.html#the-input-element"><code>input</code></a> <span class="el-context">(<a href="https://www.w3.org/TR/html/sec-forms.html#element-attrdef-input-type"><code>type</code></a> attribute in the <a href="https://www.w3.org/TR/html/sec-forms.html#date-state-typedate">Date</a> state)</span>
+              <th>
+                <a href="https://www.w3.org/TR/html/sec-forms.html#the-input-element"><code>input</code></a> <span class="el-context">(<a href="https://www.w3.org/TR/html/sec-forms.html#element-attrdef-input-type"><code>type</code></a> attribute in the <a href="https://www.w3.org/TR/html/sec-forms.html#date-state-typedate">Date</a> state)</span>
               </th>
                 <td class="aria">No corresponding role</td>
                 <td class="ia2">
@@ -2044,7 +2052,7 @@
                     <div class="ctrltype">
                         <span class="type">Localized Control Type: </span><code>"number"</code>
                     </div>
-              </td>
+                </td>
                 <td class="atk">
                   <div class="general">
                     If implemented as a spin button, use WAI-ARIA mapping for <a class="core-mapping" href="#role-map-spinbutton"><code>spinbutton</code></a>.
@@ -2360,9 +2368,9 @@
                   </div>
                 </td>
                 <td class="uia">
-                    <div class="ctrltype">
-                        <span class="type">Control Type: </span><code>Text</code>
-                    </div>
+                  <div class="ctrltype">
+                    <span class="type">Control Type: </span><code>Text</code>
+                  </div>
                   <div class="properties">
                     <span class="type">Other properties: </span> When the <code>label</code> element contains an <code>input</code> element, the <code>LabeledBy</code> property for the <code>input</code> element points to the UIA element for the <code>label</code> element.
                     <p>When the <code>label</code> element has a <a href="#att-for-label"><code>for</code></a> attribute referencing another element, the <code>LabeledBy</code> property for the referenced element points to the UIA element for the <code>label</code> element.</p>
@@ -2370,8 +2378,7 @@
                 </td>
                 <td class="atk">
                   <div class="role">
-                    <span class="type">Role: </span>
-                    <code>ATK_ROLE_LABEL</code>
+                    <span class="type">Role:</span> <code>ATK_ROLE_LABEL</code>
                   </div>
                   <div class="relations">
                     <span class="type">Relations: </span>
@@ -2883,7 +2890,7 @@
                 </td>
                 <td class="uia">
                   <div class="ctrltype">
-                        <span class="type">Control Type: </span><code>Text</code>
+                    <span class="type">Control Type: </span><code>Text</code>
                   </div>
                   <div class="ctrltype"><span class="type">Localized Control Type:</span> <code>"q"</code></div>
                 </td>
@@ -2922,10 +2929,10 @@
                     <span class="type">AXRole: </span><code>AXGroup</code>
                   </div>
                   <div class="subrole">
-                      <span class="type">AXSubrole: </span><code>AXRubyBase</code>
+                    <span class="type">AXSubrole: </span><code>AXRubyBase</code>
                   </div>
                   <div class="roledesc">
-                      <span class="type">AXRoleDescription: </span><code>"group"</code>
+                    <span class="type">AXRoleDescription: </span><code>"group"</code>
                   </div>
                 </td>
                 <td class="comments"></td>
@@ -2936,7 +2943,8 @@
                 <td class="aria">No corresponding role</td>
                 <td class="ia2">
                   <div class="general">
-                    No accessible object. No child elements are exposed if <a href="#el-ruby"><code>ruby</code></a> is supported by the browser.
+                    No accessible object.
+                    No child elements are exposed if <a href="#el-ruby">`ruby`</a> is supported by the browser.
                   </div>
                 </td>
                 <td class="uia">
@@ -2946,8 +2954,8 @@
                 </td>
                 <td class="atk">
                   <div class="general">
-                    No accessible object. No child elements are
-                    exposed if <a href="#el-ruby"><code>ruby</code></a> is supported by the browser.
+                    No accessible object.
+                    No child elements are exposed if <a href="#el-ruby">`ruby`</a> is supported by the browser.
                   </div>
                 </td>
                 <td class="ax">Not mapped</td>
@@ -2958,7 +2966,8 @@
                 <td class="aria">No corresponding role</td>
                 <td class="ia2">
                   <div class="general">
-                    No accessible object. No child elements are exposed if <a href="#el-ruby"><code>ruby</code></a> is supported by the browser.
+                    No accessible object.
+                    No child elements are exposed if <a href="#el-ruby">`ruby`</a> is supported by the browser.
                   </div>
                 </td>
                 <td class="uia">
@@ -2976,10 +2985,10 @@
                     <span class="type">AXRole: </span><code>AXGroup</code>
                   </div>
                   <div class="subrole">
-                      <span class="type">AXSubrole: </span><code>AXRubyText</code>
+                    <span class="type">AXSubrole: </span><code>AXRubyText</code>
                   </div>
                   <div class="roledesc">
-                      <span class="type">AXRoleDescription: </span><code>"group"</code>
+                    <span class="type">AXRoleDescription: </span><code>"group"</code>
                   </div>
                 </td>
                 <td class="comments"></td>
@@ -3033,7 +3042,7 @@
                   <!-- TODO add if mapped -->
                   <div class="general">No accessible object.</div>
                   <div class="properties">
-                    <span class="type">Text attributes: </span><code>text-line-through-style:solid</code> on the text container
+                    <span class="type">Text attributes:</span> `text-line-through-style:solid` on the text container
                   </div>
                 </td>
                 <td class="uia">
@@ -3046,19 +3055,19 @@
                     <span class="type">Role:</span> `ATK_ROLE_STATIC` (if mapped)
                   </div>
                   <div class="general">
-                    Otherwise no accessible object. Exposed as
-                    "text-line-through-style:solid" text attribute on the text container.
+                    Otherwise no accessible object.
+                    Exposed as "text-line-through-style:solid" text attribute on the text container.
                   </div>
                 </td>
                 <td class="ax">
                   <div class="role">
-                    <span class="type">AXRole: </span><code>AXGroup</code>
+                    <span class="type">AXRole:</span> `AXGroup`
                   </div>
                   <div class="subrole">
-                    <span class="type">AXSubrole: </span><code>(nil)</code>
+                    <span class="type">AXSubrole:</span> `(nil)`
                   </div>
                   <div class="roledesc">
-                    <span class="type">AXRoleDescription: </span><code>"group"</code>
+                    <span class="type">AXRoleDescription:</span> `"group"`
                   </div>
                 </td>
                 <td class="comments"></td>
@@ -3088,13 +3097,13 @@
                 </td>
                 <td class="ax">
                   <div class="role">
-                    <span class="type">AXRole: </span><code>AXGroup</code>
+                    <span class="type">AXRole:</span> `AXGroup`
                   </div>
                   <div class="subrole">
-                    <span class="type">AXSubrole: </span><code>(nil)</code>
+                    <span class="type">AXSubrole:</span> `(nil)`
                   </div>
                   <div class="roledesc">
-                    <span class="type">AXRoleDescription: </span><code>"group"</code>
+                    <span class="type">AXRoleDescription:</span> `"group"`
                   </div>
                 </td>
                 <td class="comments"></td>
@@ -3189,10 +3198,10 @@
                 <th><a data-cite="HTML">`small`</a></th>
                 <td class="aria">No corresponding role</td>
                 <td class="ia2">
-                  <!-- add iff mapped -->
                   <div class="general">No accessible object.</div>
+                  <!-- add if mapped -->
                   <div class="properties">
-                    <span class="type">Text attributes: </span><code>font-size</code> on the text container
+                    <span class="type">Text attributes:</span> `font-size` on the text container
                   </div>
                 </td>
                 <td class="uia">
@@ -3210,13 +3219,13 @@
                 </td>
                 <td class="ax">
                   <div class="role">
-                    <span class="type">AXRole: </span><code>AXGroup</code>
+                    <span class="type">AXRole:</span> `AXGroup`
                   </div>
                   <div class="subrole">
-                    <span class="type">AXSubrole: </span><code>(nil)</code>
+                    <span class="type">AXSubrole:</span> `(nil)`
                   </div>
                   <div class="roledesc">
-                    <span class="type">AXRoleDescription: </span><code>"group"</code>
+                    <span class="type">AXRoleDescription:</span> `"group"`
                   </div>
                 </td>
                 <td class="comments"></td>
