@@ -3702,28 +3702,42 @@
                 <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-u">
-                <th><a data-cite="HTML">`u`</a></th>
-                <td class="aria">No corresponding role</td>
-                <td class="ia2">
-                  <!-- TODO add if mapped -->
-                  <div class="general">No accessible object. Exposed as "text-underline-style:solid" text attribute on its text container.
-                  </div>
-                </td>
-                <td class="uia">
-                  <!-- TODO add if mapped -->
-                  <div class="general">No accessible object. Exposed by <code>UnderlineStyle</code> attribute of the <code>TextRange</code> Control Pattern implemented on a parent accessible object.
-                  </div>
-                </td>
-                <td class="atk">
-                  <div class="role">
-                    <span class="type">Role:</span> `ATK_ROLE_STATIC` (if mapped)
-                  </div>
-                  <div class="general">
-                    Otherwise no accessible object. Exposed as "text-underline-style:solid" text attribute on its text container.
-                  </div>
-                </td>
-                <td class="ax">?</td>
-                <td class="comments"></td>
+              <th><a data-cite="HTML">`u`</a></th>
+              <td class="aria">No corresponding role</td>
+              <td class="ia2">
+                <div class="general">
+                  If mapped:
+                </div>
+                <!-- TODO add if mapped -->
+                <div class="general">
+                  Otherwise no accessible object.
+                  Exposed as "text-underline-style:solid" text attribute on its text container.
+                </div>
+              </td>
+              <td class="uia">
+                <div class="general">
+                  If mapped:
+                </div>
+                <!-- TODO add if mapped -->
+                <div class="general">
+                  Otherwise no accessible object.
+                  Exposed by `UnderlineStyle` attribute of the `TextRange` Control Pattern implemented on a parent accessible object.
+                </div>
+              </td>
+              <td class="atk">
+                <div class="general">
+                  If mapped:
+                </div>
+                <div class="role">
+                  <span class="type">Role:</span> `ATK_ROLE_STATIC`
+                </div>
+                <div class="general">
+                  Otherwise no accessible object.
+                  Exposed as "text-underline-style:solid" text attribute on its text container.
+                </div>
+              </td>
+              <td class="ax">?</td>
+              <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-ul">
                 <th><a data-cite="HTML">`ul`</th>
