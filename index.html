@@ -2458,7 +2458,10 @@
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="comments">
-                The <a data-cite="HTML">`menu`</a> element is a semantic alternative to the <a data-cite="HTML">`ul`</a> element. It has no implemented mappings or behavior that reflect the semantics of the ARIA <a class="core-mapping" href="#role-map-menu">`menu`</a> role.
+                <div class="general">The <a data-cite="HTML">`menu`</a> element is a semantic alternative to the <a href="el-ul">`ul`</a> element. It has no implemented mappings or behavior that reflect the semantics of the ARIA <a class="core-mapping" href="#role-map-menu">`menu`</a> role.</div>
+                <div class="general">
+                  Note obsolete <a data-cite="html/obsolete.html#menuitem">`menuitem` element</a>
+                  and <a data-cite="html/obsolete.html#attr-menu-type">`menu` with `type` attribute</a>.</div>
               </td>
             </tr>
             <tr tabindex="-1" id="el-meta">
@@ -6131,8 +6134,8 @@
         <section>
           <h4>Substantive changes since moving entirely to the Web Application Working Group (formerly Web Platform WG) (01-Oct-2016)</h4>
           <ul>
+            <li>11-Sept-2019: Update mapping for `menu` to match <a data-cite="html/#the-menu-element">HTML Living Standard</a>. Remove element and attribute mappings that are not applicable to `menu` and `menuitem`.  Update mapping of `menu` to `role="list"`. See <a href="https://github.com/w3c/html-aam/issues/188">GitHub issue #188</a>.</li>
             <li>10-July-2019: Further updated mappings for `ins` and `del` elements. See <a href="https://github.com/w3c/html-aam/pull/219">GitHub pull request #219</a>.</li>
-            <li>10-July-2019: Update mapping for `menu` to match <a data-cite="html/#the-menu-element">HTML Living Standard</a>. Remove element and attribute mappings that are not applicable to `menu` and `menuitem`.  Update mapping of `menu` to `role="list"`. See <a href="https://github.com/w3c/html-aam/issues/188">GitHub issue #188</a>.</li>
             <li>13-June-2019: Update mappings for `ins` and `del` elements. See <a href="https://github.com/w3c/html-aam/issues/141">GitHub issue #141</a>.</li>
             <li>10-June-2019: Update ATK mappings for `header` and `footer` when not scoped to the `body`. See <a href="https://github.com/w3c/html-aam/issues/129">GitHub issue #129</a>.</li>
             <li>21-May-2019: Update AXAPI mappings for <code>map</code> element. Add accessible name and description computation for <code>area</code>. See <a href="https://github.com/w3c/html-aam/issues/176">GitHub issue #176</a>.</li>
