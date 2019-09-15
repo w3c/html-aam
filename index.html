@@ -4769,6 +4769,39 @@
                 <td class="ax"><code>AXMinValue: &lt;value&gt;</code></td>
                 <td class="comments"></td>
             </tr>
+            <tr tabindex="-1" id="att-minlength">
+              <th>`minlength`</th>
+              <td class="elements">
+                <a data-cite="html/input.html#attr-input-minlength">`input`</a>;
+                <a data-cite="html/form-elements.html#attr-textarea-minlength">`textarea`</a>
+              </td>
+              <td class="aria"><div class="general">Not mapped</div></td>
+              <td class="ia2">
+                <div class="states">
+                  <span class="type">States:</span>
+                  `IA2_STATE_INVALID_ENTRY` if value doesn't meet the designated minimum length value.
+                </div>
+              </td>
+              <td class="uia">
+                <div class="states">
+                  <span class="type">States:</span>
+                  `IsDataValidForForm` if value doesn't meet the designated minimum length value.
+                </div>
+              </td>
+              <td class="atk">
+                <div class="states">
+                  <span class="type">States:</span>
+                  `ATK_STATE_INVALID_ENTRY` if value doesn't meet the designated minimum length value.
+                </div>
+              </td>
+              <td class="ax">
+                <div class="property">
+                  <span class="type">Property:</span>
+                  `AXInvalid`: `true` if value doesn't meet the designated minimum length value.
+                </div>
+              </td>
+              <td class="comments"></td>
+            </tr>
             <tr tabindex="-1" id="att-multiple-input">
                 <th><code>multiple</code></th>
                 <td class="elements"><a href="https://www.w3.org/TR/html/sec-forms.html#element-attrdef-input-multiple"><code>input</code></a></td>
