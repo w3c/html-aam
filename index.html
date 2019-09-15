@@ -5380,19 +5380,22 @@
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-step">
-                <th><code>step</code></th>
-                <td class="elements"><a href="https://www.w3.org/TR/html/sec-forms.html#element-attrdef-input-step"><code>input</code></a></td>
-                <td class="aria"><div class="general">Not mapped</div></td>
-                <td class="ia2"><div class="general">Not mapped</div></td>
-                <td class="uia">If the input is in the <a href="#el-input-range"><code>Range</code></a> state, set both <code>RangeValue.SmallChange</code> and <code>RangeValue.LargeChange</code> to the value of <code>step</code></td>
-                <td class="atk">
-                  <div class="general">
-                    Exposed as <code>atk_value_get_minimum_increment</code> if the element
-                    implements the <code>AtkValue</code> interface
-                  </div>
-                </td>
-                <td class="ax">?</td>
-                <td class="comments"></td>
+              <th>`step`</th>
+              <td class="elements">
+                <a data-cite="html/input.html#attr-input-step">`input`</a>
+              </td>
+              <td class="aria"><div class="general">Not mapped</div></td>
+              <td class="ia2"><div class="general">Not mapped</div></td>
+              <td class="uia">
+                If the `input` is in the <a href="#el-input-range">`Range`</a> state, set both `RangeValue.SmallChange` and `RangeValue.LargeChange` to the value of `step`.
+              </td>
+              <td class="atk">
+                <div class="general">
+                  Exposed as `atk_value_get_minimum_increment` if the element implements the `AtkValue` interface.
+                </div>
+              </td>
+              <td class="ax">Not mapped</td>
+              <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-style">
                 <th><code>style</code></th>
