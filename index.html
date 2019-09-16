@@ -4426,7 +4426,7 @@
             <tr tabindex="-1" id="att-hidden">
                 <th><code>hidden</code></th>
                 <td class="elements"><a href="https://www.w3.org/TR/html/editing.html#the-hidden-attribute">HTML elements</a></td>
-                <td class="aria"><a class="core-mapping" href="#ariaHiddenTrue"><code>aria-hidden</code></a>="true" if the element is <code>display: none</code>, or if the element is <code>visibility: hidden</code>. If the element is no longer <code>display: none</code> or <code>visibility: hidden</code> then it does not map.</td>
+                <td class="aria"><a class="core-mapping" href="#ariaHiddenTrue"><code>aria-hidden="true"</code></a> if the element is <code>display: none</code>, or if the element is <code>visibility: hidden</code>. If the element is no longer <code>display: none</code> or <code>visibility: hidden</code> then it does not map.</td>
                 <td class="ia2"><div class="general">Use WAI-ARIA mapping</div></td>
                 <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
                 <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
@@ -4610,7 +4610,7 @@
                 </td>
                 <td class="ax"><div class="general">Not mapped</div></td>
                 <td class="comments">
-                  Refer to <a href="#el-datalist"><code>datalist</code></a>  and <a href="#el-input-textetc-autocomplete"><code>input</code></a> elements mapping.
+                  Refer to <a href="#el-datalist"><code>datalist</code></a> and <a href="#el-input-textetc-autocomplete"><code>input</code></a> elements mapping.
                 </td>
             </tr>
             <tr tabindex="-1" id="att-longdesc">
@@ -4810,7 +4810,7 @@
             <tr tabindex="-1" id="att-multiple-select">
               <th><code>multiple</code></th>
               <td class="elements"><a href="https://www.w3.org/TR/html/sec-forms.html#element-attrdef-select-multiple"><code>select</code></a></td>
-              <td class="aria"><a href="https://www.w3.org/TR/wai-aria-1.1/#aria-multiselectable"><code>aria-multiselectable</code></a><code>="true"</code></td>
+              <td class="aria"><a href="https://www.w3.org/TR/wai-aria-1.1/#aria-multiselectable">`aria-multiselectable="true"`</a></td>
               <td class="ia2"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
@@ -5155,26 +5155,23 @@
                 <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-scope">
-                <th><code>scope</code></th>
-                <td class="elements"><a href="https://www.w3.org/TR/html/tabular-data.html#element-attrdef-th-scope"><code>th</code></a></td>
-                <td class="aria">?</td>
-                <td class="ia2">
-                  <div class="general">
-                    Defines whether the element is a row or column header (refer to <a href="#el-th"><code>th</code></a> element)
-                  </div>
-                </td>
-                <td class="uia">
-                  <div class="general">
-                    Defines whether the element is a row or column header (refer to <a href="#el-th"><code>th</code></a> element)
-                  </div>
-                </td>
-                <td class="atk">
-                  <div class="general">
-                    Defines whether the element is a row or column header (refer to <a href="#el-th"><code>th</code></a> element)
-                  </div>
-                </td>
-                <td class="ax">?</td>
-                <td class="comments"></td>
+              <th>`scope`</th>
+              <td class="elements">
+                <a data-cite="html/tables.html#attr-th-scope">`th`</a>
+              </td>
+              <td class="aria">
+                <div class="general">
+                  If `scope="row"` then map `th` to <a class="core-mapping" href="#role-map-columnheader">`rowheader`</a>
+                </div>
+                <div class="general">
+                  If `scope="col"` then map `th` to <a class="core-mapping" href="#role-map-columnheader">`columnheader`</a>
+                </div>
+              </td>
+              <td class="ia2"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-selected">
                 <th><code>selected</code></th>
