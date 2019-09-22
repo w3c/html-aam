@@ -5198,26 +5198,38 @@
                 <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-size">
-                <th><code>size</code></th>
-                <td class="elements"><a href="https://www.w3.org/TR/html/sec-forms.html#element-attrdef-input-size"><code>input</code></a>; <a href="https://www.w3.org/TR/html/sec-forms.html#element-attrdef-select-size"><code>select</code></a></td>
-                <td class="aria">?</td>
-                <td class="ia2">
-                  <div class="general">
-                    If greater than 1, then creates a listbox accessible object. Refer to <a href="#el-select-listbox"><code>select</code></a> element for details.
-                  </div>
-                </td>
-                <td class="uia">
-                  <div class="general">
-                    If greater than 1, then creates a <code>List</code> accessible object. Refer to <a href="#el-select-listbox"><code>select</code></a> element for details.
-                  </div>
-                </td>
-                <td class="atk">
-                  <div class="general">
-                    If greater than 1, then creates a listbox accessible object. Refer to <a href="#el-select-listbox"><code>select</code></a> element for details.
-                  </div>
-                </td>
-                <td class="ax">?</td>
-                <td class="comments"></td>
+              <th><code>size</code></th>
+              <td class="elements">
+                <a data-cite="html/input.html#attr-input-size">`input`</a>;
+                <a data-cite="html/form-elements.html#attr-select-size">`select`</a>
+              </td>
+              <td class="aria">
+                <div class="general">
+                  Not mapped for `input` elements.
+                </div>
+                <div class="general">
+                  If greater than 1, then creates a listbox accessible object. Refer to <a href="#el-select-listbox">`select`</a> element for details.
+                </div>
+              </td>
+              <td class="ia2">
+                <div class="general">Not mapped for `input` elements.</div>
+                <div class="general">For `select` element use WAI-ARIA mapping.</div>
+              </td>
+              <td class="uia">
+                <div class="general">Not mapped for `input` elements.</div>
+                <div class="general">For `select` element use WAI-ARIA mapping.</div>
+              </td>
+              <td class="atk">
+                <div class="general">Not mapped for `input` elements.</div>
+                <div class="general">For `select` element use WAI-ARIA mapping.</div>
+              </td>
+              <td class="ax">
+                <div class="general">Not mapped for `input` elements.</div>
+                <div class="general">For `select` element use WAI-ARIA mapping.</div>
+              </td>
+              <td class="comments">
+                For `input` elements that allow the `size` attribute, the attribute will modify their default width. A width provided by CSS will negate the effects of the `size` attribute on these `input` elements.
+              </td>
             </tr>
             <tr tabindex="-1" id="att-sizes">
               <th>`sizes`</th>
@@ -5237,11 +5249,11 @@
                 <a data-cite="html/embedded-content.html#attr-img-sizes">`img`</a>;
                 <a data-cite="html/embedded-content.html#attr-source-sizes">`source`</a>
               </td>
-              <td class="aria"><div class="general">???</div></td>
-              <td class="ia2"><div class="general">???</div></td>
-              <td class="uia"><div class="general">???</div></td>
-              <td class="atk"><div class="general">???</div></td>
-              <td class="ax"><div class="general">???</div></td>
+              <td class="aria"><div class="general">Not mapped</div></td>
+              <td class="ia2"><div class="general">Not mapped</div></td>
+              <td class="uia"><div class="general">Not mapped</div></td>
+              <td class="atk"><div class="general">Not mapped</div></td>
+              <td class="ax"><div class="general">Not mapped</div></td>
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-slot">
