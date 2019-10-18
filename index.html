@@ -5260,28 +5260,36 @@
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-span">
-                <th><code>span</code></th>
-                <td class="elements"><a href="https://www.w3.org/TR/html/tabular-data.html#element-attrdef-col-span"><code>col</code></a>; <a href="https://www.w3.org/TR/html/tabular-data.html#element-attrdef-colgroup-span"><code>colgroup</code></a></td>
-                <td class="aria">?</td>
-                <td class="ia2">
-                  <div class="general">
-                    exposed as <code>IAccessibleTableCell::columnExtent</code> on
-                    all cells at the column
-                  </div>
-                </td>
-                <td class="uia">
-                  <div class="general">
-                    Exposed as <code>GridItem.ColumnSpan</code> on
-                    all cells at the column
-                  </div>
-                </td>
-                <td class="atk">
-                  <div class="general">
-                    Exposed via <code>atk_table_get_column_extent_at</code>
-                  </div>
-                </td>
-                <td class="ax">?</td>
-                <td class="comments"></td>
+              <th>`span`</th>
+              <td class="elements">
+                <a href="https://www.w3.org/TR/html/tabular-data.html#element-attrdef-col-span">`col`</a>;
+                <a href="https://www.w3.org/TR/html/tabular-data.html#element-attrdef-colgroup-span">`colgroup`</a>
+              </td>
+              <!--
+                TODO for issue #259
+              -->
+              <td class="aria">?</td>
+              <td class="ia2">
+                <div class="general">
+                  Exposed as `IAccessibleTableCell::columnExtent` on all cells at the column
+                </div>
+              </td>
+              <td class="uia">
+                <div class="general">
+                  Exposed as `GridItem.ColumnSpan` on all cells at the column
+                </div>
+              </td>
+              <td class="atk">
+                <div class="general">
+                  Exposed via `atk_table_get_column_extent_at`
+                </div>
+              </td>
+              <td class="ax">
+                <div class="general">
+                  `AXColumnIndexRange.length: &lt;value>`
+                </div>
+              </td>
+              <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-spellcheck">
               <th>`spellcheck`</th>
