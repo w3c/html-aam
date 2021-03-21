@@ -525,7 +525,9 @@
                   <span class="type">AXRoleDescription:</span> `"group"`
                 </div>
               </td>
-              <td class="comments">Can be exposed as "font-weight" text attribute on the text container. The value depends on the platform.</td>
+              <td class="comments">
+                Can be exposed as "font-weight" text attribute on the text container. The value depends on the platform.
+              </td>
             </tr>
             <tr tabindex="-1" id="el-base">
               <th>
@@ -945,7 +947,9 @@
               <th>
                 <a data-cite="HTML">`div`</a>
               </th>
-              <td class="aria"><a class="core-mapping" href="#role-map-generic">`generic`</a> role</td>
+              <td class="aria">
+                <a class="core-mapping" href="#role-map-generic">`generic`</a> role
+              </td>
               <td class="ia2"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
@@ -1005,7 +1009,9 @@
               <th>
                 <a data-cite="HTML">`em`</a>
               </th>
-              <td class="aria"><a class="core-mapping" href="#role-map-emphasis">`emphasis`</a> role</td>
+              <td class="aria">
+                <a class="core-mapping" href="#role-map-emphasis">`emphasis`</a> role
+              </td>
               <td class="ia2"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
@@ -1085,46 +1091,24 @@
               <th>
                 <a data-cite="HTML">`figcaption`</a>
               </th>
-              <td class="aria">No corresponding role</td>
+              <td class="aria">
+                <a class="core-mapping" href="#role-map-caption">`caption`</a> role
+              </td>
               <td class="ia2">
-                <div class="role">
-                  <span class="type">Roles:</span> `ROLE_SYSTEM_TEXT`; `IA2_ROLE_CAPTION`
-                </div>
+                <div class="general">Use WAI-ARIA mapping</div>
                 <div class="relations">
                   <span class="type">Relations:</span> `IA2_RELATION_LABEL_FOR` with parent <a href="#el-figure">`figure`</a> element
                 </div>
-                <div class="ifaces">
-                  <span class="type">Interfaces:</span> `IAccessibleText2`; `IAccessibleHypertext2`;
-                </div>
               </td>
-              <td class="uia">
-                <div class="ctrltype">
-                  <span class="type">Control Type:</span> `Text`
-                </div>
-              </td>
+              <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk">
-                <div class="role">
-                  <span class="type">Role:</span> `ATK_ROLE_CAPTION`
-                </div>
+                <div class="general">Use WAI-ARIA mapping</div>
                 <div class="relations">
                   <span class="type">Relations:</span>
                   `ATK_RELATION_LABEL_FOR` with parent <a href="#el-figure">`figure`</a> element
                 </div>
-                <div class="ifaces">
-                  <span class="type">Interfaces:</span> `AtkText`; `AtkHypertext`
-                </div>
               </td>
-              <td class="ax">
-                <div class="role">
-                  <span class="type">AXRole:</span> `AXGroup`
-                </div>
-                <div class="subrole">
-                  <span class="type">AXSubrole:</span> `(nil)`
-                </div>
-                <div class="roledesc">
-                  <span class="type">AXRoleDescription:</span> `"group"`
-                </div>
-              </td>
+              <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-figure">
@@ -1135,24 +1119,16 @@
                 <a class="core-mapping" href="#role-map-figure">`figure`</a> role
               </td>
               <td class="ia2">
-                <div class="role">
-                  <span class="type">Role:</span> Use WAI-ARIA mapping
-                </div>
+                <div class="general">Use WAI-ARIA mapping</div>
                 <div class="relations">
                   <span class="type">Relations:</span> `IA2_RELATION_LABELLED_BY` with child <a href="#el-figcaption">`figcaption`</a> element
                 </div>
               </td>
               <td class="uia">
-                <div class="role">
-                  <span class="type">Role:</span> Use WAI-ARIA mapping
-                </div>
-                <div class="general">
-                  Accessible name derived from `figcaption` according to the <a href="#figure-element-accessible-name-computation">`figure` Element Accessible Name Computation</a>
-                </div>
+                <div class="general">Use WAI-ARIA mapping</div>
               </td>
               <td class="atk">
-                <div class="role">
-                  <span class="type">Role:</span> Use WAI-ARIA mapping</div>
+                <div class="general">Use WAI-ARIA mapping</div>
                 <div class="name">
                   <span class="type">Name:</span> related <a href="#el-figcaption">`figcaption`</a> content
                 </div>
@@ -1161,12 +1137,11 @@
                 </div>
               </td>
               <td class="ax">
-                <div class="role">
-                  <span class="type">AXRole:</span> Use WAI-ARIA mapping
-                </div>
-                <div class="subrole"></div>
+                <div class="general">Use WAI-ARIA mapping</div>
               </td>
-              <td class="comments"></td>
+              <td class="comments">
+                Accessible name derived from `figcaption` according to the <a href="#figure-element-accessible-name-computation">`figure` Element Accessible Name Computation</a>
+              </td>
             </tr>
             <tr tabindex="-1" id="el-footer-ancestorbody">
               <th>
