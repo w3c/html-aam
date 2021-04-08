@@ -4221,11 +4221,18 @@
               <td class="elements">
                 <a data-cite="html/interaction.html#attr-contenteditable">HTML elements</a>
               </td>
-              <td class="aria">?</td>
+              <td class="aria">
+                <p class="general">
+                  If set to an element which already exposes a corresponding role, then no specific ARIA mapping.
+                </p>
+                <p>
+                  If set to an element with no corresponding role, then map to the <a class="core-mapping" href="#role-map-group">`group`</a> role.
+                </p>
+              </td>
               <td class="ia2">
                 <div class="states">
                   <span class="type">States:</span>
-                  `IA2_STATE_EDITABLE` on this and every nested text accessible object
+                  `IA2_STATE_EDITABLE` and `IA2_STATE_MULTI_LINE` on this and every nested text accessible object
                 </div>
                 <div class="interfaces">
                   <span class="type">Interfaces:</span>
@@ -4240,7 +4247,7 @@
               <td class="atk">
                 <div class="states">
                   <span class="type">States:</span>
-                  `ATK_STATE_EDITABLE` on this and every nested text accessible object.
+                  `ATK_STATE_EDITABLE` and `STATE_MULTI_LINE` on this and every nested text accessible object.
                 </div>
                 <div class="interfaces">
                   <span class="type">Interfaces:</span>
@@ -5689,6 +5696,9 @@
               </td>
               <td class="aria">
                 <a class="core-mapping" href="#focus_state_event_table">See Focus States and Events Table</a>
+                <p>
+                  If set to an element with no corresponding role, then map to the <a class="core-mapping" href="#role-map-group">`group`</a> role.
+                </p>
               </td>
               <td class="ia2"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
