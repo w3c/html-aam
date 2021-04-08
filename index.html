@@ -1684,9 +1684,6 @@
                 <div class="role">
                   <a class="core-mapping" href="#role-map-presentation">`presentation`</a>
                 </div>
-                <div class="general">
-                  See also the Note under <a href="#img-element-accessible-name-computation">`img` element Accessible Name Computation</a>.
-                </div>
               </td>
               <td class="ia2"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
@@ -6442,7 +6439,12 @@
           <li>
             If the `img` element has an <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-label">`aria-label`</a> or an <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-labelledby">`aria-labelledby`</a> attribute the <a class="termref">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.
           </li>
-          <li>Otherwise use `alt` attribute, even if its value is empty.</li>
+          <li>
+            Otherwise use `alt` attribute, even if its value is empty.
+            <div class="note">
+              When an `img` has an `alt=""` it is mapped to the <a class="core-mapping" href="#role-map-presentation">`presentation`</a> role.
+            </div>
+          </li>
           <li>Otherwise, if there is no `alt` attribute use the `title` attribute.</li>
           <li>
             Otherwise there is no <a class="termref">accessible name</a>.
