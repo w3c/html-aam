@@ -244,7 +244,7 @@
       		<thead>
       			<tr>
       				<th>Element</th>
-      				<th>[[wai-aria-1.1]]</th>
+      				<th>[[[wai-aria-1.1]]]</th>
       				<th><a href="https://msdn.microsoft.com/en-us/library/dd373608%28v=VS.85%29.aspx">MSAA</a> + <a href="http://accessibility.linuxfoundation.org/a11yspecs/ia2/docs/html/">IAccessible2</a></th>
               <th><a href="https://msdn.microsoft.com/en-us/library/ms726297%28v=VS.85%29.aspx">UIA</a></th>
       				<th><a href="https://developer.gnome.org/atk/stable/">ATK</a></th>
@@ -3823,7 +3823,7 @@
             <tr>
               <th>Attribute</th>
               <th>Element(s)</th>
-              <th>[[[WAI-ARIA]]]</th>
+              <th>[[[wai-aria-1.1]]]</th>
               <th><a href="https://msdn.microsoft.com/en-us/library/dd373608%28v=VS.85%29.aspx">MSAA</a> + <a href="http://accessibility.linuxfoundation.org/a11yspecs/ia2/docs/html/">IAccessible2</a></th>
               <th><a href="https://msdn.microsoft.com/en-us/library/ms726297%28v=VS.85%29.aspx">UIA</a></th>
               <th><a href="https://developer.gnome.org/atk/stable/">ATK</a></th>
@@ -4222,12 +4222,10 @@
                 <a data-cite="html/interaction.html#attr-contenteditable">HTML elements</a>
               </td>
               <td class="aria">
-                <p class="general">
-                  If set to an element which already exposes a corresponding role, then no specific ARIA mapping.
-                </p>
                 <p>
-                  If set to an element with no corresponding role, then map to the <a class="core-mapping" href="#role-map-group">`group`</a> role.
+                  If specified on an element with no implicit WAI-ARIA role, or if the element maps to `role="generic"`, then map to the <a class="core-mapping" href="#role-map-group">`group`</a> role.
                 </p>
+                <p>Otherwise, no specific WAI-ARIA mapping.</p>
               </td>
               <td class="ia2">
                 <div class="states">
@@ -4247,7 +4245,7 @@
               <td class="atk">
                 <div class="states">
                   <span class="type">States:</span>
-                  `ATK_STATE_EDITABLE` and `STATE_MULTI_LINE` on this and every nested text accessible object.
+                  `ATK_STATE_EDITABLE` and `ATK_STATE_MULTI_LINE` on this and every nested text accessible object.
                 </div>
                 <div class="interfaces">
                   <span class="type">Interfaces:</span>
@@ -4260,7 +4258,7 @@
                 <div class="general">Use WAI-ARIA mapping</div>
               </td>
               <td class="comments">
-                If the element has the `contenteditable` attribute  and `aria-readonly="true"`, User Agents MUST expose only the `contenteditable` state.
+                If the element is set to `contenteditable` and has the `aria-readonly="true"` attribute, User Agents MUST expose only the `contenteditable` state.
               </td>
             </tr>
             <tr tabindex="-1" id="att-controls">
@@ -5697,7 +5695,7 @@
               <td class="aria">
                 <a class="core-mapping" href="#focus_state_event_table">See Focus States and Events Table</a>
                 <p>
-                  If set to an element with no corresponding role, then map to the <a class="core-mapping" href="#role-map-group">`group`</a> role.
+                  If specified on an element with no implicit WAI-ARIA role, or if the element maps to `role="generic"`, then map to the <a class="core-mapping" href="#role-map-group">`group`</a> role.
                 </p>
               </td>
               <td class="ia2"><div class="general">Use WAI-ARIA mapping</div></td>
