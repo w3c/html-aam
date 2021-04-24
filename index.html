@@ -3536,9 +3536,11 @@
             <tr tabindex="-1" id="el-th">
               <th>
                 <a data-cite="HTML">`th`</a>
-                <span class="el-context">(is neither
-                  <a data-cite="HTML/tables.html#column-header">column header</a>
-                  nor <a data-cite="HTML/tables.html#row-header">row header</a>,
+                <span class="el-context">(is not a
+                  <a data-cite="HTML/tables.html#column-header">column header</a>,
+                  <a data-cite="HTML/tables.html#row-header">row header</a>,
+                  <a data-cite="HTML/tables.html#column-group-header">column group header</a> or 
+                  <a data-cite="HTML/tables.html#row-group-header">row group header</a>,
                   and ancestor <a data-cite="HTML">`table`</a> element has
                   <a class="core-mapping" href="#role-map-table">`table`</a> role)</span>
               </th>
@@ -3552,9 +3554,11 @@
             <tr tabindex="-1" id="el-th-gridcell">
               <th>
                 <a href="https://www.w3.org/TR/html/tabular-data.html#the-th-element">`th`</a>
-                <span class="el-context">(is neither
-                  <a data-cite="HTML/tables.html#column-header">column header</a>
-                  nor <a data-cite="HTML/tables.html#row-header">row header</a>,
+                <span class="el-context">(is not a
+                  <a data-cite="HTML/tables.html#column-header">column header</a>,
+                  <a data-cite="HTML/tables.html#row-header">row header</a>,
+                  <a data-cite="HTML/tables.html#column-group-header">column group header</a> or 
+                  <a data-cite="HTML/tables.html#row-group-header">row group header</a>,
                   and ancestor <a data-cite="HTML">`table`</a> element has
                   <a class="core-mapping" href="#role-map-grid">`grid`</a>
                   or <a class="core-mapping" href="#role-map-treegrid">`treegrid`</a> role)</span>
@@ -3569,7 +3573,7 @@
             <tr tabindex="-1" id="el-th-columnheader">
               <th>
                 <a data-cite="HTML">`th`</a>
-                <span class="el-context">(is a <a data-cite="HTML/tables.html#column-header">column header</a>)</span>
+                <span class="el-context">(is a <a data-cite="HTML/tables.html#column-header">column header</a> or <a data-cite="HTML/tables.html#column-group-header">column group header</a>)</span>
               </th>
               <td class="aria"><a class="core-mapping" href="#role-map-columnheader">`columnheader`</a> role</td>
               <td class="ia2"><div class="general">Use WAI-ARIA mapping</div></td>
@@ -3581,7 +3585,7 @@
             <tr tabindex="-1" id="el-th-rowheader">
               <th>
                 <a data-cite="HTML">`th`</a>
-                <span class="el-context">(is a <a data-cite="HTML/tables.html#row-header">row header</a>)</span>
+                <span class="el-context">(is a <a data-cite="HTML/tables.html#row-header">row header</a> or <a data-cite="HTML/tables.html#row-group-header">row group header</a>)</span>
               </th>
               <td class="aria"><a class="core-mapping" href="#role-map-rowheader">`rowheader`</a> role</td>
               <td class="ia2"><div class="general">Use WAI-ARIA mapping</div></td>
@@ -4655,14 +4659,20 @@
                 <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-hidden">
-                <th><code>hidden</code></th>
-                <td class="elements"><a href="https://www.w3.org/TR/html/editing.html#the-hidden-attribute">HTML elements</a></td>
-                <td class="aria"><a class="core-mapping" href="#ariaHiddenTrue"><code>aria-hidden="true"</code></a> if the element is <code>display: none</code>, or if the element is <code>visibility: hidden</code>. If the element is no longer <code>display: none</code> or <code>visibility: hidden</code> then it does not map.</td>
-                <td class="ia2"><div class="general">Use WAI-ARIA mapping</div></td>
-                <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
-                <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
-                <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
-                <td class="comments"></td>
+              <th>
+                <a data-cite="html/interaction.html#the-hidden-attribute">`hidden`</a>
+              </th>
+              <td class="elements">
+                <a data-cite="html/infrastructure.html#html-elements">HTML elements</a>
+              </td>
+              <td class="aria">
+                <a class="core-mapping" href="#ariaHiddenTrue">`aria-hidden="true"`</a> if the element retains its user agent default styling of `display: none`. Otherwise, if no other method for hiding the content is used (e.g., `visibility: hidden`) then it is not mapped.
+              </td>
+              <td class="ia2">Use WAI-ARIA mapping</td>
+              <td class="uia">Use WAI-ARIA mapping</td>
+              <td class="atk">Use WAI-ARIA mapping</td>
+              <td class="ax">Use WAI-ARIA mapping</td>
+              <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-high">
               <th>`high`</th>
@@ -6521,7 +6531,7 @@
       </section>
     </section>
     <section>
-      <h3><code>a</code> Element</h3>
+      <h3><code>a</code> Element with a <code>href</code> attribute</h3>
       <section>
         <h4><code>a</code> Element Accessible Name Computation</h4>
         <ol>
@@ -6536,7 +6546,7 @@
         </ol>
       </section>
       <section>
-        <h4><code>a</code> Element Accessible Description Computation</h4>
+        <h4><code>a</code> Element with a <code>href</code> attribute Accessible Description Computation</h4>
         <ol>
           <li>
             If the element has an <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-describedby"><code>aria-describedby</code></a> attribute the <a class="termref">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.
