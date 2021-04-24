@@ -25,7 +25,7 @@
   <script src="script/resolveReferences.js" class="remove"></script>
   <script src="biblio.js" class="remove"></script>
   <!--end temporary replacement of JS resources-->
-
+  <script src="script/mapping-tables.js"></script>
   <!-- <script src="script/bug-assist.js"></script> -->
   <script class="remove">
     var respecConfig = {
@@ -45,12 +45,12 @@
 
       // editors
       editors:  [
-        { name: "Steve Faulkner", company: "The Paciello Group", companyURL: "https://www.paciellogroup.com/", w3cid: 35007 },
-	      { name: "Alexander Surkov", company: "Mozilla Foundation", companyURL: "https://www.mozilla.org/", w3cid: 51089 },
-        { name: "Scott O'Hara", company: "The Paciello Group", companyURL: "https://www.paciellogroup.com/", w3cid: 103856 },
+        { name: "Steve Faulkner", company: "TPGi", companyURL: "https://www.tpgi.com/", w3cid: 35007 },
+        { name: "Scott O'Hara", company: "TPGi", companyURL: "https://www.tpgi.com/", w3cid: 103856 },
       ],
 
       formerEditors: [
+        { name: "Alexander Surkov", company: "Mozilla Foundation", companyURL: "https://www.mozilla.org/", w3cid: 51089, note: "until August 2018" },
         { name: "Bogdan Brinza", company: "Microsoft", companyURL: "https://www.microsoft.com/", w3cid: 71139, note: "until July 2018" },
         { name: "Jason Kiss", company: "Invited Expert", w3cid: 50050, note: "until June 2018" },
         { name: "Cynthia Shelly", company: "Microsoft", companyURL: "https://www.microsoft.com/", w3cid: 11897, note: "until September 2013" }
@@ -58,8 +58,6 @@
 
       // WG
       group:        "aria",
-      wgPublicList: "public-aria",
-
       github: "w3c/html-aam/",
       tocIntroductory: true,
 
@@ -73,7 +71,7 @@
       // ED pointing to latest draft due to ED links not
       // appropriately mapping on the core-aam spec.
       coreMappingURLs: {
-        "ED":   "https://www.w3.org/TR/core-aam-1.1/",
+        "ED":   "https://w3c.github.io/core-aam/",
         "WD":   "https://www.w3.org/TR/core-aam-1.1/",
         "FPWD": "https://www.w3.org/TR/core-aam-1.1/",
         "REC":  "https://www.w3.org/TR/wai-aria-implementation/"
@@ -85,15 +83,14 @@
         "FPWD": "https://www.w3.org/TR/accname-aam-1.1/",
         "REC": "https://www.w3.org/TR/accname-aam/"
       },
-      xref: ["HTML"],
+      xref: ["HTML", "core-aam", "accname", "wai-aria"],
       localBiblio: localBiblio,
-      preProcess: [ linkCrossReferences ],
+      preProcess: [ linkCrossReferences, mappingTables ],
       a11y: false
     };
   </script>
   <!-- local resources - see line 18 -->
   <script src="script/jquery.details.min.js"></script>
-  <script src="script/mapping-tables.js"></script>
   <!-- end local resources -->
   <script>
     var mappingTableLabels = {
@@ -128,7 +125,7 @@
       <strong>This document is subject to change without notice.</strong>
     </p>
     <p>
-      This document was initially developed by and with the approval of the <a href="https://www.w3.org/WAI/PF/html-accessibility-tf.html">HTML Accessibility Taskforce</a>, a joint task force of the <a href="https://www.w3.org/WAI/PF/">Protocols and Formats Working Group</a> and the <a href="https://www.w3.org/html/wg/">HTML Working Group</a>. Work continued with the successor groups <a href="https://www.w3.org/WAI/ARIA/">Accessible Rich Internet Applications Working Group</a> and the <a href="https://www.w3.org/2019/webapps/">Web Applications Working Group</a>. The document is now maintained solely by the Web Applications WG, formerly the <a href="https://www.w3.org/WebPlatform/WG/">Web Platform WG</a>.
+      This document was initially developed by and with the approval of the <a href="https://www.w3.org/WAI/PF/html-accessibility-tf.html">HTML Accessibility Taskforce</a>, a joint task force of the <a href="https://www.w3.org/WAI/PF/">Protocols and Formats Working Group</a> and the <a href="https://www.w3.org/html/wg/">HTML Working Group</a>. Work continued with the successor groups <a href="https://www.w3.org/WAI/ARIA/">Accessible Rich Internet Applications Working Group</a> and the <a href="https://www.w3.org/2019/webapps/">Web Applications Working Group</a>. This document is now maintained solely by the <a href="https://www.w3.org/WAI/ARIA/">Accessible Rich Internet Applications Working Group</a>.
     </p>
   </section>
   <section id="intro" class="informative">
@@ -183,10 +180,6 @@
       </p>
     </section>
   </section>
-  <section id="glossary">
-    <h2>Important Terms</h2>
-    <div data-include="https://rawgit.com/w3c/aria/master/common/terms.html" data-oninclude="fixIncludes"></div>
-  </section>
   <section>
     <h2>Mapping HTML to Accessibility APIs</h2>
     <section id="mapping_general">
@@ -221,18 +214,21 @@
         <li>"Not mapped" (Not Applicable) means the element does not need to be exposed via an <a class="termref">accessibility API</a>. This is usually because the element is not displayed as part of the user interface.</li>
         <li>Where applicable, how an element participates in the computation of its own or another element's <a class="termref">accessible name</a> and/or <a class="termref">accessible description</a> is described in the <a href="#accessible-name-and-description-computation">Accessible Name and Description Computation</a> section of this document.</li>
         <li>Where an element is indicated as having &quot;No corresponding (WAI-ARIA) role&quot;, user agents MUST NOT expose the <a class="core-mapping" href="#ariaRoleDescription">`aria-roledescription`</a> property value in the <a class="termref">accessibility tree</a> unless the element has an explicit, conforming `role` attribute value.</li>
-        <li><strong>IAccessible2:</strong>
+        <li>
+          <strong>IAccessible2:</strong>
           <ul>
             <li>All elements with accessible objects should implement the IAccessible, IAccessible2 and IAccessible2_2 interfaces.</li>
           </ul>
         </li>
-        <li><strong>UIA:</strong>
+        <li>
+          <strong>UIA:</strong>
           <ul>
             <li>When a <a data-cite="html/forms.html#category-label">labelable element</a> is referenced by a `label` element's `for` attribute, or a descendant of a `label` element, the labelable element's UIA `LabeledBy` property points to the UIA element for the `label` element.</li>
             <li>Elements mapped to the `Text` Control Type are not generally represented as <a class="termref" data-lt="accessible object">accessible objects</a> in the <a class="termref">accessibility tree</a>, but are just part of the `Text` Control Pattern implemented for the whole HTML document. However, if they have any `aria-` attributes or an explicit `tabindex` specified, elements mapped to the `Text` Control Type will be represented as <a class="termref" data-lt="accessible object">accessible objects</a> in the <a class="termref">accessibility tree</a>.</li>
           </ul>
         </li>
-    		<li><strong>AXAPI:</strong>
+    		<li>
+          <strong>AXAPI:</strong>
           <ul>
             <li>User agents should return a user-presentable, localized string value for the Mac Accessibility AXRoleDescription.</li>
           </ul>
@@ -2197,7 +2193,7 @@
               <td class="aria">No corresponding role</td>
               <td class="ia2">
                 <div class="role">
-                  <span class="type">Role:</span> `ROLE_SYSTEM_SPINBUTTON` if implemented as a simple <a>widget</a>; `ROLE_SYSTEM_GROUPING` with child controls mapped as appropriate if implemented as a complex <a>widget</a>
+                  <span class="type">Role:</span> `ROLE_SYSTEM_SPINBUTTON` if implemented as a simple <a class="termref">widget</a>; `ROLE_SYSTEM_GROUPING` with child controls mapped as appropriate if implemented as a complex <a class="termref">widget</a>
                 </div>
                  <div class="objattrs">
                   <span class="type">Object attributes:</span> `text-input-type:time`
@@ -2212,8 +2208,8 @@
                 <div class="role">
                   <p>
                     <span class="type">Role:</span> `ATK_ROLE_SPINBUTTON`
-                    if implemented as a simple <a>widget</a>.<br>
-                    If implemented as a complex <a>widget</a> use:<br>
+                    if implemented as a simple <a class="termref">widget</a>.<br>
+                    If implemented as a complex <a class="termref">widget</a> use:<br>
                     <span class="type">Role:</span> `ROLE_PANEL` and map child controls as appropriate.
                   </p>
                 </div>
@@ -3540,9 +3536,11 @@
             <tr tabindex="-1" id="el-th">
               <th>
                 <a data-cite="HTML">`th`</a>
-                <span class="el-context">(is neither
-                  <a data-cite="HTML/tables.html#column-header">column header</a>
-                  nor <a data-cite="HTML/tables.html#row-header">row header</a>,
+                <span class="el-context">(is not a
+                  <a data-cite="HTML/tables.html#column-header">column header</a>,
+                  <a data-cite="HTML/tables.html#row-header">row header</a>,
+                  <a data-cite="HTML/tables.html#column-group-header">column group header</a> or
+                  <a data-cite="HTML/tables.html#row-group-header">row group header</a>,
                   and ancestor <a data-cite="HTML">`table`</a> element has
                   <a class="core-mapping" href="#role-map-table">`table`</a> role)</span>
               </th>
@@ -3556,9 +3554,11 @@
             <tr tabindex="-1" id="el-th-gridcell">
               <th>
                 <a href="https://www.w3.org/TR/html/tabular-data.html#the-th-element">`th`</a>
-                <span class="el-context">(is neither
-                  <a data-cite="HTML/tables.html#column-header">column header</a>
-                  nor <a data-cite="HTML/tables.html#row-header">row header</a>,
+                <span class="el-context">(is not a
+                  <a data-cite="HTML/tables.html#column-header">column header</a>,
+                  <a data-cite="HTML/tables.html#row-header">row header</a>,
+                  <a data-cite="HTML/tables.html#column-group-header">column group header</a> or
+                  <a data-cite="HTML/tables.html#row-group-header">row group header</a>,
                   and ancestor <a data-cite="HTML">`table`</a> element has
                   <a class="core-mapping" href="#role-map-grid">`grid`</a>
                   or <a class="core-mapping" href="#role-map-treegrid">`treegrid`</a> role)</span>
@@ -3573,7 +3573,7 @@
             <tr tabindex="-1" id="el-th-columnheader">
               <th>
                 <a data-cite="HTML">`th`</a>
-                <span class="el-context">(is a <a data-cite="HTML/tables.html#column-header">column header</a>)</span>
+                <span class="el-context">(is a <a data-cite="HTML/tables.html#column-header">column header</a> or <a data-cite="HTML/tables.html#column-group-header">column group header</a>)</span>
               </th>
               <td class="aria"><a class="core-mapping" href="#role-map-columnheader">`columnheader`</a> role</td>
               <td class="ia2"><div class="general">Use WAI-ARIA mapping</div></td>
@@ -3585,7 +3585,7 @@
             <tr tabindex="-1" id="el-th-rowheader">
               <th>
                 <a data-cite="HTML">`th`</a>
-                <span class="el-context">(is a <a data-cite="HTML/tables.html#row-header">row header</a>)</span>
+                <span class="el-context">(is a <a data-cite="HTML/tables.html#row-header">row header</a> or <a data-cite="HTML/tables.html#row-group-header">row group header</a>)</span>
               </th>
               <td class="aria"><a class="core-mapping" href="#role-map-rowheader">`rowheader`</a> role</td>
               <td class="ia2"><div class="general">Use WAI-ARIA mapping</div></td>
@@ -3802,7 +3802,7 @@
     </section>
     <section>
       <h3>HTML Attribute State and Property Mappings</h3>
-      <p><strong>Notes:</strong> </p>
+      <p><strong>Notes:</strong></p>
       <ul>
         <li>HTML attributes with default WAI-ARIA state and property semantics MUST be mapped to platform <a class="termref">accessibility APIs</a> according to those WAI-ARIA state and property mappings as defined in the [[core-aam-1.2]] specification.</li>
         <li>A '?' in a cell indicates the data has yet to be provided.</li>
@@ -4654,8 +4654,10 @@
                     Defines an accessible object's height (<code>atk_component_get_size</code>)
                   </div>
                 </td>
-                <td class="ax"><p class="general">Defines an accessible object's height </p>
-                <p class="general">(<code>AXSize</code> property)</p></td>
+                <td class="ax">
+                  <p class="general">Defines an accessible object's height </p>
+                  <p class="general">(<code>AXSize</code> property)</p>
+                </td>
                 <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-hidden">
@@ -5282,7 +5284,7 @@
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-preload">
-              <th><code>preload</code></th>
+              <th>`preload`</th>
               <td class="elements">
                 <a data-cite="html/media.html#attr-media-preload">`audio` and `video`</a>
               </td>
@@ -5304,7 +5306,7 @@
                 <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-referrerpolicy">
-              <th><code>referrerpolicy</code></th>
+              <th>`referrerpolicy`</th>
               <td class="elements">
                 <a data-cite="html/links.html#attr-hyperlink-referrerpolicy">`a`</a>;
                 <a data-cite="html/links.html#attr-hyperlink-referrerpolicy">`area`</a>;
@@ -5321,26 +5323,34 @@
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-rel">
-                <th><code>rel</code></th>
-                <td class="elements"><a href="https://www.w3.org/TR/html/links.html#element-attrdef-a-rel"><code>a</code></a>; <a href="https://www.w3.org/TR/html/links.html#element-attrdef-a-rel"><code>area</code></a>; <a href="https://www.w3.org/TR/html/document-metadata.html#element-attrdef-link-rel"><code>link</code></a></td>
-                <td class="aria"><div class="general">Not mapped</div></td>
-                <td class="ia2"><div class="general">Not mapped</div></td>
-                <td class="uia"><div class="general">Not mapped</div></td>
-                <td class="atk"><div class="general">Not mapped</div></td>
-                <td class="ax"><div class="general">Not mapped</div></td>
-                <td class="comments"></td>
+              <th>`rel`</th>
+              <td class="elements">
+                <a data-cite="html/links.html#attr-hyperlink-rel">`a`</a>;
+                <a data-cite="html/links.html#attr-hyperlink-rel">`area`</a>;
+                <a data-cite="html/semantics.html#attr-link-rel">`link`</a>
+                </td>
+              <td class="aria"><div class="general">Not mapped</div></td>
+              <td class="ia2"><div class="general">Not mapped</div></td>
+              <td class="uia"><div class="general">Not mapped</div></td>
+              <td class="atk"><div class="general">Not mapped</div></td>
+              <td class="ax"><div class="general">Not mapped</div></td>
+              <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-required">
-                <th><code>required</code></th>
-                <td class="elements"><a href="https://www.w3.org/TR/html/sec-forms.html#element-attrdef-input-required">`input`</a>; <a href="https://www.w3.org/TR/html/sec-forms.html#element-attrdef-select-required"><code>select</code></a>; <a href="https://www.w3.org/TR/html/sec-forms.html#element-attrdef-textarea-required"><code>textarea</code></a></td>
-                <td class="aria"><a class="core-mapping" href="#ariaRequiredTrue"><code>aria-required</code></a></td>
-                <td class="ia2"><div class="general">Use WAI-ARIA mapping</div></td>
-                <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
-                <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
-                <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
-                <td class="comments">
-                  If the element includes both the `required` attribute and the `aria-required` attribute with a valid value, User Agents MUST expose only the `required` attribute value.
-                </td>
+              <th>`required`</th>
+              <td class="elements">
+                <a data-cite="html/input.html#attr-input-required">`input`</a>;
+                <a data-cite="html/form-elements.html#attr-select-required">`select`</a>;
+                <a data-cite="html/form-elements.html#attr-textarea-required">`textarea`</a>
+              </td>
+              <td class="aria"><a class="core-mapping" href="#ariaRequiredTrue">`aria-required`</a></td>
+              <td class="ia2"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="comments">
+                If the element includes both the `required` attribute and the `aria-required` attribute with a valid value, User Agents MUST expose only the `required` attribute value.
+              </td>
             </tr>
             <tr tabindex="-1" id="att-reversed">
               <th>`reversed`</th>
@@ -5383,24 +5393,29 @@
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-rowspan">
-                <th><code>rowspan</code></th>
-                <td class="elements"><a href="https://www.w3.org/TR/html/tabular-data.html#element-attrdef-tablecells-rowspan"><code>td</code></a>; <a href="https://www.w3.org/TR/html/tabular-data.html#element-attrdef-tablecells-rowspan"><code>th</code></a></td>
-                <td class="aria"><a class="core-mapping" href="#ariaRowSpan"><code>aria-rowspan</code></a></td>
-                <td class="ia2"><div class="general">Use WAI-ARIA mapping</div></td>
-                <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
-                <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
-                <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
-                <td class="comments"></td>
+              <th>`rowspan`</th>
+              <td class="elements">
+                <a data-cite="html/tables.html#attr-tdth-rowspan">`td`</a>;
+                <a data-cite="html/tables.html#attr-tdth-rowspan">`th`</a>
+              </td>
+              <td class="aria"><a class="core-mapping" href="#ariaRowSpan">`aria-rowspan`</a></td>
+              <td class="ia2"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-sandbox">
-                <th><code>sandbox</code></th>
-                <td class="elements"><a href="https://www.w3.org/TR/html/semantics-embedded-content.html#element-attrdef-iframe-sandbox"><code>iframe</code></a></td>
-                <td class="aria"><div class="general">Not mapped</div></td>
-                <td class="ia2"><div class="general">Not mapped</div></td>
-                <td class="uia"><div class="general">Not mapped</div></td>
-                <td class="atk"><div class="general">Not mapped</div></td>
-                <td class="ax"><div class="general">Not mapped</div></td>
-                <td class="comments"></td>
+              <th>`sandbox`</th>
+              <td class="elements">
+                <a data-cite="html/iframe-embed-object.html#attr-iframe-sandbox">`iframe`</a>
+              </td>
+              <td class="aria"><div class="general">Not mapped</div></td>
+              <td class="ia2"><div class="general">Not mapped</div></td>
+              <td class="uia"><div class="general">Not mapped</div></td>
+              <td class="atk"><div class="general">Not mapped</div></td>
+              <td class="ax"><div class="general">Not mapped</div></td>
+              <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-scope">
               <th>`scope`</th>
@@ -5422,27 +5437,31 @@
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-selected">
-                <th>`selected`</th>
-                <td class="elements"><a href="https://www.w3.org/TR/html/sec-forms.html#element-attrdef-option-selected"><code>option</code></a></td>
-                <td class="aria"><a class="core-mapping" href="#ariaSelectedTrue"><code>aria-selected="true"</code></a></td>
-                <td class="ia2"><div class="general">Use WAI-ARIA mapping</div></td>
-                <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
-                <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
-                <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
-                <td class="comments"></td>
+              <th>`selected`</th>
+              <td class="elements">
+                <a data-cite="html/form-elements.html#attr-option-selected">`option`</a>
+              </td>
+              <td class="aria"><a class="core-mapping" href="#ariaSelectedTrue">`aria-selected="true"`</a></td>
+              <td class="ia2"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-shape">
-                <th>`shape`</th>
-                <td class="elements"><a href="https://www.w3.org/TR/html/semantics-embedded-content.html#element-attrdef-area-shape"><code>area</code></a></td>
-                <td class="aria"><div class="general">Not mapped</div></td>
-                <td class="ia2"><div class="general">Not mapped</div></td>
-                <td class="uia"><div class="general">Not mapped</div></td>
-                <td class="atk"><div class="general">Not mapped</div></td>
-                <td class="ax"><div class="general">Not mapped</div></td>
-                <td class="comments"></td>
+              <th>`shape`</th>
+              <td class="elements">
+                <a data-cite="html/image-maps.html#attr-area-shape">`area`</a>
+              </td>
+              <td class="aria"><div class="general">Not mapped</div></td>
+              <td class="ia2"><div class="general">Not mapped</div></td>
+              <td class="uia"><div class="general">Not mapped</div></td>
+              <td class="atk"><div class="general">Not mapped</div></td>
+              <td class="ax"><div class="general">Not mapped</div></td>
+              <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-size">
-              <th><code>size</code></th>
+              <th>`size`</th>
               <td class="elements">
                 <a data-cite="html/input.html#attr-input-size">`input`</a>;
                 <a data-cite="html/form-elements.html#attr-select-size">`select`</a>
@@ -5515,8 +5534,8 @@
             <tr tabindex="-1" id="att-span">
               <th>`span`</th>
               <td class="elements">
-                <a href="https://www.w3.org/TR/html/tabular-data.html#element-attrdef-col-span">`col`</a>;
-                <a href="https://www.w3.org/TR/html/tabular-data.html#element-attrdef-colgroup-span">`colgroup`</a>
+                <a data-cite="html/tables.html#attr-col-span">`col`</a>;
+                <a data-cite="html/tables.html#attr-colgroup-span">`colgroup`</a>
               </td>
               <!--
                 TODO for issue #259
@@ -5700,39 +5719,46 @@
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-target">
-                <th>`target`</th>
-                <td class="elements"><a href="https://www.w3.org/TR/html/links.html#element-attrdef-a-target"><code>a</code></a>; <a href="https://www.w3.org/TR/html/links.html#element-attrdef-a-target"><code>area</code></a></td>
-                <td class="aria"><div class="general">Not mapped</div></td>
-                <td class="ia2"><div class="general">Not mapped</div></td>
-                <td class="uia"><div class="general">Not mapped</div></td>
-                <td class="atk"><div class="general">Not mapped</div></td>
-                <td class="ax"><div class="general">Not mapped</div></td>
-                <td class="comments"></td>
+              <th>`target`</th>
+              <td class="elements">
+                <a data-cite="html/links.html#attr-hyperlink-target">`a`</a>;
+                <a data-cite="html/links.html#attr-hyperlink-target">`area`</a>
+              </td>
+              <td class="aria"><div class="general">Not mapped</div></td>
+              <td class="ia2"><div class="general">Not mapped</div></td>
+              <td class="uia"><div class="general">Not mapped</div></td>
+              <td class="atk"><div class="general">Not mapped</div></td>
+              <td class="ax"><div class="general">Not mapped</div></td>
+              <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-target-base">
-                <th>`target`</th>
-                <td class="elements"><a href="https://www.w3.org/TR/html/document-metadata.html#element-attrdef-base-target"><code>base</code></a></td>
-                <td class="aria"><div class="general">Not mapped</div></td>
-                <td class="ia2"><div class="general">Not mapped</div></td>
-                <td class="uia"><div class="general">Not mapped</div></td>
-                <td class="atk"><div class="general">Not mapped</div></td>
-                <td class="ax"><div class="general">Not mapped</div></td>
-                <td class="comments"></td>
+              <th>`target`</th>
+              <td class="elements">
+                <a data-cite="html/semantics.html#attr-base-target">`base`</a>
+              </td>
+              <td class="aria"><div class="general">Not mapped</div></td>
+              <td class="ia2"><div class="general">Not mapped</div></td>
+              <td class="uia"><div class="general">Not mapped</div></td>
+              <td class="atk"><div class="general">Not mapped</div></td>
+              <td class="ax"><div class="general">Not mapped</div></td>
+              <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-target-form">
-                <th><code>target</code></th>
-                <td class="elements"><a href="https://www.w3.org/TR/html/sec-forms.html#element-attrdef-form-target"><code>form</code></a></td>
-                <td class="aria"><div class="general">Not mapped</div></td>
-                <td class="ia2"><div class="general">Not mapped</div></td>
-                <td class="uia"><div class="general">Not mapped</div></td>
-                <td class="atk"><div class="general">Not mapped</div></td>
-                <td class="ax"><div class="general">Not mapped</div></td>
-                <td class="comments"></td>
+              <th>`target`</th>
+              <td class="elements">
+                <a data-cite="html/form-control-infrastructure.html#attr-fs-target">`form`</a>
+              </td>
+              <td class="aria"><div class="general">Not mapped</div></td>
+              <td class="ia2"><div class="general">Not mapped</div></td>
+              <td class="uia"><div class="general">Not mapped</div></td>
+              <td class="atk"><div class="general">Not mapped</div></td>
+              <td class="ax"><div class="general">Not mapped</div></td>
+              <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-title">
               <th>`title`</th>
               <td class="elements">
-                <a href="https://www.w3.org/TR/html/dom.html#element-attrdef-global-title">HTML elements</a>
+                <a data-cite="html/dom.html#attr-title">HTML elements</a>
               </td>
               <!--
                 TODO for issue #259
@@ -5763,26 +5789,29 @@
               </td>
             </tr>
             <tr tabindex="-1" id="att-title-abbr">
-                <th><code>title</code></th>
-                <td class="elements"><a href="https://www.w3.org/TR/html/textlevel-semantics.html#element-attrdef-abbr-title"><code>abbr</code></a>; <a href="https://www.w3.org/TR/html/textlevel-semantics.html#element-attrdef-dfn-title"><code>dfn</code></a></td>
-                <td class="aria"><div class="general">Not mapped</div></td>
-                <td class="ia2">
-                  <div class="name">
-                    Associates the <a class="termref">accessible name</a>
-                  </div>
-                </td>
-                <td class="uia">
-                  <div class="name">
-                    Associates the <a class="termref">accessible name</a>
-                  </div>
-                </td>
-                <td class="atk">
-                  <div class="name">
-                    Associates the <a class="termref">accessible name</a>
-                  </div>
-                </td>
-                <td class="ax">`AXExpandedTextValue: &lt;value&gt;`</td>
-                <td class="comments"></td>
+              <th>`title`</th>
+              <td class="elements">
+                <a data-cite="html/text-level-semantics.html#attr-abbr-title">`abbr`</a>;
+                <a data-cite="html/text-level-semantics.html#attr-dfn-title">`dfn`</a>
+              </td>
+              <td class="aria"><div class="general">Not mapped</div></td>
+              <td class="ia2">
+                <div class="name">
+                  Associates the <a class="termref">accessible name</a>
+                </div>
+              </td>
+              <td class="uia">
+                <div class="name">
+                  Associates the <a class="termref">accessible name</a>
+                </div>
+              </td>
+              <td class="atk">
+                <div class="name">
+                  Associates the <a class="termref">accessible name</a>
+                </div>
+              </td>
+              <td class="ax">`AXExpandedTextValue: &lt;value&gt;`</td>
+              <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-title-link">
               <th>`title`</th>
@@ -5797,34 +5826,43 @@
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-title-style">
-                <th><code>title</code></th>
-                <td class="elements"><a href="https://www.w3.org/TR/html/document-metadata.html#element-attrdef-link-title"><code>link</code></a>; <a href="https://www.w3.org/TR/html/document-metadata.html#element-attrdef-style-title"><code>style</code></a></td>
-                <td class="aria"><div class="general">Not mapped</div></td>
-                <td class="ia2"><div class="general">Not mapped</div></td>
-                <td class="uia"><div class="general">Not mapped</div></td>
-                <td class="atk"><div class="general">Not mapped</div></td>
-                <td class="ax"><div class="general">Not mapped</div></td>
-                <td class="comments"></td>
+              <th>`title`</th>
+              <td class="elements">
+                <a data-cite="html/semantics.html#attr-link-title">`link`</a>; <a data-cite="html/semantics.html#attr-style-title">`style`</a>
+              </td>
+              <td class="aria"><div class="general">Not mapped</div></td>
+              <td class="ia2"><div class="general">Not mapped</div></td>
+              <td class="uia"><div class="general">Not mapped</div></td>
+              <td class="atk"><div class="general">Not mapped</div></td>
+              <td class="ax"><div class="general">Not mapped</div></td>
+              <td class="comments">
+                Provides the name for the CSS style sheet.
+              </td>
             </tr>
             <tr tabindex="-1" id="att-translate">
-                <th><code>translate</code></th>
-                <td class="elements"><a href="https://www.w3.org/TR/html/dom.html#element-attrdef-global-translate">HTML elements</a></td>
-                <td class="aria"><div class="general">Not mapped</div></td>
-                <td class="ia2"><div class="general">Not mapped</div></td>
-                <td class="uia"><div class="general">Not mapped</div></td>
-                <td class="atk"><div class="general">Not mapped</div></td>
-                <td class="ax"><div class="general">Not mapped</div></td>
-                <td class="comments"></td>
+              <th>`translate`</th>
+              <td class="elements">
+                <a data-cite="html/dom.html#attr-translate">HTML elements</a>
+              </td>
+              <td class="aria"><div class="general">Not mapped</div></td>
+              <td class="ia2"><div class="general">Not mapped</div></td>
+              <td class="uia"><div class="general">Not mapped</div></td>
+              <td class="atk"><div class="general">Not mapped</div></td>
+              <td class="ax"><div class="general">Not mapped</div></td>
+              <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-type-hyperlink">
-                <th><code>type</code></th>
-                <td class="elements"><a href="https://www.w3.org/TR/html/links.html#element-attrdef-a-type"><code>a</code></a>; <a href="https://www.w3.org/TR/html/document-metadata.html#element-attrdef-link-type"><code>link</code></a></td>
-                <td class="aria"><div class="general">Not mapped</div></td>
-                <td class="ia2"><div class="general">Not mapped</div></td>
-                <td class="uia"><div class="general">Not mapped</div></td>
-                <td class="atk"><div class="general">Not mapped</div></td>
-                <td class="ax"><div class="general">Not mapped</div></td>
-                <td class="comments"></td>
+              <th>`type`</th>
+              <td class="elements">
+                <a data-cite="html/links.html#attr-hyperlink-type">`a`</a>;
+                <a data-cite="html/semantics.html#attr-link-type">`link`</a>
+              </td>
+              <td class="aria"><div class="general">Not mapped</div></td>
+              <td class="ia2"><div class="general">Not mapped</div></td>
+              <td class="uia"><div class="general">Not mapped</div></td>
+              <td class="atk"><div class="general">Not mapped</div></td>
+              <td class="ax"><div class="general">Not mapped</div></td>
+              <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-type-button">
               <th>`type`</th>
@@ -5855,96 +5893,103 @@
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-type-embed">
-                <th><code>type</code></th>
-                <td class="elements"><a href="https://www.w3.org/TR/html/semantics-embedded-content.html#element-attrdef-embed-type"><code>embed</code></a>; <a href="https://www.w3.org/TR/html/semantics-embedded-content.html#element-attrdef-object-type"><code>object</code></a>; <a href="https://www.w3.org/TR/html/semantics-scripting.html#element-attrdef-script-type"><code>script</code></a>; <a href="https://www.w3.org/TR/html/semantics-embedded-content.html#dom-source-type"><code>source</code></a></td>
-                <td class="aria"><div class="general">Not mapped</div></td>
-                <td class="ia2"><div class="general">Not mapped</div></td>
-                <td class="uia"><div class="general">Not mapped</div></td>
-                <td class="atk"><div class="general">Not mapped</div></td>
-                <td class="ax"><div class="general">Not mapped</div></td>
-                <td class="comments"></td>
+              <th>`type`</th>
+              <td class="elements">
+                <a data-cite="html/iframe-embed-object.html#attr-embed-type">`embed`</a>;
+                <a data-cite="html/iframe-embed-object.html#attr-object-type">`object`</a>;
+                <a data-cite="html/scripting.html#attr-script-type">`script`</a>;
+                <a data-cite="html/embedded-content.html#attr-source-type">`source`</a>
+              </td>
+              <td class="aria"><div class="general">Not mapped</div></td>
+              <td class="ia2"><div class="general">Not mapped</div></td>
+              <td class="uia"><div class="general">Not mapped</div></td>
+              <td class="atk"><div class="general">Not mapped</div></td>
+              <td class="ax"><div class="general">Not mapped</div></td>
+              <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-type-input">
-                <th>`type`</th>
-                <td>
-                  <a data-cite="html/input.html#attr-input-type">`input`</a>
-                </td>
-                <td class="aria">Refer to WAI-ARIA mappings for input types with defined ARIA roles.</td>
-                <td class="ia2">
-                  <div class="general">
-                    Defines the accessible role, states and other properties, refer to
-                    type="<a href="#el-input-text">`text`</a>",
-                    type="<a href="#el-input-password"><code>password</code></a>",
-                    type="<a href="#el-input-button">`button`</a>", etc
-                  </div>
-                </td>
-                <td class="uia">
-                  <div class="general">
-                    Defines the accessible role, states and other properties, refer to
-                    type="<a href="#el-input-text">`text`</a>",
-                    type="<a href="#el-input-password"><code>password</code></a>",
-                    type="<a href="#el-input-button">`button`</a>", etc
-                  </div>
-                </td>
-                <td class="atk">
-                  <div class="general">
-                    Defines the accessible role, states and other properties, refer to
-                    type="<a href="#el-input-text">`text`</a>",
-                    type="<a href="#el-input-password"><code>password</code></a>",
-                    type="<a href="#el-input-button">`button`</a>", etc
-                  </div>
-                </td>
-                <td class="ax">
-                  <div class="general">
-                    Defines the accessible role, states and other properties, refer to
-                    type="<a href="#el-input-text">`text`</a>",
-                    type="<a href="#el-input-password"><code>password</code></a>",
-                    type="<a href="#el-input-button">`button`</a>", etc
-                  </div>
-                </td>
-                <td class="comments"></td>
+              <th>`type`</th>
+              <td>
+                <a data-cite="html/input.html#attr-input-type">`input`</a>
+              </td>
+              <td class="aria">Refer to WAI-ARIA mappings for input types with defined ARIA roles.</td>
+              <td class="ia2">
+                <div class="general">
+                  Defines the accessible role, states and other properties, refer to
+                  type="<a href="#el-input-text">`text`</a>",
+                  type="<a href="#el-input-password">`password`</a>",
+                  type="<a href="#el-input-button">`button`</a>", etc
+                </div>
+              </td>
+              <td class="uia">
+                <div class="general">
+                  Defines the accessible role, states and other properties, refer to
+                  type="<a href="#el-input-text">`text`</a>",
+                  type="<a href="#el-input-password">`password`</a>",
+                  type="<a href="#el-input-button">`button`</a>", etc
+                </div>
+              </td>
+              <td class="atk">
+                <div class="general">
+                  Defines the accessible role, states and other properties, refer to
+                  type="<a href="#el-input-text">`text`</a>",
+                  type="<a href="#el-input-password">`password`</a>",
+                  type="<a href="#el-input-button">`button`</a>", etc
+                </div>
+              </td>
+              <td class="ax">
+                <div class="general">
+                  Defines the accessible role, states and other properties, refer to
+                  type="<a href="#el-input-text">`text`</a>",
+                  type="<a href="#el-input-password">`password`</a>",
+                  type="<a href="#el-input-button">`button`</a>", etc
+                </div>
+              </td>
+              <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-type-ol">
-                <th><code>type</code></th>
-                <td class="elements"><a href="https://www.w3.org/TR/html/grouping-content.html#element-attrdef-ol-type"><code>ol</code></a></td>
-                <td class="aria">Not mapped</td>
-                <td class="ia2">
-                  <div class="general">
-                    Defines the list item marker, which has no <a class="termref">accessible object</a>, but is exposed as content in the accessible text of the associated list item.
-                  </div>
-                  <div class="ifaces">
-                    <span class="type">Interfaces:</span> <code>IAccessibleText2</code>
-                  </div>
-                </td>
-                <td class="uia">
-                  <div class="general">
-                    Defines the list item marker, which has no <a class="termref">accessible object</a>, but is exposed as content in the accessible text of the associated list item.
-                  </div>
-                  <div class="ctrlpattern"><span class="type">Control Pattern:</span> `Text`</div>
-                </td>
-                <td class="atk">
-                  <div class="general">
-                    Defines the list item marker, which has no <a class="termref">accessible object</a>, but is exposed as content in the accessible text of the associated list item.
-                  </div>
-                  <div class="ifaces">
-                    <span class="type">Interfaces:</span> `ATKText`
-                  </div>
-                </td>
-                <td class="ax">
-                  <div class="general">Defines the list item marker, which is exposed as content in <code>AXValue</code>, and rendered as an <a class="termref">accessible object</a>:</div>
-                  <div class="role">
-                      <span class="type">AXRole:</span> <code>AXListMarker</code>
-                  </div>
-                  <div class="subrole">
-                      <span class="type">AXSubrole:</span> `(nil)`
-                  </div>
-                  <div class="roledesc">
-                      <span class="type">AXRoleDescription:</span> <code>"list marker"</code>
-                  </div>
-                </td>
-                <td class="comments">
-                  <div class="general">Some platforms (IAccessible2, ATK, UIA) do not expose an <a class="termref">accessible object</a> for the list item marker, whether it was created and then pruned from the <a class="termref">accessibility tree</a>, or never created in the first place. Instead, they expose the list item marker as part of the associated list item's accessible text. In these cases, implementors need to consider such things as adjusting the offsets (e.g. for caret-moved events, text-selection events, etc.) for the updated list item text that now also contains the list item marker as content, rather than just taking the offsets unmodified from the list item renderer.</div>
-                </td>
+              <th>`type`</th>
+              <td class="elements">
+                <a data-cite="html/grouping-content.html#attr-ol-type">`ol`</a>
+              </td>
+              <td class="aria">Not mapped</td>
+              <td class="ia2">
+                <div class="general">
+                  Defines the list item marker, which has no <a class="termref">accessible object</a>, but is exposed as content in the accessible text of the associated list item.
+                </div>
+                <div class="ifaces">
+                  <span class="type">Interfaces:</span> `IAccessibleText2`
+                </div>
+              </td>
+              <td class="uia">
+                <div class="general">
+                  Defines the list item marker, which has no <a class="termref">accessible object</a>, but is exposed as content in the accessible text of the associated list item.
+                </div>
+                <div class="ctrlpattern"><span class="type">Control Pattern:</span> `Text`</div>
+              </td>
+              <td class="atk">
+                <div class="general">
+                  Defines the list item marker, which has no <a class="termref">accessible object</a>, but is exposed as content in the accessible text of the associated list item.
+                </div>
+                <div class="ifaces">
+                  <span class="type">Interfaces:</span> `ATKText`
+                </div>
+              </td>
+              <td class="ax">
+                <div class="general">Defines the list item marker, which is exposed as content in `AXValue`, and rendered as an <a class="termref">accessible object</a>:</div>
+                <div class="role">
+                  <span class="type">AXRole:</span> `AXListMarker`
+                </div>
+                <div class="subrole">
+                  <span class="type">AXSubrole:</span> `(nil)`
+                </div>
+                <div class="roledesc">
+                  <span class="type">AXRoleDescription:</span> `"list marker"`
+                </div>
+              </td>
+              <td class="comments">
+                <div class="general">Some platforms (IAccessible2, ATK, UIA) do not expose an <a class="termref">accessible object</a> for the list item marker, whether it was created and then pruned from the <a class="termref">accessibility tree</a>, or never created in the first place. Instead, they expose the list item marker as part of the associated list item's accessible text. In these cases, implementors need to consider such things as adjusting the offsets (e.g. for caret-moved events, text-selection events, etc.) for the updated list item text that now also contains the list item marker as content, rather than just taking the offsets unmodified from the list item renderer.</div>
+              </td>
             </tr>
             <tr tabindex="-1" id="att-usemap">
               <th>`usemap`</th>
@@ -5975,17 +6020,17 @@
               <td class="comments">Refer to <a href="#el-img">`img`</a> element.</td>
             </tr>
             <tr tabindex="-1" id="att-value-button">
-                <th><code>value</code></th>
-                <td class="elements">
-                  <a data-cite="html/form-elements.html#attr-button-value">`button`</a>;
-                  <a data-cite="html/form-elements.html#attr-option-value">`option`</a>
-                </td>
-                <td class="aria"><div class="general">Not mapped</div></td>
-                <td class="ia2"><div class="general">Not mapped</div></td>
-                <td class="uia"><div class="general">Not mapped</div></td>
-                <td class="atk"><div class="general">Not mapped</div></td>
-                <td class="ax"><div class="general">Not mapped</div></td>
-                <td class="comments"></td>
+              <th>`value`</th>
+              <td class="elements">
+                <a data-cite="html/form-elements.html#attr-button-value">`button`</a>;
+                <a data-cite="html/form-elements.html#attr-option-value">`option`</a>
+              </td>
+              <td class="aria"><div class="general">Not mapped</div></td>
+              <td class="ia2"><div class="general">Not mapped</div></td>
+              <td class="uia"><div class="general">Not mapped</div></td>
+              <td class="atk"><div class="general">Not mapped</div></td>
+              <td class="ax"><div class="general">Not mapped</div></td>
+              <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-value-data">
               <th>`value`</th>
@@ -6027,39 +6072,39 @@
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-value-li">
-                <th><code>value</code></th>
-                <td class="elements">
-                  <a data-cite="html/grouping-content.html#attr-li-value">`li`</a>
-                </td>
-                <td class="aria"><div class="general">Not mapped</div></td>
-                <td class="ia2">
-                  <div class="general">
-                    Exposed as first text node of <code>li</code>'s accessible object.
-                  </div>
-                </td>
-                <td class="uia">
-                  <div class="general">
-                    Expose the value of the `value` attribute as the first text node in the list item. If the value of the `value` attribute is an integer, set the UIA `PositionInSet` property to the integer value.
-                  </div>
-                </td>
-                <td class="atk">
-                  <div class="general">
-                    Exposed as first text node of <code>li</code>'s accessible object.
-                  </div>
-                </td>
-                <td class="ax">
-                    <div class="general">Exposed as <code>AXValue: &lt;value&gt;</code> with accessible object:</div>
-                    <div class="role">
-                        <span class="type">AXRole:</span> <code>AXListMarker</code>
-                    </div>
-                    <div class="subrole">
-                        <span class="type">AXSubrole:</span> `(nil)`
-                    </div>
-                    <div class="roledesc">
-                        <span class="type">AXRoleDescription:</span> <code>list marker</code>
-                    </div>
-                  </td>
-                <td class="comments"></td>
+              <th>`value`</th>
+              <td class="elements">
+                <a data-cite="html/grouping-content.html#attr-li-value">`li`</a>
+              </td>
+              <td class="aria"><div class="general">Not mapped</div></td>
+              <td class="ia2">
+                <div class="general">
+                  Exposed as first text node of `li`'s accessible object.
+                </div>
+              </td>
+              <td class="uia">
+                <div class="general">
+                  Expose the value of the `value` attribute as the first text node in the list item. If the value of the `value` attribute is an integer, set the UIA `PositionInSet` property to the integer value.
+                </div>
+              </td>
+              <td class="atk">
+                <div class="general">
+                  Exposed as first text node of `li`'s accessible object.
+                </div>
+              </td>
+              <td class="ax">
+                <div class="general">Exposed as `AXValue: &lt;value&gt;` with accessible object:</div>
+                <div class="role">
+                  <span class="type">AXRole:</span> `AXListMarker`
+                </div>
+                <div class="subrole">
+                  <span class="type">AXSubrole:</span> `(nil)`
+                </div>
+                <div class="roledesc">
+                  <span class="type">AXRoleDescription:</span> `list marker`
+                </div>
+              </td>
+              <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-value-meter">
               <th>`value`</th>
@@ -6091,38 +6136,46 @@
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-value-param">
-                <th><code>value</code></th>
-                <td class="elements">
-                  <a data-cite="html/iframe-embed-object.html#attr-param-value">`param`</a>
-                </td>
-                <td class="aria"><div class="general">Not mapped</div></td>
-                <td class="ia2"><div class="general">Not mapped</div></td>
-                <td class="uia"><div class="general">Not mapped</div></td>
-                <td class="atk"><div class="general">Not mapped</div></td>
-                <td class="ax"><div class="general">Not mapped</div></td>
-                <td class="comments"></td>
+              <th>`value`</th>
+              <td class="elements">
+                <a data-cite="html/iframe-embed-object.html#attr-param-value">`param`</a>
+              </td>
+              <td class="aria"><div class="general">Not mapped</div></td>
+              <td class="ia2"><div class="general">Not mapped</div></td>
+              <td class="uia"><div class="general">Not mapped</div></td>
+              <td class="atk"><div class="general">Not mapped</div></td>
+              <td class="ax"><div class="general">Not mapped</div></td>
+              <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-width">
-                <th><code>width</code></th>
-                <td class="elements"><a href="https://www.w3.org/TR/html/semantics-scripting.html#element-attrdef-canvas-width"><code>canvas</code></a>; <a href="https://www.w3.org/TR/html/semantics-embedded-content.html#element-attrdef-media-width"><code>embed</code></a>; <a href="https://www.w3.org/TR/html/semantics-embedded-content.html#element-attrdef-media-width"><code>iframe</code></a>; <a href="https://www.w3.org/TR/html/semantics-embedded-content.html#element-attrdef-media-width"><code>img</code></a>; <a href="https://www.w3.org/TR/html/semantics-embedded-content.html#element-attrdef-media-width">`input`</a>; <a href="https://www.w3.org/TR/html/semantics-embedded-content.html#element-attrdef-media-width"><code>object</code></a>; <a href="https://www.w3.org/TR/html/semantics-embedded-content.html#element-attrdef-media-width"><code>video</code></a></td>
-                <td class="aria"><div class="general">Not mapped</div></td>
-                <td class="ia2">
-                  <div class="general">
-                    Defines an accessible object's width (<code>IAccessible::accLocation</code>)
-                  </div>
-                </td>
-                <td class="uia">
-                  <div class="general">
-                    Defines an accessible object's width (<code>BoundingRectangle</code>)
-                  </div>
-                </td>
-                <td class="atk">
-                  <div class="general">
-                    Defines an accessible object's width (<code>atk_component_get_size</code>)
-                  </div>
-                </td>
-                <td class="ax"><code>AXSize: w=<i>n</i></code></td>
-                <td class="comments"></td>
+              <th>`width`</th>
+              <td class="elements">
+                <a data-cite="html/canvas.html#attr-canvas-width">`canvas`</a>;
+                <a data-cite="html/embedded-content-other.html#attr-dim-width">`embed`</a>;
+                <a data-cite="html/embedded-content-other.html#attr-dim-width">`iframe`</a>;
+                <a data-cite="html/embedded-content-other.html#attr-dim-width">`img`</a>;
+                <a data-cite="html/embedded-content-other.html#attr-dim-width">`input`</a>;
+                <a data-cite="html/embedded-content-other.html#attr-dim-width">`object`</a>;
+                <a data-cite="html/embedded-content-other.html#attr-dim-width">`video`</a>
+              </td>
+              <td class="aria"><div class="general">Not mapped</div></td>
+              <td class="ia2">
+                <div class="general">
+                  Defines an accessible object's width (`IAccessible::accLocation`)
+                </div>
+              </td>
+              <td class="uia">
+                <div class="general">
+                  Defines an accessible object's width (`BoundingRectangle`)
+                </div>
+              </td>
+              <td class="atk">
+                <div class="general">
+                  Defines an accessible object's width (`atk_component_get_size`)
+                </div>
+              </td>
+              <td class="ax">`AXSize: w=<i>n</i>`</td>
+              <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-wrap">
               <th>`wrap`</th>
@@ -6535,7 +6588,7 @@
       </section>
     </section>
     <section>
-      <h3><code>a</code> Element</h3>
+      <h3><code>a</code> Element with a <code>href</code> attribute</h3>
       <section>
         <h4><code>a</code> Element Accessible Name Computation</h4>
         <ol>
@@ -6550,7 +6603,7 @@
         </ol>
       </section>
       <section>
-        <h4><code>a</code> Element Accessible Description Computation</h4>
+        <h4><code>a</code> Element with a <code>href</code> attribute Accessible Description Computation</h4>
         <ol>
           <li>
             If the element has an <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-describedby"><code>aria-describedby</code></a> attribute the <a class="termref">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.
@@ -6722,80 +6775,84 @@
   </section>
   <section id="appendices" class="appendix">
     <h2>Appendices</h2>
-      <section class="appendix" id="changelog">
-        <h3>Change Log</h3>
-        <section>
-          <h4>Substantive changes since moving entirely to the Web Application Working Group (formerly Web Platform WG) (01-Oct-2016)</h4>
-          <ul>
-            <li>12-Dec-2019: Adds `hgroup`, `slot`, autonomous custom element and form associated custom element. See <a href="https://github.com/w3c/html-aam/issues/189">GitHub issue #189</a>.</li>
-            <li>26-Nov-2019: Updates mappings for `disabled`, `scope`, `spellcheck`, `tabindex` to point to WAI-ARIA.  Adds AX `pattern`, `reversed`, `rows`, `size`, `span`, `src`, `start`, `step`, `type` attribute mappings. Adds `min-length`, `ping`, `playsinline`, `referrerpolicy`, `sizes`, `srcset`, `data[value]` attribute mappings. See <a href="https://github.com/w3c/html-aam/pull/245">GitHub pull request #245</a>.</li>
-            <li>30-Sept-2019: Remove mappings for `rb` and `rtc` elements as they are marked as obsolete in HTML. See <a href="https://github.com/w3c/html-aam/issues/115">GitHub issue #115</a> and <a href="https://github.com/w3c/html-aam/pull/253">pull request #253</a>.
-            <li>23-Sept-2019: Update attribute mappings for `high`, `low`, `max`, `min`, and `meter` and `progress`'s `value` attribute.  See <a href="https://github.com/w3c/html-aam/pull/244">GitHub pull request #244</a>.</li>
-            <li>18-Sept-2019: Update `mark` element's UIA `LocalizedControlType` and AX `AXRoleDescription`.  See <a href="https://github.com/w3c/html-aam/issues/236">GitHub issue #236</a>.</li>
-            <li>18-Sept-2019: Update ATK mappings for `summary` and `details` elements. See <a href="https://github.com/w3c/html-aam/issues/142">GitHub issue #142</a> and <a href="https://github.com/w3c/html-aam/issues/147">GitHub issue #147</a>.</li>
-            <li>18-Sept-2019: Update MSAA mappings for `sub` and `sup`. See <a href="https://github.com/w3c/html-aam/pull/252">GitHub pull request #252</a>.</li>
-            <li>11-Sept-2019: Update mapping for `menu` to match <a data-cite="html/#the-menu-element">HTML Living Standard</a>. Remove element and attribute mappings that are not applicable to `menu` and `menuitem`. Update mapping of `menu` to `role="list"`. See <a href="https://github.com/w3c/html-aam/issues/188">GitHub issue #188</a>.</li>
-            <li>10-July-2019: Further updated mappings for `ins` and `del` elements. See <a href="https://github.com/w3c/html-aam/pull/219">GitHub pull request #219</a>.</li>
-            <li>13-June-2019: Update mappings for `ins` and `del` elements. See <a href="https://github.com/w3c/html-aam/issues/141">GitHub issue #141</a>.</li>
-            <li>10-June-2019: Update ATK mappings for `header` and `footer` when not scoped to the `body`. See <a href="https://github.com/w3c/html-aam/issues/129">GitHub issue #129</a>.</li>
-            <li>21-May-2019: Update AXAPI mappings for <code>map</code> element. Add accessible name and description computation for <code>area</code>. See <a href="https://github.com/w3c/html-aam/issues/176">GitHub issue #176</a>.</li>
-            <li>11-Apr-2019: Update UIA mappings for <code>sub</code> and <code>sup</code> elements. See <a href="https://github.com/w3c/html-aam/pull/177">Pull request #177</a>.</li>
-            <li>20-Mar-2019: Updated IA2 mappings for <code>sup</code> and <code>sub</code> elements. See <a href="https://github.com/w3c/html-aam/issues/174">GitHub issue #174</a>.</li>
-            <li>26-Feb-2019: Updated mappings for the <code>address</code> element. See <a href="https://github.com/w3c/html-aam/issues/170">GitHub issue #170</a>.</li>
-            <li>19-Feb-2019: Added <code>placeholder</code> attribute to accessible name computation for various `input` elements. See <a href="https://github.com/w3c/html-aam/issues/167">GitHub issue #167</a>.</li>
-            <li>07-Feb-2018: Added entries for the <code>rb</code> and <code>rtc</code> elements, and updated AXAPI mappings for the <code>rb</code>, <code>rt</code> and <code>ruby</code> elements. See <a href="https://github.com/w3c/html-aam/issues/115">GitHub issue #115</a>.</li>
-            <li>07-Feb-2018: Updated mappings for the <code>svg</code> element. See <a href="https://github.com/w3c/html-aam/issues/43">GitHub issue #43</a>.</li>
-            <li>07-Feb-2018: Updated AXAPI mappings for the <code>del</code> and <code>ins</code> elements, and the <code>datetime</code> attribute.</li>
-            <li>07-Feb-2018: Aligned mappings with CORE-AAM as appropriate for <code>header</code> and <code>footer</code> when scoped to <code>body</code>, <code>aside</code>, and <code>output</code>. See <a href="https://github.com/w3c/html-aam/issues/119">GitHub issue #119</a>.</li>
-            <li>07-Feb-2018: Updated ATK and AX mappings for the <code>multiple</code> attribute on `input` element. See <a href="https://github.com/w3c/html-aam/issues/96">GitHub issue #96</a>.</li>
-            <li>07-Feb-2018: Updated ATK mappings for the <code>sub</code> and <code>sup</code> elements. See <a href="https://github.com/w3c/html-aam/issues/121">GitHub issue #121</a>.</li>
-            <li>07-Feb-2018: Updated mappings for the <code>body</code> element. See <a href="https://github.com/w3c/html-aam/issues/117">GitHub issue #117</a>.</li>
-            <li>01-Feb-2018: Updated IA2 mapping for the <code>meter</code> element. See <a href="https://github.com/w3c/html-aam/issues/2">GitHub issue #2</a>.</li>
-            <li>29-Jan-2018: Updated heading mapping to reflect implementations. See <a href="https://github.com/w3c/html-aam/issues/116">GitHub issue #116</a>.</li>
-            <li>23-Jan-2018: Added note regarding effect of some CSS properties. See <a href="https://github.com/w3c/html-aam/issues/24">GitHub issue #234</a>.</li>
-            <li>23-Jan-2018: Updated mappings for the <code>address</code> element. See <a href="https://github.com/w3c/html-aam/issues/33">GitHub issue #33</a>.</li>
-            <li>23-Jan-2018: Updated mappings for the <code>dt</code> element. See <a href="https://github.com/w3c/html-aam/issues/78">GitHub issue #78</a>.</li>
-            <li>23-Jan-2018: Updated AXAPI mappings for the <code>mark</code> element.</li>
-            <li>08-Jan-2018: Updated mappings for the `input` element with the <code>type</code> attribute in the Color state. See <a href="https://github.com/w3c/html-aam/issues/48">GitHub issue #48</a>.</li>
-            <li>06-Jan-2018: Updated IA2 mappings for the <code>pre</code>, <code>q</code>, and <code>ruby</code> elements, and the <code>multiple</code> attribute for the `input` element. See <a href="https://github.com/w3c/html-aam/issues/94">GitHub issue #94</a>.</li>
-            <li>18-Dec-2017: Rewrote first paragraph in Introduction to better reflect the relationship between the HTML-AAM and CORE-AAM specifications. See <a href="https://github.com/w3c/html-aam/issues/66">GitHub issue #66</a>.</li>
-            <li>18-Dec-2017: Updated <code>readonly</code> attribute to use <code>aria-readonly="true"</code> WAI-ARIA mappings. See <a href="https://github.com/w3c/html-aam/issues/93">GitHub issue #93</a>.</li>
-            <li>08-Dec-2017: Changed AXAPI mapping for the <code>canvas</code> element from <code>AXImage</code> to <code>AXGroup</code>.</li>
-            <li>01-Dec-2017: Updated mappings for the <code>dfn</code> element. See <a href="https://github.com/w3c/html-aam/issues/6">GitHub issue #6</a>.</li>
-            <li>30-Nov-2017: Updated mappings for the <code>meter</code> element. See <a href="https://github.com/w3c/html-aam/issues/2">GitHub issue #2</a>.</li>
-            <li>24-Nov-2017: Updated mappings for the <code>audio</code> and <code>video</code> elements. See <a href="https://github.com/w3c/html-aam/issues/80">GitHub issue #80</a>.</li>
-            <li>23-Nov-2017: Updated <code>figure</code> element mappings to reflect the <a href="https://w3c.github.io/aria/core-aam/core-aam.html#role-map-figure">WAI-ARIA <code>figure</code> role mappings</a>.</li>
-            <li>23-Nov-2017: Updated mappings for the <code>form</code> element based on presence of <a class="termref">accessible name</a>. See <a href="https://github.com/w3c/html-aam/issues/106">GitHub issue #106</a>.</li>
-            <li>23-Nov-2017: Removed the accessible name computation requirement to ignore an <code>img</code> element's <code>title</code> attribute when the element's <code>alt</code> attribute is empty. See <a href="https://github.com/w3c/html-aam/issues/99">GitHub issue #99</a>.</li>
-            <li>23-Nov-2017: Added note to not expose <code>aria-roledescription</code> unless element also a conforming <code>role</code> attribute value. See <a href="https://github.com/w3c/html-aam/issues/98">GitHub issue #98</a>.</li>
-            <li>09-Aug-2017: Updated mappings for the <code>type</code> attribute on the <code>ol</code> element. See <a href="https://github.com/w3c/html-aam/issues/91">GitHub issue #91</a>.</li>
-            <li>25-July-2017: Updated UIA mappings for multiple elements and attributes. See <a href="https://github.com/w3c/html-aam/issues/95">GitHub issue #95</a> and <a href="https://github.com/w3c/html-aam/pull/101">GitHub pull request #101</a>.</li>
-            <li>02-June-2017: Updated AXAPI mappings for <code>title</code> attribute on <code>abbr</code> element, and <code>abbr</code> attribute on <code>th</code> element. See <a href="https://github.com/w3c/html-aam/issues/16">GitHub issue #16</a>.</li>
-            <li>31-May-2017: Updated mappings for <code>hidden</code> attribute. See <a href="https://github.com/w3c/html-aam/issues/38">GitHub issue #38</a>.</li>
-            <li>24-May-2017: Updated mappings for <code>selected</code> attribute. See <a href="https://github.com/w3c/html-aam/issues/92">GitHub issue #92</a>.</li>
-            <li>01-May-2017: Updated AXAPI mapping for <code>time</code> element. See <a href="https://github.com/w3c/html-aam/issues/88">GitHub issue #88</a>.</li>
-            <li>27-Apr-2017: Updated UIA mappings for <code>lang</code> and <code>dir</code> attributes. See <a href="https://github.com/w3c/html-aam/issues/19">GitHub issue #19</a>.</li>
-            <li>19-Apr-2017: Updated mapping for <code>colspan</code> and <code>rowspan</code> attributes. See GitHub <a href="https://github.com/w3c/html-aam/issues/56">issue #56</a> and <a href="https://github.com/w3c/html-aam/issues/57">issue #57</a>.</li>
-            <li>03-Apr-2017: Updated mapping for <code>section</code> element. See <a href="https://github.com/w3c/html-aam/issues/79">GitHub issue #79</a>.</li>
-            <li>23-Dec-2016: No mapping for <code>datalist</code> element if not linked with `input` element. See <a href="https://github.com/w3c/html-aam/issues/26">GitHub issue #26</a>.</li>
-            <li>23-Dec-2016: Updated IA2 mapping for <code>list</code> attribute. See <a href="https://github.com/w3c/html-aam/issues/21">GitHub issue #21</a>.</li>
-            <li>22-Dec-2016: Sync mappings for <code>footer</code> and <code>header</code> elements. See <a href="https://github.com/w3c/html-aam/issues/59">GitHub issue #59</a>.</li>
-            <li>22-Dec-2016: Updated IA2 mapping for <code>input@type='date'</code> attribute. See <a href="https://github.com/w3c/html-aam/issues/61">GitHub issue #61</a>.</li>
-            <li>22-Dec-2016: Updated IA2 mapping for <code>input@type='file'</code> element. See <a href="https://github.com/w3c/html-aam/issues/62">GitHub issue #62</a>.</li>
-            <li>22-Dec-2016: Updated IA2 mapping for <code>summary</code> element. See <a href="https://github.com/w3c/html-aam/issues/64">GitHub issue #64</a>.</li>
-            <li>14-Dec-2016: Updated wording distinguishing when <code>header</code> and <code>footer</code> elements are or are not ARIA landmarks. See <a href="https://github.com/w3c/html-aam/issues/65">GitHub issue #65</a>.</li>
-            <li>07-Dec-2016: Modified <code>aria-multiselectable</code> mapping for <code>datalist</code> to reflect listbox selection model. See <a href="https://github.com/w3c/html-aam/issues/71">GitHub issue #71</a>.</li>
-            <li>07-Dec-2016: Mappings for the <code>multiple</code> attribute on `input` and <code>select</code> elements. See <a href="https://github.com/w3c/html-aam/issues/72">GitHub issue #72</a>.</li>
-            <li>27-Nov-2016: Added implementation rules for the <code>checked</code>, <code>contenteditable</code>, <code>disabled</code>, and <code>indeterminate</code> attributes.</li>
-            <li>21-Nov-2016: Removed <code>placeholder</code> attribute from accessible description computation for various `input` elements.</li>
-          </ul>
-        </section>
+    <section class="appendix" id="changelog">
+      <h3>Change Log</h3>
+      <p>Review the <a href="https://github.com/w3c/html-aam/commits/gh-pages">commit history</a> of this document on GitHub.</p>
+      <section>
+        <h4>Substantive changes since moving to the <a href="https://www.w3.org/WAI/ARIA/">Accessible Rich Internet Applications Working Group</a> (03-Nov-2019)</h4>
+        <ul>
+          <li>12-Dec-2019: Adds `hgroup`, `slot`, autonomous custom element and form associated custom element. See <a href="https://github.com/w3c/html-aam/issues/189">GitHub issue #189</a>.</li>
+          <li>26-Nov-2019: Updates mappings for `disabled`, `scope`, `spellcheck`, `tabindex` to point to WAI-ARIA.  Adds AX `pattern`, `reversed`, `rows`, `size`, `span`, `src`, `start`, `step`, `type` attribute mappings. Adds `min-length`, `ping`, `playsinline`, `referrerpolicy`, `sizes`, `srcset`, `data[value]` attribute mappings. See <a href="https://github.com/w3c/html-aam/pull/245">GitHub pull request #245</a>.</li>
+        </ul>
+        <h4>Substantive changes since moving to the Web Application Working Group (formerly Web Platform WG) (01-Oct-2016)</h4>
+        <ul>
+          <li>30-Sept-2019: Remove mappings for `rb` and `rtc` elements as they are marked as obsolete in HTML. See <a href="https://github.com/w3c/html-aam/issues/115">GitHub issue #115</a> and <a href="https://github.com/w3c/html-aam/pull/253">pull request #253</a>.
+          <li>23-Sept-2019: Update attribute mappings for `high`, `low`, `max`, `min`, and `meter` and `progress`'s `value` attribute.  See <a href="https://github.com/w3c/html-aam/pull/244">GitHub pull request #244</a>.</li>
+          <li>18-Sept-2019: Update `mark` element's UIA `LocalizedControlType` and AX `AXRoleDescription`.  See <a href="https://github.com/w3c/html-aam/issues/236">GitHub issue #236</a>.</li>
+          <li>18-Sept-2019: Update ATK mappings for `summary` and `details` elements. See <a href="https://github.com/w3c/html-aam/issues/142">GitHub issue #142</a> and <a href="https://github.com/w3c/html-aam/issues/147">GitHub issue #147</a>.</li>
+          <li>18-Sept-2019: Update MSAA mappings for `sub` and `sup`. See <a href="https://github.com/w3c/html-aam/pull/252">GitHub pull request #252</a>.</li>
+          <li>11-Sept-2019: Update mapping for `menu` to match <a data-cite="html/#the-menu-element">HTML Living Standard</a>. Remove element and attribute mappings that are not applicable to `menu` and `menuitem`. Update mapping of `menu` to `role="list"`. See <a href="https://github.com/w3c/html-aam/issues/188">GitHub issue #188</a>.</li>
+          <li>10-July-2019: Further updated mappings for `ins` and `del` elements. See <a href="https://github.com/w3c/html-aam/pull/219">GitHub pull request #219</a>.</li>
+          <li>13-June-2019: Update mappings for `ins` and `del` elements. See <a href="https://github.com/w3c/html-aam/issues/141">GitHub issue #141</a>.</li>
+          <li>10-June-2019: Update ATK mappings for `header` and `footer` when not scoped to the `body`. See <a href="https://github.com/w3c/html-aam/issues/129">GitHub issue #129</a>.</li>
+          <li>21-May-2019: Update AXAPI mappings for <code>map</code> element. Add accessible name and description computation for <code>area</code>. See <a href="https://github.com/w3c/html-aam/issues/176">GitHub issue #176</a>.</li>
+          <li>11-Apr-2019: Update UIA mappings for <code>sub</code> and <code>sup</code> elements. See <a href="https://github.com/w3c/html-aam/pull/177">Pull request #177</a>.</li>
+          <li>20-Mar-2019: Updated IA2 mappings for <code>sup</code> and <code>sub</code> elements. See <a href="https://github.com/w3c/html-aam/issues/174">GitHub issue #174</a>.</li>
+          <li>26-Feb-2019: Updated mappings for the <code>address</code> element. See <a href="https://github.com/w3c/html-aam/issues/170">GitHub issue #170</a>.</li>
+          <li>19-Feb-2019: Added <code>placeholder</code> attribute to accessible name computation for various `input` elements. See <a href="https://github.com/w3c/html-aam/issues/167">GitHub issue #167</a>.</li>
+          <li>07-Feb-2018: Added entries for the <code>rb</code> and <code>rtc</code> elements, and updated AXAPI mappings for the <code>rb</code>, <code>rt</code> and <code>ruby</code> elements. See <a href="https://github.com/w3c/html-aam/issues/115">GitHub issue #115</a>.</li>
+          <li>07-Feb-2018: Updated mappings for the <code>svg</code> element. See <a href="https://github.com/w3c/html-aam/issues/43">GitHub issue #43</a>.</li>
+          <li>07-Feb-2018: Updated AXAPI mappings for the <code>del</code> and <code>ins</code> elements, and the <code>datetime</code> attribute.</li>
+          <li>07-Feb-2018: Aligned mappings with CORE-AAM as appropriate for <code>header</code> and <code>footer</code> when scoped to <code>body</code>, <code>aside</code>, and <code>output</code>. See <a href="https://github.com/w3c/html-aam/issues/119">GitHub issue #119</a>.</li>
+          <li>07-Feb-2018: Updated ATK and AX mappings for the <code>multiple</code> attribute on `input` element. See <a href="https://github.com/w3c/html-aam/issues/96">GitHub issue #96</a>.</li>
+          <li>07-Feb-2018: Updated ATK mappings for the <code>sub</code> and <code>sup</code> elements. See <a href="https://github.com/w3c/html-aam/issues/121">GitHub issue #121</a>.</li>
+          <li>07-Feb-2018: Updated mappings for the <code>body</code> element. See <a href="https://github.com/w3c/html-aam/issues/117">GitHub issue #117</a>.</li>
+          <li>01-Feb-2018: Updated IA2 mapping for the <code>meter</code> element. See <a href="https://github.com/w3c/html-aam/issues/2">GitHub issue #2</a>.</li>
+          <li>29-Jan-2018: Updated heading mapping to reflect implementations. See <a href="https://github.com/w3c/html-aam/issues/116">GitHub issue #116</a>.</li>
+          <li>23-Jan-2018: Added note regarding effect of some CSS properties. See <a href="https://github.com/w3c/html-aam/issues/24">GitHub issue #234</a>.</li>
+          <li>23-Jan-2018: Updated mappings for the <code>address</code> element. See <a href="https://github.com/w3c/html-aam/issues/33">GitHub issue #33</a>.</li>
+          <li>23-Jan-2018: Updated mappings for the <code>dt</code> element. See <a href="https://github.com/w3c/html-aam/issues/78">GitHub issue #78</a>.</li>
+          <li>23-Jan-2018: Updated AXAPI mappings for the <code>mark</code> element.</li>
+          <li>08-Jan-2018: Updated mappings for the `input` element with the <code>type</code> attribute in the Color state. See <a href="https://github.com/w3c/html-aam/issues/48">GitHub issue #48</a>.</li>
+          <li>06-Jan-2018: Updated IA2 mappings for the <code>pre</code>, <code>q</code>, and <code>ruby</code> elements, and the <code>multiple</code> attribute for the `input` element. See <a href="https://github.com/w3c/html-aam/issues/94">GitHub issue #94</a>.</li>
+          <li>18-Dec-2017: Rewrote first paragraph in Introduction to better reflect the relationship between the HTML-AAM and CORE-AAM specifications. See <a href="https://github.com/w3c/html-aam/issues/66">GitHub issue #66</a>.</li>
+          <li>18-Dec-2017: Updated <code>readonly</code> attribute to use <code>aria-readonly="true"</code> WAI-ARIA mappings. See <a href="https://github.com/w3c/html-aam/issues/93">GitHub issue #93</a>.</li>
+          <li>08-Dec-2017: Changed AXAPI mapping for the <code>canvas</code> element from <code>AXImage</code> to <code>AXGroup</code>.</li>
+          <li>01-Dec-2017: Updated mappings for the <code>dfn</code> element. See <a href="https://github.com/w3c/html-aam/issues/6">GitHub issue #6</a>.</li>
+          <li>30-Nov-2017: Updated mappings for the <code>meter</code> element. See <a href="https://github.com/w3c/html-aam/issues/2">GitHub issue #2</a>.</li>
+          <li>24-Nov-2017: Updated mappings for the <code>audio</code> and <code>video</code> elements. See <a href="https://github.com/w3c/html-aam/issues/80">GitHub issue #80</a>.</li>
+          <li>23-Nov-2017: Updated <code>figure</code> element mappings to reflect the <a href="https://w3c.github.io/aria/core-aam/core-aam.html#role-map-figure">WAI-ARIA <code>figure</code> role mappings</a>.</li>
+          <li>23-Nov-2017: Updated mappings for the <code>form</code> element based on presence of <a class="termref">accessible name</a>. See <a href="https://github.com/w3c/html-aam/issues/106">GitHub issue #106</a>.</li>
+          <li>23-Nov-2017: Removed the accessible name computation requirement to ignore an <code>img</code> element's <code>title</code> attribute when the element's <code>alt</code> attribute is empty. See <a href="https://github.com/w3c/html-aam/issues/99">GitHub issue #99</a>.</li>
+          <li>23-Nov-2017: Added note to not expose <code>aria-roledescription</code> unless element also a conforming <code>role</code> attribute value. See <a href="https://github.com/w3c/html-aam/issues/98">GitHub issue #98</a>.</li>
+          <li>09-Aug-2017: Updated mappings for the <code>type</code> attribute on the <code>ol</code> element. See <a href="https://github.com/w3c/html-aam/issues/91">GitHub issue #91</a>.</li>
+          <li>25-July-2017: Updated UIA mappings for multiple elements and attributes. See <a href="https://github.com/w3c/html-aam/issues/95">GitHub issue #95</a> and <a href="https://github.com/w3c/html-aam/pull/101">GitHub pull request #101</a>.</li>
+          <li>02-June-2017: Updated AXAPI mappings for <code>title</code> attribute on <code>abbr</code> element, and <code>abbr</code> attribute on <code>th</code> element. See <a href="https://github.com/w3c/html-aam/issues/16">GitHub issue #16</a>.</li>
+          <li>31-May-2017: Updated mappings for <code>hidden</code> attribute. See <a href="https://github.com/w3c/html-aam/issues/38">GitHub issue #38</a>.</li>
+          <li>24-May-2017: Updated mappings for <code>selected</code> attribute. See <a href="https://github.com/w3c/html-aam/issues/92">GitHub issue #92</a>.</li>
+          <li>01-May-2017: Updated AXAPI mapping for <code>time</code> element. See <a href="https://github.com/w3c/html-aam/issues/88">GitHub issue #88</a>.</li>
+          <li>27-Apr-2017: Updated UIA mappings for <code>lang</code> and <code>dir</code> attributes. See <a href="https://github.com/w3c/html-aam/issues/19">GitHub issue #19</a>.</li>
+          <li>19-Apr-2017: Updated mapping for <code>colspan</code> and <code>rowspan</code> attributes. See GitHub <a href="https://github.com/w3c/html-aam/issues/56">issue #56</a> and <a href="https://github.com/w3c/html-aam/issues/57">issue #57</a>.</li>
+          <li>03-Apr-2017: Updated mapping for <code>section</code> element. See <a href="https://github.com/w3c/html-aam/issues/79">GitHub issue #79</a>.</li>
+          <li>23-Dec-2016: No mapping for <code>datalist</code> element if not linked with `input` element. See <a href="https://github.com/w3c/html-aam/issues/26">GitHub issue #26</a>.</li>
+          <li>23-Dec-2016: Updated IA2 mapping for <code>list</code> attribute. See <a href="https://github.com/w3c/html-aam/issues/21">GitHub issue #21</a>.</li>
+          <li>22-Dec-2016: Sync mappings for <code>footer</code> and <code>header</code> elements. See <a href="https://github.com/w3c/html-aam/issues/59">GitHub issue #59</a>.</li>
+          <li>22-Dec-2016: Updated IA2 mapping for <code>input@type='date'</code> attribute. See <a href="https://github.com/w3c/html-aam/issues/61">GitHub issue #61</a>.</li>
+          <li>22-Dec-2016: Updated IA2 mapping for <code>input@type='file'</code> element. See <a href="https://github.com/w3c/html-aam/issues/62">GitHub issue #62</a>.</li>
+          <li>22-Dec-2016: Updated IA2 mapping for <code>summary</code> element. See <a href="https://github.com/w3c/html-aam/issues/64">GitHub issue #64</a>.</li>
+          <li>14-Dec-2016: Updated wording distinguishing when <code>header</code> and <code>footer</code> elements are or are not ARIA landmarks. See <a href="https://github.com/w3c/html-aam/issues/65">GitHub issue #65</a>.</li>
+          <li>07-Dec-2016: Modified <code>aria-multiselectable</code> mapping for <code>datalist</code> to reflect listbox selection model. See <a href="https://github.com/w3c/html-aam/issues/71">GitHub issue #71</a>.</li>
+          <li>07-Dec-2016: Mappings for the <code>multiple</code> attribute on `input` and <code>select</code> elements. See <a href="https://github.com/w3c/html-aam/issues/72">GitHub issue #72</a>.</li>
+          <li>27-Nov-2016: Added implementation rules for the <code>checked</code>, <code>contenteditable</code>, <code>disabled</code>, and <code>indeterminate</code> attributes.</li>
+          <li>21-Nov-2016: Removed <code>placeholder</code> attribute from accessible description computation for various `input` elements.</li>
+        </ul>
       </section>
+    </section>
     <section class="appendix informative" id="acknowledgements">
-  		<h3>Acknowledgments</h3>
-  		<p>The following people contributed to the development of this document.</p>
-		  <section class="section" id="ack_group">
-		    <h4>Participants active in the HTML Accessibility Task Force active at the time of publication</h4>
+      <h3>Acknowledgments</h3>
+      <p>The following people contributed to the development of this document.</p>
+      <section class="section" id="ack_group">
+        <h4>Participants active in the HTML Accessibility Task Force active at the time of publication</h4>
         <ul id="gh-contributors"></ul>
 
         <!--
@@ -6803,8 +6860,8 @@
           Add listing of individuals who have providing meaningful
           contributions through commenting that have impacted the specification.
         -->
-  		</section>
-    	<div data-include="https://rawgit.com/w3c/aria/master/common/acknowledgements/funders.html" data-include-replace="true"></div>
+      </section>
+      <div data-include="https://rawgit.com/w3c/aria/master/common/acknowledgements/funders.html" data-include-replace="true"></div>
     </section>
   </section>
 </body>
