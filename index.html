@@ -1067,7 +1067,9 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
-              <td class="comments"></td>
+              <td class="comments">
+                See also the `dialog` element's <a href="#att-open-dialog">`open`</a> attribute.
+              </td>
             </tr>
             <tr tabindex="-1" id="el-div">
               <th>
@@ -5279,17 +5281,24 @@
               <td class="elements"><a data-cite="html/interactive-elements.html#attr-dialog-open">`dialog`</a></td>
               <td class="aria">
                 <div class="general">
-                  If the `open` attribute is set via the `showModal()` method then the `dialog` will be set to `display: block`, <a class="core-mapping" href="#ariaModalTrue">`aria-modal="true"`</a> and <a class="core-mapping" href="#ariaHiddenFalse">`aria-hidden="false"`</a>.
+                  If the `open` attribute is set via the `showModal()` method then <a class="core-mapping" href="#ariaModalTrue">`aria-modal="true"`</a> and <a class="core-mapping" href="#ariaHiddenFalse">`aria-hidden="false"`</a>.
                 </div>
                 <div class="general">
-                  Otherwise, if the `open` attribute is set via the `show()` method, or explicitly specified by an author, then the `dialog` will be set to `display: block`, <a class="core-mapping" href="#ariaModalFalse">`aria-modal="false"`</a> and <a class="core-mapping" href="#ariaHiddenFalse">`aria-hidden="false"`</a>.
+                  Otherwise, if the `open` attribute is set via the `show()` method, or explicitly specified by an author, then <a class="core-mapping" href="#ariaModalFalse">`aria-modal="false"`</a> and <a class="core-mapping" href="#ariaHiddenFalse">`aria-hidden="false"`</a>.
                 </div>
               </td>
               <td class="ia2">Use WAI-ARIA mapping</td>
               <td class="uia">Use WAI-ARIA mapping</td>
               <td class="atk">Use WAI-ARIA mapping</td>
               <td class="ax">Use WAI-ARIA mapping</td>
-              <td class="comments"></td>
+              <td class="comments">
+                <p>
+                  The `open` attribute's value is irrelevant. When the `open` attribute is not specified the default user agent styling for a `dialog` is `display: none`.
+                </p>
+                <p>
+                  Authors can reveal a `dialog` through the style layer by modifying its `display` property. If revealed this way then the `dialog` is <a class="core-mapping" href="#ariaModalFalse">`aria-modal="false"`</a> and <a class="core-mapping" href="#ariaHiddenFalse">`aria-hidden="false"`</a>.
+                </p>
+              </td>
             </tr>
             <tr tabindex="-1" id="att-optimum">
               <th>`optimum`</th>
