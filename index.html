@@ -6033,10 +6033,17 @@
               <td class="elements">
                 <a data-cite="html/dom.html#attr-title">HTML elements</a>
               </td>
-              <!--
-                TODO for issue #259
-              -->
-              <td class="aria">?</td>
+              <td class="aria">
+                <div class="general">
+                  If the `title` attribute provides the
+                  <a class="termref">accessible name</a> for the element:
+                  <a class="core-mapping" href="#ariaLabel">`aria-label`</a>.
+                </div>
+                <div class="general">
+                  Otherwise, if providing the
+                  <a class="termref">accessible description</a>: <a class="core-mapping" href="#ariaDescription">`aria-description`</a>
+                </div>
+              </td>
               <td class="ia2">
                 <div class="name">
                   Associates the <a class="termref">accessible name</a> or if it was provided otherwise then <a class="termref">accessible description</a>
