@@ -30,9 +30,9 @@ function queryAll(selector, context) {
 
 function getElementIndex(el) {
   var i = 0;
-  do {
+  while ((el = el.previousElementSibling)) {
     i++;
-  } while ((el = el.previousElementSibling));
+  };
   return i;
 }
 
