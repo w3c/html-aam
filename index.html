@@ -164,7 +164,7 @@
       <ul>
         <li><abbr title="Microsoft Active Accessibility">MSAA</abbr> with <cite><a href="https://wiki.linuxfoundation.org/accessibility/iaccessible2/start">IAccessible2 1.3</a></cite> [[IAccessible2]]</li>
         <li><cite><a href="https://msdn.microsoft.com/en-us/library/ee684013%28VS.85%29.aspx">User Interface Automation</a></cite> [[UI-AUTOMATION]]</li>
-        <li><cite>Linux/GNOME <a href="https://developer.gnome.org/atk/stable/">ATK - Accessibility Toolkit</a></cite> [[ATK]] and <cite><a href="https://developer.gnome.org/libatspi/stable/">Assistive Technology Service Provider Interface</a></cite> [[AT-SPI]], referred to hereafter as "ATK/AT-SPI"</li>
+      	<li><cite>Linux/GNOME <a href="https://gnome.pages.gitlab.gnome.org/atk/">ATK - Accessibility Toolkit</a></cite> [[ATK]] and <cite><a href="https://gitlab.gnome.org/GNOME/at-spi2-core/">Assistive Technology Service Provider Interface</a></cite> [[AT-SPI]], referred to hereafter as "ATK/AT-SPI"</li>
         <li><cite><a href="https://developer.apple.com/reference/appkit/nsaccessibility">Mac OS X Accessibility Protocol Mac OS 10.10</a></cite> [[AXAPI]]</li>
       </ul>
       <p>
@@ -255,7 +255,7 @@
               <th>[[wai-aria-1.1]]</th>
               <th><a href="https://msdn.microsoft.com/en-us/library/dd373608%28v=VS.85%29.aspx">MSAA</a> + <a href="http://accessibility.linuxfoundation.org/a11yspecs/ia2/docs/html/">IAccessible2</a></th>
               <th><a href="https://msdn.microsoft.com/en-us/library/ms726297%28v=VS.85%29.aspx">UIA</a></th>
-              <th><a href="https://developer.gnome.org/atk/stable/">ATK</a></th>
+              <th><a href="https://gnome.pages.gitlab.gnome.org/atk/">ATK</a></th>
               <th><a href="https://developer.apple.com/reference/appkit/nsaccessibility">AX</a></th>
               <th>Comments</th>
             </tr>
@@ -744,8 +744,8 @@
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="comments">
                 A `button`'s mapping will change if the
-                <a class="core-mapping" href="role-map-button-pressed">`aria-pressed`</a> and
-                <a class="core-mapping" href="role-map-button-haspopup">`aria-haspopup`</a> attributes are specified.
+                <a class="core-mapping" href="#role-map-button-pressed">`aria-pressed`</a> and
+                <a class="core-mapping" href="#role-map-button-haspopup">`aria-haspopup`</a> attributes are specified.
               </td>
             </tr>
             <tr tabindex="-1" id="el-canvas">
@@ -1495,7 +1495,7 @@
             </tr>
             <tr tabindex="-1" id="el-form-associated-custom-element">
               <th>
-                <a href="https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-face-example">form-associated custom element</a>
+                <a data-cite="html/custom-elements.html#custom-elements-face-example">form-associated custom element</a>
               </th>
               <td class="aria">If the author assigned a conforming ARIA role using the `role` attribute, map to that role. Otherwise, no corresponding role.</td>
               <td class="ia2"><div class="general">Use WAI-ARIA mapping</div></td>
@@ -2719,7 +2719,7 @@
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="comments">
                 <div class="general">
-                  The <a data-cite="HTML">`menu`</a> element is a semantic alternative to the <a href="el-ul">`ul`</a> element. It has no implemented mappings or behavior that reflect the semantics of the ARIA <a class="core-mapping" href="#role-map-menu">`menu`</a> role.
+                  The <a data-cite="HTML">`menu`</a> element is a semantic alternative to the <a href="#el-ul">`ul`</a> element. It has no implemented mappings or behavior that reflect the semantics of the ARIA <a class="core-mapping" href="#role-map-menu">`menu`</a> role.
                 </div>
                 <div class="general">
                   Note obsolete <a data-cite="html/obsolete.html#menuitem">`menuitem` element</a>
@@ -3851,7 +3851,7 @@
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-ul">
-              <th><a data-cite="HTML">`ul`</th>
+              <th><a data-cite="HTML">`ul`</a></th>
               <td class="aria"><a class="core-mapping" href="#role-map-list">`list`</a> role</td>
               <td class="ia2"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
@@ -3970,7 +3970,7 @@
       </ul>
       <div class="table-container">
         <table class="map-table attributes" id="attribute-mapping-table">
-          <caption>Mappings of <a data-cite="html/https://html.spec.whatwg.org/multipage/indices.html#attributes-3">HTML attributes (excluding event handler content attributes)</a> to platform <a class="termref">accessibility APIs</a>: ARIA, MSAA + UIA Express, MSAA + IAccessible2, UIA, ATK, and AX </caption>
+          <caption>Mappings of <a data-cite="html/indices.html#attributes-3">HTML attributes (excluding event handler content attributes)</a> to platform <a class="termref">accessibility APIs</a>: ARIA, MSAA + UIA Express, MSAA + IAccessible2, UIA, ATK, and AX </caption>
           <thead>
             <tr>
               <th>Attribute</th>
@@ -3978,7 +3978,7 @@
               <th>[[[WAI-ARIA]]]</th>
               <th><a href="https://msdn.microsoft.com/en-us/library/dd373608%28v=VS.85%29.aspx">MSAA</a> + <a href="http://accessibility.linuxfoundation.org/a11yspecs/ia2/docs/html/">IAccessible2</a></th>
               <th><a href="https://msdn.microsoft.com/en-us/library/ms726297%28v=VS.85%29.aspx">UIA</a></th>
-              <th><a href="https://developer.gnome.org/atk/stable/">ATK</a></th>
+              <th><a href="https://gnome.pages.gitlab.gnome.org/atk/">ATK</a></th>
               <th><a href="https://developer.apple.com/reference/appkit/nsaccessibility">AX</a></th>
               <th>Comments</th>
             </tr>
@@ -4984,7 +4984,7 @@
             <tr tabindex="-1" id="att-kind">
               <th>`kind`</th>
               <td class="elements">
-                <a data-cite="html/#element-attrdef-track-kind">`track`</a>
+              	<a data-cite="html/media.html#attr-track-kind">`track`</a>
               </td>
               <td class="aria">Not mapped</td>
               <td class="ia2">Not mapped</td>
@@ -4996,9 +4996,9 @@
             <tr tabindex="-1" id="att-label">
               <th>`label`</th>
               <td class="elements">
-                <a data-cite="html/#attr-optgroup-label">`optgroup`</a>;
-                <a data-cite="html/#attr-option-label">`option`</a>;
-                <a data-cite="html/#attr-track-label">`track`</a>
+              	<a data-cite="html/form-elements.html#attr-optgroup-label">`optgroup`</a>;
+                <a data-cite="html/form-elements.html#attr-option-label">`option`</a>;
+              	<a data-cite="html/media.html#attr-track-label">`track`</a>
               </td>
               <td class="aria"><div class="general">Not mapped</div></td>
               <td class="ia2">
@@ -7051,7 +7051,7 @@
           <li>18-Sept-2019: Update `mark` element's UIA `LocalizedControlType` and AX `AXRoleDescription`.  See <a href="https://github.com/w3c/html-aam/issues/236">GitHub issue #236</a>.</li>
           <li>18-Sept-2019: Update ATK mappings for `summary` and `details` elements. See <a href="https://github.com/w3c/html-aam/issues/142">GitHub issue #142</a> and <a href="https://github.com/w3c/html-aam/issues/147">GitHub issue #147</a>.</li>
           <li>18-Sept-2019: Update MSAA mappings for `sub` and `sup`. See <a href="https://github.com/w3c/html-aam/pull/252">GitHub pull request #252</a>.</li>
-          <li>11-Sept-2019: Update mapping for `menu` to match <a data-cite="html/#the-menu-element">HTML Living Standard</a>. Remove element and attribute mappings that are not applicable to `menu` and `menuitem`. Update mapping of `menu` to `role="list"`. See <a href="https://github.com/w3c/html-aam/issues/188">GitHub issue #188</a>.</li>
+        	<li>11-Sept-2019: Update mapping for [^menu^] to match HTML Living Standard. Remove element and attribute mappings that are not applicable to `menu` and `menuitem`. Update mapping of `menu` to `role="list"`. See <a href="https://github.com/w3c/html-aam/issues/188">GitHub issue #188</a>.</li>
           <li>10-July-2019: Further updated mappings for `ins` and `del` elements. See <a href="https://github.com/w3c/html-aam/pull/219">GitHub pull request #219</a>.</li>
           <li>13-June-2019: Update mappings for `ins` and `del` elements. See <a href="https://github.com/w3c/html-aam/issues/141">GitHub issue #141</a>.</li>
           <li>10-June-2019: Update ATK mappings for `header` and `footer` when not scoped to the `body`. See <a href="https://github.com/w3c/html-aam/issues/129">GitHub issue #129</a>.</li>
@@ -7081,7 +7081,7 @@
           <li>01-Dec-2017: Updated mappings for the `dfn` element. See <a href="https://github.com/w3c/html-aam/issues/6">GitHub issue #6</a>.</li>
           <li>30-Nov-2017: Updated mappings for the `meter` element. See <a href="https://github.com/w3c/html-aam/issues/2">GitHub issue #2</a>.</li>
           <li>24-Nov-2017: Updated mappings for the `audio` and `video` elements. See <a href="https://github.com/w3c/html-aam/issues/80">GitHub issue #80</a>.</li>
-          <li>23-Nov-2017: Updated `figure` element mappings to reflect the <a href="https://w3c.github.io/aria/core-aam/core-aam.html#role-map-figure">WAI-ARIA `figure` role mappings</a>.</li>
+          <li>23-Nov-2017: Updated `figure` element mappings to reflect the <a href="https://w3c.github.io/core-aam/#role-map-figure">WAI-ARIA `figure` role mappings</a>.</li>
           <li>23-Nov-2017: Updated mappings for the `form` element based on presence of <a class="termref">accessible name</a>. See <a href="https://github.com/w3c/html-aam/issues/106">GitHub issue #106</a>.</li>
           <li>23-Nov-2017: Removed the accessible name computation requirement to ignore an `img` element's `title` attribute when the element's `alt` attribute is empty. See <a href="https://github.com/w3c/html-aam/issues/99">GitHub issue #99</a>.</li>
           <li>23-Nov-2017: Added note to not expose `aria-roledescription` unless element also a conforming `role` attribute value. See <a href="https://github.com/w3c/html-aam/issues/98">GitHub issue #98</a>.</li>
