@@ -874,11 +874,21 @@
                 <a data-cite="HTML">`details`</a>
               </th>
               <td class="aria">
-                <a class="core-mapping" href="#role-map-generic">`generic`</a> role
+                <a class="core-mapping" href="#role-map-generic">`group`</a> role
               </td>
               <td class="ia2"><div class="general">Use WAI-ARIA mapping</div></td>
-              <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
-              <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="uia">
+                <div class="general">Use WAI-ARIA mapping</div>
+                <div class="ctrltype">
+                  <span class="type">Localized Control Type: `"details"`</span>
+                </div>
+              </td>
+              <td class="atk">
+                <div class="general">Use WAI-ARIA mapping</div>
+                <div class="ctrltype">
+                  <span class="type">Relations: `"ATK_RELATION_DETAILS_FOR"`</span>
+                </div>
+              </td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="comments"></td>
             </tr>
@@ -6589,6 +6599,7 @@
       <section>
         <h4>Substantive changes since moving to the <a href="https://www.w3.org/WAI/ARIA/">Accessible Rich Internet Applications Working Group</a> (03-Nov-2019)</h4>
         <ul>
+          <li>02-Nov-2021: Updating `blockquote`, `caption`, `code`, `del`, `em`, `ins`, `meter`, `paragraph`, `strong`, `sub`, `sup` and `time` to ARIA 1.2 mappings in Core AAM.  Fix `body` mapping to `generic`, and `html` mapping to `document`. Fix `hgroup` mapping to `generic`.  Update `details` to map to `group` with additional information specific to ATK, UIA. See <a href="https://github.com/w3c/html-aam/pull/348">GitHub issue #348</a></li>
           <li>12-May-2021: Add FACES references to attributes table - `readonly`, `name`, `form`, `disabled`. See <a href="https://github.com/w3c/html-aam/issues/257">Issue 257</a>.</li>
           <li>12-Dec-2019: Adds `hgroup`, `slot`, autonomous custom element and form associated custom element. See <a href="https://github.com/w3c/html-aam/issues/189">GitHub issue #189</a>.</li>
           <li>26-Nov-2019: Updates mappings for `disabled`, `scope`, `spellcheck`, `tabindex` to point to WAI-ARIA.  Adds AX `pattern`, `reversed`, `rows`, `size`, `span`, `src`, `start`, `step`, `type` attribute mappings. Adds `min-length`, `ping`, `playsinline`, `referrerpolicy`, `sizes`, `srcset`, `data[value]` attribute mappings. See <a href="https://github.com/w3c/html-aam/pull/245">GitHub pull request #245</a>.</li>
