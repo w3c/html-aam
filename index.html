@@ -155,6 +155,8 @@
       <li>[[[core-aam-1.2]]]</li>
       <li>HTML Accessibility API Mappings 1.0 (this specification)</li>
       <li>[[[svg-aam-1.0]]]</li>
+      <!-- mathml aam link needs a shortcode, this doesn't appear to exit right now -->
+      <li><cite><a href="https://w3c.github.io/mathml-aam/">MathML AAM 1.0</a></cite></li>
     </ul>
     <section id="intro_aapi">
       <h3>Accessibility APIs</h3>
@@ -164,7 +166,7 @@
       <ul>
         <li><abbr title="Microsoft Active Accessibility">MSAA</abbr> with <cite><a href="https://wiki.linuxfoundation.org/accessibility/iaccessible2/start">IAccessible2 1.3</a></cite> [[IAccessible2]]</li>
         <li><cite><a href="https://msdn.microsoft.com/en-us/library/ee684013%28VS.85%29.aspx">User Interface Automation</a></cite> [[UI-AUTOMATION]]</li>
-      	<li><cite>Linux/GNOME <a href="https://gnome.pages.gitlab.gnome.org/atk/">ATK - Accessibility Toolkit</a></cite> [[ATK]] and <cite><a href="https://gitlab.gnome.org/GNOME/at-spi2-core/">Assistive Technology Service Provider Interface</a></cite> [[AT-SPI]], referred to hereafter as "ATK/AT-SPI"</li>
+        <li><cite>Linux/GNOME <a href="https://gnome.pages.gitlab.gnome.org/atk/">ATK - Accessibility Toolkit</a></cite> [[ATK]] and <cite><a href="https://gitlab.gnome.org/GNOME/at-spi2-core/">Assistive Technology Service Provider Interface</a></cite> [[AT-SPI]], referred to hereafter as "ATK/AT-SPI"</li>
         <li><cite><a href="https://developer.apple.com/reference/appkit/nsaccessibility">Mac OS X Accessibility Protocol Mac OS 10.10</a></cite> [[AXAPI]]</li>
       </ul>
       <p>
@@ -220,8 +222,8 @@
     </section>
     <section>
       <h3>HTML Element Role Mappings</h3>
-    	<ul>
-    		<li>HTML elements with implicit WAI-ARIA role semantics MUST be mapped to platform <a class="termref">accessibility APIs</a> according to those WAI-ARIA roles' mappings as defined in the [[core-aam-1.2]] specification.</li>
+      <ul>
+        <li>HTML elements with implicit WAI-ARIA role semantics MUST be mapped to platform <a class="termref">accessibility APIs</a> according to those WAI-ARIA roles' mappings as defined in the [[core-aam-1.2]] specification.</li>
         <li>A '?' in a cell indicates the data has yet to be provided.</li>
         <li>"Not mapped" (Not Applicable) means the element does not need to be exposed via an <a class="termref">accessibility API</a>. This is usually because the element is not displayed as part of the user interface.</li>
         <li>Where applicable, how an element participates in the computation of its own or another element's <a class="termref">accessible name</a> and/or <a class="termref">accessible description</a> is described in the <a href="#accessible-name-and-description-computation">Accessible Name and Description Computation</a> section of this document.</li>
@@ -239,15 +241,15 @@
             <li>Elements mapped to the `Text` Control Type are not generally represented as <a class="termref" data-lt="accessible object">accessible objects</a> in the <a class="termref">accessibility tree</a>, but are just part of the `Text` Control Pattern implemented for the whole HTML document. However, if they have any `aria-` attributes or an explicit `tabindex` specified, elements mapped to the `Text` Control Type will be represented as <a class="termref" data-lt="accessible object">accessible objects</a> in the <a class="termref">accessibility tree</a>.</li>
           </ul>
         </li>
-    		<li>
+        <li>
           <strong>AXAPI:</strong>
           <ul>
             <li>User agents should return a user-presentable, localized string value for the Mac Accessibility AXRoleDescription.</li>
           </ul>
         </li>
-    	</ul>
-    	<div class="table-container">
-      	<table class="map-table elements" id="element-mapping-table">
+      </ul>
+      <div class="table-container">
+        <table class="map-table elements" id="element-mapping-table">
           <caption>Mappings of HTML elements to platform <a class="termref">accessibility APIs</a>: ARIA, MSAA + UIA Express, MSAA + IAccessible2, UIA, ATK, and AX</caption>
           <thead>
             <tr>
@@ -2704,12 +2706,13 @@
               <th>
                 <a data-cite="html/embedded-content-other.html#mathml">`math`</a>
               </th>
-              <td class="aria"><a class="core-mapping" href="#role-map-math">`math`</a> role</td>
-              <td class="ia2"><div class="general">Use WAI-ARIA mapping</div></td>
-              <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
-              <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
-              <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
-              <td class="comments"></td>
+              <td class="aria">See comments</td>
+              <td class="ia2">See comments</td>
+              <td class="uia">See comments</td>
+              <td class="atk">See comments</td>
+              <td class="ax">See comments</td>
+              <td class="comments">
+                Mapping for `math` is defined by <a href="https://w3c.github.io/mathml-aam/">MathML AAM 1.0</a>.
             </tr>
             <tr tabindex="-1" id="el-menu">
               <th>
@@ -3604,13 +3607,15 @@
             <tr tabindex="-1" id="el-svg">
               <th><a data-cite="html/embedded-content-other.html#svg-0">`svg`</a></th>
               <td class="aria">
-                <a class="graphics-mapping" href="https://www.w3.org/TR/graphics-aam-1.0/#role-map-graphics-document">`graphics-document` role</a>
+                See comments
               </td>
-              <td class="ia2"><div class="general">Use WAI-ARIA mapping</div></td>
-              <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
-              <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
-              <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
-              <td class="comments"></td>
+              <td class="ia2">See comments</td>
+              <td class="uia">See comments</td>
+              <td class="atk">See comments</td>
+              <td class="ax">See comments</td>
+              <td class="comments">
+                Mapping for `svg` is defined by [[[svg-aam-1.0]]]. See also <a href="https://w3c.github.io/graphics-aam/#mapping_role_table">Graphics Accessibility API Role Mappings</a>
+              </td>
             </tr>
             <tr tabindex="-1" id="el-table">
               <th><a data-cite="HTML">`table`</a></th>
@@ -4987,7 +4992,7 @@
             <tr tabindex="-1" id="att-kind">
               <th>`kind`</th>
               <td class="elements">
-              	<a data-cite="html/media.html#attr-track-kind">`track`</a>
+                <a data-cite="html/media.html#attr-track-kind">`track`</a>
               </td>
               <td class="aria">Not mapped</td>
               <td class="ia2">Not mapped</td>
@@ -4999,9 +5004,9 @@
             <tr tabindex="-1" id="att-label">
               <th>`label`</th>
               <td class="elements">
-              	<a data-cite="html/form-elements.html#attr-optgroup-label">`optgroup`</a>;
+                <a data-cite="html/form-elements.html#attr-optgroup-label">`optgroup`</a>;
                 <a data-cite="html/form-elements.html#attr-option-label">`option`</a>;
-              	<a data-cite="html/media.html#attr-track-label">`track`</a>
+                <a data-cite="html/media.html#attr-track-label">`track`</a>
               </td>
               <td class="aria"><div class="general">Not mapped</div></td>
               <td class="ia2">
@@ -7049,7 +7054,7 @@
           <li>18-Sept-2019: Update `mark` element's UIA `LocalizedControlType` and AX `AXRoleDescription`.  See <a href="https://github.com/w3c/html-aam/issues/236">GitHub issue #236</a>.</li>
           <li>18-Sept-2019: Update ATK mappings for `summary` and `details` elements. See <a href="https://github.com/w3c/html-aam/issues/142">GitHub issue #142</a> and <a href="https://github.com/w3c/html-aam/issues/147">GitHub issue #147</a>.</li>
           <li>18-Sept-2019: Update MSAA mappings for `sub` and `sup`. See <a href="https://github.com/w3c/html-aam/pull/252">GitHub pull request #252</a>.</li>
-        	<li>11-Sept-2019: Update mapping for [^menu^] to match HTML Living Standard. Remove element and attribute mappings that are not applicable to `menu` and `menuitem`. Update mapping of `menu` to `role="list"`. See <a href="https://github.com/w3c/html-aam/issues/188">GitHub issue #188</a>.</li>
+          <li>11-Sept-2019: Update mapping for [^menu^] to match HTML Living Standard. Remove element and attribute mappings that are not applicable to `menu` and `menuitem`. Update mapping of `menu` to `role="list"`. See <a href="https://github.com/w3c/html-aam/issues/188">GitHub issue #188</a>.</li>
           <li>10-July-2019: Further updated mappings for `ins` and `del` elements. See <a href="https://github.com/w3c/html-aam/pull/219">GitHub pull request #219</a>.</li>
           <li>13-June-2019: Update mappings for `ins` and `del` elements. See <a href="https://github.com/w3c/html-aam/issues/141">GitHub issue #141</a>.</li>
           <li>10-June-2019: Update ATK mappings for `header` and `footer` when not scoped to the `body`. See <a href="https://github.com/w3c/html-aam/issues/129">GitHub issue #129</a>.</li>
