@@ -6477,9 +6477,11 @@
     <p>Certain attributes such as `aria-label`, `aria-labelledby`, `alt`, `title`, and `aria-describedby`, can contribute to the accessible name or description of an element if their returned value (once white space is trimmed) is not the empty string. For instances where an attribute's value returns the empty string, user agents MUST move on to the next step in the name or description algorithm.</p>
 
     <div class="note">
-      <p>For example, the following graphic has `alt` and a `title` attributes, however the `alt` contains only whitespace. In this instance, the `alt` has its whitespace trimmed and is ignored due to returning the empty string. User agents then use the `title` to provide the graphic its accessible name.</p>
+      <p>For example, the following graphic has `aria-label` and a `alt` attributes, however the `aria-label` contains only whitespace. 
+        In this instance, the `aria-label` has its whitespace trimmed and is ignored due to returning the empty string. 
+        User agents then use the `alt` to provide the graphic its accessible name.</p>
 
-      <pre><code>&lt;img src="moon.jpg" alt=" " title="A waning crescent Moon"></code></pre>
+      <pre><code>&lt;img src="moon.jpg" aria-label=" " alt="A waning crescent Moon"></code></pre>
     </div>
 
     <section>
