@@ -1454,7 +1454,7 @@
               </td>
               <td class="comments">
                 <div class="general">
-                  If implemented as a color picker, any UI controls presented for selecting a color are exposed in the <a class="termref">accessibility tree</a>, associated with the `input` element, and mapped as appropriate for the type of control (e.g. button or slider).
+                  If implemented as a color picker, any UI controls presented for selecting a color are exposed in the <a class="termref">accessibility tree</a>, associated with the `input` element, and mapped as appropriate for the type of control (e.g., button or slider).
                 </div>
               </td>
             </tr>
@@ -2865,7 +2865,7 @@
               <td class="comments">
                 <div class="general">
                   <b>Note:</b> There are instances where CSS properties can affect what is exposed by accessibility APIs.
-                  For instance, `display: none` or `visibility: hidden` will remove an element from the accessibility tree
+                  For instance, `display: none` or `visibility: hidden` will remove an element from the <a class="termref">accessibility tree</a>
                   and hide its presence from assistive technologies.
                 </div>
               </td>
@@ -4321,7 +4321,7 @@
               </td>
               <td class="ax">`AXTitle`: `&lt;value&gt;`</td>
               <td class="comments">
-                See Also: <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>
+                See Also: <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.2</a>
               </td>
             </tr>
             <tr tabindex="-1" id="att-lang">
@@ -5362,8 +5362,8 @@
               </td>
               <td class="aria">
                 <div class="general">
-                  Either the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a>, or the
-                  <a data-cite="accname-1.2/#dfn-accessible-description">accessible description</a>, or Not mapped (see Comments).
+                  Either contributes to the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a>, the
+                  <a data-cite="accname-1.2/#dfn-accessible-description">accessible description</a>, or is not mapped (see comments).
                 </div>
               </td>
               <td class="ia2">
@@ -5644,31 +5644,118 @@
               <td class="ax"><div class="general">Not mapped</div></td>
               <td class="comments"></td>
             </tr>
-            <tr tabindex="-1" id="att-value-input">
+            <tr tabindex="-1" id="att-value-input-buttons">
               <th>`value`</th>
               <td class="elements">
                 <a data-cite="html/input.html#attr-input-value">`input`</a>
+                <a data-cite="html/input.html#button-state-(type=button)">`type=button`</a>;
+                <a data-cite="html/input.html#reset-button-state-(type=reset)">`type=reset`</a>;
+                <a data-cite="html/input.html#submit-button-state-(type=submit)">`type=submit`</a>
               </td>
-              <td class="aria">Not mapped</td> <!-- related: https://github.com/w3c/aria/issues/711 -->
-              <td class="ia2">
-                <div class="name">
-                  Associates the accessible value for entry type input elements
-                  and <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> for button type input elements
-                </div>
+              <td class="aria">
+                Contributes to the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> of the `input`
               </td>
-              <td class="uia">
-                <div class="name">
-                  Associates the accessible value for entry type input elements
-                  and <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> for button type input elements
-                </div>
+              <td class="ia2">See comments</td>
+              <td class="uia">See comments</td>
+              <td class="atk">See comments</td>
+              <td class="ax">See comments</td>
+              <td class="comments">
+                If specified, the value of the attribute will contribute to the
+                <a href="#input-type-button-input-type-submit-and-input-type-reset-accessible-name-computation">accessible name computations</a> for these button-type `input` elements and render as the button's text label.
               </td>
-              <td class="atk">
-                <div class="name">
-                  Associates the accessible value for entry type input elements
-                  and <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> for button type input elements
-                </div>
+            </tr>
+            <tr tabindex="-1" id="att-value-input-checkbox-hidden-radio">
+              <th>`value`</th>
+              <td class="elements">
+                <a data-cite="html/input.html#attr-input-value">`input`</a>
+                <a data-cite="html/input.html#checkbox-state-(type=checkbox)">`type=checkbox`</a>;
+                <a data-cite="html/input.html#hidden-state-(type=hidden)">`type=hidden`</a>;
+                <a data-cite="html/input.html#radio-state-(type=radio)">`type=radio`</a>
               </td>
-              <td class="ax">`AXValue: &lt;value&gt;`</td>
+              <td class="aria"><div class="general">Not mapped</div></td>
+              <td class="ia2"><div class="general">Not mapped</div></td>
+              <td class="uia"><div class="general">Not mapped</div></td>
+              <td class="atk"><div class="general">Not mapped</div></td>
+              <td class="ax"><div class="general">Not mapped</div></td>
+              <td class="comments"></td>
+            </tr>
+            <tr tabindex="-1" id="att-value-input-color">
+              <th>`value`</th>
+              <td class="elements">
+                <a data-cite="html/input.html#attr-input-value">`input`</a>
+                <a data-cite="html/input.html#color-state-(type=color)">`type=color`</a>
+              </td>
+              <td class="aria">
+                <a class="core-mapping" href="#ariaValueNow">`aria-valuenow`</a> &amp;
+                <a class="core-mapping" href="#ariaValueText">`aria-valuetext`</a>
+              </td>
+              <td class="ia2">Use WAI-ARIA mapping</td>
+              <td class="uia">Use WAI-ARIA mapping</td>
+              <td class="atk">Use WAI-ARIA mapping</td>
+              <td class="ax">Use WAI-ARIA mapping</td>
+              <td class="comments">
+                <p>
+                  If specified, expose the value of the attribute as the initial value of the `input`. User Agents MUST expose the modified value of the input to the <a class="termref">accessibility tree</a>. User Agents MAY expose the initial or modified value as a human readable text alternative. E.g., `#ff0000` as a localized text alternative of "Red".
+                </p>
+                <p>
+                  If the `value` attribute is not specified, has no specified value, or if the specified value is invalid, the initial value of the `input` is `#000000` with a localized text alternative of "Black".
+                </p>
+              </td>
+            </tr>
+            <tr tabindex="-1" id="att-value-input">
+              <th>`value`</th>
+              <td class="elements">
+                <a data-cite="html/input.html#attr-input-value">`input`</a>;
+                <a data-cite="html/input.html#date-state-(type=date)">`type=date`</a>;
+                <a data-cite="html/input.html#datetime-local-state-(type=datetime-local)">`type=datetime-local`</a>;
+                <a data-cite="html/input.html#email-state-(type=email)">`type=email`</a>;
+                <a data-cite="html/input.html#month-state-(type=month)">`type=month`</a>;
+                <a data-cite="html/input.html#number-state-(type=number)">`type=number`</a>;
+                <a data-cite="html/input.html#password-state-(type=password)">`type=password`</a>;
+                <a data-cite="html/input.html#search-state-(type=search)">`type=search`</a>;
+                <a data-cite="html/input.html#tel-state-(type=tel)">`type=tel`</a>;
+                <a data-cite="html/input.html#text-state-(type=text)">`type=text`</a>;
+                <a data-cite="html/input.html#url-state-(type=url)">`type=url`</a>;
+                <a data-cite="html/input.html#week-state-(type=week)">`type=week`</a>;
+              </td>
+              <td class="aria">Not mapped</td>
+              <td class="ia2">See comments</td>
+              <td class="uia">See comments</td>
+              <td class="atk">See comments</td>
+              <td class="ax">See comments</td>
+              <td class="comments">
+                If specified, expose the value of the attribute as the initial value entry of the `input` element.
+              </td>
+            </tr>
+            <tr tabindex="-1" id="att-value-input-image">
+              <th>`value`</th>
+              <td class="elements">
+                <a data-cite="html/input.html#attr-input-value">`input`</a>
+                <a data-cite="html/input.html#image-button-state-(type=image)">`type=image`</a>
+              </td>
+              <td class="aria">
+                Contributes to the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> of the `input`
+              </td>
+              <td class="ia2">See comments</td>
+              <td class="uia">See comments</td>
+              <td class="atk">See comments</td>
+              <td class="ax">See comments</td>
+              <td class="comments">
+                If specified, and the `input type=image` element has no `alt` attribute specified, then the value of the attribute will contribute to the
+                <a href="#input-type-button-input-type-submit-and-input-type-reset-accessible-name-computation">accessible name computations</a>, and will render as text if the image source is broken. Otherwise, the attribute is ignored.
+              </td>
+            </tr>
+            <tr tabindex="-1" id="att-value-input-range">
+              <th>`value`</th>
+              <td class="elements">
+                <a data-cite="html/input.html#attr-input-value">`input`</a>
+                <a data-cite="html/input.html#range-state-(type=range)">`type=range`</a>
+              </td>
+              <td class="aria"><a class="core-mapping" href="#ariaValueNow">`aria-valuenow`</a></td>
+              <td class="ia2">Use WAI-ARIA mapping</td>
+              <td class="uia">Use WAI-ARIA mapping</td>
+              <td class="atk">Use WAI-ARIA mapping</td>
+              <td class="ax">Use WAI-ARIA mapping</td>
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-value-li">
@@ -5713,26 +5800,10 @@
                 <a data-cite="html/form-elements.html#attr-progress-value">`progress`</a>
               </td>
               <td class="aria"><a class="core-mapping" href="#ariaValueNow">`aria-valuenow`</a></td>
-              <td class="ia2">
-                <div class="general">
-                  Exposed as `IAccessibleValue::currentValue`
-                </div>
-              </td>
-              <td class="uia">
-                <div class="general">
-                  Exposed as `Value.Value`
-                </div>
-              </td>
-              <td class="atk">
-                <div class="general">
-                  Exposed as `atk_value_get_current_value`
-                </div>
-              </td>
-              <td class="ax">
-                <div class="general">
-                  `AXValue: &lt;value&gt;`
-                </div>
-              </td>
+              <td class="ia2">Use WAI-ARIA mapping</td>
+              <td class="uia">Use WAI-ARIA mapping</td>
+              <td class="atk">Use WAI-ARIA mapping</td>
+              <td class="ax">Use WAI-ARIA mapping</td>
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-value-param">
@@ -5799,12 +5870,12 @@
     <p>The terms <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> and <a data-cite="accname-1.2/#dfn-accessible-description">accessible description</a> are properties provided in all <a class="termref">accessibility APIs</a>. The name of the properties may differ across APIs but they serve the same function: as a container for a short (name) or longer (description) string of text. </p>
     <p>The <a href="#mapping_additional_nd_te" class="accname">text alternative computation</a> is used to generate both the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> and <a data-cite="accname-1.2/#dfn-accessible-description">accessible description</a>. There are different rules provided for several different types of <a class="termref" data-lt="element">elements</a>, <a class="termref" data-lt="node">nodes</a>, and combinations of markup.</p>
     <section>
-      <h3>`input type="text"`, `input type="password"`,` input type="search"`,` input type="tel"`, `input type="url"` and `textarea` Element</h3>
+      <h3>`input type="text"`, `input type="password"`, `input type="search"`, `input type="tel"`, `input type="url"` and `textarea` Element</h3>
       <section>
-        <h4>`input type="text"`, `input type="password"`,` input type="search"`,` input type="tel"`, `input type="email"`, `input type="url"` and `textarea` Element Accessible Name Computation</h4>
+        <h4>`input type="text"`, `input type="password"`, `input type="search"`, `input type="tel"`, `input type="email"`, `input type="url"` and `textarea` Element Accessible Name Computation</h4>
         <ol>
           <li>
-            If the control has an <a data-cite="wai-aria-1.2/#aria-label">`aria-label`</a> or an <a data-cite="wai-aria-1.2/#aria-labelledby">`aria-labelledby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.
+            If the control has an <a data-cite="wai-aria-1.2/#aria-label">`aria-label`</a> or an <a data-cite="wai-aria-1.2/#aria-labelledby">`aria-labelledby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.2</a>.
           </li>
           <li>
             Otherwise use the associated `label` element(s) <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a>(s) - if more than one label is associated; concatenate by DOM order, delimited by spaces.
@@ -5820,7 +5891,7 @@
         <h4>`input type="text"`, `input type="password"`, `input type="search"`, `input type="tel"`, `input type="email"`, `input type="url"` and `textarea` Element Accessible Description Computation</h4>
         <ol>
           <li>
-            If the element has an <a data-cite="wai-aria-1.2/#aria-describedby">`aria-describedby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-description">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.
+            If the element has an <a data-cite="wai-aria-1.2/#aria-describedby">`aria-describedby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-description">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.2</a>.
           </li>
           <li>
             Otherwise use the `title` attribute if it wasn't used as the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a>.
@@ -5837,7 +5908,7 @@
         <h4>`input type="button"` ,` input type="submit"` and `input type="reset"` Accessible Name Computation</h4>
         <ol>
           <li>
-            If the control has an <a data-cite="wai-aria-1.2/#aria-label">`aria-label`</a> or an <a data-cite="wai-aria-1.2/#aria-labelledby">`aria-labelledby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.
+            If the control has an <a data-cite="wai-aria-1.2/#aria-label">`aria-label`</a> or an <a data-cite="wai-aria-1.2/#aria-labelledby">`aria-labelledby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.2</a>.
           </li>
           <li>Otherwise use the `value` attribute.</li>
           <li>
@@ -5856,7 +5927,7 @@
         <h4>`input type="button"` ,` input type="submit"` and `input type="reset"` Accessible Description Computation</h4>
         <ol>
           <li>
-            If the element has an <a data-cite="wai-aria-1.2/#aria-describedby">`aria-describedby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-description">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.
+            If the element has an <a data-cite="wai-aria-1.2/#aria-describedby">`aria-describedby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-description">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.2</a>.
           </li>
           <li>
             Otherwise use the `value` attribute if it wasn't used as the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a>.
@@ -5876,7 +5947,7 @@
         <h4>`input type="image"` Accessible Name Computation</h4>
         <ol>
           <li>
-            If the control has an <a data-cite="wai-aria-1.2/#aria-label">`aria-label`</a> or an <a data-cite="wai-aria-1.2/#aria-labelledby">`aria-labelledby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.
+            If the control has an <a data-cite="wai-aria-1.2/#aria-label">`aria-label`</a> or an <a data-cite="wai-aria-1.2/#aria-labelledby">`aria-labelledby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.2</a>.
           </li>
           <li>Otherwise use `alt` attribute.</li>
           <!-- <li>Otherwise use `value` attribute.</li> -->
@@ -5893,7 +5964,7 @@
         <h4><code>input type="image"</code> Accessible Description Computation</h4>
         <ol>
           <li>
-            If the element has an <a data-cite="wai-aria-1.2/#aria-describedby">`aria-describedby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-description">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.
+            If the element has an <a data-cite="wai-aria-1.2/#aria-describedby">`aria-describedby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-description">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.2</a>.
           </li>
           <li>
             Otherwise use the `title` attribute if it wasn't used as the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a>.
@@ -5910,7 +5981,7 @@
         <h4>`button` Element Accessible Name Computation</h4>
         <ol>
           <li>
-            If the `button` element has an <a data-cite="wai-aria-1.2/#aria-label">`aria-label`</a> or an <a data-cite="wai-aria-1.2/#aria-labelledby">`aria-labelledby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.
+            If the `button` element has an <a data-cite="wai-aria-1.2/#aria-label">`aria-label`</a> or an <a data-cite="wai-aria-1.2/#aria-labelledby">`aria-labelledby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.2</a>.
           </li>
           <li>Otherwise use the `button` element subtree.</li>
           <li>Otherwise use `title` attribute.</li>
@@ -5923,7 +5994,7 @@
         <h4>`button` Element Accessible Description Computation</h4>
         <ol>
           <li>
-            If the `button` has an <a data-cite="wai-aria-1.2/#aria-describedby">`aria-describedby`</a> attribute the accessible description is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.
+            If the `button` has an <a data-cite="wai-aria-1.2/#aria-describedby">`aria-describedby`</a> attribute the accessible description is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.2</a>.
           </li>
           <li>
             Otherwise use the `title` attribute if it wasn't used as the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a>.
@@ -5940,7 +6011,7 @@
         <h4>`fieldset` Element Accessible Name Computation</h4>
         <ol>
           <li>
-            If the `fieldset` element has an <a data-cite="wai-aria-1.2/#aria-label">`aria-label`</a> or an <a data-cite="wai-aria-1.2/#aria-labelledby">`aria-labelledby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.
+            If the `fieldset` element has an <a data-cite="wai-aria-1.2/#aria-label">`aria-label`</a> or an <a data-cite="wai-aria-1.2/#aria-labelledby">`aria-labelledby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.2</a>.
           </li>
           <li>
             If the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> is still empty, then: if the `fieldset` element has a <a href="https://dom.spec.whatwg.org/#concept-tree-child">child</a> that is a <code>legend</code> element, then use the subtree of the first such element.
@@ -5955,7 +6026,7 @@
         <h4>`fieldset` Element Accessible Description Computation</h4>
         <ol>
           <li>
-            If the `fieldset` element has an <a data-cite="wai-aria-1.2/#aria-describedby">`aria-describedby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-description">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.
+            If the `fieldset` element has an <a data-cite="wai-aria-1.2/#aria-describedby">`aria-describedby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-description">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.2</a>.
           </li>
           <li>
             Otherwise use the `title` attribute if it wasn't used as the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a>.
@@ -5972,7 +6043,7 @@
         <h4>`output` Element Accessible Name Computation</h4>
         <ol>
           <li>
-            If the `output` element has an <a data-cite="wai-aria-1.2/#aria-label">`aria-label`</a> or an <a data-cite="wai-aria-1.2/#aria-labelledby">`aria-labelledby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.
+            If the `output` element has an <a data-cite="wai-aria-1.2/#aria-label">`aria-label`</a> or an <a data-cite="wai-aria-1.2/#aria-labelledby">`aria-labelledby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.2</a>.
           </li>
           <li>Otherwise use the `output` element subtree.</li>
           <li>Otherwise use `title` attribute.</li>
@@ -6000,7 +6071,7 @@
         <h4>Other Form Elements Accessible Name Computation</h4>
         <ol>
           <li>
-            If the control has an <a data-cite="wai-aria-1.2/#aria-label">`aria-label`</a> or an <a data-cite="wai-aria-1.2/#aria-labelledby">`aria-labelledby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.
+            If the control has an <a data-cite="wai-aria-1.2/#aria-label">`aria-label`</a> or an <a data-cite="wai-aria-1.2/#aria-labelledby">`aria-labelledby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.2</a>.
           </li>
           <li>Otherwise use `label` element.</li>
           <li>Otherwise use `title` attribute.</li>
@@ -6013,7 +6084,7 @@
         <h4>Other Form Elements Accessible Description Computation</h4>
         <ol>
           <li>
-            If the element has an <a data-cite="wai-aria-1.2/#aria-describedby">`aria-describedby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-description">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.
+            If the element has an <a data-cite="wai-aria-1.2/#aria-describedby">`aria-describedby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-description">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.2</a>.
           </li>
           <li>
             Otherwise use the `title` attribute if it wasn't used as the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a>.
@@ -6030,7 +6101,7 @@
         <h4>`summary` Element Accessible Name Computation</h4>
         <ol>
           <li>
-            If the first `summary` element, which is a direct child of the `details` element, has an <a data-cite="wai-aria-1.2/#aria-label">`aria-label`</a> or an <a data-cite="wai-aria-1.2/#aria-labelledby">`aria-labelledby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.
+            If the first `summary` element, which is a direct child of the `details` element, has an <a data-cite="wai-aria-1.2/#aria-label">`aria-label`</a> or an <a data-cite="wai-aria-1.2/#aria-labelledby">`aria-labelledby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.2</a>.
           </li>
           <li>Otherwise use `summary` element subtree.</li>
           <li>Otherwise use `title` attribute.</li>
@@ -6046,7 +6117,7 @@
         <h4>`summary` Element Accessible Description Computation</h4>
         <ol>
           <li>
-            If the element has an <a data-cite="wai-aria-1.2/#aria-describedby">`aria-describedby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-description">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.
+            If the element has an <a data-cite="wai-aria-1.2/#aria-describedby">`aria-describedby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-description">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.2</a>.
           </li>
           <li>
             Otherwise use `summary` element subtree if not used as the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a>.
@@ -6066,7 +6137,7 @@
         <h4>`figure` Element Accessible Name Computation</h4>
         <ol>
           <li>
-            If the `figure` element has an <a data-cite="wai-aria-1.2/#aria-label">`aria-label`</a> or an <a data-cite="wai-aria-1.2/#aria-labelledby">`aria-labelledby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.
+            If the `figure` element has an <a data-cite="wai-aria-1.2/#aria-label">`aria-label`</a> or an <a data-cite="wai-aria-1.2/#aria-labelledby">`aria-labelledby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.2</a>.
           </li>
           <li>
             If the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> is still empty, then: if the `figure` element has a <a href="https://dom.spec.whatwg.org/#concept-tree-child">child</a> that is a `figcaption` element, then use the subtree of the first such element.
@@ -6081,7 +6152,7 @@
         <h4>`figure` Element Accessible Description Computation</h4>
         <ol>
           <li>
-            If the element has an <a data-cite="wai-aria-1.2/#aria-describedby">`aria-describedby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-description">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.
+            If the element has an <a data-cite="wai-aria-1.2/#aria-describedby">`aria-describedby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-description">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.2</a>.
           </li>
           <li>
             Otherwise use the `title` attribute if it wasn't used as the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a>.
@@ -6096,7 +6167,7 @@
         <h4>`img` Element Accessible Name Computation</h4>
         <ol>
           <li>
-            If the `img` element has an <a data-cite="wai-aria-1.2/#aria-label">`aria-label`</a> or an <a data-cite="wai-aria-1.2/#aria-labelledby">`aria-labelledby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.
+            If the `img` element has an <a data-cite="wai-aria-1.2/#aria-label">`aria-label`</a> or an <a data-cite="wai-aria-1.2/#aria-labelledby">`aria-labelledby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.2</a>.
           </li>
           <li>Otherwise use `alt` attribute.</li>
           <li>Otherwise use `title` attribute.</li>
@@ -6110,7 +6181,7 @@
         <h4>`img` Element Accessible Description Computation</h4>
         <ol>
           <li>
-            If the element has an <a data-cite="wai-aria-1.2/#aria-describedby">`aria-describedby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-description">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.
+            If the element has an <a data-cite="wai-aria-1.2/#aria-describedby">`aria-describedby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-description">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.2</a>.
           </li>
           <li>
             Otherwise use the `title` attribute if it wasn't used as the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a>.
@@ -6127,7 +6198,7 @@
         <h4>`table` Element Accessible Name Computation</h4>
         <ol>
           <li>
-            If the `table` element has an <a data-cite="wai-aria-1.2/#aria-label">`aria-label`</a> or an <a data-cite="wai-aria-1.2/#aria-labelledby">`aria-labelledby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.
+            If the `table` element has an <a data-cite="wai-aria-1.2/#aria-label">`aria-label`</a> or an <a data-cite="wai-aria-1.2/#aria-labelledby">`aria-labelledby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.2</a>.
           </li>
           <li>
             If the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> is still empty, then: if the `table` element has a <a href="https://dom.spec.whatwg.org/#concept-tree-child">child</a> that is a <code>caption</code> element, then use the subtree of the first such element.
@@ -6142,7 +6213,7 @@
         <h4>`table` Element Accessible Description Computation</h4>
         <ol>
           <li>
-            If the element has an <a data-cite="wai-aria-1.2/#aria-describedby">`aria-describedby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-description">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.
+            If the element has an <a data-cite="wai-aria-1.2/#aria-describedby">`aria-describedby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-description">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.2</a>.
           </li>
           <li>
             If the <a data-cite="accname-1.2/#dfn-accessible-description">accessible description</a> is still empty, then:, if the `table` element has a <a href="https://dom.spec.whatwg.org/#concept-tree-child">child</a> that is a `caption` element and it wasn't used as the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a>, then use the subtree of the first such element.
@@ -6160,7 +6231,7 @@
         <h4>`tr`, `td`, `th` Elements Accessible Name Computation</h4>
         <ol>
           <li>
-            If the element has an <a data-cite="wai-aria-1.2/#aria-label">`aria-label`</a> or an <a data-cite="wai-aria-1.2/#aria-labelledby">`aria-labelledby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.
+            If the element has an <a data-cite="wai-aria-1.2/#aria-label">`aria-label`</a> or an <a data-cite="wai-aria-1.2/#aria-labelledby">`aria-labelledby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.2</a>.
           </li>
           <li>Otherwise use the `title` attribute.</li>
           <li>
@@ -6172,7 +6243,7 @@
         <h4>`tr`, `td`, `th` Elements Accessible Description Computation</h4>
         <ol>
           <li>
-            If the element has an <a data-cite="wai-aria-1.2/#aria-describedby">`aria-describedby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-description">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.
+            If the element has an <a data-cite="wai-aria-1.2/#aria-describedby">`aria-describedby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-description">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.2</a>.
           </li>
           <li>
             Otherwise use the `title` attribute if it wasn't used as the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a>.
@@ -6189,7 +6260,7 @@
         <h4>`a` Element Accessible Name Computation</h4>
         <ol>
           <li>
-           If the `a` element has an <a data-cite="wai-aria-1.2/#aria-label">`aria-label`</a> or an <a data-cite="wai-aria-1.2/#aria-labelledby">`aria-labelledby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.
+           If the `a` element has an <a data-cite="wai-aria-1.2/#aria-label">`aria-label`</a> or an <a data-cite="wai-aria-1.2/#aria-labelledby">`aria-labelledby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.2</a>.
           </li>
           <li>Otherwise use `a` element subtree.</li>
           <li>Otherwise use the `title` attribute.</li>
@@ -6202,7 +6273,7 @@
         <h4>`a` Element with a `href` attribute Accessible Description Computation</h4>
         <ol>
           <li>
-            If the element has an <a data-cite="wai-aria-1.2/#aria-describedby">`aria-describedby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-description">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.
+            If the element has an <a data-cite="wai-aria-1.2/#aria-describedby">`aria-describedby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-description">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.2</a>.
           </li>
           <li>
             Otherwise use the `title` attribute if it wasn't used as the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a>.
@@ -6219,7 +6290,7 @@
         <h4>`area` Element Accessible Name Computation</h4>
         <ol>
           <li>
-           If the `area` element has an <a data-cite="wai-aria-1.2/#aria-label">`aria-label`</a> or an <a data-cite="wai-aria-1.2/#aria-labelledby">`aria-labelledby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.
+           If the `area` element has an <a data-cite="wai-aria-1.2/#aria-label">`aria-label`</a> or an <a data-cite="wai-aria-1.2/#aria-labelledby">`aria-labelledby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.2</a>.
           </li>
           <li>Otherwise use `area` element's `alt` attribute.</li>
           <li>Otherwise use the `title` attribute.</li>
@@ -6232,7 +6303,7 @@
         <h4>`area` Element Accessible Description Computation</h4>
         <ol>
           <li>
-            If the element has an <a data-cite="wai-aria-1.2/#aria-describedby">`aria-describedby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-description">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.
+            If the element has an <a data-cite="wai-aria-1.2/#aria-describedby">`aria-describedby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-description">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.2</a>.
           </li>
           <li>
             Otherwise use the `title` attribute if it wasn't used as the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a>.
@@ -6248,7 +6319,7 @@
       <section>
         <h4>`iframe` Element Accessible Name Computation</h4>
         <ol>
-          <li>If the element  has an <a data-cite="wai-aria-1.2/#aria-label">`aria-label`</a> or an <a data-cite="wai-aria-1.2/#aria-labelledby">`aria-labelledby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.
+          <li>If the element  has an <a data-cite="wai-aria-1.2/#aria-label">`aria-label`</a> or an <a data-cite="wai-aria-1.2/#aria-labelledby">`aria-labelledby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.2</a>.
           </li>
           <li>Otherwise use the `title` attribute.</li>
           <li>If none of the above yield a usable text string there is no <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a>.</li>
@@ -6259,7 +6330,7 @@
         <h4>`iframe` Element Accessible Description Computation</h4>
         <ol>
           <li>
-            If the element has an <a data-cite="wai-aria-1.2/#aria-describedby">`aria-describedby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-description">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.
+            If the element has an <a data-cite="wai-aria-1.2/#aria-describedby">`aria-describedby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-description">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.2</a>.
           </li>
           <li>
             Otherwise use the `title` attribute if it wasn't used as the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a>.
@@ -6276,7 +6347,7 @@
         <h4>Section and Grouping Element Accessible Name Computation</h4>
         <ol>
           <li>
-            If the element  has an <a data-cite="wai-aria-1.2/#aria-label">`aria-label`</a> or an <a data-cite="wai-aria-1.2/#aria-labelledby">`aria-labelledby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.
+            If the element  has an <a data-cite="wai-aria-1.2/#aria-label">`aria-label`</a> or an <a data-cite="wai-aria-1.2/#aria-labelledby">`aria-labelledby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.2</a>.
           </li>
           <li>Otherwise use the `title` attribute.</li>
           <li>
@@ -6288,7 +6359,7 @@
         <h4>Section and Grouping Element Accessible Description Computation</h4>
         <ol>
           <li>
-            If the element has an <a data-cite="wai-aria-1.2/#aria-describedby">`aria-describedby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-description">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.
+            If the element has an <a data-cite="wai-aria-1.2/#aria-describedby">`aria-describedby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-description">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.2</a>.
           </li>
           <li>
             Otherwise use the `title` attribute if it wasn't used as the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a>.
@@ -6308,7 +6379,7 @@
         <h4>Text Level Element Accessible Name Computation</h4>
         <ol>
           <li>
-            If the element has an <a data-cite="wai-aria-1.2/#aria-label">`aria-label`</a> or an <a data-cite="wai-aria-1.2/#aria-labelledby">`aria-labelledby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.
+            If the element has an <a data-cite="wai-aria-1.2/#aria-label">`aria-label`</a> or an <a data-cite="wai-aria-1.2/#aria-labelledby">`aria-labelledby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.2</a>.
           </li>
           <li>Otherwise use the `title` attribute.</li>
           <li>
@@ -6320,7 +6391,7 @@
         <h4>Text Level Element Accessible Description Computation</h4>
         <ol>
           <li>
-            If the element has an <a data-cite="wai-aria-1.2/#aria-describedby">`aria-describedby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-description">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.1</a>.
+            If the element has an <a data-cite="wai-aria-1.2/#aria-describedby">`aria-describedby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-description">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings 1.2</a>.
           </li>
           <li>
             Otherwise use the `title` attribute if it wasn't used as the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a>.
