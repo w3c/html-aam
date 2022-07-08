@@ -5033,22 +5033,22 @@
               <td class="aria"><div class="general">Not mapped</div></td>
               <td class="ia2">
                 <div class="general">
-                  Reverses the numbering of the child list item accessible objects.
+                  Reverses the numerical or alphabetical order of the child list item markers.
                 </div>
               </td>
               <td class="uia">
                 <div class="general">
-                  Reverses the order of the child list items in the accessibility tree and reverses the numbering of the child list items.
+                  Reverses the numerical or alphabetical order of the child list item markers.
                 </div>
               </td>
               <td class="atk">
                 <div class="general">
-                  Reverses the numbering of the child list item accessible objects.
+                  Reverses the numerical or alphabetical order of the child list item markers.
                 </div>
               </td>
               <td class="ax">
                 <div class="general">
-                  Reverses the numbering of the child list markers.
+                  Reverses the numerical or alphabetical order of the child list item markers.
                 </div>
               </td>
               <td class="comments"></td>
@@ -5062,7 +5062,7 @@
               <td class="ia2"><div class="general">Not mapped</div></td>
               <td class="uia"><div class="general">Not mapped</div></td>
               <td class="atk"><div class="general">Not mapped</div></td>
-              <td class="ax">Not mapped</td>
+              <td class="ax"><div class="general">Not mapped</div></td>
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="att-rowspan">
@@ -5872,9 +5872,9 @@
     <p>The terms <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> and <a data-cite="accname-1.2/#dfn-accessible-description">accessible description</a> are properties provided in all <a class="termref">accessibility APIs</a>. The name of the properties may differ across APIs but they serve the same function: as a container for a short (name) or longer (description) string of text. </p>
     <p>The <a href="#mapping_additional_nd_te" class="accname">text alternative computation</a> is used to generate both the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> and <a data-cite="accname-1.2/#dfn-accessible-description">accessible description</a>. There are different rules provided for several different types of <a class="termref" data-lt="element">elements</a>, <a class="termref" data-lt="node">nodes</a>, and combinations of markup.</p>
     <section>
-      <h3>`input type="text"`, `input type="password"`,` input type="search"`,` input type="tel"`, `input type="url"` and `textarea` Element</h3>
+      <h3>`input type="text"`, `input type="password"`, `input type="number"`, `input type="search"`, `input type="tel"`, `input type="email"`, `input type="url"` and `textarea` Element</h3>
       <section>
-        <h4>`input type="text"`, `input type="password"`,` input type="search"`,` input type="tel"`, `input type="email"`, `input type="url"` and `textarea` Element Accessible Name Computation</h4>
+        <h4>`input type="text"`, `input type="password"`, `input type="number"`, `input type="search"`,` input type="tel"`, `input type="email"`, `input type="url"` and `textarea` Element Accessible Name Computation</h4>
         <ol>
           <li>
             If the control has an <a data-cite="wai-aria-1.2/#aria-label">`aria-label`</a> or an <a data-cite="wai-aria-1.2/#aria-labelledby">`aria-labelledby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings</a>.
@@ -5890,7 +5890,7 @@
         </ol>
       </section>
       <section>
-        <h4>`input type="text"`, `input type="password"`, `input type="search"`, `input type="tel"`, `input type="email"`, `input type="url"` and `textarea` Element Accessible Description Computation</h4>
+        <h4>`input type="text"`, `input type="password"`, `input type="number"`, `input type="search"`, `input type="tel"`, `input type="email"`, `input type="url"` and `textarea` Element Accessible Description Computation</h4>
         <ol>
           <li>
             If the element has an <a data-cite="wai-aria-1.2/#aria-describedby">`aria-describedby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-description">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings</a>.
