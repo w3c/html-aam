@@ -4292,8 +4292,8 @@
               <td class="ax">Use WAI-ARIA mapping</td>
               <td class="comments">
                 <p>An inert element or the elements of an inert element's subtree cannot receive keyboard focus, nor will they respond to pointer events.</p>
-                <p>A `dialog` element can escape inertness of its inert ancestor when the `dialog` is modal and rendered in the browser's 
-                  <a href="https://fullscreen.spec.whatwg.org/#top-layer">top layer</a>.</p>
+                <p>A `dialog` element can escape an inert subtree when the `dialog` is in the modal state, and rendered in the browser's 
+                  <a href="https://fullscreen.spec.whatwg.org/#top-layer">top layer</a>.  A modal dialog, or its <a>flat tree</a> descendants can also become <a>inert</a>.  See <a data-cite="interaction.html#modal-dialogs-and-inert-subtrees">Modal dialogs and inert subtrees</a></p>
               </td>
             </tr>
             <tr tabindex="-1" id="att-indeterminate">
