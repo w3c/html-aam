@@ -102,6 +102,13 @@
       }
     }
   </script>
+
+  <style>
+    .table-container {
+      max-width: 100%;
+      overflow: auto;
+    }
+  </style>
 </head>
 <body>
   <section id="abstract">
@@ -245,6 +252,7 @@
               <th><a href="https://msdn.microsoft.com/en-us/library/ms726297%28v=VS.85%29.aspx">UIA</a></th>
               <th><a href="https://gnome.pages.gitlab.gnome.org/atk/">ATK</a></th>
               <th><a href="https://developer.apple.com/reference/appkit/nsaccessibility">AX</a></th>
+              <!-- <th><a href="#accessible-name-and-description-computation">Naming Algorithm</a></th> -->
               <th>Comments</th>
             </tr>
           </thead>
@@ -261,6 +269,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-a-no-href">
@@ -275,6 +284,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-abbr">
@@ -316,6 +326,7 @@
                   <span class="type">AXRoleDescription:</span> `"group"`
                 </div>
               </td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-address">
@@ -348,6 +359,7 @@
                   <span class="type">AXRoleDescription:</span> `"group"`
                 </div>
               </td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-area">
@@ -362,6 +374,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-area-no-href">
@@ -369,23 +382,14 @@
                 <a data-cite="HTML">`area`</a>
                 <span class="el-context">(no <a data-cite="html/links.html#attr-hyperlink-href">`href`</a> attribute)</span>
               </th>
-              <td class="aria">No corresponding role</td>
-              <td class="ia2">
-                <div class="role">
-                  <span class="type">Roles:</span> `ROLE_SYSTEM_TEXT`; `IA2_ROLE_SHAPE`
-                </div>
+              <td class="aria">
+                <a class="core-mapping" href="#role-map-generic">`generic`</a> role
               </td>
-              <td class="uia">
-                <div class="ctrltype">
-                  <span class="type">Control Type:</span> `Text`
-                </div>
-              </td>
-              <td class="atk">
-                <div class="role">
-                  <span class="type">Role:</span> `ATK_ROLE_STATIC`
-                </div>
-              </td>
-              <td class="ax"><div class="general">Not mapped</div></td>
+              <td class="ia2"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-article">
@@ -399,6 +403,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-aside-ancestorbodymain">
@@ -412,6 +417,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-aside">
@@ -428,6 +434,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-audio">
@@ -473,6 +480,7 @@
                   <b>Note:</b> If the <a data-cite="html/media.html#attr-media-controls">`controls`</a> attribute is present, UI controls (e.g., play, volume) are exposed as descendants of an <a class="termref">accessible object</a> with a role of <a class="core-mapping" href="#role-map-toolbar">`toolbar`</a>, and mapped as appropriate for the type of control (e.g., <a class="core-mapping" href="#role-map-button">`button`</a> or <a class="core-mapping" href="#role-map-slider">`slider`</a>).
                 </div>
               </td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-autonomous-custom-element">
@@ -484,40 +492,23 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-b">
               <th>
                 <a data-cite="HTML">`b`</a>
               </th>
-              <td class="aria">No corresponding role</td>
-              <td class="ia2">
-                <div class="general">
-                  No accessible object. Exposed as "font-weight" text attribute on the text container. The value depends on the platform.
-                </div>
+              <td class="aria">
+                <a class="core-mapping" href="#role-map-generic">`generic`</a> role
               </td>
-              <td class="uia">
-                <div class="general">
-                  No accessible object. Exposed by the `FontWeight` attribute of the `TextRange` Control Pattern implemented on a parent accessible object.
-                </div>
+              <td class="ia2"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="comments">
+                Exposed by platform specific bold font weight text styles.
               </td>
-              <td class="atk">
-                <div class="general">
-                  No accessible object. Exposed as "font-weight" text attribute on the text container. The value depends on the platform.
-                </div>
-              </td>
-              <td class="ax">
-                <div class="role">
-                  <span class="type">AXRole:</span> `AXGroup`
-                </div>
-                <div class="subrole">
-                  <span class="type">AXSubrole:</span> `(nil)`
-                </div>
-                <div class="roledesc">
-                  <span class="type">AXRoleDescription:</span> `"group"`
-                </div>
-              </td>
-              <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-base">
               <th>
@@ -528,66 +519,38 @@
               <td class="uia"><div class="general">Not mapped</div></td>
               <td class="atk"><div class="general">Not mapped</div></td>
               <td class="ax"><div class="general">Not mapped</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-bdi">
               <th>
                 <a data-cite="HTML">`bdi`</a>
               </th>
-              <td class="aria">No corresponding role</td>
-              <td class="ia2">
-                <div class="general">
-                  No accessible object. May affect on "writing-mode" text attribute on its text container.
-                </div>
+              <td class="aria">
+                <a class="core-mapping" href="#role-map-generic">`generic`</a> role
               </td>
-              <td class="uia">
-                <div class="ctrltype">
-                  <span class="type">Control Type:</span> `Text`
-                </div>
+              <td class="ia2"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="comments">
+                IA2/ATK: May affect on "writing-mode" text attribute on its text container.
               </td>
-              <td class="atk">
-                <div class="general">
-                  No accessible object. May affect on "writing-mode" text attribute on its text container.
-                </div>
-              </td>
-              <td class="ax"></td>
-              <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-bdo">
               <th>
                 <a data-cite="HTML">`bdo`</a>
               </th>
-              <td class="aria">No corresponding role</td>
-              <td class="ia2">
-                <div class="role">
-                  <span class="type">Role:</span> `ROLE_SYSTEM_TEXT`
-                </div>
-                <div class="properties">
-                  <span class="type">Text attributes:</span> `writing-mode` on the text container
-                </div>
+              <td class="aria">
+                <a class="core-mapping" href="#role-map-generic">`generic`</a> role
               </td>
-              <td class="uia">
-                <div class="ctrltype">
-                  <span class="type">Control Type:</span> `Text`
-                </div>
+              <td class="ia2"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="comments">
+                IA2/ATK: Exposed as "writing-mode" text attribute on its text container.
               </td>
-              <td class="atk">
-                <div class="general">
-                  No accessible object. Exposed as "writing-mode" text attribute on its text container.
-                </div>
-              </td>
-              <td class="ax">
-                <div class="role">
-                  <span class="type">AXRole:</span> `AXGroup`
-                </div>
-                <div class="subrole">
-                  <span class="type">AXSubrole:</span> `(nil)`
-                </div>
-                <div class="roledesc">
-                  <span class="type">AXRoleDescription:</span> `"group"`
-                </div>
-              </td>
-              <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-blockquote">
               <th>
@@ -598,6 +561,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-body">
@@ -609,26 +573,17 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-br">
               <th><a data-cite="HTML">`br`</a></th>
               <td class="aria">No corresponding role</td>
-              <td class="ia2">
-                <div class="general">
-                  No accessible object. Exposed as '\n' character
-                  via `IAccessibleText2` interface on the text container.
-                </div>
-              </td>
+              <td class="ia2"><div class="general">Not mapped</div></td>
               <td class="uia"><div class="general">Not mapped</div></td>
-              <td class="atk">
-                <div class="general">
-                  No accessible object. Exposed as '\n' character
-                  via `AtkText` interface on the text container.
-                </div>
-              </td>
+              <td class="atk"><div class="general">Not mapped</div></td>
               <td class="ax"><div class="general">Not mapped</div></td>
-              <td class="comments"></td>
+              <td class="comments">May be exposed as '\n' character by the platform interface.</td>
             </tr>
             <tr tabindex="-1" id="el-button">
               <th>
@@ -681,6 +636,7 @@
                   <span class="type">AXRoleDescription:</span> `""`
                 </div>
               </td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-caption">
@@ -749,6 +705,7 @@
                   <span class="type">AXRoleDescription:</span> `"group"`
                 </div>
               </td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-code">
@@ -760,6 +717,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-col">
@@ -771,6 +729,7 @@
               <td class="uia"><div class="general">Not mapped</div></td>
               <td class="atk"><div class="general">Not mapped</div></td>
               <td class="ax"><div class="general">Not mapped</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-colgroup">
@@ -795,17 +754,21 @@
               </td>
               <td class="atk"><div class="general">Not mapped</div></td>
               <td class="ax"><div class="general">Not mapped</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-data">
               <th>
                 <a data-cite="HTML">`data`</a>
               </th>
-              <td class="aria">No corresponding role</td>
-              <td class="ia2"><div class="general">Not mapped</div></td>
-              <td class="uia"><div class="general">Not mapped</div></td>
-              <td class="atk"><div class="general">Not mapped</div></td>
-              <td class="ax"><div class="general">Not mapped</div></td>
+              <td class="aria">
+                <a class="core-mapping" href="#role-map-generic">`generic`</a> role
+              </td>
+              <td class="ia2"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-datalist">
@@ -834,6 +797,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-del">
@@ -847,6 +811,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-details">
@@ -870,6 +835,7 @@
                 </div>
               </td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-dfn">
@@ -883,6 +849,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-dialog">
@@ -911,6 +878,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-dl">
@@ -947,6 +915,7 @@
                   <span class="type">AXRoleDescription:</span> `"definition list"`
                 </div>
               </td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-dt">
@@ -960,6 +929,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-em">
@@ -973,6 +943,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-embed">
@@ -999,6 +970,7 @@
                 </div>
               </td>
               <td class="ax">Depends on format of data file</td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-fieldset">
@@ -1042,6 +1014,7 @@
                   </div>
                 </div>
               </td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-figcaption">
@@ -1082,6 +1055,7 @@
                   <span class="type">AXRoleDescription:</span> `"group"`
                 </div>
               </td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-figure">
@@ -1122,6 +1096,7 @@
                   <span class="type">AXRole:</span> Use WAI-ARIA mapping
                 </div>
               </td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-footer-ancestorbody">
@@ -1135,6 +1110,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-footer">
@@ -1196,6 +1172,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-h1-h6">
@@ -1209,6 +1186,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-head">
@@ -1218,6 +1196,7 @@
               <td class="uia"><div class="general">Not mapped</div></td>
               <td class="atk"><div class="general">Not mapped</div></td>
               <td class="ax"><div class="general">Not mapped</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-header-ancestorbody">
@@ -1231,6 +1210,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-header">
@@ -1267,6 +1247,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-hr">
@@ -1278,6 +1259,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-html">
@@ -1289,40 +1271,23 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-i">
               <th>
                 <a data-cite="HTML">`i`</a>
               </th>
-              <td class="aria">No corresponding role</td>
-              <td class="ia2">
-                <div class="general">No accessible object.</div>
-                <div class="properties">
-                  <span class="type">Text attributes:</span> `font-style:italic` on the text container
-                </div>
+              <td class="aria">
+                <a class="core-mapping" href="#role-map-generic">`generic`</a> role
               </td>
-              <td class="uia">
-                <div class="general">No accessible object. Exposed by the `IsItalic` attribute of the `TextRange` Control Pattern implemented on a parent accessible object.
-                </div>
+              <td class="ia2"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="comments">
+                Exposed by platform specific italic text styles.
               </td>
-              <td class="atk">
-                <div class="general">
-                  No accessible object. Exposed as "font-style:italic" text attribute on its text container.
-                </div>
-              </td>
-              <td class="ax">
-                <div class="role">
-                  <span class="type">AXRole:</span> `AXGroup`
-                </div>
-                <div class="subrole">
-                  <span class="type">AXSubrole:</span> `(nil)`
-                </div>
-                <div class="roledesc">
-                  <span class="type">AXRoleDescription:</span> `"group"`
-                </div>
-              </td>
-              <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-iframe">
               <th>
@@ -1355,6 +1320,7 @@
                   <span class="type">AXRoleDescription:</span> `"html content"`
                 </div>
               </td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-img">
@@ -1366,6 +1332,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-img-empty-alt">
@@ -1383,6 +1350,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-input-button">
@@ -1397,6 +1365,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-input-checkbox">
@@ -1415,6 +1384,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-input-color">
@@ -1502,9 +1472,10 @@
                     <span class="type">AXRoleDescription:</span> `"date field"`
                   </div>
                 </td>
+                <!-- <td class="naming"></td> -->
                 <td class="comments"></td>
             </tr>
-           <!-- <tr tabindex="-1" id="el-input-dateandtime">
+            <tr tabindex="-1" id="el-input-dateandtime">
                 <th><a data-cite="html">`input`</a> <span class="el-context">(<a data-cite="html/input.html#attr-input-type">`type`</a> attribute in the <a href="https://www.w3.org/TR/html/sec-forms.html#local-date-and-time-state-typedatetimelocal">Local Date and Time</a> state)</span></th>
                 <td class="aria">No corresponding role</td>
                 <td class="ia2">
@@ -1534,8 +1505,9 @@
                         <span class="type">AXRoleDescription:</span> <code>"text field"</code>
                     </div>
                 </td>
+                <td class="naming"></td>
                 <td class="comments"></td>
-            </tr>-->
+            </tr>
             <tr tabindex="-1" id="el-input-email">
               <th>
                 <a data-cite="html">`input`</a> <span class="el-context">(<a data-cite="html/input.html#attr-input-type">`type`</a> attribute in the
@@ -1554,6 +1526,7 @@
               </td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-input-file">
@@ -1609,6 +1582,7 @@
                   <span class="type">AXRoleDescription:</span> `file upload button`
                 </div>
               </td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-input-hidden">
@@ -1622,6 +1596,7 @@
               <td class="uia"><div class="general">Not mapped</div></td>
               <td class="atk"><div class="general">Not mapped</div></td>
               <td class="ax"><div class="general">Not mapped</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-input-image">
@@ -1635,6 +1610,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-input-datetime-local">
@@ -1670,6 +1646,7 @@
                   <span class="type">AXRoleDescription:</span> `"text field"`
                 </div>
               </td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-input-month">
@@ -1705,6 +1682,7 @@
                   <span class="type">AXRoleDescription:</span> `"text field"`
                 </div>
               </td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-input-number">
@@ -1751,6 +1729,7 @@
                 </div>
               </td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-input-password">
@@ -1794,6 +1773,7 @@
                   <span class="type">AXRoleDescription:</span> `"secure text field"`
                 </div>
               </td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-input-radio">
@@ -1814,6 +1794,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-input-range">
@@ -1829,6 +1810,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-input-reset">
@@ -1844,6 +1826,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-input-search">
@@ -1859,6 +1842,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-input-submit">
@@ -1876,6 +1860,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-input-tel">
@@ -1904,6 +1889,7 @@
               </td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-input-text">
@@ -1920,6 +1906,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-input-textetc-autocomplete">
@@ -1954,6 +1941,7 @@
               </td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-input-time">
@@ -1997,6 +1985,7 @@
                   <span class="type">AXRoleDescription:</span> `"time field"`
                 </div>
               </td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-input-url">
@@ -2018,6 +2007,7 @@
               </td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-input-week">
@@ -2058,6 +2048,7 @@
                   <span class="type">AXRoleDescription:</span> `"text field"`
                 </div>
               </td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-ins">
@@ -2071,6 +2062,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-kbd">
@@ -2103,6 +2095,7 @@
                   <span class="type">AXRoleDescription:</span> `"group"`
                 </div>
               </td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-label">
@@ -2146,6 +2139,7 @@
                   <span class="type">AXRoleDescription:</span> `"group"`
                 </div>
               </td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
               <tr tabindex="-1" id="el-legend">
@@ -2189,6 +2183,7 @@
                   <span class="type">AXRoleDescription:</span> `"group"`
                 </div>
               </td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-li">
@@ -2218,6 +2213,7 @@
               <td class="uia"><div class="general">Not mapped</div></td>
               <td class="atk"><div class="general">Not mapped</div></td>
               <td class="ax"><div class="general">Not mapped</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-main">
@@ -2227,6 +2223,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-map">
@@ -2258,6 +2255,7 @@
                   not mapped if not associated with an `img`.
                 </div>
               </td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-mark">
@@ -2267,6 +2265,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-math">
@@ -2307,6 +2306,7 @@
               <td class="uia"><div class="general">Not mapped</div></td>
               <td class="atk"><div class="general">Not mapped</div></td>
               <td class="ax"><div class="general">Not mapped</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-meter">
@@ -2318,6 +2318,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-nav">
@@ -2327,6 +2328,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-noscript">
@@ -2336,6 +2338,7 @@
               <td class="uia"><div class="general">Not mapped</div></td>
               <td class="atk"><div class="general">Not mapped</div></td>
               <td class="ax"><div class="general">Not mapped</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-object">
@@ -2364,6 +2367,7 @@
                 </div>
               </td>
               <td class="ax">Depends on format of data file.</td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-ol">
@@ -2373,6 +2377,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-optgroup">
@@ -2382,6 +2387,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-option">
@@ -2395,6 +2401,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-output">
@@ -2404,6 +2411,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-p">
@@ -2415,6 +2423,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-param">
@@ -2433,47 +2442,19 @@
               <td class="uia"><div class="general">Not mapped</div></td>
               <td class="atk"><div class="general">Not mapped</div></td>
               <td class="ax"><div class="general">Not mapped</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-pre">
               <th><a data-cite="html">`pre`</a></th>
-              <td class="aria">No corresponding role</td>
-              <td class="ia2">
-                <div class="role">
-                  <span class="type">Roles:</span> `ROLE_SYSTEM_GROUPING`; `IA2_ROLE_SECTION`
-                </div>
-                <div class="general">
-                  Styles used are mapped to text attributes on the parent accessible object.
-                </div>
+              <td class="aria">
+                <a class="core-mapping" href="#role-map-generic">`generic`</a> role
               </td>
-              <td class="uia">
-                <div class="ctrltype">
-                  <span class="type">Control Type:</span> `Text`
-                </div>
-                <div class="ctrltype">
-                  <span class="type">Localized Control Type:</span> `"pre"`
-                </div>
-              </td>
-              <td class="atk">
-                <div class="role">
-                  <span class="type">Role:</span>
-                  `ATK_ROLE_SECTION`
-                </div>
-                <div class="general">
-                  Styles used are mapped to text attributes on the accessible object.
-                </div>
-              </td>
-              <td class="ax">
-                <div class="role">
-                  <span class="type">AXRole:</span> `AXGroup`
-                </div>
-                <div class="subrole">
-                  <span class="type">AXSubrole:</span> `(nil)`
-                </div>
-                <div class="roledesc">
-                  <span class="type">AXRoleDescription:</span> `"group"`
-                </div>
-              </td>
+              <td class="ia2"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-progress">
@@ -2487,45 +2468,21 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-q">
               <th><a data-cite="HTML">`q`</a></th>
-              <td class="aria">No corresponding role</td>
-              <td class="ia2">
-                <div class="role">
-                  <span class="type">Roles:</span> `ROLE_SYSTEM_TEXT`; `IA2_ROLE_TEXT_FRAME`
-                </div>
-                <div class="children">
-                  <span class="type">Children:</span> `ROLE_SYSTEM_TEXT` wrapped by quote marks using `ROLE_SYSTEM_STATICTEXT`
-                </div>
+              <td class="aria">
+                <a class="core-mapping" href="#role-map-generic">`generic`</a> role
               </td>
-              <td class="uia">
-                <div class="ctrltype">
-                  <span class="type">Control Type:</span> `Text`
-                </div>
-                <div class="ctrltype">
-                  <span class="type">Localized Control Type:</span> `"q"`
-                </div>
+              <td class="ia2"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="comments">
+                `::before` and `::after` CSS pseudo content is used by platforms to render the element's quotation marks.
               </td>
-              <td class="atk">
-                <div class="role">
-                  <span class="type">Role:</span>
-                  `ATK_ROLE_STATIC`
-                </div>
-              </td>
-              <td class="ax">
-                <div class="role">
-                  <span class="type">AXRole:</span> `AXGroup`
-                </div>
-                <div class="subrole">
-                  <span class="type">AXSubrole:</span> `(nil)`
-                </div>
-                <div class="roledesc">
-                  <span class="type">AXRoleDescription:</span> `"group"`
-                </div>
-              </td>
-              <td class="comments"></td>
             </tr>
             <!--
               *** Marked as obsolete in HTML. ***
@@ -2585,6 +2542,7 @@
                 </div>
               </td>
               <td class="ax">Not mapped</td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-rt">
@@ -2617,6 +2575,7 @@
                   <span class="type">AXRoleDescription:</span> `"group"`
                 </div>
               </td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <!--
@@ -2689,6 +2648,7 @@
                   <span class="type">AXRoleDescription:</span> `"group"`
                 </div>
               </td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-s">
@@ -2720,6 +2680,7 @@
                   <span class="type">AXRoleDescription:</span> `"group"`
                 </div>
               </td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-samp">
@@ -2729,6 +2690,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-script">
@@ -2740,6 +2702,7 @@
               <td class="uia"><div class="general">Not mapped</div></td>
               <td class="atk"><div class="general">Not mapped</div></td>
               <td class="ax"><div class="general">Not mapped</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-section">
@@ -2752,6 +2715,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-select-listbox">
@@ -2767,6 +2731,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-select-combobox">
@@ -2782,6 +2747,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-slot">
@@ -2791,39 +2757,21 @@
               <td class="uia"><div class="general">Not mapped</div></td>
               <td class="atk"><div class="general">Not mapped</div></td>
               <td class="ax"><div class="general">Not mapped</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-small">
               <th><a data-cite="HTML">`small`</a></th>
-              <td class="aria">No corresponding role</td>
-              <td class="ia2">
-                <div class="general">No accessible object.</div>
-                <div class="properties">
-                  <span class="type">Text attributes:</span> `font-size` on the text container
-                </div>
+              <td class="aria">
+                <a class="core-mapping" href="#role-map-generic">`generic`</a> role
               </td>
-              <td class="uia">
-                <div class="general">No accessible object. Exposed by `FontSize` attribute of the `TextRange` Control Pattern implemented on a parent accessible object.
-                </div>
+              <td class="ia2"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="comments">
+                Exposed by platform specific font size styles.
               </td>
-              <td class="atk">
-                <div class="general">
-                  No accessible object. Exposed as "font-size"
-                  text attribute on the text container.
-                </div>
-              </td>
-              <td class="ax">
-                <div class="role">
-                  <span class="type">AXRole:</span> `AXGroup`
-                </div>
-                <div class="subrole">
-                  <span class="type">AXSubrole:</span> `(nil)`
-                </div>
-                <div class="roledesc">
-                  <span class="type">AXRoleDescription:</span> `"group"`
-                </div>
-              </td>
-              <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-source">
               <th><a data-cite="HTML">`source`</a></th>
@@ -2832,6 +2780,7 @@
               <td class="uia"><div class="general">Not mapped</div></td>
               <td class="atk"><div class="general">Not mapped</div></td>
               <td class="ax"><div class="general">Not mapped</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-span">
@@ -2843,6 +2792,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-strong">
@@ -2854,6 +2804,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-style">
@@ -2880,6 +2831,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-summary">
@@ -2926,6 +2878,7 @@
                   <span class="type">AXRoleDescription:</span> `"disclosure triangle"`
                 </div>
               </td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-sup">
@@ -2937,6 +2890,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-svg">
@@ -2960,6 +2914,7 @@
               <td class="uia">Use WAI-ARIA mapping</td>
               <td class="atk">Use WAI-ARIA mapping</td>
               <td class="ax">Use WAI-ARIA mapping</td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-tbody">
@@ -2969,6 +2924,7 @@
               <td class="uia">Use WAI-ARIA mapping</td>
               <td class="atk">Use WAI-ARIA mapping</td>
               <td class="ax">Use WAI-ARIA mapping</td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-td">
@@ -2982,6 +2938,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-td-gridcell">
@@ -2996,6 +2953,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-template">
@@ -3005,6 +2963,7 @@
               <td class="uia"><div class="general">Not mapped</div></td>
               <td class="atk"><div class="general">Not mapped</div></td>
               <td class="ax"><div class="general">Not mapped</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-textarea">
@@ -3017,6 +2976,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-tfoot">
@@ -3026,6 +2986,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-th">
@@ -3045,6 +3006,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-th-gridcell">
@@ -3065,6 +3027,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-th-columnheader">
@@ -3077,6 +3040,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-th-rowheader">
@@ -3089,6 +3053,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-thead">
@@ -3098,6 +3063,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-time">
@@ -3109,6 +3075,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-title">
@@ -3127,6 +3094,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-track">
@@ -3136,26 +3104,21 @@
               <td class="uia"><div class="general">Not mapped</div></td>
               <td class="atk"><div class="general">Not mapped</div></td>
               <td class="ax"><div class="general">Not mapped</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-u">
               <th><a data-cite="HTML">`u`</a></th>
-              <td class="aria">No corresponding role</td>
-              <td class="ia2">
-                <div class="general">No accessible object. Exposed as "text-underline-style:solid" text attribute on its text container.
-                </div>
+              <td class="aria">
+                <a class="core-mapping" href="#role-map-generic">`generic`</a> role
               </td>
-              <td class="uia">
-                <div class="general">No accessible object. Exposed by `UnderlineStyle` attribute of the `TextRange` Control Pattern implemented on a parent accessible object.
-                </div>
+              <td class="ia2"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="comments">
+                Exposed by platform specific underline text styles.
               </td>
-              <td class="atk">
-                <div class="general">No accessible object. Exposed as
-                  "text-underline-style:solid" text attribute on its text container.
-                </div>
-              </td>
-              <td class="ax">Not mapped</td>
-              <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-ul">
               <th><a data-cite="HTML">`ul`</a></th>
@@ -3164,6 +3127,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-var">
@@ -3190,6 +3154,7 @@
                   <span class="type">AXRoleDescription:</span> `"group"`
                 </div>
               </td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-video">
@@ -3229,6 +3194,7 @@
                   <b>Note:</b> If the <a data-cite="HTML/media.html#attr-media-controls">`controls`</a> attribute is present, UI controls (e.g., play, volume) are exposed as descendants of an <a class="termref">accessible object</a> with a role of <a class="core-mapping" href="#role-map-toolbar">`toolbar`</a>, and mapped as appropriate for the type of control (e.g., <a class="core-mapping" href="#role-map-button">`button`</a> or <a class="core-mapping" href="#role-map-slider">`slider`</a>).
                 </div>
               </td>
+              <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-wbr">
@@ -3256,6 +3222,7 @@
                     <span class="type">AXRoleDescription:</span> `"group"`
                   </div>
                 </td>
+                <!-- <td class="naming"></td> -->
                 <td class="comments"></td>
             </tr>
           </tbody>
@@ -3584,17 +3551,9 @@
               <td class="aria">
                 <a class="core-mapping" href="#ariaCheckedTrue">`aria-checked`</a> (state)="true"
               </td>
-              <td class="ia2">
-                <div class="states">
-                  <span class="type">States:</span> `STATE_SYSTEM_CHECKED`
-                </div>
-              </td>
-              <td class="uia">Expose as `ToggleState` property in `Toggle` control pattern</td>
-              <td class="atk">
-                <div class="states">
-                  <span class="type">States:</span> `ATK_STATE_CHECKED`
-                </div>
-              </td>
+              <td class="ia2"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="uia">Property: `Toggle.ToggleState: On (1)`</td>
+              <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax">`AXValue: 1`</td>
               <td class="comments">
                 If the element includes both the `checked` attribute and the `aria-checked` attribute with a valid value, User Agents MUST expose only the `checked` attribute value.
@@ -3608,11 +3567,14 @@
               <td class="aria">
                 <a class="core-mapping" href="#ariaCheckedFalse">`aria-checked`</a> (state)="false"
               </td>
-              <td class="ia2">Not mapped</td>
-              <td class="uia">Expose as `ToggleState` property in `Toggle` control pattern.</td>
-              <td class="atk">Not mapped</td>
+              <td class="ia2"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="uia">Property: `Toggle.ToggleState: Off (0)`</td>
+              <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax">`AXValue: 0`</td>
-              <td class="comments"></td>
+              <td class="comments">
+                An `input` element without a `checked` attribute has an implicit "false" state. User Agents MUST ignore an `aria-checked` attribute
+                which conflicts with the native element's implicit checked state.
+              </td>
             </tr>
             <tr tabindex="-1" id="att-cite">
               <th>`cite`</th>
