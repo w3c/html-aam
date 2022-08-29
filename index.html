@@ -103,12 +103,12 @@
     }
   </script>
 
-  <style>
+<!--   <style>
     .table-container {
       max-width: 100%;
       overflow: auto;
     }
-  </style>
+  </style> -->
 </head>
 <body>
   <section id="abstract">
@@ -331,34 +331,13 @@
             </tr>
             <tr tabindex="-1" id="el-address">
               <th><a data-cite="HTML">`address`</a></th>
-              <td class="aria">No corresponding role</td>
-              <td class="ia2">
-                <div class="role">
-                  <span class="type">Roles:</span>
-                  `ROLE_SYSTEM_GROUPING`; `IA2_ROLE_SECTION`
-                </div>
+              <td class="aria">
+                <a class="core-mapping" href="#role-map-group">`group`</a> role
               </td>
-              <td class="uia">
-                <div class="ctrltype">
-                  <span class="type">Control Type:</span> `Group`
-                </div>
-              </td>
-              <td class="atk">
-                <div class="role">
-                  <span class="type">Role:</span> `ATK_ROLE_SECTION`
-                </div>
-              </td>
-              <td class="ax">
-                <div class="role">
-                  <span class="type">AXRole:</span> `AXGroup`
-                </div>
-                <div class="subrole">
-                  <span class="type">AXSubrole:</span> `(nil)`
-                </div>
-                <div class="roledesc">
-                  <span class="type">AXRoleDescription:</span> `"group"`
-                </div>
-              </td>
+              <td class="ia2"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
               <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
@@ -533,6 +512,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments">
                 IA2/ATK: May affect on "writing-mode" text attribute on its text container.
               </td>
@@ -548,6 +528,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments">
                 IA2/ATK: Exposed as "writing-mode" text attribute on its text container.
               </td>
@@ -583,6 +564,7 @@
               <td class="uia"><div class="general">Not mapped</div></td>
               <td class="atk"><div class="general">Not mapped</div></td>
               <td class="ax"><div class="general">Not mapped</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments">May be exposed as '\n' character by the platform interface.</td>
             </tr>
             <tr tabindex="-1" id="el-button">
@@ -596,6 +578,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments">
                 A `button`'s mapping will change if the
                 <a class="core-mapping" href="#role-map-button-pressed">`aria-pressed`</a> or
@@ -672,6 +655,7 @@
                   `ATK_RELATION_LABEL_FOR` with parent <a href="#el-table">`table`</a>
                 </div>
               </td>
+              <!-- <td class="naming"></td> -->
               <td class="comments">If a descendant of a `table`, the first instance of a `caption` element will provide the `table` its accessible name.</td>
             </tr>
             <tr tabindex="-1" id="el-cite">
@@ -782,6 +766,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments">
                 If `datalist` is not linked to a proper `input` element, then `datalist` element is not mapped to accessibility APIs.
               </td>
@@ -863,6 +848,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments">
                 See also the `dialog` element's <a href="#att-open-dialog">`open`</a> attribute.
               </td>
@@ -1137,8 +1123,11 @@
                 </div>
               </td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
-              <td class="comments">If a `footer` is not scoped to the `body` element,
-                do not expose the element as a `contentinfo` landmark.</td>
+              <!-- <td class="naming"></td> -->
+              <td class="comments">
+                If a `footer` is not scoped to the `body` element,
+                do not expose the element as a `contentinfo` landmark.
+              </td>
             </tr>
             <tr tabindex="-1" id="el-form">
               <th>
@@ -1149,7 +1138,6 @@
               </td>
               <td class="ia2"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
-
               <td class="atk">
                 <div class="general">Use WAI-ARIA mapping</div>
                 <div>If a `form` has no <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a>:</div>
@@ -1158,6 +1146,7 @@
                 </div>
               </td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments">
                 If a <a class="core-mapping" href="#role-map-form-nameless">`form` has no accessible name</a>,
                 do not expose the element as a landmark.
@@ -1235,8 +1224,11 @@
                 </div>
               </td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
-              <td class="comments">If a `header` is not scoped to the `body` element,
-                do not expose the element as a `banner` landmark.</td>
+              <!-- <td class="naming"></td> -->
+              <td class="comments">
+                If a `header` is not scoped to the `body` element,
+                do not expose the element as a `banner` landmark.
+              </td>
             </tr>
             <tr tabindex="-1" id="el-hgroup">
               <th>
@@ -1285,6 +1277,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments">
                 Exposed by platform specific italic text styles.
               </td>
@@ -1426,6 +1419,7 @@
                 <div class="subrole"><span class="type">AXSubrole:</span> `(nil)`</div>
                 <div class="roledesc"><span class="type">AXRoleDescription:</span> `"color well"`</div>
               </td>
+              <!-- <td class="naming"></td> -->
               <td class="comments">
                 <div class="general">
                   If implemented as a color picker, any UI controls presented for selecting a color are exposed in the <a class="termref">accessibility tree</a>, associated with the `input` element, and mapped as appropriate for the type of control (e.g. button or slider).
@@ -1505,7 +1499,7 @@
                         <span class="type">AXRoleDescription:</span> <code>"text field"</code>
                     </div>
                 </td>
-                <td class="naming"></td>
+                <!-- <td class="naming"></td> -->
                 <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-input-email">
@@ -2201,6 +2195,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments">
                 If `li` element is not a child of <a data-cite="html">`ol`</a> , <a data-cite="html">`menu`</a> or <a data-cite="html">`ul`</a>
                 then expose the `li` element with a `generic` role.
@@ -2277,6 +2272,7 @@
               <td class="uia">See comments</td>
               <td class="atk">See comments</td>
               <td class="ax">See comments</td>
+              <!-- <td class="naming"></td> -->
               <td class="comments">
                 Mapping for `math` is defined by <a href="https://w3c.github.io/mathml-aam/">MathML AAM 1.0</a>.
             </tr>
@@ -2289,9 +2285,12 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments">
                 <div class="general">
-                  The <a data-cite="HTML">`menu`</a> element is a semantic alternative to the <a href="#el-ul">`ul`</a> element. It has no implemented mappings or behavior that reflect the semantics of the ARIA <a class="core-mapping" href="#role-map-menu">`menu`</a> role.
+                  The <a data-cite="HTML">`menu`</a> element is a semantic alternative to the <a href="#el-ul">`ul`</a> element. 
+                  It has no implemented mappings or behavior that reflect the semantics of the ARIA 
+                  <a class="core-mapping" href="#role-map-menu">`menu`</a> role.
                 </div>
                 <div class="general">
                   Note obsolete <a data-cite="html/obsolete.html#menuitem">`menuitem` element</a>
@@ -2433,6 +2432,7 @@
               <td class="uia"><div class="general">Not mapped</div></td>
               <td class="atk"><div class="general">Not mapped</div></td>
               <td class="ax"><div class="general">Not mapped</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments">`param` is obsolete in HTML</td>
             </tr>
             <tr tabindex="-1" id="el-picture">
@@ -2480,6 +2480,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments">
                 `::before` and `::after` CSS pseudo content is used by platforms to render the element's quotation marks.
               </td>
@@ -2518,6 +2519,7 @@
                     <span class="type">AXRoleDescription:</span> `"group"`
                   </div>
                 </td>
+                <td class="naming"></td>
                 <td class="comments"><a href="https://html.spec.whatwg.org/#rb">Marked as Obsolete in HTML</a>.</td>
               </tr>
             -->
@@ -2612,6 +2614,7 @@
                     <span class="type">AXRoleDescription:</span> `"group"`
                   </div>
                 </td>
+                <td class="naming"></td>
                 <td class="comments">
                   <a href="https://html.spec.whatwg.org/#rtc">Marked as Obsolete in HTML</a>.</td>
               </tr>
@@ -2769,6 +2772,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments">
                 Exposed by platform specific font size styles.
               </td>
@@ -2814,6 +2818,7 @@
               <td class="uia"><div class="general">Not mapped</div></td>
               <td class="atk"><div class="general">Not mapped</div></td>
               <td class="ax"><div class="general">Not mapped</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments">
                 <div class="general">
                   <b>Note:</b> There are instances where CSS properties can affect what is exposed by accessibility APIs.
@@ -2902,6 +2907,7 @@
               <td class="uia">See comments</td>
               <td class="atk">See comments</td>
               <td class="ax">See comments</td>
+              <!-- <td class="naming"></td> -->
               <td class="comments">
                 Mapping for `svg` is defined by [[[svg-aam-1.0]]].
                 See also <a href="https://w3c.github.io/graphics-aam/#mapping_role_table">Graphics Accessibility API Role Mappings</a>
@@ -3085,6 +3091,7 @@
               <td class="uia"><div class="general">Not mapped</div></td>
               <td class="atk"><div class="general">Not mapped</div></td>
               <td class="ax"><div class="general">Not mapped</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments">A `title` element provides the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> for its document.</td>
             </tr>
             <tr tabindex="-1" id="el-tr">
@@ -3116,6 +3123,7 @@
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
+              <!-- <td class="naming"></td> -->
               <td class="comments">
                 Exposed by platform specific underline text styles.
               </td>
@@ -5871,6 +5879,9 @@
           <li>
             If the control has an <a data-cite="wai-aria-1.2/#aria-label">`aria-label`</a> or an <a data-cite="wai-aria-1.2/#aria-labelledby">`aria-labelledby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings</a>.
           </li>
+          <li>
+            Otherwise use the associated `label` element(s) <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a>(s) - if more than one `label` is associated; concatenate by DOM order, delimited by spaces.
+          </li>
           <li>Otherwise use the `value` attribute.</li>
           <li>
             For `input type=submit`: If steps 1 to 2 do not yield a usable text string, the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> is a localized string of the word &quot;submit&quot;.
@@ -5910,7 +5921,11 @@
           <li>
             If the control has an <a data-cite="wai-aria-1.2/#aria-label">`aria-label`</a> or an <a data-cite="wai-aria-1.2/#aria-labelledby">`aria-labelledby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings</a>.
           </li>
+          <li>
+            Otherwise use the associated `label` element(s) <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a>(s) - if more than one `label` is associated; concatenate by DOM order, delimited by spaces.
+          </li>
           <li>Otherwise use `alt` attribute.</li>
+          <!-- NOTE: use of valid attribute is invalid on input type=image, but it DOES contribute to the name if used -->
           <!-- <li>Otherwise use `value` attribute.</li> -->
           <li>Otherwise use `title` attribute.</li>
           <li>
@@ -5943,6 +5958,9 @@
         <ol>
           <li>
             If the `button` element has an <a data-cite="wai-aria-1.2/#aria-label">`aria-label`</a> or an <a data-cite="wai-aria-1.2/#aria-labelledby">`aria-labelledby`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings</a>.
+          </li>
+          <li>
+            Otherwise use the associated `label` element(s) <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a>(s) - if more than one `label` is associated; concatenate by DOM order, delimited by spaces.
           </li>
           <li>Otherwise use the `button` element subtree.</li>
           <li>Otherwise use `title` attribute.</li>
@@ -6375,6 +6393,7 @@
       <section>
         <h4>Substantive changes since moving to the <a href="https://www.w3.org/WAI/ARIA/">Accessible Rich Internet Applications Working Group</a> (03-Nov-2019)</h4>
         <ul>
+          <li>19-Jul-2022: Update `address` element to be mapped to `role=group`. See <a href="https://github.com/w3c/html-aam/pull/420">GitHub PR 420</a></li>
           <li>03-Apr-2022: Update `aside` mappings based on its nesting context. See <a href="https://github.com/w3c/html-aam/pull/350">GitHub PR 350</a>.</li>
           <li>06-Mar-2022: Update the following elements to map to the `generic` role: `a no href`, `footer` not scoped to `body`, `header` not scoped to `body`, `samp`, `span`. See <a href="https://github.com/w3c/html-aam/pull/364">GitHub PR 364</a>.</li>
           <li>06-Feb-2022: Update `mark` to point to Core AAM mapping for the role. See <a href="https://github.com/w3c/html-aam/issues/316">GitHub Issue 316</a>.</li>
