@@ -6108,9 +6108,24 @@
         <li>
           Otherwise, if the <a data-cite="accname-1.2/#dfn-accessible-description">accessible description</a> is still empty, then:
           <ul>
-            <li>If a `table` element, has a <a href="https://dom.spec.whatwg.org/#concept-tree-child">child</a> that is a `caption` element and it was not used as the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a>, then use the subtree of the first such element.</li>
-            <li>If a `summary` element, use the element's subtree if it was not used as the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a>.</li>
-            <li>If an `input` element whose type attribute is the `button`, `submit` or `reset` state has a `value` attribute and it was not used as the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a>, then use the content of the `value` attribute.</li>
+            <li>
+              If a `table` element:
+              <ul>
+                <li>has a <a href="https://dom.spec.whatwg.org/#concept-tree-child">child</a> `caption` element, use the subtree of the first `caption` element if it was not used as the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a>.</li>
+              </ul>
+            </li>
+            <li>
+              If a `summary` element:
+              <ul>
+                <li>use the element's subtree if it was not used as the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a>.</li>
+              </ul>
+            </li>
+            <li>
+              If an `input` element whose type attribute is the `button`, `submit` or `reset` state:
+              <ul>
+                <li>if the element has a `value` attribute, then use the content of the attribute if it was not used as the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a>.</li>
+              </ul>
+            </li>
           </ul>
         </li> 
         <li>
