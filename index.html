@@ -6106,30 +6106,21 @@
           If the element has an <a data-cite="wai-aria-1.2/#aria-describedby">`aria-describedby`</a> or <a data-cite="wai-aria-1.2/#aria-description">`aria-description`</a> attribute the <a data-cite="accname-1.2/#dfn-accessible-description">accessible description</a> is to be calculated using the algorithm defined in <a href="" class="accname">Accessible Name and Description: Computation and API Mappings</a>.
         </li>
         <li>
-          Otherwise, if the <a data-cite="accname-1.2/#dfn-accessible-description">accessible description</a> is still empty, then:
+          Otherwise, if the <a data-cite="accname-1.2/#dfn-accessible-description">accessible description</a> is still empty, and the element is:
           <ul>
             <li>
-              If a `table` element:
-              <ul>
-                <li>has a <a href="https://dom.spec.whatwg.org/#concept-tree-child">child</a> `caption` element, use the subtree of the first `caption` element if it was not used as the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a>.</li>
-              </ul>
+              a `table` element which has a <a href="https://dom.spec.whatwg.org/#concept-tree-child">child</a> `caption` element, use the subtree of the first `caption` element if it was not used as the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a>.
             </li>
             <li>
-              If a `summary` element:
-              <ul>
-                <li>use the element's subtree if it was not used as the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a>.</li>
-              </ul>
+              `summary` element, use the element's subtree if it was not used as the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a>.
             </li>
             <li>
-              If an `input` element whose type attribute is the `button`, `submit` or `reset` state:
-              <ul>
-                <li>if the element has a `value` attribute, then use the content of the attribute if it was not used as the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a>.</li>
-              </ul>
+              an `input` element whose `type` attribute is the `button`, `submit` or `reset` state, and it has a `value` attribute, then use the content of the attribute if it was not used as the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a>.
             </li>
           </ul>
         </li> 
         <li>
-          Otherwise, use the `title` attribute if it was not used as the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> for the element.
+          Otherwise, use the content of the `title` attribute if it was not used as the <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a> for the element.
         </li>
         <li>
           If none of the above yield a usable text string there is no <a data-cite="accname-1.2/#dfn-accessible-description">accessible description</a>.
