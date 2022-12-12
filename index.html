@@ -2101,7 +2101,7 @@
                 </div>
                 <div class="relations">
                   <span class="type">Relations:</span> 
-                  `IA2_RELATION_LABEL_FOR` with a <a href="#el-label">`label`</a> and referred <a data-cite="html/forms.html#category-label">labelable element</a>
+                  `IA2_RELATION_LABEL_FOR` with a <a data-cite="html/forms.html#category-label">labelable element</a>
                   that is child to the `label` or referred to by the `label` element's <a href="#att-for-label">`for`</a> attribute. 
                   The associated labelable element has `IA2_RELATION_LABELLED_BY` pointing to the `label`.
                 </div>
@@ -2112,13 +2112,15 @@
                 </div>
                 <div class="properties">
                   <span class="type">Other properties:</span>
-                  When the `label` element contains a <a data-cite="html/forms.html#category-label">labelable element</a>, the `LabeledBy` property for 
-                  the element points to the UIA element for the `label` element.
-                  <p>
+                  <div>
+                    When the `label` element contains a <a data-cite="html/forms.html#category-label">labelable element</a>, the `LabeledBy` property for 
+                    the element points to the UIA element for the `label` element.
+                  </div>
+                  <div>
                     When the `label` element has a <a href="#att-for-label">`for`</a> attribute referencing a  
                     <a data-cite="html/forms.html#category-label">labelable element</a>, the `LabeledBy` property for the referenced element points to 
                     the UIA element for the `label` element.
-                  </p>
+                  </div>
                 </div>
               </td>
               <td class="atk">
@@ -2126,9 +2128,10 @@
                   <span class="type">Role:</span> `ATK_ROLE_LABEL`
                 </div>
                 <div class="relations">
-                  <span class="type">Relations: </span>
-                  `ATK_RELATION_LABEL_FOR` for a child form element or form element referred by <a href="#att-for-label">`for`</a> attribute. 
-                  Note, related form element provides `ATK_RELATION_LABELLED_BY` pointing to the label.
+                  <span class="type">Relations:</span>
+                  `ATK_RELATION_LABEL_FOR` for a child <a data-cite="html/forms.html#category-label">labelable element</a> or 
+                  labelable element referred by <a href="#att-for-label">`for`</a> attribute. 
+                  Note, related labelable element provides `ATK_RELATION_LABELLED_BY` pointing to the `label`.
                 </div>
               </td>
               <td class="ax">
