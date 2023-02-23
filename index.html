@@ -402,8 +402,7 @@
             <tr tabindex="-1" id="el-aside">
               <th>
                 <a data-cite="HTML">`aside`</a>
-                (scoped to a <a data-cite="HTML/dom.html#sectioning-content">sectioning content</a> element,
-                or a <a data-cite="HTML/sections.html#sectioning-root">sectioning root</a> element other than `body`)
+                (scoped to a <a data-cite="HTML/dom.html#sectioning-content">sectioning content</a> element)
               </th>
               <td class="aria">
                 <a class="core-mapping" href="#role-map-complementary">`complementary`</a> role if the <a>`aside`</a> element has an <a data-cite="accname-1.2/#dfn-accessible-name">accessible name</a>.
@@ -1102,8 +1101,7 @@
             <tr tabindex="-1" id="el-footer">
               <th>
                 <a data-cite="HTML">`footer`</a> (scoped to the <a data-cite="HTML">`main`</a> element,
-                a <a data-cite="HTML/dom.html#sectioning-content">sectioning content</a> element,
-                or a <a data-cite="HTML/sections.html#sectioning-root">sectioning root</a> element other than <a data-cite="HTML">`body`</a>)
+                a <a data-cite="HTML/dom.html#sectioning-content">sectioning content</a> element)
               </th>
               <td class="aria">
                 <a class="core-mapping" href="#role-map-generic">`generic`</a> role
@@ -1204,7 +1202,7 @@
             </tr>
             <tr tabindex="-1" id="el-header">
               <th>
-                <a data-cite="html">`header`</a> (scoped to the <a data-cite="html">`main`</a> element, a <a data-cite="html/dom.html#sectioning-content">sectioning content</a> element, or a <a data-cite="html/sections.html#sectioning-root">sectioning root</a> element other than <a data-cite="html">`body`</a>)
+                <a data-cite="html">`header`</a> (scoped to the <a data-cite="html">`main`</a> element, or a <a data-cite="html/dom.html#sectioning-content">sectioning content</a> element)
               </th>
               <td class="aria">
                 <a class="core-mapping" href="#role-map-generic">`generic`</a> role
@@ -2659,33 +2657,13 @@
             </tr>
             <tr tabindex="-1" id="el-s">
               <th><a data-cite="HTML">`s`</a></th>
-              <td class="aria">No corresponding role</td>
-              <td class="ia2">
-                <div class="general">No accessible object.</div>
-                <div class="properties">
-                  <span class="type">Text attributes:</span> `text-line-through-style:solid` on the text container
-                </div>
+              <td class="aria">
+                <a class="core-mapping" href="#role-map-deletion">`deletion`</a> role
               </td>
-              <td class="uia">
-                <div class="general">No accessible object. Styles used are exposed by UIA text attribute identifiers of the `TextRange` Control Pattern implemented on a parent accessible object.
-                </div>
-              </td>
-              <td class="atk">
-                <div class="general">No accessible object. Exposed as
-                  "text-line-through-style:solid" text attribute on the text container.
-                </div>
-              </td>
-              <td class="ax">
-                <div class="role">
-                  <span class="type">AXRole:</span> `AXGroup`
-                </div>
-                <div class="subrole">
-                  <span class="type">AXSubrole:</span> `(nil)`
-                </div>
-                <div class="roledesc">
-                  <span class="type">AXRoleDescription:</span> `"group"`
-                </div>
-              </td>
+              <td class="ia2"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="ax"><div class="general">Use WAI-ARIA mapping</div></td>
               <!-- <td class="naming"></td> -->
               <td class="comments"></td>
             </tr>
@@ -3694,7 +3672,7 @@
               </td>
               <td class="ax">
                 <span class="type">Role:</span>
-                <a href="#el-textarea">AXtextArea</a>
+                <a href="#el-textarea">AXTextArea</a>
                 <div class="general">Use WAI-ARIA mapping</div>
               </td>
               <td class="comments">
@@ -6227,6 +6205,7 @@
       <section>
         <h4>Substantive changes since moving to the <a href="https://www.w3.org/WAI/ARIA/">Accessible Rich Internet Applications Working Group</a> (03-Nov-2019)</h4>
         <ul>
+          <li>12-Dec-2022: Revise mapping for `s` element to be `role=deletion`. See <a href="https://github.com/w3c/html-aam/pull/442">GitHub PR 442</a>.</li>
           <li>28-Nov-2022: Simplify accessible description computation section. See <a href="https://github.com/w3c/html-aam/pull/444">GitHub PR 444</a>.</li>
           <li>19-Jul-2022: Update `address` element to be mapped to `role=group`. See <a href="https://github.com/w3c/html-aam/pull/420">GitHub PR 420</a>.</li>
           <li>03-Apr-2022: Update `aside` mappings based on its nesting context. See <a href="https://github.com/w3c/html-aam/pull/350">GitHub PR 350</a>.</li>
