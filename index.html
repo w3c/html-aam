@@ -4251,18 +4251,19 @@
               <td class="elements">
                 <a data-cite="html/interaction.html#the-inert-attribute">HTML elements</a>
               </td>
-              <td class="aria"><a class="core-mapping" href="#ariaHiddenTrue">`aria-hidden="true"`</a></td>
-              <td class="ia2">Use WAI-ARIA mapping</td>
-              <td class="uia">Use WAI-ARIA mapping</td>
-              <td class="atk">Use WAI-ARIA mapping</td>
-              <td class="ax">Use WAI-ARIA mapping</td>
+              <td class="aria">Not Mapped</td>
+              <td class="ia2">See comments</td>
+              <td class="uia">See comments</td>
+              <td class="atk">See comments</td>
+              <td class="ax">See comments</td>
               <td class="comments">
-                <p>An inert element, nor the nodes if its subtree can receive keyboard focus, respond to pointer events, 
-                   or be otherwise reachable by assistive technology.
+                <p>
+                  Nodes that are inert are not exposed to an accessibility API.
                 </p>
-                <p>A `dialog` element can escape an inert subtree when the `dialog` is in the modal state, and rendered in the browser's 
-                  <a href="https://fullscreen.spec.whatwg.org/#top-layer">top layer</a> by use of the `showModal()` method. 
-                  See also <a data-cite="html/interaction.html#modal-dialogs-and-inert-subtrees">Modal dialogs and inert subtrees</a>.
+                <p class="note">
+                  Note: an inert node can have descendants that are not inert. For example, a
+                  <a data-cite="html/interaction.html#modal-dialogs-and-inert-subtrees">modal dialog</a>
+                  can escape an inert subtree.
                 </p>
               </td>
             </tr>
