@@ -295,7 +295,7 @@
               <td class="aria">
                 No corresponding role
               </td>
-              <td class="role-computed"><div class="general">???</div></td>
+              <td class="role-computed"><div class="general">html-abbr</div></td>
               <td class="ia2">
                 <div class="role">
                   <span class="type">Roles:</span> `ROLE_SYSTEM_TEXT`; `IA2_ROLE_TEXT_FRAME`
@@ -745,7 +745,7 @@
                 <a data-cite="HTML">`colgroup`</a>
               </th>
               <td class="aria">No corresponding role</td>
-              <td class="role-computed"><div class="general">???</div></td>
+              <td class="role-computed"><div class="general">Not mapped</div></td>
               <td class="ia2">
                 <div class="role">
                   <span class="type">Role:</span> `ROLE_SYSTEM_GROUPING`
@@ -806,7 +806,12 @@
               <td class="aria">
                 <a class="core-mapping" href="#role-map-definition">`definition`</a> role
               </td>
-              <td class="role-computed"><div class="general">Use WAI-ARIA mapping</div></td>
+              <td class="role-computed">
+                <div class="general">Use WAI-ARIA mapping</div>
+                <div class="note">
+                  Editorial Note: This value may change upon resolution of <a href="https://github.com/w3c/aria/issues/1662">ARIA #1662</a>.
+                </div>
+              </td>
               <td class="ia2"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="uia"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="atk"><div class="general">Use WAI-ARIA mapping</div></td>
@@ -906,7 +911,12 @@
                 <a data-cite="HTML">`dl`</a>
               </th>
               <td class="aria">No corresponding role</td>
-              <td class="role-computed"><div class="general">list</div> Editorial Note: This value may change upon resolution of <a href="https://github.com/w3c/aria/issues/1662">ARIA #1662</a>.</td>
+              <td class="role-computed">
+                <div class="general">list</div>
+                <div class="note">
+                  Editorial Note: This value may change upon resolution of <a href="https://github.com/w3c/aria/issues/1662">ARIA #1662</a>.
+                </div>
+              </td>
               <td class="ia2">
                 <div class="role">
                   <span class="type">Role:</span> `ROLE_SYSTEM_LIST`
@@ -1148,6 +1158,9 @@
               </th>
               <td class="aria">
                 <a class="core-mapping" href="#role-map-generic">`generic`</a> role
+                <div class="note">
+                  Editorial Note: This value may change upon resolution of <a href="https://github.com/w3c/aria/issues/1915">ARIA #1915</a>.
+                </div>
               </td>
               <td class="role-computed"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ia2"><div class="general">Use WAI-ARIA mapping</div></td>
@@ -1255,6 +1268,9 @@
               </th>
               <td class="aria">
                 <a class="core-mapping" href="#role-map-generic">`generic`</a> role
+                <div class="note">
+                  Editorial Note: This value may change upon resolution of <a href="https://github.com/w3c/aria/issues/1915">ARIA #1915</a>.
+                </div>
               </td>
               <td class="role-computed"><div class="general">Use WAI-ARIA mapping</div></td>
               <td class="ia2"><div class="general">Use WAI-ARIA mapping</div></td>
@@ -1447,7 +1463,7 @@
                 <a data-cite="html/input.html#color-state-(type=color)">Color</a> state)</span>
               </th>
               <td class="aria">No corresponding role</td>
-              <td class="role-computed"><div class="general">???</div></td>
+              <td class="role-computed"><div class="general">html-input-color</div></td>
               <td class="ia2">
                 <div class="general">If implemented as a textbox:</div>
                 <div class="role"><span class="type">Roles:</span> `ROLE_SYSTEM_TEXT`</div>
@@ -1494,7 +1510,7 @@
                 <a data-cite="html/input.html#date-state-(type=date)">Date</a> state)</span>
               </th>
                 <td class="aria">No corresponding role</td>
-                <td class="role-computed"><div class="general">???</div></td>
+                <td class="role-computed"><div class="general">html-input-date</div></td>
                 <td class="ia2">
                   <div class="general">If implemented as a textbox:</div>
                   <div class="role">
@@ -1535,7 +1551,7 @@
             <tr tabindex="-1" id="el-input-dateandtime">
                 <th><a data-cite="html">`input`</a> <span class="el-context">(<a data-cite="html/input.html#attr-input-type">`type`</a> attribute in the <a href="https://www.w3.org/TR/html/sec-forms.html#local-date-and-time-state-typedatetimelocal">Local Date and Time</a> state)</span></th>
                 <td class="aria">No corresponding role</td>
-                <td class="role-computed"><div class="general">???</div></td>
+                <td class="role-computed"><div class="general">html-input-datetime</div></td>
                 <td class="ia2">
                   <div class="role">
                     <span class="type">Role:</span> <code>IA2_ROLE_DATE_EDITOR</code>
@@ -1594,7 +1610,7 @@
                   <a data-cite="html/input.html#file-upload-state-(type=file)">File Upload</a> state)</span>
               </th>
               <td class="aria">No corresponding role</td>
-              <td class="role-computed"><div class="general">???</div></td>
+              <td class="role-computed"><div class="general">html-input-file</div></td>
               <td class="ia2">
                 <div class="general">
                   Implementation dependent. If represented by a container with a button a text label inside then:
@@ -1682,7 +1698,7 @@
                   <a data-cite="html/input.html#local-date-and-time-state-(type=datetime-local)">Local Date and Time</a> state)</span>
               </th>
               <td class="aria">No corresponding role</td>
-              <td class="role-computed"><div class="general">???</div></td>
+              <td class="role-computed"><div class="general">html-input-datetime-local</div></td>
               <td class="ia2">
                 <div class="role">
                   <span class="type">Role:</span> `IA2_ROLE_DATE_EDITOR`
@@ -1719,7 +1735,7 @@
                   <a data-cite="html/input.html#month-state-(type=month)">Month</a> state)</span>
               </th>
               <td class="aria">No corresponding role</td>
-              <td class="role-computed"><div class="general">???</div></td>
+              <td class="role-computed"><div class="general">html-input-month</div></td>
               <td class="ia2">
                 <div class="role">
                   <span class="type">Role:</span> `IA2_ROLE_DATE_EDITOR`
@@ -1804,7 +1820,7 @@
                   <a data-cite="html/input.html#password-state-(type=password)">Password</a> state)</span>
               </th>
               <td class="aria">No corresponding role</td>
-              <td class="role-computed"><div class="general">???</div></td>
+              <td class="role-computed"><div class="general">html-input-password</div></td>
               <td class="ia2">
                 <div class="role"><span class="type">Role:</span> `ROLE_SYSTEM_TEXT`</div>
                 <div class="states">
@@ -2025,7 +2041,7 @@
                   <a data-cite="html/input.html#time-state-(type=time)">Time</a> state)</span>
               </th>
               <td class="aria">No corresponding role</td>
-              <td class="role-computed"><div class="general">???</div></td>
+              <td class="role-computed"><div class="general">html-input-time</div></td>
               <td class="ia2">
                 <div class="role">
                   <span class="type">Role:</span> `ROLE_SYSTEM_SPINBUTTON` if implemented as a simple <a class="termref">widget</a>; `ROLE_SYSTEM_GROUPING` with child controls mapped as appropriate if implemented as a complex <a class="termref">widget</a>
@@ -2095,7 +2111,7 @@
                 </span>
               </th>
               <td class="aria">No corresponding role</td>
-              <td class="role-computed"><div class="general">???</div></td>
+              <td class="role-computed"><div class="general">html-imput-week</div></td>
               <td class="ia2">
                 <div class="role">
                   <span class="type">Role:</span> `IA2_ROLE_DATE_EDITOR`
@@ -2627,7 +2643,7 @@
                   <a href="https://html.spec.whatwg.org/#rb">`rb`</a>
                 </th>
                 <td class="aria">No corresponding role</td>
-                <td class="role-computed"><div class="general">???</div></td>
+                <td class="role-computed"><div class="general">html-rb</div></td>
                 <td class="ia2">
                   <div class="role">
                     <span class="type">Role:</span> `ROLE_SYSTEM_TEXT`; `IA2_ROLE_TEXT_FRAME`
@@ -2661,7 +2677,7 @@
             <tr tabindex="-1" id="el-rp">
               <th><a data-cite="html">`rp`</a></th>
               <td class="aria">No corresponding role</td>
-              <td class="role-computed"><div class="general">???</div></td>
+              <td class="role-computed"><div class="general">htmp-rp</div></td>
               <td class="ia2">
                 <div class="general">
                   No accessible object. No child elements are exposed if
@@ -2686,7 +2702,7 @@
             <tr tabindex="-1" id="el-rt">
               <th><a data-cite="HTML">`rt`</a></th>
               <td class="aria">No corresponding role</td>
-              <td class="role-computed"><div class="general">???</div></td>
+              <td class="role-computed"><div class="general">html-rt</div></td>
               <td class="ia2">
                 <div class="general">
                   No accessible object. No child elements are exposed if
@@ -2725,7 +2741,7 @@
                   <a href="https://html.spec.whatwg.org/#rtc">`rtc`</a>
                 </th>
                 <td class="aria">No corresponding role</td>
-                <td class="role-computed"><div class="general">???</div></td>
+                <td class="role-computed"><div class="general">html-rtc</div></td>
                 <td class="ia2">
                   <div class="role">
                     <span class="type">Role:</span> `ROLE_SYSTEM_TEXT`; `IA2_ROLE_TEXT_FRAME`
@@ -2760,7 +2776,7 @@
             <tr tabindex="-1" id="el-ruby">
               <th><a data-cite="HTML">`ruby`</a></th>
               <td class="aria">No corresponding role</td>
-              <td class="role-computed"><div class="general">???</div></td>
+              <td class="role-computed"><div class="general">html-ruby</div></td>
               <td class="ia2">
                 <div class="role">
                   <span class="type">Role:</span> `ROLE_SYSTEM_TEXT`; `IA2_ROLE_TEXT_FRAME`
@@ -3376,7 +3392,7 @@
             <tr tabindex="-1" id="el-wbr">
                 <th><a data-cite="HTML">`wbr`</a></th>
                 <td class="aria">No corresponding role</td>
-                <td class="role-computed"><div class="general">html-wbr</div></td>
+                <td class="role-computed"><div class="general">Not mapped</div></td>
                 <td class="ia2">
                   <div class="general">
                     If a line break is added, expose it with `IAccessibleText` on the text container
