@@ -2963,7 +2963,13 @@
                 <a data-cite="HTML">`summary`</a>
               </th>
               <td class="aria">No corresponding role</td>
-              <td class="role-computed"><div class="general">html-summary</div></td>
+              <td class="role-computed">
+                <div class="general">
+                  <p>If the element is the first child of its type within a parent `details` element: `html-summary`</p>
+                  <p>Otherwise, if it is not the first child of its type of a parent `details` element, 
+                     or it is not a child of a `details` element: <a class="core-mapping" href="#role-map-generic">`generic`</a> role</p>
+                </div>
+              </td>
               <td class="ia2">
                 <div class="role">
                   <span class="type">Role:</span> `ROLE_SYSTEM_PUSHBUTTON`
@@ -3004,10 +3010,7 @@
                 </div>
               </td>
               <!-- <td class="naming"></td> -->
-              <td class="comments">
-                If a `summary` element is not a child of a `details` element, or it is not the first `summary` element of a parent `details`, 
-                then the `summary` element MUST be exposed with a `generic` role.
-              </td>
+              <td class="comments"></td>
             </tr>
             <tr tabindex="-1" id="el-sup">
               <th><a data-cite="html">`sup`</a></th>
