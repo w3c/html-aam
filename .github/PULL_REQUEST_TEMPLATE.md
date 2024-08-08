@@ -1,13 +1,2 @@
-Closes #????
-
-<!--- IF EDITORIAL or CHORE, delete this template -->
-
-Describe Change Here!
-
-## Implementation
-
-* WPT tests:
-* Implementations (link to issue or when done, link to commit):
-   * WebKit:
-   * Gecko:
-   * Blink:
+New PRs should be made against this spec in the ARIA repository:
+https://github.com/w3c/html-aam
