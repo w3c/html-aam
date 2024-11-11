@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en-US"><head>
 <meta charset="utf-8">
-<meta name="generator" content="ReSpec 35.1.1">
+<meta name="generator" content="ReSpec 35.1.2">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <style>
 .issue-label{text-transform:initial}
@@ -97,7 +97,7 @@ dd{margin-left:0}
 }
 </style>
 <meta name="color-scheme" content="light">
-<meta name="revision" content="077f0e6ab5962db931f2cda2632a99dbc2971e40">
+<meta name="revision" content="5fbc6e95dee199a70b630c1ee389dd529d0b1c3a">
 <meta name="description" content="HTML Accessibility API Mappings (HTML-AAM) defines how user agents map HTML [HTML] elements and attributes to platform
         accessibility application programming interfaces (APIs). It leverages and extends the
         Core Accessibility API Mappings 1.2 and the Accessible Name and Description Computation 1.2 for use with the HTML host language. Documenting these mappings promotes interoperable exposure of roles, states, properties, and events
@@ -198,16 +198,16 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     null
   ],
   "a11y": false,
-  "gitRevision": "077f0e6ab5962db931f2cda2632a99dbc2971e40",
-  "publishISODate": "2024-08-19T00:00:00.000Z",
-  "generatedSubtitle": "W3C Editor's Draft 19 August 2024"
+  "gitRevision": "5fbc6e95dee199a70b630c1ee389dd529d0b1c3a",
+  "publishISODate": "2024-11-11T00:00:00.000Z",
+  "generatedSubtitle": "W3C Editor's Draft 11 November 2024"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-ED"></head>
   <body class="h-entry" data-cite="HTML core-aam accname wai-aria dom infra"><div class="head">
     <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
   </a></p>
     <h1 id="title" class="title">HTML Accessibility API Mappings 1.0</h1> 
-    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2024-08-19">19 August 2024</time></p>
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2024-11-11">11 November 2024</time></p>
     <details open="">
       <summary>More details about this document</summary>
       <dl>
@@ -3546,7 +3546,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <td>
                 <div class="general">
                   If implemented as a color picker, any UI controls presented for selecting a color are exposed in the <a class="termref informative" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-tree">accessibility tree</a>, associated with the <code>input</code> element,
-                  and mapped as appropriate for the type of control (e.g. button or slider).
+                  and mapped as appropriate for the type of control (e.g., button or slider).
                 </div>
               </td>
             </tr>
@@ -6849,7 +6849,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <td>
                 <div class="general">
                   <b>Note:</b> There are instances where CSS properties can affect what is exposed by accessibility <abbr title="Application Programming Interfaces">APIs</abbr>. For instance, <code>display: none</code> or <code>visibility: hidden</code> will remove an element
-                  from the accessibility tree and hide its presence from assistive technologies.
+                  from the <a class="termref informative" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-tree">accessibility tree</a> and hide its presence from assistive technologies.
                 </div>
               </td>
             </tr>
@@ -11917,7 +11917,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
             <tr>
               <th>Comments</th>
-              <td>See Also: <a href="https://w3c.github.io/accname/" class="accname">Accessible Name and Description: Computation and <abbr title="application programming interface">API</abbr> Mappings 1.1</a></td>
+              <td>See Also: <a href="https://w3c.github.io/accname/" class="accname">Accessible Name and Description: Computation and <abbr title="application programming interface">API</abbr> Mappings</a></td>
             </tr>
           </tbody>
         </table>
@@ -16759,9 +16759,9 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     <dl class="bibliography"><dt id="bib-accname-1.2">[accname-1.2]</dt><dd>
       <a href="https://www.w3.org/TR/accname-1.2/"><cite>Accessible Name and Description Computation 1.2</cite></a>. Bryan Garaventa; Melanie Sumner.  W3C. 2 August 2024. W3C Working Draft. URL: <a href="https://www.w3.org/TR/accname-1.2/">https://www.w3.org/TR/accname-1.2/</a>
     </dd><dt id="bib-core-aam-1.2">[core-aam-1.2]</dt><dd>
-      <a href="https://www.w3.org/TR/core-aam-1.2/"><cite>Core Accessibility API Mappings 1.2</cite></a>. Valerie Young; Alexander Surkov.  W3C. 13 August 2024. W3C Candidate Recommendation. URL: <a href="https://www.w3.org/TR/core-aam-1.2/">https://www.w3.org/TR/core-aam-1.2/</a>
+      <a href="https://www.w3.org/TR/core-aam-1.2/"><cite>Core Accessibility API Mappings 1.2</cite></a>. Valerie Young; Alexander Surkov.  W3C. 15 October 2024. W3C Candidate Recommendation. URL: <a href="https://www.w3.org/TR/core-aam-1.2/">https://www.w3.org/TR/core-aam-1.2/</a>
     </dd><dt id="bib-html">[HTML]</dt><dd>
-      <a href="https://html.spec.whatwg.org/multipage/"><cite>HTML Standard</cite></a>. Anne van Kesteren; Domenic Denicola; Ian Hickson; Philip Jägenstedt; Simon Pieters.  WHATWG. Living Standard. URL: <a href="https://html.spec.whatwg.org/multipage/">https://html.spec.whatwg.org/multipage/</a>
+      <a href="https://html.spec.whatwg.org/multipage/"><cite>HTML Standard</cite></a>. Anne van Kesteren; Domenic Denicola; Dominic Farolino; Ian Hickson; Philip Jägenstedt; Simon Pieters.  WHATWG. Living Standard. URL: <a href="https://html.spec.whatwg.org/multipage/">https://html.spec.whatwg.org/multipage/</a>
     </dd><dt id="bib-rfc2119">[RFC2119]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner.  IETF. March 1997. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc2119">https://www.rfc-editor.org/rfc/rfc2119</a>
     </dd><dt id="bib-rfc8174">[RFC8174]</dt><dd>
