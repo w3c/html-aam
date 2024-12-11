@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en-US"><head>
 <meta charset="utf-8">
-<meta name="generator" content="ReSpec 35.1.2">
+<meta name="generator" content="ReSpec 35.2.0">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <style>
 .issue-label{text-transform:initial}
@@ -42,7 +42,7 @@ dfn{cursor:pointer}
     
     
     
-
+    
     
 <link href="common/css/mapping-tables.css" rel="stylesheet" type="text/css">
     
@@ -97,7 +97,7 @@ dd{margin-left:0}
 }
 </style>
 <meta name="color-scheme" content="light">
-<meta name="revision" content="a26b436d0dadaefb78715e68d8b31357915b9446">
+<meta name="revision" content="801bdb84aa45df641d379213e3773a474ffab28e">
 <meta name="description" content="HTML Accessibility API Mappings (HTML-AAM) defines how user agents map HTML [HTML] elements and attributes to platform
         accessibility application programming interfaces (APIs). It leverages and extends the
         Core Accessibility API Mappings 1.2 and the Accessible Name and Description Computation 1.2 for use with the HTML host language. Documenting these mappings promotes interoperable exposure of roles, states, properties, and events
@@ -192,22 +192,23 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     "infra"
   ],
   "preProcess": [
+    null,
     null
   ],
   "postProcess": [
     null
   ],
   "a11y": false,
-  "gitRevision": "a26b436d0dadaefb78715e68d8b31357915b9446",
-  "publishISODate": "2024-11-21T00:00:00.000Z",
-  "generatedSubtitle": "W3C Editor's Draft 21 November 2024"
+  "gitRevision": "801bdb84aa45df641d379213e3773a474ffab28e",
+  "publishISODate": "2024-12-11T00:00:00.000Z",
+  "generatedSubtitle": "W3C Editor's Draft 11 December 2024"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-ED"></head>
   <body class="h-entry" data-cite="HTML core-aam accname wai-aria dom infra"><div class="head">
     <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
   </a></p>
     <h1 id="title" class="title">HTML Accessibility API Mappings 1.0</h1> 
-    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2024-11-21">21 November 2024</time></p>
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2024-12-11">11 December 2024</time></p>
     <details open="">
       <summary>More details about this document</summary>
       <dl>
@@ -272,8 +273,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   </div>
     <section id="abstract" class="introductory"><h2>Abstract</h2>
       <p>
-        <abbr title="HyperText Markup Language">HTML</abbr> Accessibility <abbr title="application programming interface">API</abbr> Mappings (<abbr title="HyperText Markup Language">HTML</abbr>-AAM) defines how <a class="termref informative" data-type="dfn" href="https://infra.spec.whatwg.org/#user-agent">user agents</a> map <abbr title="HyperText Markup Language">HTML</abbr> [<cite><a class="bibref" data-link-type="biblio" href="#bib-html" title="HTML Standard">HTML</a></cite>] elements and attributes to platform
-        <a class="termref informative" data-lt="accessibility API" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-api">accessibility application programming interfaces (<abbr title="Application Programming Interfaces">APIs</abbr>)</a>. It leverages and extends the
+        <abbr title="HyperText Markup Language">HTML</abbr> Accessibility <abbr title="application programming interface">API</abbr> Mappings (<abbr title="HyperText Markup Language">HTML</abbr>-AAM) defines how <a class="termref informative" data-link-type="dfn" href="https://infra.spec.whatwg.org/#user-agent">user agents</a> map <abbr title="HyperText Markup Language">HTML</abbr> [<cite><a class="bibref" data-link-type="biblio" href="#bib-html" title="HTML Standard">HTML</a></cite>] elements and attributes to platform
+        <a class="termref informative" data-lt="accessibility API" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-api">accessibility application programming interfaces (<abbr title="Application Programming Interfaces">APIs</abbr>)</a>. It leverages and extends the
         <cite><a data-matched-text="[[[core-aam-1.2]]]" href="https://www.w3.org/TR/core-aam-1.2/">Core Accessibility API Mappings 1.2</a></cite> and the <cite><a data-matched-text="[[[accname-1.2]]]" href="https://www.w3.org/TR/accname-1.2/">Accessible Name and Description Computation 1.2</a></cite> for use with the <abbr title="HyperText Markup Language">HTML</abbr> host language. Documenting these mappings promotes interoperable exposure of roles, states, properties, and events
         implemented by accessibility <abbr title="Application Programming Interfaces">APIs</abbr> and helps to ensure that this information appears in a manner consistent with author intent.
       </p>
@@ -330,13 +331,13 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     <section id="intro" class="informative"><div class="header-wrapper"><h2 id="x1-introduction"><bdi class="secno">1. </bdi>Introduction</h2><a class="self-link" href="#intro" aria-label="Permalink for Section 1."></a></div><p><em>This section is non-normative.</em></p>
       
       <p>
-        This specification defines how <abbr title="HyperText Markup Language">HTML</abbr> user agents respond to and expose <a data-link-type="dfn|abstract-op" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-role">role</a>, <a data-link-type="dfn|abstract-op" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-state">state</a> and <a data-link-type="dfn|abstract-op" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-property">property</a> information provided for Web content. Unless indicated otherwise, an <abbr title="HyperText Markup Language">HTML</abbr>
-        element or attribute with default <cite><a data-matched-text="[[[wai-aria-1.2]]]" href="https://www.w3.org/TR/wai-aria-1.2/">Accessible Rich Internet Applications (WAI-ARIA) 1.2</a></cite> semantics must be exposed to the platform <a class="termref informative" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-api">accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a> according to the relevant <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> mappings defined in
+        This specification defines how <abbr title="HyperText Markup Language">HTML</abbr> user agents respond to and expose <a data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-role">role</a>, <a data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-state">state</a> and <a data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-property">property</a> information provided for Web content. Unless indicated otherwise, an <abbr title="HyperText Markup Language">HTML</abbr>
+        element or attribute with default <cite><a data-matched-text="[[[wai-aria-1.2]]]" href="https://www.w3.org/TR/wai-aria-1.2/">Accessible Rich Internet Applications (WAI-ARIA) 1.2</a></cite> semantics must be exposed to the platform <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-api">accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a> according to the relevant <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> mappings defined in
         the <cite><a data-matched-text="[[[core-aam-1.2]]]" href="https://www.w3.org/TR/core-aam-1.2/">Core Accessibility API Mappings 1.2</a></cite> specification.
       </p>
       <p>
         In some cases, often due to features of the <abbr title="HyperText Markup Language">HTML</abbr> host language or the accessibility <abbr title="application programming interface">API</abbr> in question, an element or attribute's mapping differs from the corresponding ARIA mappings specified in
-        the [<cite><a class="bibref" data-link-type="biblio" href="#bib-core-aam-1.2" title="Core Accessibility API Mappings 1.2">core-aam-1.2</a></cite>]. Where an <abbr title="HyperText Markup Language">HTML</abbr> element or attribute does not have any default <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> semantics, the applicable mapping for each platform <a class="termref informative" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-api">accessibility <abbr title="application programming interface">API</abbr></a> is
+        the [<cite><a class="bibref" data-link-type="biblio" href="#bib-core-aam-1.2" title="Core Accessibility API Mappings 1.2">core-aam-1.2</a></cite>]. Where an <abbr title="HyperText Markup Language">HTML</abbr> element or attribute does not have any default <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> semantics, the applicable mapping for each platform <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-api">accessibility <abbr title="application programming interface">API</abbr></a> is
         defined by this specification.
       </p>
       <p>
@@ -345,7 +346,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
         features.
       </p>
       <p>
-        Users often access <abbr title="HyperText Markup Language">HTML</abbr> content using assistive technologies that rely on platform <a class="termref informative" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-api">accessibility <abbr title="Application Programming Interface">API</abbr></a> to obtain and
+        Users often access <abbr title="HyperText Markup Language">HTML</abbr> content using assistive technologies that rely on platform <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-api">accessibility <abbr title="Application Programming Interface">API</abbr></a> to obtain and
         interact with information from the page. This document is part of the following suite of accessibility <abbr title="application programming interface">API</abbr> mapping specifications for content rendered by user agents:
       </p>
       <ul>
@@ -360,7 +361,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       </ul>
       <section id="intro_aapi"><div class="header-wrapper"><h3 id="x1-1-accessibility-apis"><bdi class="secno">1.1 </bdi>Accessibility <abbr title="Application Programming Interfaces">APIs</abbr></h3><a class="self-link" href="#intro_aapi" aria-label="Permalink for Section 1.1"></a></div>
         
-        <p><a class="termref informative" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-api">Accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a> covered by this document are:</p>
+        <p><a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-api">Accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a> covered by this document are:</p>
         <ul>
           <li><abbr title="Microsoft Active Accessibility">MSAA</abbr> with <cite>IAccessible2 1.3</cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-iaccessible2" title="IAccessible2">IAccessible2</a></cite>]</li>
           <li><cite>User Interface Automation</cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-ui-automation" title="UI Automation">UI-AUTOMATION</a></cite>]</li>
@@ -368,10 +369,10 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
           <li><cite>macOS Accessibility Protocol</cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-axapi" title="The NSAccessibility Protocol for macOS">AXAPI</a></cite>]</li>
         </ul>
         <p>
-          If user agent developers need to expose information using other <a class="termref informative" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-api">accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a>, it is recommended that they work closely with the developer of the platform where
+          If user agent developers need to expose information using other <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-api">accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a>, it is recommended that they work closely with the developer of the platform where
           the <abbr title="application programming interface">API</abbr> runs, and assistive technology developers on that platform.
         </p>
-        <p>For more information regarding <a class="termref informative" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-api">accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a>, refer to <a href="https://www.w3.org/TR/core-aam-1.2/#intro_aapi">section 1.1 Accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a> of the <cite><a data-matched-text="[[[core-aam-1.2]]]" href="https://www.w3.org/TR/core-aam-1.2/">Core Accessibility API Mappings 1.2</a></cite>.</p>
+        <p>For more information regarding <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-api">accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a>, refer to <a href="https://www.w3.org/TR/core-aam-1.2/#intro_aapi">section 1.1 Accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a> of the <cite><a data-matched-text="[[[core-aam-1.2]]]" href="https://www.w3.org/TR/core-aam-1.2/">Core Accessibility API Mappings 1.2</a></cite>.</p>
       </section>
     </section>
     <section id="conformance"><div class="header-wrapper"><h2 id="x2-conformance"><bdi class="secno">2. </bdi>Conformance</h2><a class="self-link" href="#conformance" aria-label="Permalink for Section 2."></a></div><p>As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.</p><p>
@@ -398,7 +399,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
         
         <div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="4"><span>Note</span></div><p class=""><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> support was first introduced to <abbr title="HyperText Markup Language">HTML</abbr> in [<cite><a class="bibref" data-link-type="biblio" href="#bib-html5" title="HTML5">HTML5</a></cite>].</p></div>
         <p>
-          Where an <abbr title="HyperText Markup Language">HTML</abbr> element or attribute has default <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> semantics, it <em class="rfc2119">MUST</em> be exposed to the platform <a class="termref informative" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-api">accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a> in a way that conforms to
+          Where an <abbr title="HyperText Markup Language">HTML</abbr> element or attribute has default <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> semantics, it <em class="rfc2119">MUST</em> be exposed to the platform <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-api">accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a> in a way that conforms to
           <a class="core-mapping" href="https://w3c.github.io/core-aam/#mapping_general">General rules for exposing <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> semantics</a> in the <cite><a data-matched-text="[[[core-aam-1.2]]]" href="https://www.w3.org/TR/core-aam-1.2/">Core Accessibility API Mappings 1.2</a></cite>.
         </p>
       </section>
@@ -412,8 +413,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       <section id="mapping_nodirect"><div class="header-wrapper"><h3 id="x3-3-exposing-html-features-that-do-not-directly-map-to-accessibility-apis"><bdi class="secno">3.3 </bdi>Exposing <abbr title="HyperText Markup Language">HTML</abbr> Features That Do Not Directly Map to Accessibility <abbr title="Application Programming Interfaces">APIs</abbr></h3><a class="self-link" href="#mapping_nodirect" aria-label="Permalink for Section 3.3"></a></div>
         
         <p>
-          <abbr title="HyperText Markup Language">HTML</abbr> can include features that are not supported by <a class="termref informative" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-api">accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a> at the time of publication. There is not a one to one relationship between all features and
-          platform <a class="termref informative" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-api">accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a>. When <abbr title="HyperText Markup Language">HTML</abbr> roles, states and properties do not directly map to an <a class="termref informative" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-api">accessibility <abbr title="application programming interface">API</abbr></a>, and there is a method in the
+          <abbr title="HyperText Markup Language">HTML</abbr> can include features that are not supported by <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-api">accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a> at the time of publication. There is not a one to one relationship between all features and
+          platform <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-api">accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a>. When <abbr title="HyperText Markup Language">HTML</abbr> roles, states and properties do not directly map to an <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-api">accessibility <abbr title="application programming interface">API</abbr></a>, and there is a method in the
           <abbr title="application programming interface">API</abbr> to expose a text string, user agents <em class="rfc2119">MUST</em> expose the undefined role, states and properties via that method.
         </p>
         <p>
@@ -447,18 +448,18 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
         
         <ul>
           <li>
-            <abbr title="HyperText Markup Language">HTML</abbr> elements with implicit <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> role semantics <em class="rfc2119">MUST</em> be mapped to platform <a class="termref informative" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-api">accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a> according to the identified <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> role mapping as defined in the
+            <abbr title="HyperText Markup Language">HTML</abbr> elements with implicit <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> role semantics <em class="rfc2119">MUST</em> be mapped to platform <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-api">accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a> according to the identified <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> role mapping as defined in the
             [<cite><a class="bibref" data-link-type="biblio" href="#bib-core-aam-1.2" title="Core Accessibility API Mappings 1.2">core-aam-1.2</a></cite>] specification.
           </li>
           <li>
-            "Not mapped" means the element does not need to be exposed via an <a class="termref informative" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-api">accessibility <abbr title="application programming interface">API</abbr></a>. This is usually because the element is not displayed as part of the user
+            "Not mapped" means the element does not need to be exposed via an <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-api">accessibility <abbr title="application programming interface">API</abbr></a>. This is usually because the element is not displayed as part of the user
             interface. However, authors can force some of these elements to be rendered. For instance, by overriding user agent styles to render elements that would have been otherwise set to
             <code>display: none</code>. In these cases, the user agent <em class="rfc2119">SHOULD</em> map such elements to the role of <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-generic"><code>generic</code></a>, unless other <abbr title="HyperText Markup Language">HTML</abbr> features have been
             specified which would require a more specific <a href="#dfn-minimum-role" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-minimum-role-1">minimum role</a> to be exposed.
           </li>
           <li>
             Where an element is indicated as having "No corresponding (<abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr>) role", or is mapped to the <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-generic"><code>generic</code></a> role, user agents
-            <em class="rfc2119">MUST NOT</em> expose the <a class="core-mapping" href="https://w3c.github.io/core-aam/#ariaRoleDescription"><code>aria-roledescription</code></a> property value in the <a class="termref informative" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-tree">accessibility tree</a> unless the element has an
+            <em class="rfc2119">MUST NOT</em> expose the <a class="core-mapping" href="https://w3c.github.io/core-aam/#ariaRoleDescription"><code>aria-roledescription</code></a> property value in the <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-tree">accessibility tree</a> unless the element has an
             explicit, conforming <code>role</code> attribute value which [<cite><a class="bibref" data-link-type="biblio" href="#bib-wai-aria-1.2" title="Accessible Rich Internet Applications (WAI-ARIA) 1.2">WAI-ARIA-1.2</a></cite>] does not prohibit the use of <code>aria-roledescription</code>.
           </li>
           <li>
@@ -493,10 +494,10 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
                 element's UIA <code>LabeledBy</code> property points to the UIA element for the <code>label</code> element.
               </li>
               <li>
-                Elements mapped to the <code>Text</code> Control Type are not generally represented as <a class="termref informative" data-lt="accessible object" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessible-object">accessible objects</a> in the
-                <a class="termref informative" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-tree">accessibility tree</a>, but are just part of the <code>Text</code> Control Pattern implemented for the whole <abbr title="HyperText Markup Language">HTML</abbr> document. However, if they have any <code>aria-</code> attributes or an
-                explicit <code>tabindex</code> specified, elements mapped to the <code>Text</code> Control Type will be represented as <a class="termref informative" data-lt="accessible object" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessible-object">accessible objects</a> in the
-                <a class="termref informative" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-tree">accessibility tree</a>.
+                Elements mapped to the <code>Text</code> Control Type are not generally represented as <a class="termref informative" data-lt="accessible object" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessible-object">accessible objects</a> in the
+                <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-tree">accessibility tree</a>, but are just part of the <code>Text</code> Control Pattern implemented for the whole <abbr title="HyperText Markup Language">HTML</abbr> document. However, if they have any <code>aria-</code> attributes or an
+                explicit <code>tabindex</code> specified, elements mapped to the <code>Text</code> Control Type will be represented as <a class="termref informative" data-lt="accessible object" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessible-object">accessible objects</a> in the
+                <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-tree">accessibility tree</a>.
               </li>
             </ul>
           </li>
@@ -513,8 +514,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element"><code>a</code></a>
-                <span class="el-context">(represents a <a data-type="dfn" href="https://html.spec.whatwg.org/multipage/links.html#hyperlink">hyperlink</a>)</span>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element"><code>a</code></a>
+                <span class="el-context">(represents a <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/links.html#hyperlink">hyperlink</a>)</span>
               </td>
             </tr>
             <tr>
@@ -563,7 +564,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element"><code>a</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element"><code>a</code></a>
                 <span class="el-context">(no <a href="https://html.spec.whatwg.org/multipage/links.html#attr-hyperlink-href"><code>href</code></a> attribute)</span>
               </td>
             </tr>
@@ -613,7 +614,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-abbr-element"><code>abbr</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-abbr-element"><code>abbr</code></a>
               </td>
             </tr>
             <tr>
@@ -672,7 +673,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-address-element"><code>address</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-address-element"><code>address</code></a>
               </td>
             </tr>
             <tr>
@@ -721,8 +722,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element"><code>area</code></a>
-                <span class="el-context">(represents a <a data-type="dfn" href="https://html.spec.whatwg.org/multipage/links.html#hyperlink">hyperlink</a>)</span>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element"><code>area</code></a>
+                <span class="el-context">(represents a <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/links.html#hyperlink">hyperlink</a>)</span>
               </td>
             </tr>
             <tr>
@@ -771,7 +772,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element"><code>area</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element"><code>area</code></a>
                 <span class="el-context">(no <a href="https://html.spec.whatwg.org/multipage/links.html#attr-hyperlink-href"><code>href</code></a> attribute)</span>
               </td>
             </tr>
@@ -824,7 +825,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-article-element"><code>article</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-article-element"><code>article</code></a>
               </td>
             </tr>
             <tr>
@@ -872,7 +873,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
           <tbody>
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
-              <td><a data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element"><code>aside</code></a> (scoped to the <code>body</code> or <code>main</code> element)</td>
+              <td><a data-link-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element"><code>aside</code></a> (scoped to the <code>body</code> or <code>main</code> element)</td>
             </tr>
             <tr>
               <th>[<cite><a class="bibref" data-link-type="biblio" href="#bib-wai-aria-1.2" title="Accessible Rich Internet Applications (WAI-ARIA) 1.2">wai-aria-1.2</a></cite>]</th>
@@ -920,14 +921,14 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element"><code>aside</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element"><code>aside</code></a>
                 (scoped to a <a href="https://html.spec.whatwg.org/multipage/dom.html#sectioning-content">sectioning content</a> element)
               </td>
             </tr>
             <tr>
               <th>[<cite><a class="bibref" data-link-type="biblio" href="#bib-wai-aria-1.2" title="Accessible Rich Internet Applications (WAI-ARIA) 1.2">wai-aria-1.2</a></cite>]</th>
               <td>
-                <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-complementary"><code>complementary</code></a> role if the <a data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element"><code>aside</code></a> element has an
+                <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-complementary"><code>complementary</code></a> role if the <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element"><code>aside</code></a> element has an
                 <a href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-name">accessible name</a>. Otherwise, <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-generic"><code>generic</code></a> role.
               </td>
             </tr>
@@ -974,7 +975,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/media.html#audio"><code>audio</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/media.html#audio"><code>audio</code></a>
               </td>
             </tr>
             <tr>
@@ -1000,11 +1001,11 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
                 <div class="ctrltype"><span class="type">Localized Control Type:</span> <code>"audio"</code></div>
                 <div class="general">
                   <b>Note:</b> If the <a href="https://html.spec.whatwg.org/multipage/media.html#attr-media-controls"><code>controls</code></a> attribute is present, UI controls (e.g., play, volume) are exposed as children of the
-                  <a data-type="element" href="https://html.spec.whatwg.org/multipage/media.html#audio"><code>audio</code></a> element in the <a class="termref informative" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-tree">accessibility tree</a>, and mapped as appropriate for the type of control (e.g.,
+                  <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/media.html#audio"><code>audio</code></a> element in the <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-tree">accessibility tree</a>, and mapped as appropriate for the type of control (e.g.,
                   <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-button"><code>button</code></a> or <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-slider"><code>slider</code></a>).
                 </div>
                 <div class="general">
-                  Text objects associated with loading or error messages, and any UI control not currently displayed, <em class="rfc2119">MAY</em> be present in the <a class="termref informative" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-tree">accessibility tree</a> and marked as
+                  Text objects associated with loading or error messages, and any UI control not currently displayed, <em class="rfc2119">MAY</em> be present in the <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-tree">accessibility tree</a> and marked as
                   hidden or off-screen.
                 </div>
               </td>
@@ -1023,7 +1024,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
                 <div class="roledesc"><span class="type">AXRoleDescription:</span> <code>"audio playback"</code></div>
                 <div class="general">
                   <b>Note:</b> If the <a href="https://html.spec.whatwg.org/multipage/media.html#attr-media-controls"><code>controls</code></a> attribute is present, UI controls (e.g., play, volume) are exposed as descendants of an
-                  <a class="termref informative" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessible-object">accessible object</a> with a role of <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-toolbar"><code>toolbar</code></a>, and mapped as appropriate for the type of control (e.g.,
+                  <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessible-object">accessible object</a> with a role of <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-toolbar"><code>toolbar</code></a>, and mapped as appropriate for the type of control (e.g.,
                   <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-button"><code>button</code></a> or <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-slider"><code>slider</code></a>).
                 </div>
               </td>
@@ -1041,7 +1042,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="dfn" href="https://html.spec.whatwg.org/multipage/custom-elements.html#autonomous-custom-element">autonomous custom element</a>
+                <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/custom-elements.html#autonomous-custom-element">autonomous custom element</a>
               </td>
             </tr>
             <tr>
@@ -1091,7 +1092,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-b-element"><code>b</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-b-element"><code>b</code></a>
               </td>
             </tr>
             <tr>
@@ -1141,7 +1142,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/semantics.html#the-base-element"><code>base</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/semantics.html#the-base-element"><code>base</code></a>
               </td>
             </tr>
             <tr>
@@ -1191,7 +1192,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdi-element"><code>bdi</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdi-element"><code>bdi</code></a>
               </td>
             </tr>
             <tr>
@@ -1241,7 +1242,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdo-element"><code>bdo</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdo-element"><code>bdo</code></a>
               </td>
             </tr>
             <tr>
@@ -1291,7 +1292,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-blockquote-element"><code>blockquote</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-blockquote-element"><code>blockquote</code></a>
               </td>
             </tr>
             <tr>
@@ -1341,7 +1342,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-body-element"><code>body</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-body-element"><code>body</code></a>
               </td>
             </tr>
             <tr>
@@ -1391,7 +1392,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-br-element"><code>br</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-br-element"><code>br</code></a>
               </td>
             </tr>
             <tr>
@@ -1441,7 +1442,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/form-elements.html#the-button-element"><code>button</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/form-elements.html#the-button-element"><code>button</code></a>
               </td>
             </tr>
             <tr>
@@ -1494,7 +1495,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/canvas.html#canvas"><code>canvas</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/canvas.html#canvas"><code>canvas</code></a>
               </td>
             </tr>
             <tr>
@@ -1547,7 +1548,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/tables.html#the-caption-element"><code>caption</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/tables.html#the-caption-element"><code>caption</code></a>
               </td>
             </tr>
             <tr>
@@ -1612,7 +1613,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-cite-element"><code>cite</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-cite-element"><code>cite</code></a>
               </td>
             </tr>
             <tr>
@@ -1664,7 +1665,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-code-element"><code>code</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-code-element"><code>code</code></a>
               </td>
             </tr>
             <tr>
@@ -1714,7 +1715,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/tables.html#the-col-element"><code>col</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/tables.html#the-col-element"><code>col</code></a>
               </td>
             </tr>
             <tr>
@@ -1764,7 +1765,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/tables.html#the-colgroup-element"><code>colgroup</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/tables.html#the-colgroup-element"><code>colgroup</code></a>
               </td>
             </tr>
             <tr>
@@ -1817,7 +1818,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-data-element"><code>data</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-data-element"><code>data</code></a>
               </td>
             </tr>
             <tr>
@@ -1867,7 +1868,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/form-elements.html#the-datalist-element"><code>datalist</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/form-elements.html#the-datalist-element"><code>datalist</code></a>
                 (represents pre-defined options for <code>input</code> element)
               </td>
             </tr>
@@ -1921,7 +1922,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dd-element"><code>dd</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dd-element"><code>dd</code></a>
               </td>
             </tr>
             <tr>
@@ -1974,7 +1975,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/edits.html#the-del-element"><code>del</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/edits.html#the-del-element"><code>del</code></a>
               </td>
             </tr>
             <tr>
@@ -2024,7 +2025,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/interactive-elements.html#the-details-element"><code>details</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/interactive-elements.html#the-details-element"><code>details</code></a>
               </td>
             </tr>
             <tr>
@@ -2080,7 +2081,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-dfn-element"><code>dfn</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-dfn-element"><code>dfn</code></a>
               </td>
             </tr>
             <tr>
@@ -2130,7 +2131,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/interactive-elements.html#the-dialog-element"><code>dialog</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/interactive-elements.html#the-dialog-element"><code>dialog</code></a>
               </td>
             </tr>
             <tr>
@@ -2180,7 +2181,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element"><code>div</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element"><code>div</code></a>
               </td>
             </tr>
             <tr>
@@ -2230,7 +2231,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dl-element"><code>dl</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dl-element"><code>dl</code></a>
               </td>
             </tr>
             <tr>
@@ -2286,7 +2287,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dt-element"><code>dt</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dt-element"><code>dt</code></a>
               </td>
             </tr>
             <tr>
@@ -2339,7 +2340,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-em-element"><code>em</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-em-element"><code>em</code></a>
               </td>
             </tr>
             <tr>
@@ -2389,7 +2390,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-embed-element"><code>embed</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-embed-element"><code>embed</code></a>
               </td>
             </tr>
             <tr>
@@ -2438,7 +2439,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/form-elements.html#the-fieldset-element"><code>fieldset</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/form-elements.html#the-fieldset-element"><code>fieldset</code></a>
               </td>
             </tr>
             <tr>
@@ -2496,7 +2497,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-figcaption-element"><code>figcaption</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-figcaption-element"><code>figcaption</code></a>
               </td>
             </tr>
             <tr>
@@ -2553,7 +2554,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-figure-element"><code>figure</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-figure-element"><code>figure</code></a>
               </td>
             </tr>
             <tr>
@@ -2608,7 +2609,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
           <tbody>
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
-              <td><a data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-footer-element"><code>footer</code></a> (scoped to the <a data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-body-element"><code>body</code></a> element)</td>
+              <td><a data-link-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-footer-element"><code>footer</code></a> (scoped to the <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-body-element"><code>body</code></a> element)</td>
             </tr>
             <tr>
               <th>[<cite><a class="bibref" data-link-type="biblio" href="#bib-wai-aria-1.2" title="Accessible Rich Internet Applications (WAI-ARIA) 1.2">wai-aria-1.2</a></cite>]</th>
@@ -2656,7 +2657,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
           <tbody>
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
-              <td><a data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-footer-element"><code>footer</code></a> (scoped to the <a data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-main-element"><code>main</code></a> element, a <a href="https://html.spec.whatwg.org/multipage/dom.html#sectioning-content">sectioning content</a> element)</td>
+              <td><a data-link-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-footer-element"><code>footer</code></a> (scoped to the <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-main-element"><code>main</code></a> element, a <a href="https://html.spec.whatwg.org/multipage/dom.html#sectioning-content">sectioning content</a> element)</td>
             </tr>
             <tr>
               <th>[<cite><a class="bibref" data-link-type="biblio" href="#bib-wai-aria-1.2" title="Accessible Rich Internet Applications (WAI-ARIA) 1.2">wai-aria-1.2</a></cite>]</th>
@@ -2709,7 +2710,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/forms.html#the-form-element"><code>form</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/forms.html#the-form-element"><code>form</code></a>
               </td>
             </tr>
             <tr>
@@ -2864,7 +2865,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/semantics.html#the-head-element"><code>head</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/semantics.html#the-head-element"><code>head</code></a>
               </td>
             </tr>
             <tr>
@@ -2913,7 +2914,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
           <tbody>
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
-              <td><a data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-header-element"><code>header</code></a> (scoped to the <a data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-body-element"><code>body</code></a> element)</td>
+              <td><a data-link-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-header-element"><code>header</code></a> (scoped to the <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-body-element"><code>body</code></a> element)</td>
             </tr>
             <tr>
               <th>[<cite><a class="bibref" data-link-type="biblio" href="#bib-wai-aria-1.2" title="Accessible Rich Internet Applications (WAI-ARIA) 1.2">wai-aria-1.2</a></cite>]</th>
@@ -2961,7 +2962,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
           <tbody>
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
-              <td><a data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-header-element"><code>header</code></a> (scoped to the <a data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-main-element"><code>main</code></a> element, or a <a href="https://html.spec.whatwg.org/multipage/dom.html#sectioning-content">sectioning content</a> element)</td>
+              <td><a data-link-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-header-element"><code>header</code></a> (scoped to the <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-main-element"><code>main</code></a> element, or a <a href="https://html.spec.whatwg.org/multipage/dom.html#sectioning-content">sectioning content</a> element)</td>
             </tr>
             <tr>
               <th>[<cite><a class="bibref" data-link-type="biblio" href="#bib-wai-aria-1.2" title="Accessible Rich Internet Applications (WAI-ARIA) 1.2">wai-aria-1.2</a></cite>]</th>
@@ -3014,7 +3015,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-hgroup-element"><code>hgroup</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-hgroup-element"><code>hgroup</code></a>
               </td>
             </tr>
             <tr>
@@ -3067,7 +3068,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-hr-element"><code>hr</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-hr-element"><code>hr</code></a>
               </td>
             </tr>
             <tr>
@@ -3119,7 +3120,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/semantics.html#the-html-element"><code>html</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/semantics.html#the-html-element"><code>html</code></a>
               </td>
             </tr>
             <tr>
@@ -3169,7 +3170,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-i-element"><code>i</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-i-element"><code>i</code></a>
               </td>
             </tr>
             <tr>
@@ -3219,7 +3220,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-iframe-element"><code>iframe</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-iframe-element"><code>iframe</code></a>
               </td>
             </tr>
             <tr>
@@ -3269,7 +3270,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/embedded-content.html#the-img-element"><code>img</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/embedded-content.html#the-img-element"><code>img</code></a>
               </td>
             </tr>
             <tr>
@@ -3324,7 +3325,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/embedded-content.html#the-img-element"><code>img</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/embedded-content.html#the-img-element"><code>img</code></a>
                 <span class="el-context">(<a href="https://html.spec.whatwg.org/multipage/embedded-content.html#attr-img-alt"><code>alt</code></a> attribute value is the empty string, i.e., <code>alt=""</code> or <code>alt</code> with no value in the markup)</span>
               </td>
             </tr>
@@ -3380,7 +3381,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
                 <span class="el-context">(<a href="https://html.spec.whatwg.org/multipage/input.html#attr-input-type"><code>type</code></a> attribute in the <a href="https://html.spec.whatwg.org/multipage/input.html#button-state-(type=button)">Button</a> state)</span>
               </td>
             </tr>
@@ -3431,7 +3432,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
                 <span class="el-context">(<a href="https://html.spec.whatwg.org/multipage/input.html#attr-input-type"><code>type</code></a> attribute in the <a href="https://html.spec.whatwg.org/multipage/input.html#checkbox-state-(type=checkbox)">Checkbox</a> state)</span>
               </td>
             </tr>
@@ -3486,7 +3487,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
                 <span class="el-context">(<a href="https://html.spec.whatwg.org/multipage/input.html#attr-input-type"><code>type</code></a> attribute in the <a href="https://html.spec.whatwg.org/multipage/input.html#color-state-(type=color)">Color</a> state)</span>
               </td>
             </tr>
@@ -3545,7 +3546,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <th>Comments</th>
               <td>
                 <div class="general">
-                  If implemented as a color picker, any UI controls presented for selecting a color are exposed in the <a class="termref informative" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-tree">accessibility tree</a>, associated with the <code>input</code> element,
+                  If implemented as a color picker, any UI controls presented for selecting a color are exposed in the <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-tree">accessibility tree</a>, associated with the <code>input</code> element,
                   and mapped as appropriate for the type of control (e.g., button or slider).
                 </div>
               </td>
@@ -3558,7 +3559,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
                 <span class="el-context">(<a href="https://html.spec.whatwg.org/multipage/input.html#attr-input-type"><code>type</code></a> attribute in the <a href="https://html.spec.whatwg.org/multipage/input.html#date-state-(type=date)">Date</a> state)</span>
               </td>
             </tr>
@@ -3615,7 +3616,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
                 <span class="el-context">(<a href="https://html.spec.whatwg.org/multipage/input.html#attr-input-type"><code>type</code></a> attribute in the
                   <a href="https://html.spec.whatwg.org/multipage/input.html#local-date-and-time-state-(type=datetime-local)">Local Date and Time</a> state)</span>
               </td>
@@ -3669,7 +3670,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
                 <span class="el-context">(<a href="https://html.spec.whatwg.org/multipage/input.html#attr-input-type"><code>type</code></a> attribute in the <a href="https://html.spec.whatwg.org/multipage/input.html#email-state-(type=email)">E-mail</a> state with no
                   <a href="https://html.spec.whatwg.org/multipage/input.html#concept-input-list">suggestions source element</a>)</span>
               </td>
@@ -3722,7 +3723,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
                 <span class="el-context">(<a href="https://html.spec.whatwg.org/multipage/input.html#attr-input-type"><code>type</code></a> attribute in the <a href="https://html.spec.whatwg.org/multipage/input.html#file-upload-state-(type=file)">File Upload</a> state)</span>
               </td>
             </tr>
@@ -3786,7 +3787,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
                 <span class="el-context">(<a href="https://html.spec.whatwg.org/multipage/input.html#attr-input-type"><code>type</code></a> attribute in the <a href="https://html.spec.whatwg.org/multipage/input.html#hidden-state-(type=hidden)">Hidden</a> state)</span>
               </td>
             </tr>
@@ -3837,7 +3838,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
                 <span class="el-context">(<a href="https://html.spec.whatwg.org/multipage/input.html#attr-input-type"><code>type</code></a> attribute in the <a href="https://html.spec.whatwg.org/multipage/input.html#image-button-state-(type=image)">Image Button</a> state)</span>
               </td>
             </tr>
@@ -3888,7 +3889,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
                 <span class="el-context">(<a href="https://html.spec.whatwg.org/multipage/input.html#attr-input-type"><code>type</code></a> attribute in the <a href="https://html.spec.whatwg.org/multipage/input.html#month-state-(type=month)">Month</a> state)</span>
               </td>
             </tr>
@@ -3941,7 +3942,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
                 <span class="el-context">(<a href="https://html.spec.whatwg.org/multipage/input.html#attr-input-type"><code>type</code></a> attribute in the <a href="https://html.spec.whatwg.org/multipage/input.html#number-state-(type=number)">Number</a> state)</span>
               </td>
             </tr>
@@ -4002,7 +4003,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
                 <span class="el-context">(<a href="https://html.spec.whatwg.org/multipage/input.html#attr-input-type"><code>type</code></a> attribute in the <a href="https://html.spec.whatwg.org/multipage/input.html#password-state-(type=password)">Password</a> state)</span>
               </td>
             </tr>
@@ -4058,7 +4059,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
                 <span class="el-context">(<a href="https://html.spec.whatwg.org/multipage/input.html#attr-input-type"><code>type</code></a> attribute in the <a href="https://html.spec.whatwg.org/multipage/input.html#radio-button-state-(type=radio)">Radio Button</a> state)</span>
               </td>
             </tr>
@@ -4116,7 +4117,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
                 <span class="el-context">(<a href="https://html.spec.whatwg.org/multipage/input.html#attr-input-type"><code>type</code></a> attribute in the <a href="https://html.spec.whatwg.org/multipage/input.html#range-state-(type=range)">Range</a> state)</span>
               </td>
             </tr>
@@ -4167,7 +4168,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
                 <span class="el-context">(<a href="https://html.spec.whatwg.org/multipage/input.html#attr-input-type"><code>type</code></a> attribute in the <a href="https://html.spec.whatwg.org/multipage/input.html#reset-button-state-(type=reset)">Reset Button</a> state)</span>
               </td>
             </tr>
@@ -4218,7 +4219,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
                 <span class="el-context">(<a href="https://html.spec.whatwg.org/multipage/input.html#attr-input-type"><code>type</code></a> attribute in the <a href="https://html.spec.whatwg.org/multipage/input.html#text-(type=text)-state-and-search-state-(type=search)">Search</a> state
                   with no <a href="https://html.spec.whatwg.org/multipage/input.html#concept-input-list">suggestions source element</a>)</span>
               </td>
@@ -4270,7 +4271,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
                 <span class="el-context">
                   (<a href="https://html.spec.whatwg.org/multipage/input.html#attr-input-type"><code>type</code></a> attribute in the <a href="https://html.spec.whatwg.org/multipage/input.html#submit-button-state-(type=submit)">Submit Button</a> state)
                 </span>
@@ -4323,7 +4324,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
                 <span class="el-context">
                   (<a href="https://html.spec.whatwg.org/multipage/input.html#attr-input-type"><code>type</code></a> attribute in the <a href="https://html.spec.whatwg.org/multipage/input.html#telephone-state-(type=tel)">Telephone</a> state with no
                   <a href="https://html.spec.whatwg.org/multipage/input.html#concept-input-list">suggestions source element</a>)
@@ -4378,7 +4379,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
                 <span class="el-context">
                   (<a href="https://html.spec.whatwg.org/multipage/input.html#attr-input-type"><code>type</code></a> attribute in the <a href="https://html.spec.whatwg.org/multipage/input.html#text-(type=text)-state-and-search-state-(type=search)">Text</a> state with
                   no <a href="https://html.spec.whatwg.org/multipage/input.html#concept-input-list">suggestions source element</a>)
@@ -4432,7 +4433,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
                 <span class="el-context">
                   (<a href="https://html.spec.whatwg.org/multipage/input.html#attr-input-type"><code>type</code></a> attribute in the <a href="https://html.spec.whatwg.org/multipage/input.html#text-(type=text)-state-and-search-state-(type=search)">Text</a>,
                   <a href="https://html.spec.whatwg.org/multipage/input.html#text-(type=text)-state-and-search-state-(type=search)">Search</a>, <a href="https://html.spec.whatwg.org/multipage/input.html#telephone-state-(type=tel)">Telephone</a>,
@@ -4493,7 +4494,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
                 <span class="el-context">(<a href="https://html.spec.whatwg.org/multipage/input.html#attr-input-type"><code>type</code></a> attribute in the <a href="https://html.spec.whatwg.org/multipage/input.html#time-state-(type=time)">Time</a> state)</span>
               </td>
             </tr>
@@ -4511,8 +4512,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               </th>
               <td>
                 <div class="role">
-                  <span class="type">Role:</span> <code>ROLE_SYSTEM_SPINBUTTON</code> if implemented as a simple <a class="termref informative" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-widget">widget</a>; <code>ROLE_SYSTEM_GROUPING</code> with child controls mapped as appropriate if
-                  implemented as a complex <a class="termref informative" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-widget">widget</a>
+                  <span class="type">Role:</span> <code>ROLE_SYSTEM_SPINBUTTON</code> if implemented as a simple <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-widget">widget</a>; <code>ROLE_SYSTEM_GROUPING</code> with child controls mapped as appropriate if
+                  implemented as a complex <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-widget">widget</a>
                 </div>
                 <div class="objattrs"><span class="type">Object attributes:</span> <code>text-input-type:time</code></div>
               </td>
@@ -4528,8 +4529,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <td>
                 <div class="role">
                   <p>
-                    <span class="type">Role:</span> <code>ATK_ROLE_SPINBUTTON</code> if implemented as a simple <a class="termref informative" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-widget">widget</a>.<br>
-                    If implemented as a complex <a class="termref informative" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-widget">widget</a> use:<br>
+                    <span class="type">Role:</span> <code>ATK_ROLE_SPINBUTTON</code> if implemented as a simple <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-widget">widget</a>.<br>
+                    If implemented as a complex <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-widget">widget</a> use:<br>
                     <span class="type">Role:</span> <code>ROLE_PANEL</code> and map child controls as appropriate.
                   </p>
                 </div>
@@ -4556,7 +4557,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
                 <span class="el-context">(<a href="https://html.spec.whatwg.org/multipage/input.html#attr-input-type"><code>type</code></a> attribute in the <a href="https://html.spec.whatwg.org/multipage/input.html#url-state-(type=url)">URL</a> state with no
                   <a href="https://html.spec.whatwg.org/multipage/input.html#concept-input-list">suggestions source element</a>)</span>
               </td>
@@ -4609,7 +4610,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/input.html#the-input-element"><code>input</code></a>
                 <span class="el-context"> (<a href="https://html.spec.whatwg.org/multipage/input.html#attr-input-type"><code>type</code></a> attribute in the <a href="https://html.spec.whatwg.org/multipage/input.html#week-state-(type=week)">Week</a> state) </span>
               </td>
             </tr>
@@ -4663,7 +4664,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/edits.html#the-ins-element"><code>ins</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/edits.html#the-ins-element"><code>ins</code></a>
               </td>
             </tr>
             <tr>
@@ -4713,7 +4714,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-kbd-element"><code>kbd</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-kbd-element"><code>kbd</code></a>
               </td>
             </tr>
             <tr>
@@ -4766,7 +4767,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/forms.html#the-label-element"><code>label</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/forms.html#the-label-element"><code>label</code></a>
               </td>
             </tr>
             <tr>
@@ -4839,7 +4840,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/form-elements.html#the-legend-element"><code>legend</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/form-elements.html#the-legend-element"><code>legend</code></a>
               </td>
             </tr>
             <tr>
@@ -4901,7 +4902,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-li-element"><code>li</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-li-element"><code>li</code></a>
               </td>
             </tr>
             <tr>
@@ -4946,7 +4947,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th>Comments</th>
               <td>
-                If <code>li</code> element is not a child of <a data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-ol-element"><code>ol</code></a> , <a data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#menus"><code>menu</code></a> or <a data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-ul-element"><code>ul</code></a>, or if the containing list element is no longer exposed
+                If <code>li</code> element is not a child of <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-ol-element"><code>ol</code></a> , <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#menus"><code>menu</code></a> or <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-ul-element"><code>ul</code></a>, or if the containing list element is no longer exposed
                 with a <code>list</code> role, then expose the <code>li</code> element with a <code>generic</code> role.
               </td>
             </tr>
@@ -4958,7 +4959,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/semantics.html#the-link-element"><code>link</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/semantics.html#the-link-element"><code>link</code></a>
               </td>
             </tr>
             <tr>
@@ -5008,7 +5009,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-main-element"><code>main</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-main-element"><code>main</code></a>
               </td>
             </tr>
             <tr>
@@ -5058,7 +5059,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/image-maps.html#the-map-element"><code>map</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/image-maps.html#the-map-element"><code>map</code></a>
               </td>
             </tr>
             <tr>
@@ -5114,7 +5115,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-mark-element"><code>mark</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-mark-element"><code>mark</code></a>
               </td>
             </tr>
             <tr>
@@ -5206,7 +5207,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#menus"><code>menu</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#menus"><code>menu</code></a>
               </td>
             </tr>
             <tr>
@@ -5248,7 +5249,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <th>Comments</th>
               <td>
                 <div class="general">
-                  The <a data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#menus"><code>menu</code></a> element is a semantic alternative to the <a href="#el-ul"><code>ul</code></a> element. It has no implemented mappings or behavior that reflect the semantics
+                  The <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#menus"><code>menu</code></a> element is a semantic alternative to the <a href="#el-ul"><code>ul</code></a> element. It has no implemented mappings or behavior that reflect the semantics
                   of the ARIA <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-menu"><code>menu</code></a> role.
                 </div>
                 <div class="general">
@@ -5264,7 +5265,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/semantics.html#meta"><code>meta</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/semantics.html#meta"><code>meta</code></a>
               </td>
             </tr>
             <tr>
@@ -5314,7 +5315,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/form-elements.html#the-meter-element"><code>meter</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/form-elements.html#the-meter-element"><code>meter</code></a>
               </td>
             </tr>
             <tr>
@@ -5364,7 +5365,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-nav-element"><code>nav</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-nav-element"><code>nav</code></a>
               </td>
             </tr>
             <tr>
@@ -5414,7 +5415,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/scripting.html#the-noscript-element"><code>noscript</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/scripting.html#the-noscript-element"><code>noscript</code></a>
               </td>
             </tr>
             <tr>
@@ -5464,7 +5465,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-object-element"><code>object</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-object-element"><code>object</code></a>
               </td>
             </tr>
             <tr>
@@ -5521,7 +5522,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-ol-element"><code>ol</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-ol-element"><code>ol</code></a>
               </td>
             </tr>
             <tr>
@@ -5571,7 +5572,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/form-elements.html#the-optgroup-element"><code>optgroup</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/form-elements.html#the-optgroup-element"><code>optgroup</code></a>
               </td>
             </tr>
             <tr>
@@ -5621,8 +5622,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/form-elements.html#the-option-element"><code>option</code></a>
-                <span class="el-context">(in a <a href="https://html.spec.whatwg.org/multipage/form-elements.html#concept-select-option-list">list of options</a> or represents a suggestion in a <a data-type="element" href="https://html.spec.whatwg.org/multipage/form-elements.html#the-datalist-element"><code>datalist</code></a>)</span>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/form-elements.html#the-option-element"><code>option</code></a>
+                <span class="el-context">(in a <a href="https://html.spec.whatwg.org/multipage/form-elements.html#concept-select-option-list">list of options</a> or represents a suggestion in a <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/form-elements.html#the-datalist-element"><code>datalist</code></a>)</span>
               </td>
             </tr>
             <tr>
@@ -5675,7 +5676,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/form-elements.html#the-output-element"><code>output</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/form-elements.html#the-output-element"><code>output</code></a>
               </td>
             </tr>
             <tr>
@@ -5731,7 +5732,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-p-element"><code>p</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-p-element"><code>p</code></a>
               </td>
             </tr>
             <tr>
@@ -5781,7 +5782,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/obsolete.html#param"><code>param</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/obsolete.html#param"><code>param</code></a>
               </td>
             </tr>
             <tr>
@@ -5831,7 +5832,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/embedded-content.html#the-picture-element"><code>picture</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/embedded-content.html#the-picture-element"><code>picture</code></a>
               </td>
             </tr>
             <tr>
@@ -5881,7 +5882,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-pre-element"><code>pre</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-pre-element"><code>pre</code></a>
               </td>
             </tr>
             <tr>
@@ -5931,7 +5932,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/form-elements.html#the-progress-element"><code>progress</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/form-elements.html#the-progress-element"><code>progress</code></a>
               </td>
             </tr>
             <tr>
@@ -5986,7 +5987,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-q-element"><code>q</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-q-element"><code>q</code></a>
               </td>
             </tr>
             <tr>
@@ -6036,7 +6037,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rp-element"><code>rp</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rp-element"><code>rp</code></a>
               </td>
             </tr>
             <tr>
@@ -6087,7 +6088,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rt-element"><code>rt</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rt-element"><code>rt</code></a>
               </td>
             </tr>
             <tr>
@@ -6142,7 +6143,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-ruby-element"><code>ruby</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-ruby-element"><code>ruby</code></a>
               </td>
             </tr>
             <tr>
@@ -6195,7 +6196,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-s-element"><code>s</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-s-element"><code>s</code></a>
               </td>
             </tr>
             <tr>
@@ -6245,7 +6246,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-samp-element"><code>samp</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-samp-element"><code>samp</code></a>
               </td>
             </tr>
             <tr>
@@ -6345,7 +6346,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-search-element"><code>search</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-search-element"><code>search</code></a>
               </td>
             </tr>
             <tr>
@@ -6395,13 +6396,13 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element"><code>section</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element"><code>section</code></a>
               </td>
             </tr>
             <tr>
               <th>[<cite><a class="bibref" data-link-type="biblio" href="#bib-wai-aria-1.2" title="Accessible Rich Internet Applications (WAI-ARIA) 1.2">wai-aria-1.2</a></cite>]</th>
               <td>
-                <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-region"><code>region</code></a> role if the <a data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element"><code>section</code></a> element has an <a href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-name">accessible name</a>. Otherwise,
+                <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-region"><code>region</code></a> role if the <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element"><code>section</code></a> element has an <a href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-name">accessible name</a>. Otherwise,
                 the <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-generic"><code>generic</code></a> role.
               </td>
             </tr>
@@ -6448,7 +6449,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/form-elements.html#the-select-element"><code>select</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/form-elements.html#the-select-element"><code>select</code></a>
                 <span class="el-context">
                   (with a <a href="https://html.spec.whatwg.org/multipage/form-elements.html#attr-select-multiple"><code>multiple</code></a> attribute or <a href="https://html.spec.whatwg.org/multipage/form-elements.html#attr-select-size"><code>size</code></a> attribute having
                   value greater than <code>1</code>)
@@ -6502,7 +6503,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/form-elements.html#the-select-element"><code>select</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/form-elements.html#the-select-element"><code>select</code></a>
                 <span class="el-context">
                   (with NO <a href="https://html.spec.whatwg.org/multipage/form-elements.html#attr-select-multiple"><code>multiple</code></a> attribute and NO <a href="https://html.spec.whatwg.org/multipage/form-elements.html#attr-select-size"><code>size</code></a> attribute
                   having value greater than <code>1</code>)
@@ -6556,7 +6557,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/scripting.html#the-slot-element"><code>slot</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/scripting.html#the-slot-element"><code>slot</code></a>
               </td>
             </tr>
             <tr>
@@ -6606,7 +6607,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-small-element"><code>small</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-small-element"><code>small</code></a>
               </td>
             </tr>
             <tr>
@@ -6656,7 +6657,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/embedded-content.html#the-source-element"><code>source</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/embedded-content.html#the-source-element"><code>source</code></a>
               </td>
             </tr>
             <tr>
@@ -6706,7 +6707,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-span-element"><code>span</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-span-element"><code>span</code></a>
               </td>
             </tr>
             <tr>
@@ -6756,7 +6757,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-strong-element"><code>strong</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-strong-element"><code>strong</code></a>
               </td>
             </tr>
             <tr>
@@ -6806,7 +6807,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/semantics.html#the-style-element"><code>style</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/semantics.html#the-style-element"><code>style</code></a>
               </td>
             </tr>
             <tr>
@@ -6849,7 +6850,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <td>
                 <div class="general">
                   <b>Note:</b> There are instances where CSS properties can affect what is exposed by accessibility <abbr title="Application Programming Interfaces">APIs</abbr>. For instance, <code>display: none</code> or <code>visibility: hidden</code> will remove an element
-                  from the <a class="termref informative" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-tree">accessibility tree</a> and hide its presence from assistive technologies.
+                  from the <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-tree">accessibility tree</a> and hide its presence from assistive technologies.
                 </div>
               </td>
             </tr>
@@ -6861,7 +6862,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-sub-element"><code>sub</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-sub-element"><code>sub</code></a>
               </td>
             </tr>
             <tr>
@@ -6911,7 +6912,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/interactive-elements.html#the-summary-element"><code>summary</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/interactive-elements.html#the-summary-element"><code>summary</code></a>
               </td>
             </tr>
             <tr>
@@ -6981,7 +6982,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-sup-element"><code>sup</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-sup-element"><code>sup</code></a>
               </td>
             </tr>
             <tr>
@@ -7073,7 +7074,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/tables.html#the-table-element"><code>table</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/tables.html#the-table-element"><code>table</code></a>
               </td>
             </tr>
             <tr>
@@ -7115,7 +7116,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/tables.html#the-tbody-element"><code>tbody</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/tables.html#the-tbody-element"><code>tbody</code></a>
               </td>
             </tr>
             <tr>
@@ -7157,8 +7158,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/tables.html#the-td-element"><code>td</code></a>
-                (ancestor <a data-type="element" href="https://html.spec.whatwg.org/multipage/tables.html#the-table-element"><code>table</code></a> element has <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-table"><code>table</code></a> role)
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/tables.html#the-td-element"><code>td</code></a>
+                (ancestor <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/tables.html#the-table-element"><code>table</code></a> element has <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-table"><code>table</code></a> role)
               </td>
             </tr>
             <tr>
@@ -7208,8 +7209,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/tables.html#the-td-element"><code>td</code></a>
-                (ancestor <a data-type="element" href="https://html.spec.whatwg.org/multipage/tables.html#the-table-element"><code>table</code></a> element has <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-grid"><code>grid</code></a> or <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-treegrid"><code>treegrid</code></a> role)
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/tables.html#the-td-element"><code>td</code></a>
+                (ancestor <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/tables.html#the-table-element"><code>table</code></a> element has <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-grid"><code>grid</code></a> or <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-treegrid"><code>treegrid</code></a> role)
               </td>
             </tr>
             <tr>
@@ -7259,7 +7260,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/scripting.html#the-template-element"><code>template</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/scripting.html#the-template-element"><code>template</code></a>
               </td>
             </tr>
             <tr>
@@ -7309,7 +7310,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/form-elements.html#the-textarea-element"><code>textarea</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/form-elements.html#the-textarea-element"><code>textarea</code></a>
               </td>
             </tr>
             <tr>
@@ -7359,7 +7360,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/tables.html#the-tfoot-element"><code>tfoot</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/tables.html#the-tfoot-element"><code>tfoot</code></a>
               </td>
             </tr>
             <tr>
@@ -7409,10 +7410,10 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/tables.html#the-th-element"><code>th</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/tables.html#the-th-element"><code>th</code></a>
                 <span class="el-context">(is not a <a href="https://html.spec.whatwg.org/multipage/tables.html#column-header">column header</a>, <a href="https://html.spec.whatwg.org/multipage/tables.html#row-header">row header</a>,
                   <a href="https://html.spec.whatwg.org/multipage/tables.html#column-group-header">column group header</a> or <a href="https://html.spec.whatwg.org/multipage/tables.html#row-group-header">row group header</a>, and ancestor
-                  <a data-type="element" href="https://html.spec.whatwg.org/multipage/tables.html#the-table-element"><code>table</code></a> element has <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-table"><code>table</code></a> role)
+                  <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/tables.html#the-table-element"><code>table</code></a> element has <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-table"><code>table</code></a> role)
                 </span>
               </td>
             </tr>
@@ -7465,10 +7466,10 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/tables.html#the-th-element"><code>th</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/tables.html#the-th-element"><code>th</code></a>
                 <span class="el-context">(is not a <a href="https://html.spec.whatwg.org/multipage/tables.html#column-header">column header</a>, <a href="https://html.spec.whatwg.org/multipage/tables.html#row-header">row header</a>,
                   <a href="https://html.spec.whatwg.org/multipage/tables.html#column-group-header">column group header</a> or <a href="https://html.spec.whatwg.org/multipage/tables.html#row-group-header">row group header</a>, and ancestor
-                  <a data-type="element" href="https://html.spec.whatwg.org/multipage/tables.html#the-table-element"><code>table</code></a> element has
+                  <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/tables.html#the-table-element"><code>table</code></a> element has
                   <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-grid"><code>grid</code></a>
                   or <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-treegrid"><code>treegrid</code></a> role)
                 </span>
@@ -7521,7 +7522,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/tables.html#the-th-element"><code>th</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/tables.html#the-th-element"><code>th</code></a>
                 <span class="el-context">(is a <a href="https://html.spec.whatwg.org/multipage/tables.html#column-header">column header</a> or <a href="https://html.spec.whatwg.org/multipage/tables.html#column-group-header">column group header</a>)</span>
               </td>
             </tr>
@@ -7572,7 +7573,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/tables.html#the-th-element"><code>th</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/tables.html#the-th-element"><code>th</code></a>
                 <span class="el-context">(is a <a href="https://html.spec.whatwg.org/multipage/tables.html#row-header">row header</a> or <a href="https://html.spec.whatwg.org/multipage/tables.html#row-group-header">row group header</a>)</span>
               </td>
             </tr>
@@ -7623,7 +7624,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/tables.html#the-thead-element"><code>thead</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/tables.html#the-thead-element"><code>thead</code></a>
               </td>
             </tr>
             <tr>
@@ -7673,7 +7674,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-time-element"><code>time</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-time-element"><code>time</code></a>
               </td>
             </tr>
             <tr>
@@ -7723,7 +7724,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/semantics.html#the-title-element"><code>title</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/semantics.html#the-title-element"><code>title</code></a>
               </td>
             </tr>
             <tr>
@@ -7773,7 +7774,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/tables.html#the-tr-element"><code>tr</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/tables.html#the-tr-element"><code>tr</code></a>
               </td>
             </tr>
             <tr>
@@ -7823,7 +7824,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/media.html#the-track-element"><code>track</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/media.html#the-track-element"><code>track</code></a>
               </td>
             </tr>
             <tr>
@@ -7873,7 +7874,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-u-element"><code>u</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-u-element"><code>u</code></a>
               </td>
             </tr>
             <tr>
@@ -7923,7 +7924,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-ul-element"><code>ul</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-ul-element"><code>ul</code></a>
               </td>
             </tr>
             <tr>
@@ -7973,7 +7974,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-var-element"><code>var</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-var-element"><code>var</code></a>
               </td>
             </tr>
             <tr>
@@ -8025,7 +8026,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/media.html#video"><code>video</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/media.html#video"><code>video</code></a>
               </td>
             </tr>
             <tr>
@@ -8051,11 +8052,11 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
                 <div class="ctrltype"><span class="type">Localized Control Type:</span> <code>"group"</code></div>
                 <div class="general">
                   <b>Note:</b> If the <a href="https://html.spec.whatwg.org/multipage/media.html#attr-media-controls"><code>controls</code></a> attribute is present, UI controls (e.g., play, volume) are exposed as children of the
-                  <a data-type="element" href="https://html.spec.whatwg.org/multipage/media.html#video"><code>video</code></a> element in the <a class="termref informative" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-tree">accessibility tree</a>, and mapped as appropriate for the type of control (e.g.,
+                  <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/media.html#video"><code>video</code></a> element in the <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-tree">accessibility tree</a>, and mapped as appropriate for the type of control (e.g.,
                   <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-button"><code>button</code></a> or <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-slider"><code>slider</code></a>).
                 </div>
                 <div class="general">
-                  Text objects associated with loading or error messages, and any UI control not currently displayed, <em class="rfc2119">MAY</em> be present in the <a class="termref informative" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-tree">accessibility tree</a> and marked as
+                  Text objects associated with loading or error messages, and any UI control not currently displayed, <em class="rfc2119">MAY</em> be present in the <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-tree">accessibility tree</a> and marked as
                   hidden or off-screen.
                 </div>
               </td>
@@ -8074,7 +8075,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
                 <div class="roledesc"><span class="type">AXRoleDescription:</span> <code>"video playback"</code></div>
                 <div class="general">
                   <b>Note:</b> If the <a href="https://html.spec.whatwg.org/multipage/media.html#attr-media-controls"><code>controls</code></a> attribute is present, UI controls (e.g., play, volume) are exposed as descendants of an
-                  <a class="termref informative" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessible-object">accessible object</a> with a role of <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-toolbar"><code>toolbar</code></a>, and mapped as appropriate for the type of control (e.g.,
+                  <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessible-object">accessible object</a> with a role of <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-toolbar"><code>toolbar</code></a>, and mapped as appropriate for the type of control (e.g.,
                   <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-button"><code>button</code></a> or <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-slider"><code>slider</code></a>).
                 </div>
               </td>
@@ -8092,7 +8093,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-wbr-element"><code>wbr</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-wbr-element"><code>wbr</code></a>
               </td>
             </tr>
             <tr>
@@ -8143,12 +8144,12 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
         
         <ul>
           <li>
-            <abbr title="HyperText Markup Language">HTML</abbr> attributes with default <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> state and property semantics <em class="rfc2119">MUST</em> be mapped to platform <a class="termref informative" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-api">accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a> according to those <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> state and property
+            <abbr title="HyperText Markup Language">HTML</abbr> attributes with default <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> state and property semantics <em class="rfc2119">MUST</em> be mapped to platform <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-api">accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a> according to those <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> state and property
             mappings as defined in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-core-aam-1.2" title="Core Accessibility API Mappings 1.2">core-aam-1.2</a></cite>] specification.
           </li>
           <li>A '?' in a cell indicates the data has yet to be provided.</li>
           <li>
-            "Not mapped" (Not Applicable) means the attribute does not need to be exposed via an <a class="termref informative" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-api">accessibility <abbr title="application programming interface">API</abbr></a>. This is usually because the attribute is not displayed as
+            "Not mapped" (Not Applicable) means the attribute does not need to be exposed via an <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-api">accessibility <abbr title="application programming interface">API</abbr></a>. This is usually because the attribute is not displayed as
             part of the user interface.
             <div class="note" role="note" id="issue-container-generatedID-7"><div role="heading" class="note-title marker" id="h-note-7" aria-level="4"><span>Note</span></div><div class="">
               In some cases, while not directly exposed to accessibility <abbr title="Application Programming Interfaces">APIs</abbr>, an attribute can still impact the accessibility of an element. e.g., <a href="#att-autoplay"><code>autoplay</code></a> will
@@ -10037,7 +10038,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th>Element(s)</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdo-element"><code>bdo</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdo-element"><code>bdo</code></a>
               </td>
             </tr>
             <tr>
@@ -10231,7 +10232,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th>Comments</th>
               <td>
-                <p>Form controls within a valid <code><a data-link-type="element" data-type="element" href="https://html.spec.whatwg.org/multipage/form-elements.html#the-legend-element">legend</a></code> child element of a <code>fieldset</code> with a <code>disabled</code> attribute do not become disabled.</p>
+                <p>Form controls within a valid <code><a data-link-type="element" href="https://html.spec.whatwg.org/multipage/form-elements.html#the-legend-element">legend</a></code> child element of a <code>fieldset</code> with a <code>disabled</code> attribute do not become disabled.</p>
                 <p>If the element has both the <code>disabled</code> attribute and the <code>aria-disabled</code> attribute with a valid value, User Agents <em class="rfc2119">MUST</em> expose only the <code>disabled</code> attribute value.</p>
               </td>
             </tr>
@@ -10247,7 +10248,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th>Element(s)</th>
               <td>
-                <a data-type="element" href="https://html.spec.whatwg.org/multipage/semantics.html#the-link-element"><code>link</code></a>
+                <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/semantics.html#the-link-element"><code>link</code></a>
               </td>
             </tr>
             <tr>
@@ -13652,7 +13653,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
                   <li>The element's implicit or explicit <code>popovertargetaction</code> is the "<code>auto</code>" state and the element is a descendant of the <code>popover</code> it is associated with.</li>
                   
                 </ul>
-                <div class="note" role="note" id="issue-container-generatedID-11"><div role="heading" class="note-title marker" id="h-note-11" aria-level="4"><span>Note</span></div><p class="">A button that represents a <a href="https://html.spec.whatwg.org/multipage/forms.html#concept-submit-button">submit button</a> with a <a data-link-type="dfn|abstract-op" data-type="dfn" href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#form-owner">form owner</a> cannot invoke a popover.</p></div>
+                <div class="note" role="note" id="issue-container-generatedID-11"><div role="heading" class="note-title marker" id="h-note-11" aria-level="4"><span>Note</span></div><p class="">A button that represents a <a href="https://html.spec.whatwg.org/multipage/forms.html#concept-submit-button">submit button</a> with a <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#form-owner">form owner</a> cannot invoke a popover.</p></div>
               </td>
             </tr>
           </tbody>
@@ -15761,7 +15762,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               </th>
               <td>
                 <div class="general">
-                  Defines the list item marker, which has no <a class="termref informative" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessible-object">accessible object</a>, but is exposed as content in the accessible text of the associated list item.
+                  Defines the list item marker, which has no <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessible-object">accessible object</a>, but is exposed as content in the accessible text of the associated list item.
                 </div>
                 <div class="ifaces"><span class="type">Interfaces:</span> <code>IAccessibleText2</code></div>
               </td>
@@ -15770,7 +15771,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <th><a href="https://msdn.microsoft.com/en-us/library/ms726297%28v=VS.85%29.aspx">UIA</a></th>
               <td>
                 <div class="general">
-                  Defines the list item marker, which has no <a class="termref informative" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessible-object">accessible object</a>, but is exposed as content in the accessible text of the associated list item.
+                  Defines the list item marker, which has no <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessible-object">accessible object</a>, but is exposed as content in the accessible text of the associated list item.
                 </div>
                 <div class="ctrlpattern"><span class="type">Control Pattern:</span> <code>Text</code></div>
               </td>
@@ -15779,7 +15780,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <th><a href="https://gnome.pages.gitlab.gnome.org/atk/">ATK</a></th>
               <td>
                 <div class="general">
-                  Defines the list item marker, which has no <a class="termref informative" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessible-object">accessible object</a>, but is exposed as content in the accessible text of the associated list item.
+                  Defines the list item marker, which has no <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessible-object">accessible object</a>, but is exposed as content in the accessible text of the associated list item.
                 </div>
                 <div class="ifaces"><span class="type">Interfaces:</span> <code>ATKText</code></div>
               </td>
@@ -15787,7 +15788,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><a href="https://developer.apple.com/reference/appkit/nsaccessibility">AX</a></th>
               <td>
-                <div class="general">Defines the list item marker, which is exposed as content in <code>AXValue</code>, and rendered as an <a class="termref informative" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessible-object">accessible object</a>:</div>
+                <div class="general">Defines the list item marker, which is exposed as content in <code>AXValue</code>, and rendered as an <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessible-object">accessible object</a>:</div>
                 <div class="role"><span class="type">AXRole:</span> <code>AXListMarker</code></div>
                 <div class="subrole"><span class="type">AXSubrole:</span> <code>(nil)</code></div>
                 <div class="roledesc"><span class="type">AXRoleDescription:</span> <code>"list marker"</code></div>
@@ -15797,8 +15798,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <th>Comments</th>
               <td>
                 <div class="general">
-                  Some platforms (IAccessible2, ATK, UIA) do not expose an <a class="termref informative" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessible-object">accessible object</a> for the list item marker, whether it was created and then pruned from the
-                  <a class="termref informative" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-tree">accessibility tree</a>, or never created in the first place. Instead, they expose the list item marker as part of the associated list item's accessible text. In
+                  Some platforms (IAccessible2, ATK, UIA) do not expose an <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessible-object">accessible object</a> for the list item marker, whether it was created and then pruned from the
+                  <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-tree">accessibility tree</a>, or never created in the first place. Instead, they expose the list item marker as part of the associated list item's accessible text. In
                   these cases, implementors need to consider such things as adjusting the offsets (e.g., for caret-moved events, text-selection events, etc.) for the updated list item text that now
                   also contains the list item marker as content, rather than just taking the offsets unmodified from the list item renderer.
                 </div>
@@ -16234,13 +16235,13 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       
       <p>
         The terms <a href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-name">accessible name</a> and <a href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-description">accessible description</a> are properties provided in
-        all <a class="termref informative" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-api">accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a>. The name of the properties may differ across <abbr title="Application Programming Interfaces">APIs</abbr> but they serve the same function: as a container for a short (name) or longer (description)
+        all <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-api">accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a>. The name of the properties may differ across <abbr title="Application Programming Interfaces">APIs</abbr> but they serve the same function: as a container for a short (name) or longer (description)
         string of text.
       </p>
       <p>
         The <a href="https://w3c.github.io/accname/#mapping_additional_nd_te" class="accname">text alternative computation</a> is used to generate both the <a href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-name">accessible name</a> and
         <a href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-description">accessible description</a>. There are different rules provided for several different types of
-        <a class="termref informative" data-lt="element" data-type="dfn" href="https://dom.spec.whatwg.org/#concept-element">elements</a>, <a class="termref informative" data-lt="node" data-type="dfn" href="https://dom.spec.whatwg.org/#concept-node">nodes</a>, and combinations of markup.
+        <a class="termref informative" data-lt="element" data-link-type="dfn" href="https://dom.spec.whatwg.org/#concept-element">elements</a>, <a class="termref informative" data-lt="node" data-link-type="dfn" href="https://dom.spec.whatwg.org/#concept-node">nodes</a>, and combinations of markup.
       </p>
       <div class="note" role="note" id="issue-container-generatedID-12"><div role="heading" class="note-title marker" id="h-note-12" aria-level="3"><span>Note</span></div><p class="">
         User Agents notify assistive technology when relevant accessibility information changes, sometimes by destroying and recreating the accessibility object, or sometimes by notifying of changes
@@ -16513,9 +16514,9 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
         <section id="text-level-element-accessible-name-computation"><div class="header-wrapper"><h4 id="x4-1-17-text-level-element-accessible-name-computation"><bdi class="secno">4.1.17 </bdi>Text-level Element Accessible Name Computation</h4><a class="self-link" href="#text-level-element-accessible-name-computation" aria-label="Permalink for Section 4.1.17"></a></div>
           
           <p>
-            <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-abbr-element"><code>abbr</code></a>, <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-b-element"><code>b</code></a>, <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdi-element"><code>bdi</code></a>, <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdo-element"><code>bdo</code></a>, <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-br-element"><code>br</code></a>, <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-cite-element"><code>cite</code></a>, <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-code-element"><code>code</code></a>, <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-dfn-element"><code>dfn</code></a>, <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-em-element"><code>em</code></a>, <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-i-element"><code>i</code></a>, <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-kbd-element"><code>kbd</code></a>, <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-mark-element"><code>mark</code></a>, <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-q-element"><code>q</code></a>,
-            <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rp-element"><code>rp</code></a>, <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rt-element"><code>rt</code></a>, <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-ruby-element"><code>ruby</code></a>, <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-s-element"><code>s</code></a>, <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-samp-element"><code>samp</code></a>, <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-small-element"><code>small</code></a>, <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-strong-element"><code>strong</code></a>,
-            <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-sub-and-sup-elements"><code>sub</code> and <code>sup</code></a>, <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-time-element"><code>time</code></a>, <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-u-element"><code>u</code></a>, <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-var-element"><code>var</code></a>, <a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-wbr-element"><code>wbr</code></a>
+            <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-abbr-element"><code>abbr</code></a>, <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-b-element"><code>b</code></a>, <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdi-element"><code>bdi</code></a>, <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdo-element"><code>bdo</code></a>, <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-br-element"><code>br</code></a>, <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-cite-element"><code>cite</code></a>, <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-code-element"><code>code</code></a>, <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-dfn-element"><code>dfn</code></a>, <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-em-element"><code>em</code></a>, <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-i-element"><code>i</code></a>, <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-kbd-element"><code>kbd</code></a>, <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-mark-element"><code>mark</code></a>, <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-q-element"><code>q</code></a>,
+            <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rp-element"><code>rp</code></a>, <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rt-element"><code>rt</code></a>, <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-ruby-element"><code>ruby</code></a>, <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-s-element"><code>s</code></a>, <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-samp-element"><code>samp</code></a>, <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-small-element"><code>small</code></a>, <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-strong-element"><code>strong</code></a>,
+            <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-sub-and-sup-elements"><code>sub</code> and <code>sup</code></a>, <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-time-element"><code>time</code></a>, <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-u-element"><code>u</code></a>, <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-var-element"><code>var</code></a>, <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-wbr-element"><code>wbr</code></a>
           </p>
           <ol>
             <li>
@@ -16532,8 +16533,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
         
         <p>
           An <a href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-description">accessible description</a> <em class="rfc2119">MAY</em> be provided to any <abbr title="HyperText Markup Language">HTML</abbr> element that is a valid child of the <code>body</code> element. The following list
-          represents the order of precedence for <a class="termref informative" data-type="dfn" href="https://infra.spec.whatwg.org/#user-agent">user agents</a> to compute the <a href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-description">accessible description</a> of an element. As
-          defined by <a href="https://www.w3.org/TR/accname-1.2/#mapping_additional_nd_description">Accessible Name and Description Computation: Description Computation </a>, <a class="termref informative" data-type="dfn" href="https://infra.spec.whatwg.org/#user-agent">user agents</a> <em class="rfc2119">MUST</em>
+          represents the order of precedence for <a class="termref informative" data-link-type="dfn" href="https://infra.spec.whatwg.org/#user-agent">user agents</a> to compute the <a href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-description">accessible description</a> of an element. As
+          defined by <a href="https://www.w3.org/TR/accname-1.2/#mapping_additional_nd_description">Accessible Name and Description Computation: Description Computation </a>, <a class="termref informative" data-link-type="dfn" href="https://infra.spec.whatwg.org/#user-agent">user agents</a> <em class="rfc2119">MUST</em>
           use the first applicable description source, even if its use results in an empty description.
         </p>
         <ol>
@@ -16638,7 +16639,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </li>
             <li>18-Sept-2019: Update <abbr title="Microsoft Active Accessibility">MSAA</abbr> mappings for <code>sub</code> and <code>sup</code>. See <a href="https://github.com/w3c/html-aam/pull/252">GitHub pull request #252</a>.</li>
             <li>
-              11-Sept-2019: Update mapping for <code><a data-link-type="element" data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#menus">menu</a></code> to match <abbr title="HyperText Markup Language">HTML</abbr> Living Standard. Remove element and attribute mappings that are not applicable to <code>menu</code> and <code>menuitem</code>. Update mapping of <code>menu</code>
+              11-Sept-2019: Update mapping for <code><a data-link-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#menus">menu</a></code> to match <abbr title="HyperText Markup Language">HTML</abbr> Living Standard. Remove element and attribute mappings that are not applicable to <code>menu</code> and <code>menuitem</code>. Update mapping of <code>menu</code>
               to <code>role="list"</code>. See <a href="https://github.com/w3c/html-aam/issues/188">GitHub issue #188</a>.
             </li>
             <li>10-July-2019: Further updated mappings for <code>ins</code> and <code>del</code> elements. See <a href="https://github.com/w3c/html-aam/pull/219">GitHub pull request #219</a>.</li>
@@ -16740,12 +16741,15 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       <section class="appendix informative" id="acknowledgements"><div class="header-wrapper"><h3 id="a-2-acknowledgments"><bdi class="secno">A.2 </bdi>Acknowledgments</h3><a class="self-link" href="#acknowledgements" aria-label="Permalink for Appendix A.2"></a></div><p><em>This section is non-normative.</em></p>
         
         <p>The following people contributed to the development of this document.</p>
-        <div class="section" id="ack_group">
+        <ul id="gh-contributors"><li><a href="https://github.com/adampage">Adam Page</a></li><li><a href="https://github.com/AlexLloyd0">Alex Lloyd</a></li><li><a href="https://github.com/asurkov">Alexander Surkov</a></li><li><a href="https://github.com/boggydigital">Bogdan Brinza</a></li><li><a href="https://github.com/carmacleod">Carolyn MacLeod</a></li><li><a href="https://github.com/dandclark">Dan Clark</a></li><li><a href="https://github.com/daniel-montalvo">Daniel Montalvo</a></li><li><a href="https://github.com/deniak">Denis Ah-Kang</a></li><li><a href="https://github.com/dontcallmedom">Dominique Hazael-Massieux</a></li><li><a href="https://github.com/einSelbst">einSelbst</a></li><li><a href="https://github.com/cookiecrook">James Craig</a></li><li><a href="https://github.com/jnurthen">James Nurthen</a></li><li><a href="https://github.com/jasonkiss">Jason Kiss</a></li><li><a href="https://github.com/joanmarie">joanmarie</a></li><li><a href="https://github.com/Johanna-hub">Johanna</a></li><li><a href="https://github.com/jongund">Jon Gunderson</a></li><li><a href="https://github.com/LJWatson">Léonie Watson</a></li><li><a href="https://github.com/marcoscaceres">Marcos Cáceres</a></li><li><a href="https://github.com/melanierichards">Melanie Richards</a></li><li><a href="https://github.com/nschonni">Nick Schonning</a></li><li><a href="https://github.com/pkra">Peter Krautzberger</a></li><li><a href="https://github.com/plehegar">Philippe Le Hegaret</a></li><li><a href="https://github.com/rahimabdi">Rahim Abdi</a></li><li><a href="https://github.com/sidvishnoi">Sid Vishnoi</a></li><li><a href="https://github.com/zcorpan">Simon Pieters</a></li><li><a href="https://github.com/stevefaulkner">Steve Faulkner</a></li><li><a href="https://github.com/spectranaut">Valerie Young</a></li><li><a href="https://github.com/vikas-parashar">Vikas Parashar</a></li><li><a href="https://github.com/siusin">Xiaoqian Wu</a></li><li><a href="https://github.com/YummyBacon5">Yummy_Bacon5</a></li><li><a href="https://github.com/ylafon">Yves Lafon</a></li></ul>
+        <section class="section" id="ack_group"><div class="header-wrapper"><h4 id="a-2-1-aria-wg-participants-at-the-time-of-publication"><bdi class="secno">A.2.1 </bdi>ARIA WG participants at the time of publication</h4><a class="self-link" href="#ack_group" aria-label="Permalink for Appendix A.2.1"></a></div>
           
-          <ul id="gh-contributors"><li><a href="https://github.com/adampage">Adam Page</a></li><li><a href="https://github.com/AlexLloyd0">Alex Lloyd</a></li><li><a href="https://github.com/asurkov">Alexander Surkov</a></li><li><a href="https://github.com/boggydigital">Bogdan Brinza</a></li><li><a href="https://github.com/carmacleod">Carolyn MacLeod</a></li><li><a href="https://github.com/dandclark">Dan Clark</a></li><li><a href="https://github.com/daniel-montalvo">Daniel Montalvo</a></li><li><a href="https://github.com/deniak">Denis Ah-Kang</a></li><li><a href="https://github.com/dontcallmedom">Dominique Hazael-Massieux</a></li><li><a href="https://github.com/einSelbst">einSelbst</a></li><li><a href="https://github.com/cookiecrook">James Craig</a></li><li><a href="https://github.com/jnurthen">James Nurthen</a></li><li><a href="https://github.com/jasonkiss">Jason Kiss</a></li><li><a href="https://github.com/joanmarie">joanmarie</a></li><li><a href="https://github.com/Johanna-hub">Johanna</a></li><li><a href="https://github.com/jongund">Jon Gunderson</a></li><li><a href="https://github.com/LJWatson">Léonie Watson</a></li><li><a href="https://github.com/marcoscaceres">Marcos Cáceres</a></li><li><a href="https://github.com/melanierichards">Melanie Richards</a></li><li><a href="https://github.com/nschonni">Nick Schonning</a></li><li><a href="https://github.com/pkra">Peter Krautzberger</a></li><li><a href="https://github.com/plehegar">Philippe Le Hegaret</a></li><li><a href="https://github.com/rahimabdi">Rahim Abdi</a></li><li><a href="https://github.com/sidvishnoi">Sid Vishnoi</a></li><li><a href="https://github.com/zcorpan">Simon Pieters</a></li><li><a href="https://github.com/stevefaulkner">Steve Faulkner</a></li><li><a href="https://github.com/spectranaut">Valerie Young</a></li><li><a href="https://github.com/vikas-parashar">Vikas Parashar</a></li><li><a href="https://github.com/siusin">Xiaoqian Wu</a></li><li><a href="https://github.com/YummyBacon5">Yummy_Bacon5</a></li><li><a href="https://github.com/ylafon">Yves Lafon</a></li></ul>
-          
-          </div>
-        <section class="section" id="ack_funders"><div class="header-wrapper"><h4 id="a-2-1-enabling-funders"><bdi class="secno">A.2.1 </bdi>Enabling funders</h4><a class="self-link" href="#ack_funders" aria-label="Permalink for Appendix A.2.1"></a></div>
+          <ul>
+            
+          <li>Rahim Abdi (Apple Inc.)</li><li>Sina Bahram (Prime Access Consulting, Inc.)</li><li>Mario Batušić (Fabasoft)</li><li>Benjamin Beaudry (Microsoft Corporation)</li><li>Curt Bellew (Oracle Corporation)</li><li>Zoë Bijl (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Experts)</li><li>Jieting Chen (Tencent)</li><li>Aleksandar Cindrikj (Netcetera)</li><li>Keith Cirkel (Microsoft Corporation)</li><li>Daniel Clark (Microsoft Corporation)</li><li>Dominic Cooney (Meta)</li><li>James Craig (Apple Inc.)</li><li>Chris Cuellar (Bocoup)</li><li>Hidde de Vries (Logius)</li><li>Airing Deng (Tencent)</li><li>Joanmarie Diggs (Igalia)</li><li>Howard Edwards (Bocoup)</li><li>James Edwards (TPGi)</li><li>Mayuri Faldu (Navy Federal Credit Union)</li><li>Betsy Fanning (PDF Association)</li><li>Reinaldo Ferraz (NIC.br - Brazilian Network Information Center)</li><li>Jane Fulton (Cisco)</li><li>Bryan Garaventa (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Experts)</li><li>Rashmi Garimella (Google LLC)</li><li>Matt Garrish (DAISY Consortium)</li><li>Doug Geoffray (Microsoft Corporation)</li><li>Jaunita George (Navy Federal Credit Union)</li><li>Ariella Gilmore (IBM Corporation)</li><li>Glen Gordon (TPGi)</li><li>Shirisha Gubba (Google LLC)</li><li>Eloisa Guerrero (Rakuten Group, Inc.)</li><li>Jon Gunderson (University of Illinois)</li><li>Oliver Habersetzer (SAP SE)</li><li>Theo Hale (Microsoft Corporation)</li><li>Sunny Hardasani (Adobe)</li><li>Matthew Hardy (Adobe)</li><li>Peter Heumader (Fabasoft)</li><li>Sarah Higley (Microsoft Corporation)</li><li>Hans Hillen (TPGi)</li><li>Isabel Holdsworth (TPGi)</li><li>Stanley Hon (Microsoft Corporation)</li><li>Jeroen Hulscher (Logius)</li><li>Michael Jackson (Microsoft Corporation)</li><li>Duff Johnson (PDF Association)</li><li>Summer Jones (Thomson Reuters Corp.)</li><li>Cory Joseph (CVS Pharmacy, Inc.)</li><li>Sanket Joshi (Microsoft Corporation)</li><li>William Kilian (TargetStream Technologies)</li><li>Matthew King (Meta)</li><li>Zachary Kinsey (TargetStream Technologies)</li><li>Greta Krafsig (The Washington Post)</li><li>Peter Krautzberger (krautzource UG)</li><li>Nina Krauß (SAP SE)</li><li>JaEun Jemma Ku (University of Illinois)</li><li>Charles LaPierre (Benetech)</li><li>Philip Lazarevic (Level Access)</li><li>Aaron Leventhal (Google LLC)</li><li>Brett Lewis (TPGi)</li><li>biao liu (Shenzhen Accessibility Research Association)</li><li>Sazzad Mahamud (Google LLC)</li><li>Alison Maher (Microsoft Corporation)</li><li>Mark McCarthy (University of Illinois)</li><li>Clay Miller (Microsoft Corporation)</li><li>Daniel Montalvo (<abbr title="World Wide Web Consortium">W3C</abbr>)</li><li>Shikha Nikhil Dwivedi (Centre for Inclusive Design)</li><li>James Nurthen (Adobe)</li><li>Scott O'Hara (Microsoft Corporation)</li><li>Lola Odelola (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Experts)</li><li>Adam Page (Hilton)</li><li>Michael Pennisi (Bocoup)</li><li>Roberto Perez (Microsoft Corporation)</li><li>Giacomo Petri (UsableNet)</li><li>Daniel Pöll (Fabasoft)</li><li>Paul Rayius (Allyant)</li><li>Adrian Roselli (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Experts)</li><li>Marco Sabidussi (UsableNet)</li><li>Janina Sajka (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Experts)</li><li>Trisha Salas (Level Access)</li><li>Stefan Schnabel (SAP SE)</li><li>Harris Schneiderman (Deque Systems, Inc.)</li><li>Raymond Schwartz (Navy Federal Credit Union)</li><li>Cynthia Shelly (Google LLC)</li><li>Avneesh Singh (DAISY Consortium)</li><li>Michael[tm] Smith (sideshowbarker) (<abbr title="World Wide Web Consortium">W3C</abbr>)</li><li>Neil Soiffer (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Experts)</li><li>Francis Storr (Intel Corporation)</li><li>Melanie Sumner (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Experts)</li><li>Alexander Surkov (Igalia)</li><li>James Teh (Mozilla Foundation)</li><li>Roman Toda (Foxit software)</li><li>Jocelyn Tran (Google LLC)</li><li>Jan Williams (TPGi)</li><li>Peter Wyatt (PDF Association)</li><li>Michail Yasonik (Airbnb Inc)</li><li>Valerie Young (Igalia)</li><li>Kate Zhao (Thomson Reuters Corp.)</li><li>Xiao (Helen) Zhou (University of Illinois)</li><li>Filippo Zorzi (UsableNet)</li><li>骅 杨 (Shenzhen Accessibility Research Association)</li></ul>
+        </section>
+        
+        <section class="section" id="ack_funders"><div class="header-wrapper"><h4 id="a-2-2-enabling-funders"><bdi class="secno">A.2.2 </bdi>Enabling funders</h4><a class="self-link" href="#ack_funders" aria-label="Permalink for Appendix A.2.2"></a></div>
 	
 	<p>This publication has been funded in part with U.S. Federal funds from the Department of Education, National Institute on Disability, Independent Living, and Rehabilitation Research (NIDILRR), initially under contract number ED-OSE-10-C-0067, then under contract number HHSP23301500054C, and now under HHS75P00120P00168. The content of this publication does not necessarily reflect the views or policies of the U.S. Department of Education, nor does mention of trade names, commercial products, or organizations imply endorsement by the U.S. Government.</p>
 </section>
@@ -16759,7 +16763,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     <dl class="bibliography"><dt id="bib-accname-1.2">[accname-1.2]</dt><dd>
       <a href="https://www.w3.org/TR/accname-1.2/"><cite>Accessible Name and Description Computation 1.2</cite></a>. Bryan Garaventa; Melanie Sumner.  W3C. 2 August 2024. W3C Working Draft. URL: <a href="https://www.w3.org/TR/accname-1.2/">https://www.w3.org/TR/accname-1.2/</a>
     </dd><dt id="bib-core-aam-1.2">[core-aam-1.2]</dt><dd>
-      <a href="https://www.w3.org/TR/core-aam-1.2/"><cite>Core Accessibility API Mappings 1.2</cite></a>. Valerie Young; Alexander Surkov.  W3C. 14 November 2024. W3C Candidate Recommendation. URL: <a href="https://www.w3.org/TR/core-aam-1.2/">https://www.w3.org/TR/core-aam-1.2/</a>
+      <a href="https://www.w3.org/TR/core-aam-1.2/"><cite>Core Accessibility API Mappings 1.2</cite></a>. Valerie Young; Alexander Surkov.  W3C. 22 November 2024. W3C Candidate Recommendation. URL: <a href="https://www.w3.org/TR/core-aam-1.2/">https://www.w3.org/TR/core-aam-1.2/</a>
     </dd><dt id="bib-html">[HTML]</dt><dd>
       <a href="https://html.spec.whatwg.org/multipage/"><cite>HTML Standard</cite></a>. Anne van Kesteren; Domenic Denicola; Dominic Farolino; Ian Hickson; Philip Jägenstedt; Simon Pieters.  WHATWG. Living Standard. URL: <a href="https://html.spec.whatwg.org/multipage/">https://html.spec.whatwg.org/multipage/</a>
     </dd><dt id="bib-rfc2119">[RFC2119]</dt><dd>
@@ -16776,7 +16780,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   </section><section id="informative-references"><div class="header-wrapper"><h3 id="b-2-informative-references"><bdi class="secno">B.2 </bdi>Informative references</h3><a class="self-link" href="#informative-references" aria-label="Permalink for Appendix B.2"></a></div>
     
     <dl class="bibliography"><dt id="bib-at-spi">[AT-SPI]</dt><dd>
-      <a href="https://developer-old.gnome.org/libatspi/stable/"><cite>Assistive Technology Service Provider Interface</cite></a>.  The GNOME Project. URL: <a href="https://developer-old.gnome.org/libatspi/stable/">https://developer-old.gnome.org/libatspi/stable/</a>
+      <a href="https://gnome.pages.gitlab.gnome.org/at-spi2-core/libatspi/"><cite>Assistive Technology Service Provider Interface</cite></a>.  The GNOME Project. URL: <a href="https://gnome.pages.gitlab.gnome.org/at-spi2-core/libatspi/">https://gnome.pages.gitlab.gnome.org/at-spi2-core/libatspi/</a>
     </dd><dt id="bib-atk">[ATK]</dt><dd>
       <a href="https://developer.gnome.org/atk/stable/"><cite>ATK - Accessibility Toolkit</cite></a>.  The GNOME Project. URL: <a href="https://developer.gnome.org/atk/stable/">https://developer.gnome.org/atk/stable/</a>
     </dd><dt id="bib-axapi">[AXAPI]</dt><dd>
