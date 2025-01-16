@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en-US"><head>
 <meta charset="utf-8">
-<meta name="generator" content="ReSpec 35.2.0">
+<meta name="generator" content="ReSpec 35.2.2">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <style>
 .issue-label{text-transform:initial}
@@ -97,7 +97,7 @@ dd{margin-left:0}
 }
 </style>
 <meta name="color-scheme" content="light">
-<meta name="revision" content="af984853f1d53239ec7ba0f71a1494f312019f21">
+<meta name="revision" content="09c6ed15ac83ef89eeb2f88ed3639c49e35a933e">
 <meta name="description" content="HTML Accessibility API Mappings (HTML-AAM) defines how user agents map HTML [HTML] elements and attributes to platform
         accessibility application programming interfaces (APIs). It leverages and extends the
         Core Accessibility API Mappings 1.2 and the Accessible Name and Description Computation 1.2 for use with the HTML host language. Documenting these mappings promotes interoperable exposure of roles, states, properties, and events
@@ -199,16 +199,16 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     null
   ],
   "a11y": false,
-  "gitRevision": "af984853f1d53239ec7ba0f71a1494f312019f21",
-  "publishISODate": "2024-12-11T00:00:00.000Z",
-  "generatedSubtitle": "W3C Editor's Draft 11 December 2024"
+  "gitRevision": "09c6ed15ac83ef89eeb2f88ed3639c49e35a933e",
+  "publishISODate": "2025-01-16T00:00:00.000Z",
+  "generatedSubtitle": "W3C Editor's Draft 16 January 2025"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-ED"></head>
   <body class="h-entry" data-cite="HTML core-aam accname wai-aria dom infra"><div class="head">
     <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
   </a></p>
     <h1 id="title" class="title">HTML Accessibility API Mappings 1.0</h1> 
-    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2024-12-11">11 December 2024</time></p>
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2025-01-16">16 January 2025</time></p>
     <details open="">
       <summary>More details about this document</summary>
       <dl>
@@ -261,7 +261,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     <p class="copyright">
     <a href="https://www.w3.org/policies/#copyright">Copyright</a>
     ©
-    2015-2024
+    2015-2025
     
     <a href="https://www.w3.org/">World Wide Web Consortium</a>.
     <abbr title="World Wide Web Consortium">W3C</abbr><sup>®</sup>
@@ -13621,10 +13621,11 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
                 <p>User agents <em class="rfc2119">MUST NOT</em> expose a details relation between a <code>popover</code> and its invoking element under the following conditions:</p>
                 <ul>
                   <li>when the <code>popover</code> is the next immediate accessibility sibling to the invoking element,</li>
-                  <li>when the element has a <code>popovertarget=hide</code> attribute value,</li>
+                  <li>when the element has a <code>popovertargetaction=hide</code> attribute value,</li>
                   <li>or when the element is a descendant of the <code>popover</code> and its <code>popovertarget</code> is the "<code>auto</code>" state.</li>
                 </ul>
-                <p>If specified on an element with an implicit role of <code>generic</code>, then the element's role instead maps to <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-group"><code>group</code></a>.</p>
+                <p>If specified on an element with an implicit role of <code>generic</code>, then the element's role instead maps to <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-group"><code>group</code></a> for all <a href="https://html.spec.whatwg.org/multipage/popover.html#the-popover-attribute"><code>popover</code> states</a>.</p>
+                <div class="note" role="note" id="issue-container-generatedID-11"><div role="heading" class="note-title marker" id="h-note-11" aria-level="4"><span>Note</span></div><p class="">There are no unique mappings for the different <code>popover</code> states. Any accessibility mapping changes for the popover element would be the responsibility of the author. e.g., using different base <abbr title="HyperText Markup Language">HTML</abbr> elements, attributes, or ARIA attributes to make such changes.</p></div>
               </td>
             </tr>
           </tbody>
@@ -13703,7 +13704,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
                   <li>The element's implicit or explicit <code>popovertargetaction</code> is the "<code>auto</code>" state and the element is a descendant of the <code>popover</code> it is associated with.</li>
                   
                 </ul>
-                <div class="note" role="note" id="issue-container-generatedID-11"><div role="heading" class="note-title marker" id="h-note-11" aria-level="4"><span>Note</span></div><p class="">A button that represents a <a href="https://html.spec.whatwg.org/multipage/forms.html#concept-submit-button">submit button</a> with a <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#form-owner">form owner</a> cannot invoke a popover.</p></div>
+                <div class="note" role="note" id="issue-container-generatedID-12"><div role="heading" class="note-title marker" id="h-note-12" aria-level="4"><span>Note</span></div><p class="">A button that represents a <a href="https://html.spec.whatwg.org/multipage/forms.html#concept-submit-button">submit button</a> with a <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#form-owner">form owner</a> cannot invoke a popover.</p></div>
               </td>
             </tr>
           </tbody>
@@ -16293,7 +16294,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
         <a href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-description">accessible description</a>. There are different rules provided for several different types of
         <a class="termref informative" data-lt="element" data-link-type="dfn" href="https://dom.spec.whatwg.org/#concept-element">elements</a>, <a class="termref informative" data-lt="node" data-link-type="dfn" href="https://dom.spec.whatwg.org/#concept-node">nodes</a>, and combinations of markup.
       </p>
-      <div class="note" role="note" id="issue-container-generatedID-12"><div role="heading" class="note-title marker" id="h-note-12" aria-level="3"><span>Note</span></div><p class="">
+      <div class="note" role="note" id="issue-container-generatedID-13"><div role="heading" class="note-title marker" id="h-note-13" aria-level="3"><span>Note</span></div><p class="">
         User Agents notify assistive technology when relevant accessibility information changes, sometimes by destroying and recreating the accessibility object, or sometimes by notifying of changes
         to the object per the specified
         <a href="https://www.w3.org/TR/core-aam-1.2/#event-aria-label">name change event mappings</a> and <a href="https://www.w3.org/TR/core-aam-1.2/#event-aria-describedby">description change event mappings</a>.
@@ -16470,7 +16471,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </li>
             <li>
               Otherwise use <code>alt</code> attribute, even if its value is the empty string.
-              <div class="note" role="note" id="issue-container-generatedID-13"><div role="heading" class="note-title marker" id="h-note-13" aria-level="5"><span>Note</span></div><div class="">
+              <div class="note" role="note" id="issue-container-generatedID-14"><div role="heading" class="note-title marker" id="h-note-14" aria-level="5"><span>Note</span></div><div class="">
                 An <code>img</code> with an <code>alt</code> attribute whose value is the empty string is mapped to the
                 <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-presentation"><code>presentation</code></a> role. It has no accessible name.
               </div></div>
@@ -16544,7 +16545,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <li>Otherwise use the <code>title</code> attribute.</li>
             <li>If none of the above yield a usable text string there is no <a href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-name">accessible name</a>.</li>
           </ol>
-          <div class="note" role="note" id="issue-container-generatedID-14"><div role="heading" class="note-title marker" id="h-note-14" aria-level="5"><span>Note</span></div><p class="">
+          <div class="note" role="note" id="issue-container-generatedID-15"><div role="heading" class="note-title marker" id="h-note-15" aria-level="5"><span>Note</span></div><p class="">
             The document referenced by the <code>src</code> of the <code>iframe</code> element gets its name from that document's <code>title</code> element, like any other document. If there is no <code>title</code> provided, there is no
             accessible name.
           </p></div>
@@ -16791,12 +16792,12 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       <section class="appendix informative" id="acknowledgements"><div class="header-wrapper"><h3 id="a-2-acknowledgments"><bdi class="secno">A.2 </bdi>Acknowledgments</h3><a class="self-link" href="#acknowledgements" aria-label="Permalink for Appendix A.2"></a></div><p><em>This section is non-normative.</em></p>
         
         <p>The following people contributed to the development of this document.</p>
-        <ul id="gh-contributors"><li><a href="https://github.com/adampage">Adam Page</a></li><li><a href="https://github.com/AlexLloyd0">Alex Lloyd</a></li><li><a href="https://github.com/asurkov">Alexander Surkov</a></li><li><a href="https://github.com/boggydigital">Bogdan Brinza</a></li><li><a href="https://github.com/carmacleod">Carolyn MacLeod</a></li><li><a href="https://github.com/dandclark">Dan Clark</a></li><li><a href="https://github.com/daniel-montalvo">Daniel Montalvo</a></li><li><a href="https://github.com/deniak">Denis Ah-Kang</a></li><li><a href="https://github.com/dontcallmedom">Dominique Hazael-Massieux</a></li><li><a href="https://github.com/einSelbst">einSelbst</a></li><li><a href="https://github.com/cookiecrook">James Craig</a></li><li><a href="https://github.com/jnurthen">James Nurthen</a></li><li><a href="https://github.com/jasonkiss">Jason Kiss</a></li><li><a href="https://github.com/joanmarie">joanmarie</a></li><li><a href="https://github.com/Johanna-hub">Johanna</a></li><li><a href="https://github.com/jongund">Jon Gunderson</a></li><li><a href="https://github.com/LJWatson">Léonie Watson</a></li><li><a href="https://github.com/marcoscaceres">Marcos Cáceres</a></li><li><a href="https://github.com/melanierichards">Melanie Richards</a></li><li><a href="https://github.com/nschonni">Nick Schonning</a></li><li><a href="https://github.com/pkra">Peter Krautzberger</a></li><li><a href="https://github.com/plehegar">Philippe Le Hegaret</a></li><li><a href="https://github.com/rahimabdi">Rahim Abdi</a></li><li><a href="https://github.com/sidvishnoi">Sid Vishnoi</a></li><li><a href="https://github.com/zcorpan">Simon Pieters</a></li><li><a href="https://github.com/stevefaulkner">Steve Faulkner</a></li><li><a href="https://github.com/spectranaut">Valerie Young</a></li><li><a href="https://github.com/vikas-parashar">Vikas Parashar</a></li><li><a href="https://github.com/siusin">Xiaoqian Wu</a></li><li><a href="https://github.com/YummyBacon5">Yummy_Bacon5</a></li><li><a href="https://github.com/ylafon">Yves Lafon</a></li></ul>
+        <ul id="gh-contributors"><li><a href="https://github.com/adampage">Adam Page</a></li><li><a href="https://github.com/AlexLloyd0">Alex Lloyd</a></li><li><a href="https://github.com/asurkov">Alexander Surkov</a></li><li><a href="https://github.com/boggydigital">Bogdan Brinza</a></li><li><a href="https://github.com/carmacleod">Carolyn MacLeod</a></li><li><a href="https://github.com/dandclark">Dan Clark</a></li><li><a href="https://github.com/deniak">Denis Ah-Kang</a></li><li><a href="https://github.com/dontcallmedom">Dominique Hazael-Massieux</a></li><li><a href="https://github.com/einSelbst">einSelbst</a></li><li><a href="https://github.com/cookiecrook">James Craig</a></li><li><a href="https://github.com/jnurthen">James Nurthen</a></li><li><a href="https://github.com/jasonkiss">Jason Kiss</a></li><li><a href="https://github.com/joanmarie">joanmarie</a></li><li><a href="https://github.com/Johanna-hub">Johanna</a></li><li><a href="https://github.com/jongund">Jon Gunderson</a></li><li><a href="https://github.com/LJWatson">Léonie Watson</a></li><li><a href="https://github.com/marcoscaceres">Marcos Cáceres</a></li><li><a href="https://github.com/melanierichards">Melanie Richards</a></li><li><a href="https://github.com/nschonni">Nick Schonning</a></li><li><a href="https://github.com/pkra">Peter Krautzberger</a></li><li><a href="https://github.com/plehegar">Philippe Le Hegaret</a></li><li><a href="https://github.com/rahimabdi">Rahim Abdi</a></li><li><a href="https://github.com/sidvishnoi">Sid Vishnoi</a></li><li><a href="https://github.com/zcorpan">Simon Pieters</a></li><li><a href="https://github.com/stevefaulkner">Steve Faulkner</a></li><li><a href="https://github.com/spectranaut">Valerie Young</a></li><li><a href="https://github.com/vikas-parashar">Vikas Parashar</a></li><li><a href="https://github.com/siusin">Xiaoqian Wu</a></li><li><a href="https://github.com/YummyBacon5">Yummy_Bacon5</a></li><li><a href="https://github.com/ylafon">Yves Lafon</a></li></ul>
         <section class="section" id="ack_group"><div class="header-wrapper"><h4 id="a-2-1-aria-wg-participants-at-the-time-of-publication"><bdi class="secno">A.2.1 </bdi>ARIA WG participants at the time of publication</h4><a class="self-link" href="#ack_group" aria-label="Permalink for Appendix A.2.1"></a></div>
           
           <ul>
             
-          <li>Rahim Abdi (Apple Inc.)</li><li>Sina Bahram (Prime Access Consulting, Inc.)</li><li>Mario Batušić (Fabasoft)</li><li>Benjamin Beaudry (Microsoft Corporation)</li><li>Curt Bellew (Oracle Corporation)</li><li>Zoë Bijl (W3C Invited Experts)</li><li>Jieting Chen (Tencent)</li><li>Aleksandar Cindrikj (Netcetera)</li><li>Keith Cirkel (Microsoft Corporation)</li><li>Daniel Clark (Microsoft Corporation)</li><li>Dominic Cooney (Meta)</li><li>James Craig (Apple Inc.)</li><li>Chris Cuellar (Bocoup)</li><li>Hidde de Vries (Logius)</li><li>Airing Deng (Tencent)</li><li>Joanmarie Diggs (Igalia)</li><li>Howard Edwards (Bocoup)</li><li>James Edwards (TPGi)</li><li>Mayuri Faldu (Navy Federal Credit Union)</li><li>Betsy Fanning (PDF Association)</li><li>Reinaldo Ferraz (NIC.br - Brazilian Network Information Center)</li><li>Jane Fulton (Cisco)</li><li>Bryan Garaventa (W3C Invited Experts)</li><li>Rashmi Garimella (Google LLC)</li><li>Matt Garrish (DAISY Consortium)</li><li>Doug Geoffray (Microsoft Corporation)</li><li>Jaunita George (Navy Federal Credit Union)</li><li>Ariella Gilmore (IBM Corporation)</li><li>Glen Gordon (TPGi)</li><li>Shirisha Gubba (Google LLC)</li><li>Eloisa Guerrero (Rakuten Group, Inc.)</li><li>Jon Gunderson (University of Illinois)</li><li>Oliver Habersetzer (SAP SE)</li><li>Theo Hale (Microsoft Corporation)</li><li>Sunny Hardasani (Adobe)</li><li>Matthew Hardy (Adobe)</li><li>Peter Heumader (Fabasoft)</li><li>Sarah Higley (Microsoft Corporation)</li><li>Hans Hillen (TPGi)</li><li>Isabel Holdsworth (TPGi)</li><li>Stanley Hon (Microsoft Corporation)</li><li>Jeroen Hulscher (Logius)</li><li>Michael Jackson (Microsoft Corporation)</li><li>Duff Johnson (PDF Association)</li><li>Summer Jones (Thomson Reuters Corp.)</li><li>Cory Joseph (CVS Pharmacy, Inc.)</li><li>Sanket Joshi (Microsoft Corporation)</li><li>William Kilian (TargetStream Technologies)</li><li>Matthew King (Meta)</li><li>Zachary Kinsey (TargetStream Technologies)</li><li>Greta Krafsig (The Washington Post)</li><li>Peter Krautzberger (krautzource UG)</li><li>Nina Krauß (SAP SE)</li><li>JaEun Jemma Ku (University of Illinois)</li><li>Charles LaPierre (Benetech)</li><li>Philip Lazarevic (Level Access)</li><li>Aaron Leventhal (Google LLC)</li><li>Brett Lewis (TPGi)</li><li>biao liu (Shenzhen Accessibility Research Association)</li><li>Sazzad Mahamud (Google LLC)</li><li>Alison Maher (Microsoft Corporation)</li><li>Mark McCarthy (University of Illinois)</li><li>Clay Miller (Microsoft Corporation)</li><li>Daniel Montalvo (W3C)</li><li>Shikha Nikhil Dwivedi (Centre for Inclusive Design)</li><li>James Nurthen (Adobe)</li><li>Scott O'Hara (Microsoft Corporation)</li><li>Lola Odelola (W3C Invited Experts)</li><li>Adam Page (Hilton)</li><li>Michael Pennisi (Bocoup)</li><li>Roberto Perez (Microsoft Corporation)</li><li>Giacomo Petri (UsableNet)</li><li>Daniel Pöll (Fabasoft)</li><li>Paul Rayius (Allyant)</li><li>Adrian Roselli (W3C Invited Experts)</li><li>Marco Sabidussi (UsableNet)</li><li>Janina Sajka (W3C Invited Experts)</li><li>Trisha Salas (Level Access)</li><li>Stefan Schnabel (SAP SE)</li><li>Harris Schneiderman (Deque Systems, Inc.)</li><li>Raymond Schwartz (Navy Federal Credit Union)</li><li>Cynthia Shelly (Google LLC)</li><li>Avneesh Singh (DAISY Consortium)</li><li>Michael[tm] Smith (sideshowbarker) (W3C)</li><li>Neil Soiffer (W3C Invited Experts)</li><li>Francis Storr (Intel Corporation)</li><li>Melanie Sumner (W3C Invited Experts)</li><li>Alexander Surkov (Igalia)</li><li>James Teh (Mozilla Foundation)</li><li>Roman Toda (Foxit software)</li><li>Jocelyn Tran (Google LLC)</li><li>Jan Williams (TPGi)</li><li>Peter Wyatt (PDF Association)</li><li>Michail Yasonik (Airbnb Inc)</li><li>Valerie Young (Igalia)</li><li>Kate Zhao (Thomson Reuters Corp.)</li><li>Xiao (Helen) Zhou (University of Illinois)</li><li>Filippo Zorzi (UsableNet)</li><li>骅 杨 (Shenzhen Accessibility Research Association)</li></ul>
+          <li>Rahim Abdi (Apple Inc.)</li><li>Sina Bahram (Prime Access Consulting, Inc.)</li><li>Mario Batušić (Fabasoft)</li><li>Benjamin Beaudry (Microsoft Corporation)</li><li>Curt Bellew (Oracle Corporation)</li><li>Zoë Bijl (W3C Invited Experts)</li><li>Jieting Chen (Tencent)</li><li>Aleksandar Cindrikj (Netcetera)</li><li>Keith Cirkel (Microsoft Corporation)</li><li>Daniel Clark (Microsoft Corporation)</li><li>Dominic Cooney (Meta)</li><li>James Craig (Apple Inc.)</li><li>Chris Cuellar (Bocoup)</li><li>Hidde de Vries (Logius)</li><li>Airing Deng (Tencent)</li><li>Joanmarie Diggs (Igalia)</li><li>Howard Edwards (Bocoup)</li><li>James Edwards (TPGi)</li><li>Mayuri Faldu (Navy Federal Credit Union)</li><li>Betsy Fanning (PDF Association)</li><li>Steve Faulkner (TetraLogical Services Ltd)</li><li>Reinaldo Ferraz (NIC.br - Brazilian Network Information Center)</li><li>Jane Fulton (Cisco)</li><li>Bryan Garaventa (W3C Invited Experts)</li><li>Rashmi Garimella (Google LLC)</li><li>Matt Garrish (DAISY Consortium)</li><li>Doug Geoffray (Microsoft Corporation)</li><li>Jaunita George (Navy Federal Credit Union)</li><li>Ariella Gilmore (IBM Corporation)</li><li>Glen Gordon (TPGi)</li><li>Shirisha Gubba (Google LLC)</li><li>Eloisa Guerrero (Rakuten Group, Inc.)</li><li>Jon Gunderson (University of Illinois)</li><li>Oliver Habersetzer (SAP SE)</li><li>Theo Hale (Microsoft Corporation)</li><li>Sunny Hardasani (Adobe)</li><li>Matthew Hardy (Adobe)</li><li>Peter Heumader (Fabasoft)</li><li>Sarah Higley (Microsoft Corporation)</li><li>Hans Hillen (TPGi)</li><li>Isabel Holdsworth (TPGi)</li><li>Stanley Hon (Microsoft Corporation)</li><li>Jeroen Hulscher (Logius)</li><li>Michael Jackson (Microsoft Corporation)</li><li>Duff Johnson (PDF Association)</li><li>Summer Jones (Thomson Reuters Corp.)</li><li>Cory Joseph (CVS Pharmacy, Inc.)</li><li>Sanket Joshi (Microsoft Corporation)</li><li>William Kilian (TargetStream Technologies)</li><li>Matthew King (Meta)</li><li>Zachary Kinsey (TargetStream Technologies)</li><li>Greta Krafsig (The Washington Post)</li><li>Peter Krautzberger (krautzource UG)</li><li>Nina Krauß (SAP SE)</li><li>JaEun Jemma Ku (University of Illinois)</li><li>Joe Lamyman (TetraLogical Services Ltd)</li><li>Charles LaPierre (Benetech)</li><li>Philip Lazarevic (Level Access)</li><li>Aaron Leventhal (Google LLC)</li><li>Brett Lewis (TPGi)</li><li>biao liu (Shenzhen Accessibility Research Association)</li><li>Sazzad Mahamud (Google LLC)</li><li>Alison Maher (Microsoft Corporation)</li><li>Mark McCarthy (University of Illinois)</li><li>Clay Miller (Microsoft Corporation)</li><li>Daniel Montalvo (W3C)</li><li>Shikha Nikhil Dwivedi (Centre for Inclusive Design)</li><li>James Nurthen (Adobe)</li><li>Scott O'Hara (Microsoft Corporation)</li><li>Lola Odelola (W3C Invited Experts)</li><li>Adam Page (Hilton)</li><li>Michael Pennisi (Bocoup)</li><li>Roberto Perez (Microsoft Corporation)</li><li>Giacomo Petri (UsableNet)</li><li>Daniel Pöll (Fabasoft)</li><li>Paul Rayius (Allyant)</li><li>Adrian Roselli (W3C Invited Experts)</li><li>Marco Sabidussi (UsableNet)</li><li>Janina Sajka (W3C Invited Experts)</li><li>Trisha Salas (Level Access)</li><li>Stefan Schnabel (SAP SE)</li><li>Harris Schneiderman (Deque Systems, Inc.)</li><li>Raymond Schwartz (Navy Federal Credit Union)</li><li>Cynthia Shelly (Google LLC)</li><li>Tzviya Siegman (W3C)</li><li>Avneesh Singh (DAISY Consortium)</li><li>Michael[tm] Smith (sideshowbarker) (W3C)</li><li>Neil Soiffer (W3C Invited Experts)</li><li>Francis Storr (Intel Corporation)</li><li>Melanie Sumner (W3C Invited Experts)</li><li>Alexander Surkov (Igalia)</li><li>James Teh (Mozilla Foundation)</li><li>Roman Toda (Foxit software)</li><li>Jocelyn Tran (Google LLC)</li><li>Léonie Watson (TetraLogical Services Ltd)</li><li>Jan Williams (TPGi)</li><li>Peter Wyatt (PDF Association)</li><li>Michail Yasonik (Airbnb Inc)</li><li>Valerie Young (Igalia)</li><li>Kate Zhao (Thomson Reuters Corp.)</li></ul>
         </section>
         
         <section class="section" id="ack_funders"><div class="header-wrapper"><h4 id="a-2-2-enabling-funders"><bdi class="secno">A.2.2 </bdi>Enabling funders</h4><a class="self-link" href="#ack_funders" aria-label="Permalink for Appendix A.2.2"></a></div>
@@ -16813,7 +16814,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     <dl class="bibliography"><dt id="bib-accname-1.2">[accname-1.2]</dt><dd>
       <a href="https://www.w3.org/TR/accname-1.2/"><cite>Accessible Name and Description Computation 1.2</cite></a>. Bryan Garaventa; Melanie Sumner.  W3C. 11 December 2024. W3C Working Draft. URL: <a href="https://www.w3.org/TR/accname-1.2/">https://www.w3.org/TR/accname-1.2/</a>
     </dd><dt id="bib-core-aam-1.2">[core-aam-1.2]</dt><dd>
-      <a href="https://www.w3.org/TR/core-aam-1.2/"><cite>Core Accessibility API Mappings 1.2</cite></a>. Valerie Young; Alexander Surkov.  W3C. 11 December 2024. W3C Candidate Recommendation. URL: <a href="https://www.w3.org/TR/core-aam-1.2/">https://www.w3.org/TR/core-aam-1.2/</a>
+      <a href="https://www.w3.org/TR/core-aam-1.2/"><cite>Core Accessibility API Mappings 1.2</cite></a>. Valerie Young; Alexander Surkov.  W3C. 19 December 2024. CRD. URL: <a href="https://www.w3.org/TR/core-aam-1.2/">https://www.w3.org/TR/core-aam-1.2/</a>
     </dd><dt id="bib-html">[HTML]</dt><dd>
       <a href="https://html.spec.whatwg.org/multipage/"><cite>HTML Standard</cite></a>. Anne van Kesteren; Domenic Denicola; Dominic Farolino; Ian Hickson; Philip Jägenstedt; Simon Pieters.  WHATWG. Living Standard. URL: <a href="https://html.spec.whatwg.org/multipage/">https://html.spec.whatwg.org/multipage/</a>
     </dd><dt id="bib-rfc2119">[RFC2119]</dt><dd>
