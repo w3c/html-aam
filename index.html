@@ -91,7 +91,7 @@ dd{margin-left:0}
 }
 </style>
 <meta name="color-scheme" content="light">
-<meta name="revision" content="e5f0305049dbe85992b8211936f1ed9c117ee85b">
+<meta name="revision" content="de2ce16919d1facc302e28b72683e822cc0f85f9">
 <meta name="description" content="HTML Accessibility API Mappings (HTML-AAM) defines how user agents map HTML [HTML] elements and attributes to platform
         accessibility application programming interfaces (APIs). It leverages and extends the
         Core Accessibility API Mappings 1.2 and the Accessible Name and Description Computation 1.2 for use with the HTML host language. Documenting these mappings promotes interoperable exposure of roles, states, properties, and events
@@ -244,16 +244,16 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     null
   ],
   "a11y": false,
-  "gitRevision": "e5f0305049dbe85992b8211936f1ed9c117ee85b",
-  "publishISODate": "2025-03-24T00:00:00.000Z",
-  "generatedSubtitle": "W3C Editor's Draft 24 March 2025"
+  "gitRevision": "de2ce16919d1facc302e28b72683e822cc0f85f9",
+  "publishISODate": "2025-04-02T00:00:00.000Z",
+  "generatedSubtitle": "W3C Editor's Draft 02 April 2025"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-ED"></head>
   <body class="h-entry" data-cite="HTML core-aam accname wai-aria dom infra"><div class="head">
     <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
   </a></p>
     <h1 id="title" class="title">HTML Accessibility API Mappings 1.0</h1> 
-    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2025-03-24">24 March 2025</time></p>
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2025-04-02">02 April 2025</time></p>
     <details open="">
       <summary>More details about this document</summary>
       <dl>
@@ -9491,7 +9491,203 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="content"><div class="header-wrapper"><h4 id="att-content"><bdi class="secno">3.6.25 </bdi><code>content</code></h4><a class="self-link" href="#att-content" aria-label="Permalink for Section 3.6.25"></a></div>
+        </section><section id="command-in-the-toggle-show-and-hide-popover-states"><div class="header-wrapper"><h4 id="att-command-popovers"><bdi class="secno">3.6.25 </bdi><code>command</code> <span class="att-context">(in the Toggle, Show, and Hide popover states)</span></h4><a class="self-link" href="#att-command-popovers" aria-label="Permalink for Section 3.6.25"></a></div>
+        <table class="data" aria-labelledby="att-command-popovers">
+          <tbody>
+            <tr>
+              <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
+              <td>
+                <span class="el-context"> <code>command</code> </span>
+              </td>
+            </tr>
+            <tr>
+              <th>Element(s)</th>
+              <td>
+                <a href="https://html.spec.whatwg.org/multipage/button.html#attr-input-command"><code>button</code></a>
+                (<code>command</code> in the
+                <a id="att-command-toggle-popover" href="https://html.spec.whatwg.org/multipage/input.html#attr-button-command-toggle-popover-state">Toggle popover state</a>
+                <a id="att-command-showpopover" href="https://html.spec.whatwg.org/multipage/input.html#attr-button-command-show-popover-state">Show popover state</a> and
+                <a id="att-command-hidepopover" href="https://html.spec.whatwg.org/multipage/input.html#attr-button-command-hide-popover-state">Hide popover state</a>)
+              </td>
+            </tr>
+            <tr>
+              <th>[<cite><a class="bibref" data-link-type="biblio" href="#bib-wai-aria-1.2" title="Accessible Rich Internet Applications (WAI-ARIA) 1.2">WAI-ARIA-1.2</a></cite>]</th>
+              <td>
+                <p>
+                  If the associated element is displayed as a popover:
+                  <a class="core-mapping" href="https://w3c.github.io/core-aam/#ariaExpandedTrue"><code>aria-expanded=true</code></a>
+                </p>
+                <p>
+                  If the associated element is hidden:
+                  <a class="core-mapping" href="https://w3c.github.io/core-aam/#ariaExpandedFalse"><code>aria-expanded=false</code></a>
+                </p>
+                <p>
+                  If the associated element is an accessibility ancestor of the element with the <code>command</code> attribute or is not present in the DOM:
+                  <a class="core-mapping" href="https://w3c.github.io/core-aam/#ariaExpandedUndefined"><code>aria-expanded=undefined</code></a>
+                </p>
+                <p>If the associated element is not a valid <code>popover</code> element: no <code>aria-expanded</code> mapping.</p>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a href="https://msdn.microsoft.com/en-us/library/dd373608%28v=VS.85%29.aspx"><abbr title="Microsoft Active Accessibility">MSAA</abbr></a> + <a href="http://accessibility.linuxfoundation.org/a11yspecs/ia2/docs/html/">IAccessible2</a>
+              </th>
+              <td>
+                <div class="general">Use <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> mapping</div>
+                <div class="objattrs"><span class="type">Object attributes:</span> <code>details-roles:popover</code></div>
+              </td>
+            </tr>
+            <tr>
+              <th><a href="https://msdn.microsoft.com/en-us/library/ms726297%28v=VS.85%29.aspx">UIA</a></th>
+              <td>
+                <div class="general">Use <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> mapping</div>
+              </td>
+            </tr>
+            <tr>
+              <th><a href="https://gnome.pages.gitlab.gnome.org/atk/">ATK</a></th>
+              <td>
+                <div class="general">Use <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> mapping</div>
+                <div class="objattrs"><span class="type">Object attributes:</span> <code>details-roles:popover</code></div>
+              </td>
+            </tr>
+            <tr>
+              <th><a href="https://developer.apple.com/reference/appkit/nsaccessibility">AX</a></th>
+              <td>
+                <div class="general">Use <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> mapping</div>
+              </td>
+            </tr>
+            <tr>
+              <th>Comments</th>
+              <td>
+                <p>
+                  User Agents <em class="rfc2119">MUST</em> expose an <a class="core-mapping" href="https://w3c.github.io/core-aam/#ariaDetails"><code>aria-details</code></a> relationship with the associated element (identified via the specified <code>commandfor</code>
+                  attribute) <strong>except</strong> under the following conditions:
+                </p>
+                <ul>
+                  <li>The associated popover element is the next immediate accessibility sibling to the invoking element,</li>
+                  <li>The element is a descendant of the <code>popover</code> it is associated with.</li>
+                </ul>
+                <div class="note" role="note" id="issue-container-generatedID-11"><div role="heading" class="note-title marker" id="h-note-11" aria-level="4"><span>Note</span></div><p class="">
+                  A button that represents a <a href="https://html.spec.whatwg.org/multipage/forms.html#concept-submit-button">submit button</a> or is in the
+                  <a href="https://html.spec.whatwg.org/multipage/input.html#reset-button-state-(type=reset)">reset state</a> with a <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#form-owner">form owner</a> cannot invoke a command.
+                </p></div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </section><section id="command-in-the-close-and-show-modal-states"><div class="header-wrapper"><h4 id="att-command-dialogs"><bdi class="secno">3.6.26 </bdi><code>command</code> <span class="att-context">(in the Close and Show Modal states)</span></h4><a class="self-link" href="#att-command-dialogs" aria-label="Permalink for Section 3.6.26"></a></div>
+        <table class="data" aria-labelledby="att-command-dialogs">
+          <tbody>
+            <tr>
+              <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
+              <td><code>command</code></td>
+            </tr>
+            <tr>
+              <th>Element(s)</th>
+              <td>
+                <a href="https://html.spec.whatwg.org/multipage/button.html#attr-input-command"><code>button</code></a>
+                <span class="el-context">(<code>command</code> in the <a href="https://html.spec.whatwg.org/multipage/input.html#attr-button-command-close-state">Close state</a>) and
+                  <a href="https://html.spec.whatwg.org/multipage/input.html#attr-button-command-show-modal-state">Show Modal state</a>)</span>
+              </td>
+            </tr>
+            <tr>
+              <th>[<cite><a class="bibref" data-link-type="biblio" href="#bib-wai-aria-1.2" title="Accessible Rich Internet Applications (WAI-ARIA) 1.2">WAI-ARIA-1.2</a></cite>]</th>
+              <td>
+                <div class="general">A <code>command</code> attribute in the <code>close</code> and <code>show-modal</code> states provide no additional accessibility mappings to the <code>button</code> element.</div>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a href="https://msdn.microsoft.com/en-us/library/dd373608%28v=VS.85%29.aspx"><abbr title="Microsoft Active Accessibility">MSAA</abbr></a> + <a href="http://accessibility.linuxfoundation.org/a11yspecs/ia2/docs/html/">IAccessible2</a>
+              </th>
+              <td>
+                <div class="general">Not mapped</div>
+              </td>
+            </tr>
+            <tr>
+              <th><a href="https://msdn.microsoft.com/en-us/library/ms726297%28v=VS.85%29.aspx">UIA</a></th>
+              <td>
+                <div class="general">Not mapped</div>
+              </td>
+            </tr>
+            <tr>
+              <th><a href="https://gnome.pages.gitlab.gnome.org/atk/">ATK</a></th>
+              <td>
+                <div class="general">Not mapped</div>
+              </td>
+            </tr>
+            <tr>
+              <th><a href="https://developer.apple.com/reference/appkit/nsaccessibility">AX</a></th>
+              <td>
+                <div class="general">Not mapped</div>
+              </td>
+            </tr>
+            <tr>
+              <th>Comments</th>
+              <td>
+                <div class="note" role="note" id="issue-container-generatedID-12"><div role="heading" class="note-title marker" id="h-note-12" aria-level="4"><span>Note</span></div><p class="">
+                  A button that represents a <a href="https://html.spec.whatwg.org/multipage/forms.html#concept-submit-button">submit button</a> or is in the
+                  <a href="https://html.spec.whatwg.org/multipage/input.html#reset-button-state-(type=reset)">reset state</a> with a <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#form-owner">form owner</a> cannot invoke a command.
+                </p></div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </section><section id="commandfor"><div class="header-wrapper"><h4 id="att-commandfor"><bdi class="secno">3.6.27 </bdi><code>commandfor</code></h4><a class="self-link" href="#att-commandfor" aria-label="Permalink for Section 3.6.27"></a></div>
+        <table aria-labelledby="att-commandfor">
+          <tbody>
+            <tr>
+              <th><abbr title="HyperText Markup Language">HTML</abbr> Specification</th>
+              <td><code>commandfor</code></td>
+            </tr>
+            <tr>
+              <th>Element(s)</th>
+              <td>
+                <a href="https://html.spec.whatwg.org/multipage/button.html#attr-input-commandfor"><code>button</code></a>
+              </td>
+            </tr>
+            <tr>
+              <th>[<cite><a class="bibref" data-link-type="biblio" href="#bib-wai-aria-1.2" title="Accessible Rich Internet Applications (WAI-ARIA) 1.2">WAI-ARIA-1.2</a></cite>]</th>
+              <td>
+                <div class="general">See comments</div>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a href="https://msdn.microsoft.com/en-us/library/dd373608%28v=VS.85%29.aspx"><abbr title="Microsoft Active Accessibility">MSAA</abbr></a> + <a href="http://accessibility.linuxfoundation.org/a11yspecs/ia2/docs/html/">IAccessible2</a>
+              </th>
+              <td>
+                <div class="general">See comments</div>
+              </td>
+            </tr>
+            <tr>
+              <th><a href="https://msdn.microsoft.com/en-us/library/ms726297%28v=VS.85%29.aspx">UIA</a></th>
+              <td>
+                <div class="general">See comments</div>
+              </td>
+            </tr>
+            <tr>
+              <th><a href="https://gnome.pages.gitlab.gnome.org/atk/">ATK</a></th>
+              <td>
+                <div class="general">See comments</div>
+              </td>
+            </tr>
+            <tr>
+              <th><a href="https://developer.apple.com/reference/appkit/nsaccessibility">AX</a></th>
+              <td>
+                <div class="general">See comments</div>
+              </td>
+            </tr>
+            <tr>
+              <th>Comments</th>
+              <td>
+                <p>The <code>commandfor</code> attribute identifies the associated element for the <code>button</code> element.</p>
+                <p>The specified <code>command</code> state will determine if a relationship mapping needs to be exposed between the <code>button</code> and its programmatically associated element.</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </section><section id="content"><div class="header-wrapper"><h4 id="att-content"><bdi class="secno">3.6.28 </bdi><code>content</code></h4><a class="self-link" href="#att-content" aria-label="Permalink for Section 3.6.28"></a></div>
         <table class="data" aria-labelledby="att-content">
           <tbody>
             <tr>
@@ -9542,7 +9738,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="contenteditable"><div class="header-wrapper"><h4 id="att-contenteditable"><bdi class="secno">3.6.26 </bdi><code>contenteditable</code></h4><a class="self-link" href="#att-contenteditable" aria-label="Permalink for Section 3.6.26"></a></div>
+        </section><section id="contenteditable"><div class="header-wrapper"><h4 id="att-contenteditable"><bdi class="secno">3.6.29 </bdi><code>contenteditable</code></h4><a class="self-link" href="#att-contenteditable" aria-label="Permalink for Section 3.6.29"></a></div>
         <table class="data" aria-labelledby="att-contenteditable">
           <tbody>
             <tr>
@@ -9623,7 +9819,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="controls"><div class="header-wrapper"><h4 id="att-controls"><bdi class="secno">3.6.27 </bdi><code>controls</code></h4><a class="self-link" href="#att-controls" aria-label="Permalink for Section 3.6.27"></a></div>
+        </section><section id="controls"><div class="header-wrapper"><h4 id="att-controls"><bdi class="secno">3.6.30 </bdi><code>controls</code></h4><a class="self-link" href="#att-controls" aria-label="Permalink for Section 3.6.30"></a></div>
         <table class="data" aria-labelledby="att-controls">
           <tbody>
             <tr>
@@ -9672,7 +9868,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="coords"><div class="header-wrapper"><h4 id="att-coords"><bdi class="secno">3.6.28 </bdi><code>coords</code></h4><a class="self-link" href="#att-coords" aria-label="Permalink for Section 3.6.28"></a></div>
+        </section><section id="coords"><div class="header-wrapper"><h4 id="att-coords"><bdi class="secno">3.6.31 </bdi><code>coords</code></h4><a class="self-link" href="#att-coords" aria-label="Permalink for Section 3.6.31"></a></div>
         <table class="data" aria-labelledby="att-coords">
           <tbody>
             <tr>
@@ -9723,7 +9919,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="crossorigin"><div class="header-wrapper"><h4 id="att-crossorigin"><bdi class="secno">3.6.29 </bdi><code>crossorigin</code></h4><a class="self-link" href="#att-crossorigin" aria-label="Permalink for Section 3.6.29"></a></div>
+        </section><section id="crossorigin"><div class="header-wrapper"><h4 id="att-crossorigin"><bdi class="secno">3.6.32 </bdi><code>crossorigin</code></h4><a class="self-link" href="#att-crossorigin" aria-label="Permalink for Section 3.6.32"></a></div>
         <table class="data" aria-labelledby="att-crossorigin">
           <tbody>
             <tr>
@@ -9776,7 +9972,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="data-0"><div class="header-wrapper"><h4 id="att-data"><bdi class="secno">3.6.30 </bdi><code>data</code></h4><a class="self-link" href="#att-data" aria-label="Permalink for Section 3.6.30"></a></div>
+        </section><section id="data-0"><div class="header-wrapper"><h4 id="att-data"><bdi class="secno">3.6.33 </bdi><code>data</code></h4><a class="self-link" href="#att-data" aria-label="Permalink for Section 3.6.33"></a></div>
         <table class="data" aria-labelledby="att-data">
           <tbody>
             <tr>
@@ -9827,7 +10023,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="datetime"><div class="header-wrapper"><h4 id="att-datetime-delins"><bdi class="secno">3.6.31 </bdi><code>datetime</code></h4><a class="self-link" href="#att-datetime-delins" aria-label="Permalink for Section 3.6.31"></a></div>
+        </section><section id="datetime"><div class="header-wrapper"><h4 id="att-datetime-delins"><bdi class="secno">3.6.34 </bdi><code>datetime</code></h4><a class="self-link" href="#att-datetime-delins" aria-label="Permalink for Section 3.6.34"></a></div>
         <table class="data" aria-labelledby="att-datetime-delins">
           <tbody>
             <tr>
@@ -9876,7 +10072,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="datetime-0"><div class="header-wrapper"><h4 id="att-datetime-time"><bdi class="secno">3.6.32 </bdi><code>datetime</code></h4><a class="self-link" href="#att-datetime-time" aria-label="Permalink for Section 3.6.32"></a></div>
+        </section><section id="datetime-0"><div class="header-wrapper"><h4 id="att-datetime-time"><bdi class="secno">3.6.35 </bdi><code>datetime</code></h4><a class="self-link" href="#att-datetime-time" aria-label="Permalink for Section 3.6.35"></a></div>
         <table class="data" aria-labelledby="att-datetime-time">
           <tbody>
             <tr>
@@ -9925,7 +10121,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="decoding"><div class="header-wrapper"><h4 id="att-decoding"><bdi class="secno">3.6.33 </bdi><code>decoding</code></h4><a class="self-link" href="#att-decoding" aria-label="Permalink for Section 3.6.33"></a></div>
+        </section><section id="decoding"><div class="header-wrapper"><h4 id="att-decoding"><bdi class="secno">3.6.36 </bdi><code>decoding</code></h4><a class="self-link" href="#att-decoding" aria-label="Permalink for Section 3.6.36"></a></div>
         <table class="data" aria-labelledby="att-decoding">
           <tbody>
             <tr>
@@ -9976,7 +10172,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="default"><div class="header-wrapper"><h4 id="att-default"><bdi class="secno">3.6.34 </bdi><code>default</code></h4><a class="self-link" href="#att-default" aria-label="Permalink for Section 3.6.34"></a></div>
+        </section><section id="default"><div class="header-wrapper"><h4 id="att-default"><bdi class="secno">3.6.37 </bdi><code>default</code></h4><a class="self-link" href="#att-default" aria-label="Permalink for Section 3.6.37"></a></div>
         <table class="data" aria-labelledby="att-default">
           <tbody>
             <tr>
@@ -10027,7 +10223,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="defer"><div class="header-wrapper"><h4 id="att-defer"><bdi class="secno">3.6.35 </bdi><code>defer</code></h4><a class="self-link" href="#att-defer" aria-label="Permalink for Section 3.6.35"></a></div>
+        </section><section id="defer"><div class="header-wrapper"><h4 id="att-defer"><bdi class="secno">3.6.38 </bdi><code>defer</code></h4><a class="self-link" href="#att-defer" aria-label="Permalink for Section 3.6.38"></a></div>
         <table class="data" aria-labelledby="att-defer">
           <tbody>
             <tr>
@@ -10078,7 +10274,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="dir"><div class="header-wrapper"><h4 id="att-dir"><bdi class="secno">3.6.36 </bdi><code>dir</code></h4><a class="self-link" href="#att-dir" aria-label="Permalink for Section 3.6.36"></a></div>
+        </section><section id="dir"><div class="header-wrapper"><h4 id="att-dir"><bdi class="secno">3.6.39 </bdi><code>dir</code></h4><a class="self-link" href="#att-dir" aria-label="Permalink for Section 3.6.39"></a></div>
         <table class="data" aria-labelledby="att-dir">
           <tbody>
             <tr>
@@ -10129,7 +10325,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="dir-0"><div class="header-wrapper"><h4 id="att-dir-bdo"><bdi class="secno">3.6.37 </bdi><code>dir</code></h4><a class="self-link" href="#att-dir-bdo" aria-label="Permalink for Section 3.6.37"></a></div>
+        </section><section id="dir-0"><div class="header-wrapper"><h4 id="att-dir-bdo"><bdi class="secno">3.6.40 </bdi><code>dir</code></h4><a class="self-link" href="#att-dir-bdo" aria-label="Permalink for Section 3.6.40"></a></div>
         <table class="data" aria-labelledby="att-dir-bdo">
           <tbody>
             <tr>
@@ -10180,7 +10376,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="dirname"><div class="header-wrapper"><h4 id="att-dirname"><bdi class="secno">3.6.38 </bdi><code>dirname</code></h4><a class="self-link" href="#att-dirname" aria-label="Permalink for Section 3.6.38"></a></div>
+        </section><section id="dirname"><div class="header-wrapper"><h4 id="att-dirname"><bdi class="secno">3.6.41 </bdi><code>dirname</code></h4><a class="self-link" href="#att-dirname" aria-label="Permalink for Section 3.6.41"></a></div>
         <table class="data" aria-labelledby="att-dirname">
           <tbody>
             <tr>
@@ -10231,7 +10427,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="disabled"><div class="header-wrapper"><h4 id="att-disabled"><bdi class="secno">3.6.39 </bdi><code>disabled</code></h4><a class="self-link" href="#att-disabled" aria-label="Permalink for Section 3.6.39"></a></div>
+        </section><section id="disabled"><div class="header-wrapper"><h4 id="att-disabled"><bdi class="secno">3.6.42 </bdi><code>disabled</code></h4><a class="self-link" href="#att-disabled" aria-label="Permalink for Section 3.6.42"></a></div>
         <table class="data" aria-labelledby="att-disabled">
           <tbody>
             <tr>
@@ -10285,7 +10481,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="disabled-0"><div class="header-wrapper"><h4 id="att-disabled-fieldset"><bdi class="secno">3.6.40 </bdi><code>disabled</code></h4><a class="self-link" href="#att-disabled-fieldset" aria-label="Permalink for Section 3.6.40"></a></div>
+        </section><section id="disabled-0"><div class="header-wrapper"><h4 id="att-disabled-fieldset"><bdi class="secno">3.6.43 </bdi><code>disabled</code></h4><a class="self-link" href="#att-disabled-fieldset" aria-label="Permalink for Section 3.6.43"></a></div>
         <table class="data" aria-labelledby="att-disabled-fieldset">
           <tbody>
             <tr>
@@ -10339,7 +10535,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="disabled-1"><div class="header-wrapper"><h4 id="att-disabled-link"><bdi class="secno">3.6.41 </bdi><code>disabled</code></h4><a class="self-link" href="#att-disabled-link" aria-label="Permalink for Section 3.6.41"></a></div>
+        </section><section id="disabled-1"><div class="header-wrapper"><h4 id="att-disabled-link"><bdi class="secno">3.6.44 </bdi><code>disabled</code></h4><a class="self-link" href="#att-disabled-link" aria-label="Permalink for Section 3.6.44"></a></div>
         <table class="data" aria-labelledby="att-disabled-link">
           <tbody>
             <tr>
@@ -10380,7 +10576,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="download"><div class="header-wrapper"><h4 id="att-download"><bdi class="secno">3.6.42 </bdi><code>download</code></h4><a class="self-link" href="#att-download" aria-label="Permalink for Section 3.6.42"></a></div>
+        </section><section id="download"><div class="header-wrapper"><h4 id="att-download"><bdi class="secno">3.6.45 </bdi><code>download</code></h4><a class="self-link" href="#att-download" aria-label="Permalink for Section 3.6.45"></a></div>
         <table class="data" aria-labelledby="att-download">
           <tbody>
             <tr>
@@ -10431,7 +10627,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="draggable"><div class="header-wrapper"><h4 id="att-draggable"><bdi class="secno">3.6.43 </bdi><code>draggable</code></h4><a class="self-link" href="#att-draggable" aria-label="Permalink for Section 3.6.43"></a></div>
+        </section><section id="draggable"><div class="header-wrapper"><h4 id="att-draggable"><bdi class="secno">3.6.46 </bdi><code>draggable</code></h4><a class="self-link" href="#att-draggable" aria-label="Permalink for Section 3.6.46"></a></div>
         <table class="data" aria-labelledby="att-draggable">
           <tbody>
             <tr>
@@ -10482,7 +10678,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="enctype"><div class="header-wrapper"><h4 id="att-enctype"><bdi class="secno">3.6.44 </bdi><code>enctype</code></h4><a class="self-link" href="#att-enctype" aria-label="Permalink for Section 3.6.44"></a></div>
+        </section><section id="enctype"><div class="header-wrapper"><h4 id="att-enctype"><bdi class="secno">3.6.47 </bdi><code>enctype</code></h4><a class="self-link" href="#att-enctype" aria-label="Permalink for Section 3.6.47"></a></div>
         <table class="data" aria-labelledby="att-enctype">
           <tbody>
             <tr>
@@ -10533,7 +10729,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="enterkeyhint"><div class="header-wrapper"><h4 id="att-enterkeyhint"><bdi class="secno">3.6.45 </bdi><code>enterkeyhint</code></h4><a class="self-link" href="#att-enterkeyhint" aria-label="Permalink for Section 3.6.45"></a></div>
+        </section><section id="enterkeyhint"><div class="header-wrapper"><h4 id="att-enterkeyhint"><bdi class="secno">3.6.48 </bdi><code>enterkeyhint</code></h4><a class="self-link" href="#att-enterkeyhint" aria-label="Permalink for Section 3.6.48"></a></div>
         <table class="data" aria-labelledby="att-enterkeyhint">
           <tbody>
             <tr>
@@ -10587,7 +10783,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="fetchpriority"><div class="header-wrapper"><h4 id="att-fetchpriority"><bdi class="secno">3.6.46 </bdi><code>fetchpriority</code></h4><a class="self-link" href="#att-fetchpriority" aria-label="Permalink for Section 3.6.46"></a></div>
+        </section><section id="fetchpriority"><div class="header-wrapper"><h4 id="att-fetchpriority"><bdi class="secno">3.6.49 </bdi><code>fetchpriority</code></h4><a class="self-link" href="#att-fetchpriority" aria-label="Permalink for Section 3.6.49"></a></div>
         <table class="data" aria-labelledby="att-fetchpriority">
           <tbody>
             <tr>
@@ -10639,7 +10835,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="for"><div class="header-wrapper"><h4 id="att-for-label"><bdi class="secno">3.6.47 </bdi><code>for</code></h4><a class="self-link" href="#att-for-label" aria-label="Permalink for Section 3.6.47"></a></div>
+        </section><section id="for"><div class="header-wrapper"><h4 id="att-for-label"><bdi class="secno">3.6.50 </bdi><code>for</code></h4><a class="self-link" href="#att-for-label" aria-label="Permalink for Section 3.6.50"></a></div>
         <table class="data" aria-labelledby="att-for-label">
           <tbody>
             <tr>
@@ -10704,7 +10900,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="for-0"><div class="header-wrapper"><h4 id="att-for-output"><bdi class="secno">3.6.48 </bdi><code>for</code></h4><a class="self-link" href="#att-for-output" aria-label="Permalink for Section 3.6.48"></a></div>
+        </section><section id="for-0"><div class="header-wrapper"><h4 id="att-for-output"><bdi class="secno">3.6.51 </bdi><code>for</code></h4><a class="self-link" href="#att-for-output" aria-label="Permalink for Section 3.6.51"></a></div>
         <table class="data" aria-labelledby="att-for-output">
           <tbody>
             <tr>
@@ -10761,7 +10957,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="form-0"><div class="header-wrapper"><h4 id="att-form"><bdi class="secno">3.6.49 </bdi><code>form</code></h4><a class="self-link" href="#att-form" aria-label="Permalink for Section 3.6.49"></a></div>
+        </section><section id="form-0"><div class="header-wrapper"><h4 id="att-form"><bdi class="secno">3.6.52 </bdi><code>form</code></h4><a class="self-link" href="#att-form" aria-label="Permalink for Section 3.6.52"></a></div>
         <table class="data" aria-labelledby="att-form">
           <tbody>
             <tr>
@@ -10816,7 +11012,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="formaction"><div class="header-wrapper"><h4 id="att-formaction"><bdi class="secno">3.6.50 </bdi><code>formaction</code></h4><a class="self-link" href="#att-formaction" aria-label="Permalink for Section 3.6.50"></a></div>
+        </section><section id="formaction"><div class="header-wrapper"><h4 id="att-formaction"><bdi class="secno">3.6.53 </bdi><code>formaction</code></h4><a class="self-link" href="#att-formaction" aria-label="Permalink for Section 3.6.53"></a></div>
         <table class="data" aria-labelledby="att-formaction">
           <tbody>
             <tr>
@@ -10868,7 +11064,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="formenctype"><div class="header-wrapper"><h4 id="att-formenctype"><bdi class="secno">3.6.51 </bdi><code>formenctype</code></h4><a class="self-link" href="#att-formenctype" aria-label="Permalink for Section 3.6.51"></a></div>
+        </section><section id="formenctype"><div class="header-wrapper"><h4 id="att-formenctype"><bdi class="secno">3.6.54 </bdi><code>formenctype</code></h4><a class="self-link" href="#att-formenctype" aria-label="Permalink for Section 3.6.54"></a></div>
         <table class="data" aria-labelledby="att-formenctype">
           <tbody>
             <tr>
@@ -10920,7 +11116,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="formmethod"><div class="header-wrapper"><h4 id="att-formmethod"><bdi class="secno">3.6.52 </bdi><code>formmethod</code></h4><a class="self-link" href="#att-formmethod" aria-label="Permalink for Section 3.6.52"></a></div>
+        </section><section id="formmethod"><div class="header-wrapper"><h4 id="att-formmethod"><bdi class="secno">3.6.55 </bdi><code>formmethod</code></h4><a class="self-link" href="#att-formmethod" aria-label="Permalink for Section 3.6.55"></a></div>
         <table class="data" aria-labelledby="att-formmethod">
           <tbody>
             <tr>
@@ -10972,7 +11168,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="formnovalidate"><div class="header-wrapper"><h4 id="att-formnovalidate"><bdi class="secno">3.6.53 </bdi><code>formnovalidate</code></h4><a class="self-link" href="#att-formnovalidate" aria-label="Permalink for Section 3.6.53"></a></div>
+        </section><section id="formnovalidate"><div class="header-wrapper"><h4 id="att-formnovalidate"><bdi class="secno">3.6.56 </bdi><code>formnovalidate</code></h4><a class="self-link" href="#att-formnovalidate" aria-label="Permalink for Section 3.6.56"></a></div>
         <table class="data" aria-labelledby="att-formnovalidate">
           <tbody>
             <tr>
@@ -11024,7 +11220,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="formtarget"><div class="header-wrapper"><h4 id="att-formtarget"><bdi class="secno">3.6.54 </bdi><code>formtarget</code></h4><a class="self-link" href="#att-formtarget" aria-label="Permalink for Section 3.6.54"></a></div>
+        </section><section id="formtarget"><div class="header-wrapper"><h4 id="att-formtarget"><bdi class="secno">3.6.57 </bdi><code>formtarget</code></h4><a class="self-link" href="#att-formtarget" aria-label="Permalink for Section 3.6.57"></a></div>
         <table class="data" aria-labelledby="att-formtarget">
           <tbody>
             <tr>
@@ -11073,7 +11269,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="headers"><div class="header-wrapper"><h4 id="att-headers"><bdi class="secno">3.6.55 </bdi><code>headers</code></h4><a class="self-link" href="#att-headers" aria-label="Permalink for Section 3.6.55"></a></div>
+        </section><section id="headers"><div class="header-wrapper"><h4 id="att-headers"><bdi class="secno">3.6.58 </bdi><code>headers</code></h4><a class="self-link" href="#att-headers" aria-label="Permalink for Section 3.6.58"></a></div>
         <table class="data" aria-labelledby="att-headers">
           <tbody>
             <tr>
@@ -11126,7 +11322,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="height"><div class="header-wrapper"><h4 id="att-height"><bdi class="secno">3.6.56 </bdi><code>height</code></h4><a class="self-link" href="#att-height" aria-label="Permalink for Section 3.6.56"></a></div>
+        </section><section id="height"><div class="header-wrapper"><h4 id="att-height"><bdi class="secno">3.6.59 </bdi><code>height</code></h4><a class="self-link" href="#att-height" aria-label="Permalink for Section 3.6.59"></a></div>
         <table class="data" aria-labelledby="att-height">
           <tbody>
             <tr>
@@ -11181,7 +11377,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="hidden"><div class="header-wrapper"><h4 id="att-hidden"><bdi class="secno">3.6.57 </bdi><code>hidden</code></h4><a class="self-link" href="#att-hidden" aria-label="Permalink for Section 3.6.57"></a></div>
+        </section><section id="hidden"><div class="header-wrapper"><h4 id="att-hidden"><bdi class="secno">3.6.60 </bdi><code>hidden</code></h4><a class="self-link" href="#att-hidden" aria-label="Permalink for Section 3.6.60"></a></div>
         <table class="data" aria-labelledby="att-hidden">
           <tbody>
             <tr>
@@ -11227,7 +11423,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="high"><div class="header-wrapper"><h4 id="att-high"><bdi class="secno">3.6.58 </bdi><code>high</code></h4><a class="self-link" href="#att-high" aria-label="Permalink for Section 3.6.58"></a></div>
+        </section><section id="high"><div class="header-wrapper"><h4 id="att-high"><bdi class="secno">3.6.61 </bdi><code>high</code></h4><a class="self-link" href="#att-high" aria-label="Permalink for Section 3.6.61"></a></div>
         <table class="data" aria-labelledby="att-high">
           <tbody>
             <tr>
@@ -11274,7 +11470,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="href"><div class="header-wrapper"><h4 id="att-href"><bdi class="secno">3.6.59 </bdi><code>href</code></h4><a class="self-link" href="#att-href" aria-label="Permalink for Section 3.6.59"></a></div>
+        </section><section id="href"><div class="header-wrapper"><h4 id="att-href"><bdi class="secno">3.6.62 </bdi><code>href</code></h4><a class="self-link" href="#att-href" aria-label="Permalink for Section 3.6.62"></a></div>
         <table class="data" aria-labelledby="att-href">
           <tbody>
             <tr>
@@ -11330,7 +11526,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="href-0"><div class="header-wrapper"><h4 id="att-href-link"><bdi class="secno">3.6.60 </bdi><code>href</code></h4><a class="self-link" href="#att-href-link" aria-label="Permalink for Section 3.6.60"></a></div>
+        </section><section id="href-0"><div class="header-wrapper"><h4 id="att-href-link"><bdi class="secno">3.6.63 </bdi><code>href</code></h4><a class="self-link" href="#att-href-link" aria-label="Permalink for Section 3.6.63"></a></div>
         <table class="data" aria-labelledby="att-href-link">
           <tbody>
             <tr>
@@ -11381,7 +11577,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="hreflang"><div class="header-wrapper"><h4 id="att-hreflang"><bdi class="secno">3.6.61 </bdi><code>hreflang</code></h4><a class="self-link" href="#att-hreflang" aria-label="Permalink for Section 3.6.61"></a></div>
+        </section><section id="hreflang"><div class="header-wrapper"><h4 id="att-hreflang"><bdi class="secno">3.6.64 </bdi><code>hreflang</code></h4><a class="self-link" href="#att-hreflang" aria-label="Permalink for Section 3.6.64"></a></div>
         <table class="data" aria-labelledby="att-hreflang">
           <tbody>
             <tr>
@@ -11433,7 +11629,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="http-equiv"><div class="header-wrapper"><h4 id="att-http-equiv"><bdi class="secno">3.6.62 </bdi><code>http-equiv</code></h4><a class="self-link" href="#att-http-equiv" aria-label="Permalink for Section 3.6.62"></a></div>
+        </section><section id="http-equiv"><div class="header-wrapper"><h4 id="att-http-equiv"><bdi class="secno">3.6.65 </bdi><code>http-equiv</code></h4><a class="self-link" href="#att-http-equiv" aria-label="Permalink for Section 3.6.65"></a></div>
         <table class="data" aria-labelledby="att-http-equiv">
           <tbody>
             <tr>
@@ -11484,7 +11680,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="id"><div class="header-wrapper"><h4 id="att-id"><bdi class="secno">3.6.63 </bdi><code>id</code></h4><a class="self-link" href="#att-id" aria-label="Permalink for Section 3.6.63"></a></div>
+        </section><section id="id"><div class="header-wrapper"><h4 id="att-id"><bdi class="secno">3.6.66 </bdi><code>id</code></h4><a class="self-link" href="#att-id" aria-label="Permalink for Section 3.6.66"></a></div>
         <table class="data" aria-labelledby="att-id">
           <tbody>
             <tr>
@@ -11535,7 +11731,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="inert"><div class="header-wrapper"><h4 id="att-inert"><bdi class="secno">3.6.64 </bdi><code>inert</code></h4><a class="self-link" href="#att-inert" aria-label="Permalink for Section 3.6.64"></a></div>
+        </section><section id="inert"><div class="header-wrapper"><h4 id="att-inert"><bdi class="secno">3.6.67 </bdi><code>inert</code></h4><a class="self-link" href="#att-inert" aria-label="Permalink for Section 3.6.67"></a></div>
         <table class="data" aria-labelledby="att-inert">
           <tbody>
             <tr>
@@ -11574,7 +11770,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <th>Comments</th>
               <td>
                 <p>Nodes that are <a href="https://html.spec.whatwg.org/multipage/interaction.html#inert">inert</a> are not exposed to an accessibility <abbr title="application programming interface">API</abbr>.</p>
-                <div class="note" role="note" id="issue-container-generatedID-11"><div role="heading" class="note-title marker" id="h-note-11" aria-level="4"><span>Note</span></div><p class="">
+                <div class="note" role="note" id="issue-container-generatedID-13"><div role="heading" class="note-title marker" id="h-note-13" aria-level="4"><span>Note</span></div><p class="">
                   Note: an inert node can have descendants that are not inert. For example, a
                   <a href="https://html.spec.whatwg.org/multipage/interaction.html#modal-dialogs-and-inert-subtrees">modal dialog</a>
                   can escape an inert subtree.
@@ -11583,7 +11779,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="indeterminate-idl"><div class="header-wrapper"><h4 id="att-indeterminate"><bdi class="secno">3.6.65 </bdi><code>indeterminate [IDL]</code></h4><a class="self-link" href="#att-indeterminate" aria-label="Permalink for Section 3.6.65"></a></div>
+        </section><section id="indeterminate-idl"><div class="header-wrapper"><h4 id="att-indeterminate"><bdi class="secno">3.6.68 </bdi><code>indeterminate [IDL]</code></h4><a class="self-link" href="#att-indeterminate" aria-label="Permalink for Section 3.6.68"></a></div>
         <table class="data" aria-labelledby="att-indeterminate">
           <tbody>
             <tr>
@@ -11625,7 +11821,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="ismap"><div class="header-wrapper"><h4 id="att-ismap"><bdi class="secno">3.6.66 </bdi><code>ismap</code></h4><a class="self-link" href="#att-ismap" aria-label="Permalink for Section 3.6.66"></a></div>
+        </section><section id="ismap"><div class="header-wrapper"><h4 id="att-ismap"><bdi class="secno">3.6.69 </bdi><code>ismap</code></h4><a class="self-link" href="#att-ismap" aria-label="Permalink for Section 3.6.69"></a></div>
         <table class="data" aria-labelledby="att-ismap">
           <tbody>
             <tr>
@@ -11676,7 +11872,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="itemid"><div class="header-wrapper"><h4 id="att-itemid"><bdi class="secno">3.6.67 </bdi><code>itemid</code></h4><a class="self-link" href="#att-itemid" aria-label="Permalink for Section 3.6.67"></a></div>
+        </section><section id="itemid"><div class="header-wrapper"><h4 id="att-itemid"><bdi class="secno">3.6.70 </bdi><code>itemid</code></h4><a class="self-link" href="#att-itemid" aria-label="Permalink for Section 3.6.70"></a></div>
         <table class="data" aria-labelledby="att-itemid">
           <tbody>
             <tr>
@@ -11727,7 +11923,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="itemprop"><div class="header-wrapper"><h4 id="att-itemprop"><bdi class="secno">3.6.68 </bdi><code>itemprop</code></h4><a class="self-link" href="#att-itemprop" aria-label="Permalink for Section 3.6.68"></a></div>
+        </section><section id="itemprop"><div class="header-wrapper"><h4 id="att-itemprop"><bdi class="secno">3.6.71 </bdi><code>itemprop</code></h4><a class="self-link" href="#att-itemprop" aria-label="Permalink for Section 3.6.71"></a></div>
         <table class="data" aria-labelledby="att-itemprop">
           <tbody>
             <tr>
@@ -11778,7 +11974,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="itemref"><div class="header-wrapper"><h4 id="att-itemref"><bdi class="secno">3.6.69 </bdi><code>itemref</code></h4><a class="self-link" href="#att-itemref" aria-label="Permalink for Section 3.6.69"></a></div>
+        </section><section id="itemref"><div class="header-wrapper"><h4 id="att-itemref"><bdi class="secno">3.6.72 </bdi><code>itemref</code></h4><a class="self-link" href="#att-itemref" aria-label="Permalink for Section 3.6.72"></a></div>
         <table class="data" aria-labelledby="att-itemref">
           <tbody>
             <tr>
@@ -11829,7 +12025,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="itemscope"><div class="header-wrapper"><h4 id="att-itemscope"><bdi class="secno">3.6.70 </bdi><code>itemscope</code></h4><a class="self-link" href="#att-itemscope" aria-label="Permalink for Section 3.6.70"></a></div>
+        </section><section id="itemscope"><div class="header-wrapper"><h4 id="att-itemscope"><bdi class="secno">3.6.73 </bdi><code>itemscope</code></h4><a class="self-link" href="#att-itemscope" aria-label="Permalink for Section 3.6.73"></a></div>
         <table class="data" aria-labelledby="att-itemscope">
           <tbody>
             <tr>
@@ -11880,7 +12076,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="itemtype"><div class="header-wrapper"><h4 id="att-itemtype"><bdi class="secno">3.6.71 </bdi><code>itemtype</code></h4><a class="self-link" href="#att-itemtype" aria-label="Permalink for Section 3.6.71"></a></div>
+        </section><section id="itemtype"><div class="header-wrapper"><h4 id="att-itemtype"><bdi class="secno">3.6.74 </bdi><code>itemtype</code></h4><a class="self-link" href="#att-itemtype" aria-label="Permalink for Section 3.6.74"></a></div>
         <table class="data" aria-labelledby="att-itemtype">
           <tbody>
             <tr>
@@ -11931,7 +12127,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="kind"><div class="header-wrapper"><h4 id="att-kind"><bdi class="secno">3.6.72 </bdi><code>kind</code></h4><a class="self-link" href="#att-kind" aria-label="Permalink for Section 3.6.72"></a></div>
+        </section><section id="kind"><div class="header-wrapper"><h4 id="att-kind"><bdi class="secno">3.6.75 </bdi><code>kind</code></h4><a class="self-link" href="#att-kind" aria-label="Permalink for Section 3.6.75"></a></div>
         <table class="data" aria-labelledby="att-kind">
           <tbody>
             <tr>
@@ -11972,7 +12168,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="label-0"><div class="header-wrapper"><h4 id="att-label"><bdi class="secno">3.6.73 </bdi><code>label</code></h4><a class="self-link" href="#att-label" aria-label="Permalink for Section 3.6.73"></a></div>
+        </section><section id="label-0"><div class="header-wrapper"><h4 id="att-label"><bdi class="secno">3.6.76 </bdi><code>label</code></h4><a class="self-link" href="#att-label" aria-label="Permalink for Section 3.6.76"></a></div>
         <table class="data" aria-labelledby="att-label">
           <tbody>
             <tr>
@@ -12023,7 +12219,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="lang"><div class="header-wrapper"><h4 id="att-lang"><bdi class="secno">3.6.74 </bdi><code>lang</code></h4><a class="self-link" href="#att-lang" aria-label="Permalink for Section 3.6.74"></a></div>
+        </section><section id="lang"><div class="header-wrapper"><h4 id="att-lang"><bdi class="secno">3.6.77 </bdi><code>lang</code></h4><a class="self-link" href="#att-lang" aria-label="Permalink for Section 3.6.77"></a></div>
         <table class="data" aria-labelledby="att-lang">
           <tbody>
             <tr>
@@ -12075,7 +12271,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="list"><div class="header-wrapper"><h4 id="att-list"><bdi class="secno">3.6.75 </bdi><code>list</code></h4><a class="self-link" href="#att-list" aria-label="Permalink for Section 3.6.75"></a></div>
+        </section><section id="list"><div class="header-wrapper"><h4 id="att-list"><bdi class="secno">3.6.78 </bdi><code>list</code></h4><a class="self-link" href="#att-list" aria-label="Permalink for Section 3.6.78"></a></div>
         <table class="data" aria-labelledby="att-list">
           <tbody>
             <tr>
@@ -12126,7 +12322,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="loop"><div class="header-wrapper"><h4 id="att-loop"><bdi class="secno">3.6.76 </bdi><code>loop</code></h4><a class="self-link" href="#att-loop" aria-label="Permalink for Section 3.6.76"></a></div>
+        </section><section id="loop"><div class="header-wrapper"><h4 id="att-loop"><bdi class="secno">3.6.79 </bdi><code>loop</code></h4><a class="self-link" href="#att-loop" aria-label="Permalink for Section 3.6.79"></a></div>
         <table class="data" aria-labelledby="att-loop">
           <tbody>
             <tr>
@@ -12178,7 +12374,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="low"><div class="header-wrapper"><h4 id="att-low"><bdi class="secno">3.6.77 </bdi><code>low</code></h4><a class="self-link" href="#att-low" aria-label="Permalink for Section 3.6.77"></a></div>
+        </section><section id="low"><div class="header-wrapper"><h4 id="att-low"><bdi class="secno">3.6.80 </bdi><code>low</code></h4><a class="self-link" href="#att-low" aria-label="Permalink for Section 3.6.80"></a></div>
         <table class="data" aria-labelledby="att-low">
           <tbody>
             <tr>
@@ -12227,7 +12423,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="max"><div class="header-wrapper"><h4 id="att-max-input"><bdi class="secno">3.6.78 </bdi><code>max</code></h4><a class="self-link" href="#att-max-input" aria-label="Permalink for Section 3.6.78"></a></div>
+        </section><section id="max"><div class="header-wrapper"><h4 id="att-max-input"><bdi class="secno">3.6.81 </bdi><code>max</code></h4><a class="self-link" href="#att-max-input" aria-label="Permalink for Section 3.6.81"></a></div>
         <table class="data" aria-labelledby="att-max-input">
           <tbody>
             <tr>
@@ -12274,7 +12470,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="max-0"><div class="header-wrapper"><h4 id="att-max"><bdi class="secno">3.6.79 </bdi><code>max</code></h4><a class="self-link" href="#att-max" aria-label="Permalink for Section 3.6.79"></a></div>
+        </section><section id="max-0"><div class="header-wrapper"><h4 id="att-max"><bdi class="secno">3.6.82 </bdi><code>max</code></h4><a class="self-link" href="#att-max" aria-label="Permalink for Section 3.6.82"></a></div>
         <table class="data" aria-labelledby="att-max">
           <tbody>
             <tr>
@@ -12322,7 +12518,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="maxlength"><div class="header-wrapper"><h4 id="att-maxlength"><bdi class="secno">3.6.80 </bdi><code>maxlength</code></h4><a class="self-link" href="#att-maxlength" aria-label="Permalink for Section 3.6.80"></a></div>
+        </section><section id="maxlength"><div class="header-wrapper"><h4 id="att-maxlength"><bdi class="secno">3.6.83 </bdi><code>maxlength</code></h4><a class="self-link" href="#att-maxlength" aria-label="Permalink for Section 3.6.83"></a></div>
         <table class="data" aria-labelledby="att-maxlength">
           <tbody>
             <tr>
@@ -12372,7 +12568,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="media"><div class="header-wrapper"><h4 id="att-media"><bdi class="secno">3.6.81 </bdi><code>media</code></h4><a class="self-link" href="#att-media" aria-label="Permalink for Section 3.6.81"></a></div>
+        </section><section id="media"><div class="header-wrapper"><h4 id="att-media"><bdi class="secno">3.6.84 </bdi><code>media</code></h4><a class="self-link" href="#att-media" aria-label="Permalink for Section 3.6.84"></a></div>
         <table class="data" aria-labelledby="att-media">
           <tbody>
             <tr>
@@ -12425,7 +12621,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="method"><div class="header-wrapper"><h4 id="att-method"><bdi class="secno">3.6.82 </bdi><code>method</code></h4><a class="self-link" href="#att-method" aria-label="Permalink for Section 3.6.82"></a></div>
+        </section><section id="method"><div class="header-wrapper"><h4 id="att-method"><bdi class="secno">3.6.85 </bdi><code>method</code></h4><a class="self-link" href="#att-method" aria-label="Permalink for Section 3.6.85"></a></div>
         <table class="data" aria-labelledby="att-method">
           <tbody>
             <tr>
@@ -12476,7 +12672,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="min"><div class="header-wrapper"><h4 id="att-min-input"><bdi class="secno">3.6.83 </bdi><code>min</code></h4><a class="self-link" href="#att-min-input" aria-label="Permalink for Section 3.6.83"></a></div>
+        </section><section id="min"><div class="header-wrapper"><h4 id="att-min-input"><bdi class="secno">3.6.86 </bdi><code>min</code></h4><a class="self-link" href="#att-min-input" aria-label="Permalink for Section 3.6.86"></a></div>
         <table class="data" aria-labelledby="att-min-input">
           <tbody>
             <tr>
@@ -12523,7 +12719,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="min-0"><div class="header-wrapper"><h4 id="att-min"><bdi class="secno">3.6.84 </bdi><code>min</code></h4><a class="self-link" href="#att-min" aria-label="Permalink for Section 3.6.84"></a></div>
+        </section><section id="min-0"><div class="header-wrapper"><h4 id="att-min"><bdi class="secno">3.6.87 </bdi><code>min</code></h4><a class="self-link" href="#att-min" aria-label="Permalink for Section 3.6.87"></a></div>
         <table class="data" aria-labelledby="att-min">
           <tbody>
             <tr>
@@ -12570,7 +12766,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="minlength"><div class="header-wrapper"><h4 id="att-minlength"><bdi class="secno">3.6.85 </bdi><code>minlength</code></h4><a class="self-link" href="#att-minlength" aria-label="Permalink for Section 3.6.85"></a></div>
+        </section><section id="minlength"><div class="header-wrapper"><h4 id="att-minlength"><bdi class="secno">3.6.88 </bdi><code>minlength</code></h4><a class="self-link" href="#att-minlength" aria-label="Permalink for Section 3.6.88"></a></div>
         <table class="data" aria-labelledby="att-minlength">
           <tbody>
             <tr>
@@ -12634,7 +12830,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="multiple"><div class="header-wrapper"><h4 id="att-multiple-input"><bdi class="secno">3.6.86 </bdi><code>multiple</code></h4><a class="self-link" href="#att-multiple-input" aria-label="Permalink for Section 3.6.86"></a></div>
+        </section><section id="multiple"><div class="header-wrapper"><h4 id="att-multiple-input"><bdi class="secno">3.6.89 </bdi><code>multiple</code></h4><a class="self-link" href="#att-multiple-input" aria-label="Permalink for Section 3.6.89"></a></div>
         <table class="data" aria-labelledby="att-multiple-input">
           <tbody>
             <tr>
@@ -12685,7 +12881,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="multiple-0"><div class="header-wrapper"><h4 id="att-multiple-select"><bdi class="secno">3.6.87 </bdi><code>multiple</code></h4><a class="self-link" href="#att-multiple-select" aria-label="Permalink for Section 3.6.87"></a></div>
+        </section><section id="multiple-0"><div class="header-wrapper"><h4 id="att-multiple-select"><bdi class="secno">3.6.90 </bdi><code>multiple</code></h4><a class="self-link" href="#att-multiple-select" aria-label="Permalink for Section 3.6.90"></a></div>
         <table class="data" aria-labelledby="att-multiple-select">
           <tbody>
             <tr>
@@ -12736,7 +12932,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="muted"><div class="header-wrapper"><h4 id="att-muted"><bdi class="secno">3.6.88 </bdi><code>muted</code></h4><a class="self-link" href="#att-muted" aria-label="Permalink for Section 3.6.88"></a></div>
+        </section><section id="muted"><div class="header-wrapper"><h4 id="att-muted"><bdi class="secno">3.6.91 </bdi><code>muted</code></h4><a class="self-link" href="#att-muted" aria-label="Permalink for Section 3.6.91"></a></div>
         <table class="data" aria-labelledby="att-muted">
           <tbody>
             <tr>
@@ -12788,7 +12984,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="name"><div class="header-wrapper"><h4 id="att-name"><bdi class="secno">3.6.89 </bdi><code>name</code></h4><a class="self-link" href="#att-name" aria-label="Permalink for Section 3.6.89"></a></div>
+        </section><section id="name"><div class="header-wrapper"><h4 id="att-name"><bdi class="secno">3.6.92 </bdi><code>name</code></h4><a class="self-link" href="#att-name" aria-label="Permalink for Section 3.6.92"></a></div>
         <table class="data" aria-labelledby="att-name">
           <tbody>
             <tr>
@@ -12842,7 +13038,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="name-0"><div class="header-wrapper"><h4 id="att-name-form"><bdi class="secno">3.6.90 </bdi><code>name</code></h4><a class="self-link" href="#att-name-form" aria-label="Permalink for Section 3.6.90"></a></div>
+        </section><section id="name-0"><div class="header-wrapper"><h4 id="att-name-form"><bdi class="secno">3.6.93 </bdi><code>name</code></h4><a class="self-link" href="#att-name-form" aria-label="Permalink for Section 3.6.93"></a></div>
         <table class="data" aria-labelledby="att-name-form">
           <tbody>
             <tr>
@@ -12893,7 +13089,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="name-1"><div class="header-wrapper"><h4 id="att-name-iframe"><bdi class="secno">3.6.91 </bdi><code>name</code></h4><a class="self-link" href="#att-name-iframe" aria-label="Permalink for Section 3.6.91"></a></div>
+        </section><section id="name-1"><div class="header-wrapper"><h4 id="att-name-iframe"><bdi class="secno">3.6.94 </bdi><code>name</code></h4><a class="self-link" href="#att-name-iframe" aria-label="Permalink for Section 3.6.94"></a></div>
         <table class="data" aria-labelledby="att-name-iframe">
           <tbody>
             <tr>
@@ -12945,7 +13141,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="name-2"><div class="header-wrapper"><h4 id="att-name-map"><bdi class="secno">3.6.92 </bdi><code>name</code></h4><a class="self-link" href="#att-name-map" aria-label="Permalink for Section 3.6.92"></a></div>
+        </section><section id="name-2"><div class="header-wrapper"><h4 id="att-name-map"><bdi class="secno">3.6.95 </bdi><code>name</code></h4><a class="self-link" href="#att-name-map" aria-label="Permalink for Section 3.6.95"></a></div>
         <table class="data" aria-labelledby="att-name-map">
           <tbody>
             <tr>
@@ -12996,7 +13192,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="name-3"><div class="header-wrapper"><h4 id="att-name-meta"><bdi class="secno">3.6.93 </bdi><code>name</code></h4><a class="self-link" href="#att-name-meta" aria-label="Permalink for Section 3.6.93"></a></div>
+        </section><section id="name-3"><div class="header-wrapper"><h4 id="att-name-meta"><bdi class="secno">3.6.96 </bdi><code>name</code></h4><a class="self-link" href="#att-name-meta" aria-label="Permalink for Section 3.6.96"></a></div>
         <table class="data" aria-labelledby="att-name-meta">
           <tbody>
             <tr>
@@ -13047,7 +13243,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="name-4"><div class="header-wrapper"><h4 id="att-name-slot"><bdi class="secno">3.6.94 </bdi><code>name</code></h4><a class="self-link" href="#att-name-slot" aria-label="Permalink for Section 3.6.94"></a></div>
+        </section><section id="name-4"><div class="header-wrapper"><h4 id="att-name-slot"><bdi class="secno">3.6.97 </bdi><code>name</code></h4><a class="self-link" href="#att-name-slot" aria-label="Permalink for Section 3.6.97"></a></div>
         <table class="data" aria-labelledby="att-name-slot">
           <tbody>
             <tr>
@@ -13098,7 +13294,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="nomodule"><div class="header-wrapper"><h4 id="att-nomodule"><bdi class="secno">3.6.95 </bdi><code>nomodule</code></h4><a class="self-link" href="#att-nomodule" aria-label="Permalink for Section 3.6.95"></a></div>
+        </section><section id="nomodule"><div class="header-wrapper"><h4 id="att-nomodule"><bdi class="secno">3.6.98 </bdi><code>nomodule</code></h4><a class="self-link" href="#att-nomodule" aria-label="Permalink for Section 3.6.98"></a></div>
         <table class="data" aria-labelledby="att-nomodule">
           <tbody>
             <tr>
@@ -13149,7 +13345,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="nonce"><div class="header-wrapper"><h4 id="att-nonce"><bdi class="secno">3.6.96 </bdi><code>nonce</code></h4><a class="self-link" href="#att-nonce" aria-label="Permalink for Section 3.6.96"></a></div>
+        </section><section id="nonce"><div class="header-wrapper"><h4 id="att-nonce"><bdi class="secno">3.6.99 </bdi><code>nonce</code></h4><a class="self-link" href="#att-nonce" aria-label="Permalink for Section 3.6.99"></a></div>
         <table class="data" aria-labelledby="att-nonce">
           <tbody>
             <tr>
@@ -13200,7 +13396,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="novalidate"><div class="header-wrapper"><h4 id="att-novalidate"><bdi class="secno">3.6.97 </bdi><code>novalidate</code></h4><a class="self-link" href="#att-novalidate" aria-label="Permalink for Section 3.6.97"></a></div>
+        </section><section id="novalidate"><div class="header-wrapper"><h4 id="att-novalidate"><bdi class="secno">3.6.100 </bdi><code>novalidate</code></h4><a class="self-link" href="#att-novalidate" aria-label="Permalink for Section 3.6.100"></a></div>
         <table class="data" aria-labelledby="att-novalidate">
           <tbody>
             <tr>
@@ -13251,7 +13447,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="open"><div class="header-wrapper"><h4 id="att-open-details"><bdi class="secno">3.6.98 </bdi><code>open</code></h4><a class="self-link" href="#att-open-details" aria-label="Permalink for Section 3.6.98"></a></div>
+        </section><section id="open"><div class="header-wrapper"><h4 id="att-open-details"><bdi class="secno">3.6.101 </bdi><code>open</code></h4><a class="self-link" href="#att-open-details" aria-label="Permalink for Section 3.6.101"></a></div>
         <table class="data" aria-labelledby="att-open-details">
           <tbody>
             <tr>
@@ -13299,7 +13495,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="open-0"><div class="header-wrapper"><h4 id="att-open-dialog"><bdi class="secno">3.6.99 </bdi><code>open</code></h4><a class="self-link" href="#att-open-dialog" aria-label="Permalink for Section 3.6.99"></a></div>
+        </section><section id="open-0"><div class="header-wrapper"><h4 id="att-open-dialog"><bdi class="secno">3.6.102 </bdi><code>open</code></h4><a class="self-link" href="#att-open-dialog" aria-label="Permalink for Section 3.6.102"></a></div>
         <table class="data" aria-labelledby="att-open-dialog">
           <tbody>
             <tr>
@@ -13355,7 +13551,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="optimum"><div class="header-wrapper"><h4 id="att-optimum"><bdi class="secno">3.6.100 </bdi><code>optimum</code></h4><a class="self-link" href="#att-optimum" aria-label="Permalink for Section 3.6.100"></a></div>
+        </section><section id="optimum"><div class="header-wrapper"><h4 id="att-optimum"><bdi class="secno">3.6.103 </bdi><code>optimum</code></h4><a class="self-link" href="#att-optimum" aria-label="Permalink for Section 3.6.103"></a></div>
         <table class="data" aria-labelledby="att-optimum">
           <tbody>
             <tr>
@@ -13406,7 +13602,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="pattern"><div class="header-wrapper"><h4 id="att-pattern"><bdi class="secno">3.6.101 </bdi><code>pattern</code></h4><a class="self-link" href="#att-pattern" aria-label="Permalink for Section 3.6.101"></a></div>
+        </section><section id="pattern"><div class="header-wrapper"><h4 id="att-pattern"><bdi class="secno">3.6.104 </bdi><code>pattern</code></h4><a class="self-link" href="#att-pattern" aria-label="Permalink for Section 3.6.104"></a></div>
         <table class="data" aria-labelledby="att-pattern">
           <tbody>
             <tr>
@@ -13452,7 +13648,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="ping"><div class="header-wrapper"><h4 id="att-ping"><bdi class="secno">3.6.102 </bdi><code>ping</code></h4><a class="self-link" href="#att-ping" aria-label="Permalink for Section 3.6.102"></a></div>
+        </section><section id="ping"><div class="header-wrapper"><h4 id="att-ping"><bdi class="secno">3.6.105 </bdi><code>ping</code></h4><a class="self-link" href="#att-ping" aria-label="Permalink for Section 3.6.105"></a></div>
         <table class="data" aria-labelledby="att-ping">
           <tbody>
             <tr>
@@ -13503,7 +13699,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="placeholder"><div class="header-wrapper"><h4 id="att-placeholder"><bdi class="secno">3.6.103 </bdi><code>placeholder</code></h4><a class="self-link" href="#att-placeholder" aria-label="Permalink for Section 3.6.103"></a></div>
+        </section><section id="placeholder"><div class="header-wrapper"><h4 id="att-placeholder"><bdi class="secno">3.6.106 </bdi><code>placeholder</code></h4><a class="self-link" href="#att-placeholder" aria-label="Permalink for Section 3.6.106"></a></div>
         <table class="data" aria-labelledby="att-placeholder">
           <tbody>
             <tr>
@@ -13560,7 +13756,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="playsinline"><div class="header-wrapper"><h4 id="att-playsinline"><bdi class="secno">3.6.104 </bdi><code>playsinline</code></h4><a class="self-link" href="#att-playsinline" aria-label="Permalink for Section 3.6.104"></a></div>
+        </section><section id="playsinline"><div class="header-wrapper"><h4 id="att-playsinline"><bdi class="secno">3.6.107 </bdi><code>playsinline</code></h4><a class="self-link" href="#att-playsinline" aria-label="Permalink for Section 3.6.107"></a></div>
         <table class="data" aria-labelledby="att-playsinline">
           <tbody>
             <tr>
@@ -13611,7 +13807,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="popover"><div class="header-wrapper"><h4 id="att-popover"><bdi class="secno">3.6.105 </bdi><code>popover</code></h4><a class="self-link" href="#att-popover" aria-label="Permalink for Section 3.6.105"></a></div>
+        </section><section id="popover"><div class="header-wrapper"><h4 id="att-popover"><bdi class="secno">3.6.108 </bdi><code>popover</code></h4><a class="self-link" href="#att-popover" aria-label="Permalink for Section 3.6.108"></a></div>
         <table class="data" aria-labelledby="att-popover">
           <tbody>
             <tr>
@@ -13662,7 +13858,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th><a href="https://developer.apple.com/reference/appkit/nsaccessibility">AX</a></th>
               <td>
-                Not mapped
+                TBD
                 
               </td>
             </tr>
@@ -13679,7 +13875,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
                   If specified on an element with an implicit role of <code>generic</code>, then the element's role instead maps to <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-group"><code>group</code></a> for all
                   <a href="https://html.spec.whatwg.org/multipage/popover.html#the-popover-attribute"><code>popover</code> states</a>.
                 </p>
-                <div class="note" role="note" id="issue-container-generatedID-12"><div role="heading" class="note-title marker" id="h-note-12" aria-level="4"><span>Note</span></div><p class="">
+                <div class="note" role="note" id="issue-container-generatedID-14"><div role="heading" class="note-title marker" id="h-note-14" aria-level="4"><span>Note</span></div><p class="">
                   There are no unique mappings for the different <code>popover</code> states. Any accessibility mapping changes for the popover element would be the responsibility of the author. e.g., using
                   different base <abbr title="HyperText Markup Language">HTML</abbr> elements, attributes, or ARIA attributes to make such changes.
                 </p></div>
@@ -13687,7 +13883,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="popovertarget"><div class="header-wrapper"><h4 id="att-popovertarget"><bdi class="secno">3.6.106 </bdi><code>popovertarget</code></h4><a class="self-link" href="#att-popovertarget" aria-label="Permalink for Section 3.6.106"></a></div>
+        </section><section id="popovertarget"><div class="header-wrapper"><h4 id="att-popovertarget"><bdi class="secno">3.6.109 </bdi><code>popovertarget</code></h4><a class="self-link" href="#att-popovertarget" aria-label="Permalink for Section 3.6.109"></a></div>
         <table class="data" aria-labelledby="att-popovertarget">
           <tbody>
             <tr>
@@ -13710,13 +13906,14 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
                     <a class="core-mapping" href="https://w3c.github.io/core-aam/#ariaExpandedTrue"><code>aria-expanded=true</code></a>
                   </p>
                   <p>
-                    If the associated element is hidden, or not present in the DOM:
+                    If the associated element is hidden:
                     <a class="core-mapping" href="https://w3c.github.io/core-aam/#ariaExpandedFalse"><code>aria-expanded=false</code></a>
                   </p>
                   <p>
-                    If the associated element is an accessibility ancestor of the element with the <code>popovertarget</code> attribute:
+                    If the associated element is an accessibility ancestor of the element with the <code>command</code> attribute or is not present in the DOM:
                     <a class="core-mapping" href="https://w3c.github.io/core-aam/#ariaExpandedUndefined"><code>aria-expanded=undefined</code></a>
                   </p>
+                  <p>If the associated element is not a valid <code>popover</code> element: no <code>aria-expanded</code> mapping.</p>
                 </div>
               </td>
             </tr>
@@ -13761,12 +13958,12 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
                   <li>The element's implicit or explicit <code>popovertargetaction</code> is the "<code>auto</code>" state and the element is a descendant of the <code>popover</code> it is associated with.</li>
                   
                 </ul>
-                <div class="note" role="note" id="issue-container-generatedID-13"><div role="heading" class="note-title marker" id="h-note-13" aria-level="4"><span>Note</span></div><p class="">A button that represents a <a href="https://html.spec.whatwg.org/multipage/forms.html#concept-submit-button">submit button</a> with a <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#form-owner">form owner</a> cannot invoke a popover.</p></div>
+                <div class="note" role="note" id="issue-container-generatedID-15"><div role="heading" class="note-title marker" id="h-note-15" aria-level="4"><span>Note</span></div><p class="">A button that represents a <a href="https://html.spec.whatwg.org/multipage/forms.html#concept-submit-button">submit button</a> with a <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#form-owner">form owner</a> cannot invoke a popover.</p></div>
               </td>
             </tr>
           </tbody>
         </table>
-        </section><section id="popovertargetaction"><div class="header-wrapper"><h4 id="att-popovertargetaction"><bdi class="secno">3.6.107 </bdi><code>popovertargetaction</code></h4><a class="self-link" href="#att-popovertargetaction" aria-label="Permalink for Section 3.6.107"></a></div>
+        </section><section id="popovertargetaction"><div class="header-wrapper"><h4 id="att-popovertargetaction"><bdi class="secno">3.6.110 </bdi><code>popovertargetaction</code></h4><a class="self-link" href="#att-popovertargetaction" aria-label="Permalink for Section 3.6.110"></a></div>
         <table class="data" aria-labelledby="att-popovertargetaction">
           <tbody>
             <tr>
@@ -13818,7 +14015,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="poster"><div class="header-wrapper"><h4 id="att-poster"><bdi class="secno">3.6.108 </bdi><code>poster</code></h4><a class="self-link" href="#att-poster" aria-label="Permalink for Section 3.6.108"></a></div>
+        </section><section id="poster"><div class="header-wrapper"><h4 id="att-poster"><bdi class="secno">3.6.111 </bdi><code>poster</code></h4><a class="self-link" href="#att-poster" aria-label="Permalink for Section 3.6.111"></a></div>
         <table class="data" aria-labelledby="att-poster">
           <tbody>
             <tr>
@@ -13869,7 +14066,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="preload"><div class="header-wrapper"><h4 id="att-preload"><bdi class="secno">3.6.109 </bdi><code>preload</code></h4><a class="self-link" href="#att-preload" aria-label="Permalink for Section 3.6.109"></a></div>
+        </section><section id="preload"><div class="header-wrapper"><h4 id="att-preload"><bdi class="secno">3.6.112 </bdi><code>preload</code></h4><a class="self-link" href="#att-preload" aria-label="Permalink for Section 3.6.112"></a></div>
         <table class="data" aria-labelledby="att-preload">
           <tbody>
             <tr>
@@ -13920,7 +14117,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="readonly"><div class="header-wrapper"><h4 id="att-readonly"><bdi class="secno">3.6.110 </bdi><code>readonly</code></h4><a class="self-link" href="#att-readonly" aria-label="Permalink for Section 3.6.110"></a></div>
+        </section><section id="readonly"><div class="header-wrapper"><h4 id="att-readonly"><bdi class="secno">3.6.113 </bdi><code>readonly</code></h4><a class="self-link" href="#att-readonly" aria-label="Permalink for Section 3.6.113"></a></div>
         <table class="data" aria-labelledby="att-readonly">
           <tbody>
             <tr>
@@ -13972,7 +14169,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="referrerpolicy"><div class="header-wrapper"><h4 id="att-referrerpolicy"><bdi class="secno">3.6.111 </bdi><code>referrerpolicy</code></h4><a class="self-link" href="#att-referrerpolicy" aria-label="Permalink for Section 3.6.111"></a></div>
+        </section><section id="referrerpolicy"><div class="header-wrapper"><h4 id="att-referrerpolicy"><bdi class="secno">3.6.114 </bdi><code>referrerpolicy</code></h4><a class="self-link" href="#att-referrerpolicy" aria-label="Permalink for Section 3.6.114"></a></div>
         <table class="data" aria-labelledby="att-referrerpolicy">
           <tbody>
             <tr>
@@ -14026,7 +14223,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="rel"><div class="header-wrapper"><h4 id="att-rel"><bdi class="secno">3.6.112 </bdi><code>rel</code></h4><a class="self-link" href="#att-rel" aria-label="Permalink for Section 3.6.112"></a></div>
+        </section><section id="rel"><div class="header-wrapper"><h4 id="att-rel"><bdi class="secno">3.6.115 </bdi><code>rel</code></h4><a class="self-link" href="#att-rel" aria-label="Permalink for Section 3.6.115"></a></div>
         <table class="data" aria-labelledby="att-rel">
           <tbody>
             <tr>
@@ -14078,7 +14275,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="required"><div class="header-wrapper"><h4 id="att-required"><bdi class="secno">3.6.113 </bdi><code>required</code></h4><a class="self-link" href="#att-required" aria-label="Permalink for Section 3.6.113"></a></div>
+        </section><section id="required"><div class="header-wrapper"><h4 id="att-required"><bdi class="secno">3.6.116 </bdi><code>required</code></h4><a class="self-link" href="#att-required" aria-label="Permalink for Section 3.6.116"></a></div>
         <table class="data" aria-labelledby="att-required">
           <tbody>
             <tr>
@@ -14137,7 +14334,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="reversed"><div class="header-wrapper"><h4 id="att-reversed"><bdi class="secno">3.6.114 </bdi><code>reversed</code></h4><a class="self-link" href="#att-reversed" aria-label="Permalink for Section 3.6.114"></a></div>
+        </section><section id="reversed"><div class="header-wrapper"><h4 id="att-reversed"><bdi class="secno">3.6.117 </bdi><code>reversed</code></h4><a class="self-link" href="#att-reversed" aria-label="Permalink for Section 3.6.117"></a></div>
         <table class="data" aria-labelledby="att-reversed">
           <tbody>
             <tr>
@@ -14188,7 +14385,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="rows"><div class="header-wrapper"><h4 id="att-rows"><bdi class="secno">3.6.115 </bdi><code>rows</code></h4><a class="self-link" href="#att-rows" aria-label="Permalink for Section 3.6.115"></a></div>
+        </section><section id="rows"><div class="header-wrapper"><h4 id="att-rows"><bdi class="secno">3.6.118 </bdi><code>rows</code></h4><a class="self-link" href="#att-rows" aria-label="Permalink for Section 3.6.118"></a></div>
         <table class="data" aria-labelledby="att-rows">
           <tbody>
             <tr>
@@ -14237,7 +14434,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="rowspan"><div class="header-wrapper"><h4 id="att-rowspan"><bdi class="secno">3.6.116 </bdi><code>rowspan</code></h4><a class="self-link" href="#att-rowspan" aria-label="Permalink for Section 3.6.116"></a></div>
+        </section><section id="rowspan"><div class="header-wrapper"><h4 id="att-rowspan"><bdi class="secno">3.6.119 </bdi><code>rowspan</code></h4><a class="self-link" href="#att-rowspan" aria-label="Permalink for Section 3.6.119"></a></div>
         <table class="data" aria-labelledby="att-rowspan">
           <tbody>
             <tr>
@@ -14289,7 +14486,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="sandbox"><div class="header-wrapper"><h4 id="att-sandbox"><bdi class="secno">3.6.117 </bdi><code>sandbox</code></h4><a class="self-link" href="#att-sandbox" aria-label="Permalink for Section 3.6.117"></a></div>
+        </section><section id="sandbox"><div class="header-wrapper"><h4 id="att-sandbox"><bdi class="secno">3.6.120 </bdi><code>sandbox</code></h4><a class="self-link" href="#att-sandbox" aria-label="Permalink for Section 3.6.120"></a></div>
         <table class="data" aria-labelledby="att-sandbox">
           <tbody>
             <tr>
@@ -14340,7 +14537,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="scope"><div class="header-wrapper"><h4 id="att-scope"><bdi class="secno">3.6.118 </bdi><code>scope</code></h4><a class="self-link" href="#att-scope" aria-label="Permalink for Section 3.6.118"></a></div>
+        </section><section id="scope"><div class="header-wrapper"><h4 id="att-scope"><bdi class="secno">3.6.121 </bdi><code>scope</code></h4><a class="self-link" href="#att-scope" aria-label="Permalink for Section 3.6.121"></a></div>
         <table class="data" aria-labelledby="att-scope">
           <tbody>
             <tr>
@@ -14392,7 +14589,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="selected"><div class="header-wrapper"><h4 id="att-selected"><bdi class="secno">3.6.119 </bdi><code>selected</code></h4><a class="self-link" href="#att-selected" aria-label="Permalink for Section 3.6.119"></a></div>
+        </section><section id="selected"><div class="header-wrapper"><h4 id="att-selected"><bdi class="secno">3.6.122 </bdi><code>selected</code></h4><a class="self-link" href="#att-selected" aria-label="Permalink for Section 3.6.122"></a></div>
         <table class="data" aria-labelledby="att-selected">
           <tbody>
             <tr>
@@ -14443,7 +14640,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="shape"><div class="header-wrapper"><h4 id="att-shape"><bdi class="secno">3.6.120 </bdi><code>shape</code></h4><a class="self-link" href="#att-shape" aria-label="Permalink for Section 3.6.120"></a></div>
+        </section><section id="shape"><div class="header-wrapper"><h4 id="att-shape"><bdi class="secno">3.6.123 </bdi><code>shape</code></h4><a class="self-link" href="#att-shape" aria-label="Permalink for Section 3.6.123"></a></div>
         <table class="data" aria-labelledby="att-shape">
           <tbody>
             <tr>
@@ -14494,7 +14691,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="size"><div class="header-wrapper"><h4 id="att-size"><bdi class="secno">3.6.121 </bdi><code>size</code></h4><a class="self-link" href="#att-size" aria-label="Permalink for Section 3.6.121"></a></div>
+        </section><section id="size"><div class="header-wrapper"><h4 id="att-size"><bdi class="secno">3.6.124 </bdi><code>size</code></h4><a class="self-link" href="#att-size" aria-label="Permalink for Section 3.6.124"></a></div>
         <table class="data" aria-labelledby="att-size">
           <tbody>
             <tr>
@@ -14554,7 +14751,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="sizes"><div class="header-wrapper"><h4 id="att-sizes"><bdi class="secno">3.6.122 </bdi><code>sizes</code></h4><a class="self-link" href="#att-sizes" aria-label="Permalink for Section 3.6.122"></a></div>
+        </section><section id="sizes"><div class="header-wrapper"><h4 id="att-sizes"><bdi class="secno">3.6.125 </bdi><code>sizes</code></h4><a class="self-link" href="#att-sizes" aria-label="Permalink for Section 3.6.125"></a></div>
         <table class="data" aria-labelledby="att-sizes">
           <tbody>
             <tr>
@@ -14605,7 +14802,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="sizes-0"><div class="header-wrapper"><h4 id="att-sizes-img-source"><bdi class="secno">3.6.123 </bdi><code>sizes</code></h4><a class="self-link" href="#att-sizes-img-source" aria-label="Permalink for Section 3.6.123"></a></div>
+        </section><section id="sizes-0"><div class="header-wrapper"><h4 id="att-sizes-img-source"><bdi class="secno">3.6.126 </bdi><code>sizes</code></h4><a class="self-link" href="#att-sizes-img-source" aria-label="Permalink for Section 3.6.126"></a></div>
         <table class="data" aria-labelledby="att-sizes-img-source">
           <tbody>
             <tr>
@@ -14657,7 +14854,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="slot-0"><div class="header-wrapper"><h4 id="att-slot"><bdi class="secno">3.6.124 </bdi><code>slot</code></h4><a class="self-link" href="#att-slot" aria-label="Permalink for Section 3.6.124"></a></div>
+        </section><section id="slot-0"><div class="header-wrapper"><h4 id="att-slot"><bdi class="secno">3.6.127 </bdi><code>slot</code></h4><a class="self-link" href="#att-slot" aria-label="Permalink for Section 3.6.127"></a></div>
         <table class="data" aria-labelledby="att-slot">
           <tbody>
             <tr>
@@ -14708,7 +14905,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="span-0"><div class="header-wrapper"><h4 id="att-span"><bdi class="secno">3.6.125 </bdi><code>span</code></h4><a class="self-link" href="#att-span" aria-label="Permalink for Section 3.6.125"></a></div>
+        </section><section id="span-0"><div class="header-wrapper"><h4 id="att-span"><bdi class="secno">3.6.128 </bdi><code>span</code></h4><a class="self-link" href="#att-span" aria-label="Permalink for Section 3.6.128"></a></div>
         <table class="data" aria-labelledby="att-span">
           <tbody>
             <tr>
@@ -14758,7 +14955,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="spellcheck"><div class="header-wrapper"><h4 id="att-spellcheck"><bdi class="secno">3.6.126 </bdi><code>spellcheck</code></h4><a class="self-link" href="#att-spellcheck" aria-label="Permalink for Section 3.6.126"></a></div>
+        </section><section id="spellcheck"><div class="header-wrapper"><h4 id="att-spellcheck"><bdi class="secno">3.6.129 </bdi><code>spellcheck</code></h4><a class="self-link" href="#att-spellcheck" aria-label="Permalink for Section 3.6.129"></a></div>
         <table class="data" aria-labelledby="att-spellcheck">
           <tbody>
             <tr>
@@ -14809,7 +15006,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="src"><div class="header-wrapper"><h4 id="att-src-media"><bdi class="secno">3.6.127 </bdi><code>src</code></h4><a class="self-link" href="#att-src-media" aria-label="Permalink for Section 3.6.127"></a></div>
+        </section><section id="src"><div class="header-wrapper"><h4 id="att-src-media"><bdi class="secno">3.6.130 </bdi><code>src</code></h4><a class="self-link" href="#att-src-media" aria-label="Permalink for Section 3.6.130"></a></div>
         <table class="data" aria-labelledby="att-src-media">
           <tbody>
             <tr>
@@ -14868,7 +15065,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="srcdoc"><div class="header-wrapper"><h4 id="att-srcdoc"><bdi class="secno">3.6.128 </bdi><code>srcdoc</code></h4><a class="self-link" href="#att-srcdoc" aria-label="Permalink for Section 3.6.128"></a></div>
+        </section><section id="srcdoc"><div class="header-wrapper"><h4 id="att-srcdoc"><bdi class="secno">3.6.131 </bdi><code>srcdoc</code></h4><a class="self-link" href="#att-srcdoc" aria-label="Permalink for Section 3.6.131"></a></div>
         <table class="data" aria-labelledby="att-srcdoc">
           <tbody>
             <tr>
@@ -14919,7 +15116,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="srclang"><div class="header-wrapper"><h4 id="att-srclang"><bdi class="secno">3.6.129 </bdi><code>srclang</code></h4><a class="self-link" href="#att-srclang" aria-label="Permalink for Section 3.6.129"></a></div>
+        </section><section id="srclang"><div class="header-wrapper"><h4 id="att-srclang"><bdi class="secno">3.6.132 </bdi><code>srclang</code></h4><a class="self-link" href="#att-srclang" aria-label="Permalink for Section 3.6.132"></a></div>
         <table class="data" aria-labelledby="att-srclang">
           <tbody>
             <tr>
@@ -14970,7 +15167,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="srcset"><div class="header-wrapper"><h4 id="att-srcset"><bdi class="secno">3.6.130 </bdi><code>srcset</code></h4><a class="self-link" href="#att-srcset" aria-label="Permalink for Section 3.6.130"></a></div>
+        </section><section id="srcset"><div class="header-wrapper"><h4 id="att-srcset"><bdi class="secno">3.6.133 </bdi><code>srcset</code></h4><a class="self-link" href="#att-srcset" aria-label="Permalink for Section 3.6.133"></a></div>
         <table class="data" aria-labelledby="att-srcset">
           <tbody>
             <tr>
@@ -15022,7 +15219,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="start"><div class="header-wrapper"><h4 id="att-start"><bdi class="secno">3.6.131 </bdi><code>start</code></h4><a class="self-link" href="#att-start" aria-label="Permalink for Section 3.6.131"></a></div>
+        </section><section id="start"><div class="header-wrapper"><h4 id="att-start"><bdi class="secno">3.6.134 </bdi><code>start</code></h4><a class="self-link" href="#att-start" aria-label="Permalink for Section 3.6.134"></a></div>
         <table class="data" aria-labelledby="att-start">
           <tbody>
             <tr>
@@ -15073,7 +15270,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="step"><div class="header-wrapper"><h4 id="att-step"><bdi class="secno">3.6.132 </bdi><code>step</code></h4><a class="self-link" href="#att-step" aria-label="Permalink for Section 3.6.132"></a></div>
+        </section><section id="step"><div class="header-wrapper"><h4 id="att-step"><bdi class="secno">3.6.135 </bdi><code>step</code></h4><a class="self-link" href="#att-step" aria-label="Permalink for Section 3.6.135"></a></div>
         <table class="data" aria-labelledby="att-step">
           <tbody>
             <tr>
@@ -15120,7 +15317,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="style-0"><div class="header-wrapper"><h4 id="att-style"><bdi class="secno">3.6.133 </bdi><code>style</code></h4><a class="self-link" href="#att-style" aria-label="Permalink for Section 3.6.133"></a></div>
+        </section><section id="style-0"><div class="header-wrapper"><h4 id="att-style"><bdi class="secno">3.6.136 </bdi><code>style</code></h4><a class="self-link" href="#att-style" aria-label="Permalink for Section 3.6.136"></a></div>
         <table class="data" aria-labelledby="att-style">
           <tbody>
             <tr>
@@ -15171,7 +15368,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="tabindex"><div class="header-wrapper"><h4 id="att-tabindex"><bdi class="secno">3.6.134 </bdi><code>tabindex</code></h4><a class="self-link" href="#att-tabindex" aria-label="Permalink for Section 3.6.134"></a></div>
+        </section><section id="tabindex"><div class="header-wrapper"><h4 id="att-tabindex"><bdi class="secno">3.6.137 </bdi><code>tabindex</code></h4><a class="self-link" href="#att-tabindex" aria-label="Permalink for Section 3.6.137"></a></div>
         <table class="data" aria-labelledby="att-tabindex">
           <tbody>
             <tr>
@@ -15224,7 +15421,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="target"><div class="header-wrapper"><h4 id="att-target"><bdi class="secno">3.6.135 </bdi><code>target</code></h4><a class="self-link" href="#att-target" aria-label="Permalink for Section 3.6.135"></a></div>
+        </section><section id="target"><div class="header-wrapper"><h4 id="att-target"><bdi class="secno">3.6.138 </bdi><code>target</code></h4><a class="self-link" href="#att-target" aria-label="Permalink for Section 3.6.138"></a></div>
         <table class="data" aria-labelledby="att-target">
           <tbody>
             <tr>
@@ -15276,7 +15473,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="target-0"><div class="header-wrapper"><h4 id="att-target-base"><bdi class="secno">3.6.136 </bdi><code>target</code></h4><a class="self-link" href="#att-target-base" aria-label="Permalink for Section 3.6.136"></a></div>
+        </section><section id="target-0"><div class="header-wrapper"><h4 id="att-target-base"><bdi class="secno">3.6.139 </bdi><code>target</code></h4><a class="self-link" href="#att-target-base" aria-label="Permalink for Section 3.6.139"></a></div>
         <table class="data" aria-labelledby="att-target-base">
           <tbody>
             <tr>
@@ -15327,7 +15524,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="target-1"><div class="header-wrapper"><h4 id="att-target-form"><bdi class="secno">3.6.137 </bdi><code>target</code></h4><a class="self-link" href="#att-target-form" aria-label="Permalink for Section 3.6.137"></a></div>
+        </section><section id="target-1"><div class="header-wrapper"><h4 id="att-target-form"><bdi class="secno">3.6.140 </bdi><code>target</code></h4><a class="self-link" href="#att-target-form" aria-label="Permalink for Section 3.6.140"></a></div>
         <table class="data" aria-labelledby="att-target-form">
           <tbody>
             <tr>
@@ -15378,7 +15575,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="title-1"><div class="header-wrapper"><h4 id="att-title"><bdi class="secno">3.6.138 </bdi><code>title</code></h4><a class="self-link" href="#att-title" aria-label="Permalink for Section 3.6.138"></a></div>
+        </section><section id="title-1"><div class="header-wrapper"><h4 id="att-title"><bdi class="secno">3.6.141 </bdi><code>title</code></h4><a class="self-link" href="#att-title" aria-label="Permalink for Section 3.6.141"></a></div>
         <table class="data" aria-labelledby="att-title">
           <tbody>
             <tr>
@@ -15437,7 +15634,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="title-2"><div class="header-wrapper"><h4 id="att-title-abbr"><bdi class="secno">3.6.139 </bdi><code>title</code></h4><a class="self-link" href="#att-title-abbr" aria-label="Permalink for Section 3.6.139"></a></div>
+        </section><section id="title-2"><div class="header-wrapper"><h4 id="att-title-abbr"><bdi class="secno">3.6.142 </bdi><code>title</code></h4><a class="self-link" href="#att-title-abbr" aria-label="Permalink for Section 3.6.142"></a></div>
         <table class="data" aria-labelledby="att-title-abbr">
           <tbody>
             <tr>
@@ -15487,7 +15684,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="title-3"><div class="header-wrapper"><h4 id="att-title-link"><bdi class="secno">3.6.140 </bdi><code>title</code></h4><a class="self-link" href="#att-title-link" aria-label="Permalink for Section 3.6.140"></a></div>
+        </section><section id="title-3"><div class="header-wrapper"><h4 id="att-title-link"><bdi class="secno">3.6.143 </bdi><code>title</code></h4><a class="self-link" href="#att-title-link" aria-label="Permalink for Section 3.6.143"></a></div>
         <table class="data" aria-labelledby="att-title-link">
           <tbody>
             <tr>
@@ -15528,7 +15725,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="title-4"><div class="header-wrapper"><h4 id="att-title-style"><bdi class="secno">3.6.141 </bdi><code>title</code></h4><a class="self-link" href="#att-title-style" aria-label="Permalink for Section 3.6.141"></a></div>
+        </section><section id="title-4"><div class="header-wrapper"><h4 id="att-title-style"><bdi class="secno">3.6.144 </bdi><code>title</code></h4><a class="self-link" href="#att-title-style" aria-label="Permalink for Section 3.6.144"></a></div>
         <table class="data" aria-labelledby="att-title-style">
           <tbody>
             <tr>
@@ -15577,7 +15774,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="translate"><div class="header-wrapper"><h4 id="att-translate"><bdi class="secno">3.6.142 </bdi><code>translate</code></h4><a class="self-link" href="#att-translate" aria-label="Permalink for Section 3.6.142"></a></div>
+        </section><section id="translate"><div class="header-wrapper"><h4 id="att-translate"><bdi class="secno">3.6.145 </bdi><code>translate</code></h4><a class="self-link" href="#att-translate" aria-label="Permalink for Section 3.6.145"></a></div>
         <table class="data" aria-labelledby="att-translate">
           <tbody>
             <tr>
@@ -15628,7 +15825,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="type"><div class="header-wrapper"><h4 id="att-type-hyperlink"><bdi class="secno">3.6.143 </bdi><code>type</code></h4><a class="self-link" href="#att-type-hyperlink" aria-label="Permalink for Section 3.6.143"></a></div>
+        </section><section id="type"><div class="header-wrapper"><h4 id="att-type-hyperlink"><bdi class="secno">3.6.146 </bdi><code>type</code></h4><a class="self-link" href="#att-type-hyperlink" aria-label="Permalink for Section 3.6.146"></a></div>
         <table class="data" aria-labelledby="att-type-hyperlink">
           <tbody>
             <tr>
@@ -15680,7 +15877,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="type-0"><div class="header-wrapper"><h4 id="att-type-button"><bdi class="secno">3.6.144 </bdi><code>type</code></h4><a class="self-link" href="#att-type-button" aria-label="Permalink for Section 3.6.144"></a></div>
+        </section><section id="type-0"><div class="header-wrapper"><h4 id="att-type-button"><bdi class="secno">3.6.147 </bdi><code>type</code></h4><a class="self-link" href="#att-type-button" aria-label="Permalink for Section 3.6.147"></a></div>
         <table class="data" aria-labelledby="att-type-button">
           <tbody>
             <tr>
@@ -15729,7 +15926,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="type-1"><div class="header-wrapper"><h4 id="att-type-embed"><bdi class="secno">3.6.145 </bdi><code>type</code></h4><a class="self-link" href="#att-type-embed" aria-label="Permalink for Section 3.6.145"></a></div>
+        </section><section id="type-1"><div class="header-wrapper"><h4 id="att-type-embed"><bdi class="secno">3.6.148 </bdi><code>type</code></h4><a class="self-link" href="#att-type-embed" aria-label="Permalink for Section 3.6.148"></a></div>
         <table class="data" aria-labelledby="att-type-embed">
           <tbody>
             <tr>
@@ -15782,7 +15979,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="type-2"><div class="header-wrapper"><h4 id="att-type-input"><bdi class="secno">3.6.146 </bdi><code>type</code></h4><a class="self-link" href="#att-type-input" aria-label="Permalink for Section 3.6.146"></a></div>
+        </section><section id="type-2"><div class="header-wrapper"><h4 id="att-type-input"><bdi class="secno">3.6.149 </bdi><code>type</code></h4><a class="self-link" href="#att-type-input" aria-label="Permalink for Section 3.6.149"></a></div>
         <table class="data" aria-labelledby="att-type-input">
           <tbody>
             <tr>
@@ -15847,7 +16044,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="type-3"><div class="header-wrapper"><h4 id="att-type-ol"><bdi class="secno">3.6.147 </bdi><code>type</code></h4><a class="self-link" href="#att-type-ol" aria-label="Permalink for Section 3.6.147"></a></div>
+        </section><section id="type-3"><div class="header-wrapper"><h4 id="att-type-ol"><bdi class="secno">3.6.150 </bdi><code>type</code></h4><a class="self-link" href="#att-type-ol" aria-label="Permalink for Section 3.6.150"></a></div>
         <table class="data" aria-labelledby="att-type-ol">
           <tbody>
             <tr>
@@ -15915,7 +16112,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="usemap"><div class="header-wrapper"><h4 id="att-usemap"><bdi class="secno">3.6.148 </bdi><code>usemap</code></h4><a class="self-link" href="#att-usemap" aria-label="Permalink for Section 3.6.148"></a></div>
+        </section><section id="usemap"><div class="header-wrapper"><h4 id="att-usemap"><bdi class="secno">3.6.151 </bdi><code>usemap</code></h4><a class="self-link" href="#att-usemap" aria-label="Permalink for Section 3.6.151"></a></div>
         <table class="data" aria-labelledby="att-usemap">
           <tbody>
             <tr>
@@ -15966,7 +16163,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="value"><div class="header-wrapper"><h4 id="att-value-button"><bdi class="secno">3.6.149 </bdi><code>value</code></h4><a class="self-link" href="#att-value-button" aria-label="Permalink for Section 3.6.149"></a></div>
+        </section><section id="value"><div class="header-wrapper"><h4 id="att-value-button"><bdi class="secno">3.6.152 </bdi><code>value</code></h4><a class="self-link" href="#att-value-button" aria-label="Permalink for Section 3.6.152"></a></div>
         <table class="data" aria-labelledby="att-value-button">
           <tbody>
             <tr>
@@ -16018,7 +16215,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="value-0"><div class="header-wrapper"><h4 id="att-value-data"><bdi class="secno">3.6.150 </bdi><code>value</code></h4><a class="self-link" href="#att-value-data" aria-label="Permalink for Section 3.6.150"></a></div>
+        </section><section id="value-0"><div class="header-wrapper"><h4 id="att-value-data"><bdi class="secno">3.6.153 </bdi><code>value</code></h4><a class="self-link" href="#att-value-data" aria-label="Permalink for Section 3.6.153"></a></div>
         <table class="data" aria-labelledby="att-value-data">
           <tbody>
             <tr>
@@ -16069,7 +16266,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="value-1"><div class="header-wrapper"><h4 id="att-value-input"><bdi class="secno">3.6.151 </bdi><code>value</code></h4><a class="self-link" href="#att-value-input" aria-label="Permalink for Section 3.6.151"></a></div>
+        </section><section id="value-1"><div class="header-wrapper"><h4 id="att-value-input"><bdi class="secno">3.6.154 </bdi><code>value</code></h4><a class="self-link" href="#att-value-input" aria-label="Permalink for Section 3.6.154"></a></div>
         <table class="data" aria-labelledby="att-value-input">
           <tbody>
             <tr>
@@ -16122,7 +16319,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="value-2"><div class="header-wrapper"><h4 id="att-value-li"><bdi class="secno">3.6.152 </bdi><code>value</code></h4><a class="self-link" href="#att-value-li" aria-label="Permalink for Section 3.6.152"></a></div>
+        </section><section id="value-2"><div class="header-wrapper"><h4 id="att-value-li"><bdi class="secno">3.6.155 </bdi><code>value</code></h4><a class="self-link" href="#att-value-li" aria-label="Permalink for Section 3.6.155"></a></div>
         <table class="data" aria-labelledby="att-value-li">
           <tbody>
             <tr>
@@ -16179,7 +16376,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="value-3"><div class="header-wrapper"><h4 id="att-value-meter"><bdi class="secno">3.6.153 </bdi><code>value</code></h4><a class="self-link" href="#att-value-meter" aria-label="Permalink for Section 3.6.153"></a></div>
+        </section><section id="value-3"><div class="header-wrapper"><h4 id="att-value-meter"><bdi class="secno">3.6.156 </bdi><code>value</code></h4><a class="self-link" href="#att-value-meter" aria-label="Permalink for Section 3.6.156"></a></div>
         <table class="data" aria-labelledby="att-value-meter">
           <tbody>
             <tr>
@@ -16231,7 +16428,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="width"><div class="header-wrapper"><h4 id="att-width"><bdi class="secno">3.6.154 </bdi><code>width</code></h4><a class="self-link" href="#att-width" aria-label="Permalink for Section 3.6.154"></a></div>
+        </section><section id="width"><div class="header-wrapper"><h4 id="att-width"><bdi class="secno">3.6.157 </bdi><code>width</code></h4><a class="self-link" href="#att-width" aria-label="Permalink for Section 3.6.157"></a></div>
         <table class="data" aria-labelledby="att-width">
           <tbody>
             <tr>
@@ -16286,7 +16483,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
           </tbody>
         </table>
-        </section><section id="wrap"><div class="header-wrapper"><h4 id="att-wrap"><bdi class="secno">3.6.155 </bdi><code>wrap</code></h4><a class="self-link" href="#att-wrap" aria-label="Permalink for Section 3.6.155"></a></div>
+        </section><section id="wrap"><div class="header-wrapper"><h4 id="att-wrap"><bdi class="secno">3.6.158 </bdi><code>wrap</code></h4><a class="self-link" href="#att-wrap" aria-label="Permalink for Section 3.6.158"></a></div>
         <table class="data" aria-labelledby="att-wrap">
           <tbody>
             <tr>
@@ -16351,7 +16548,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
         <a href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-description">accessible description</a>. There are different rules provided for several different types of
         <a class="termref informative" data-lt="element" data-link-type="dfn" href="https://dom.spec.whatwg.org/#concept-element">elements</a>, <a class="termref informative" data-lt="node" data-link-type="dfn" href="https://dom.spec.whatwg.org/#concept-node">nodes</a>, and combinations of markup.
       </p>
-      <div class="note" role="note" id="issue-container-generatedID-14"><div role="heading" class="note-title marker" id="h-note-14" aria-level="3"><span>Note</span></div><p class="">
+      <div class="note" role="note" id="issue-container-generatedID-16"><div role="heading" class="note-title marker" id="h-note-16" aria-level="3"><span>Note</span></div><p class="">
         User Agents notify assistive technology when relevant accessibility information changes, sometimes by destroying and recreating the accessibility object, or sometimes by notifying of changes
         to the object per the specified
         <a href="https://www.w3.org/TR/core-aam-1.2/#event-aria-label">name change event mappings</a> and <a href="https://www.w3.org/TR/core-aam-1.2/#event-aria-describedby">description change event mappings</a>.
@@ -16528,7 +16725,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </li>
             <li>
               Otherwise use <code>alt</code> attribute, even if its value is the empty string.
-              <div class="note" role="note" id="issue-container-generatedID-15"><div role="heading" class="note-title marker" id="h-note-15" aria-level="5"><span>Note</span></div><div class="">
+              <div class="note" role="note" id="issue-container-generatedID-17"><div role="heading" class="note-title marker" id="h-note-17" aria-level="5"><span>Note</span></div><div class="">
                 An <code>img</code> with an <code>alt</code> attribute whose value is the empty string is mapped to the
                 <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-presentation"><code>presentation</code></a> role. It has no accessible name.
               </div></div>
@@ -16602,7 +16799,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <li>Otherwise use the <code>title</code> attribute.</li>
             <li>If none of the above yield a usable text string there is no <a href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-name">accessible name</a>.</li>
           </ol>
-          <div class="note" role="note" id="issue-container-generatedID-16"><div role="heading" class="note-title marker" id="h-note-16" aria-level="5"><span>Note</span></div><p class="">
+          <div class="note" role="note" id="issue-container-generatedID-18"><div role="heading" class="note-title marker" id="h-note-18" aria-level="5"><span>Note</span></div><p class="">
             The document referenced by the <code>src</code> of the <code>iframe</code> element gets its name from that document's <code>title</code> element, like any other document. If there is no <code>title</code> provided, there is no
             accessible name.
           </p></div>
@@ -16697,6 +16894,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
         <section id="substantive-changes-since-moving-to-the-accessible-rich-internet-applications-working-group-03-nov-2019"><div class="header-wrapper"><h4 id="a-1-1-substantive-changes-since-moving-to-the-accessible-rich-internet-applications-working-group-03-nov-2019"><bdi class="secno">A.1.1 </bdi>Substantive changes since moving to the <a href="https://www.w3.org/WAI/ARIA/">Accessible Rich Internet Applications Working Group</a> (03-Nov-2019)</h4><a class="self-link" href="#substantive-changes-since-moving-to-the-accessible-rich-internet-applications-working-group-03-nov-2019" aria-label="Permalink for Appendix A.1.1"></a></div>
           
           <ul>
+            <li>2-April-2025: Add <code>command</code> and <code>commandfor</code> attribute mappings. See <a href="https://github.com/w3c/aria/pull/2354/">GitHub ARIA PR 2354</a>.</li>
             <li>11-July-2024: User Agents ignore <code>aria-hidden=true</code> on <code>body</code> and <code>html</code> elements. See <a href="https://github.com/w3c/html-aam/pull/516">GitHub PR 516</a>.</li>
             <li>06-June-2024: Add concept of Minimum Role. See <a href="https://github.com/w3c/html-aam/pull/454">GitHub PR 454</a>.</li>
             <li>06-June-2024: Add <code>popover</code>, <code>popovertarget</code> and <code>popovertargetaction</code> mappings. See <a href="https://github.com/w3c/html-aam/pull/481">GitHub PR 481</a>.</li>
@@ -16854,7 +17052,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
           
           <ul>
             
-          <li>Rahim Abdi (Apple Inc.)</li><li>NAVYA AGARWAL (Adobe)</li><li>Mario Batušić (Fabasoft)</li><li>Benjamin Beaudry (Microsoft Corporation)</li><li>Curt Bellew (Oracle Corporation)</li><li>Zoë Bijl (W3C Invited Experts)</li><li>Aleksandar Cindrikj (Netcetera)</li><li>Keith Cirkel (Microsoft Corporation)</li><li>Daniel Clark (Microsoft Corporation)</li><li>James Craig (Apple Inc.)</li><li>Chris Cuellar (Bocoup)</li><li>Hidde de Vries (Logius)</li><li>Joanmarie Diggs (Igalia)</li><li>Howard Edwards (Bocoup)</li><li>James Edwards (TPGi)</li><li>Mayuri Faldu (Navy Federal Credit Union)</li><li>Betsy Fanning (PDF Association)</li><li>Steve Faulkner (TetraLogical Services Ltd)</li><li>Jane Fulton (Cisco)</li><li>Bryan Garaventa (W3C Invited Experts)</li><li>Rashmi Garimella (Google LLC)</li><li>Matt Garrish (DAISY Consortium)</li><li>Doug Geoffray (Microsoft Corporation)</li><li>Jaunita George (Navy Federal Credit Union)</li><li>Ariella Gilmore (IBM Corporation)</li><li>Glen Gordon (TPGi)</li><li>Shirisha Gubba (Google LLC)</li><li>Eloisa Guerrero (Rakuten Group, Inc.)</li><li>Jon Gunderson (University of Illinois)</li><li>Oliver Habersetzer (SAP SE)</li><li>Theo Hale (Microsoft Corporation)</li><li>Sunny Hardasani (Adobe)</li><li>Matthew Hardy (Adobe)</li><li>Peter Heumader (Fabasoft)</li><li>Sarah Higley (Microsoft Corporation)</li><li>Hans Hillen (TPGi)</li><li>Isabel Holdsworth (TPGi)</li><li>Stanley Hon (Microsoft Corporation)</li><li>Michael Jackson (Microsoft Corporation)</li><li>Duff Johnson (PDF Association)</li><li>Summer Jones (Thomson Reuters Corp.)</li><li>William Kilian (TargetStream Technologies)</li><li>Matthew King (Meta)</li><li>Zachary Kinsey (TargetStream Technologies)</li><li>Greta Krafsig (The Washington Post)</li><li>Peter Krautzberger (krautzource UG)</li><li>Nina Krauß (SAP SE)</li><li>JaEun Jemma Ku (University of Illinois)</li><li>Joe Lamyman (TetraLogical Services Ltd)</li><li>Charles LaPierre (Benetech)</li><li>Philip Lazarevic (Level Access)</li><li>Aaron Leventhal (Google LLC)</li><li>Brett Lewis (TPGi)</li><li>Andy Luhrs (Microsoft Corporation)</li><li>Sazzad Mahamud (Google LLC)</li><li>Alison Maher (Microsoft Corporation)</li><li>Mark McCarthy (University of Illinois)</li><li>Clay Miller (Microsoft Corporation)</li><li>Daniel Montalvo (W3C)</li><li>James Nurthen (Adobe)</li><li>Scott O'Hara (Microsoft Corporation)</li><li>Lola Odelola (W3C Invited Experts)</li><li>Adam Page (Hilton)</li><li>Michael Pennisi (Bocoup)</li><li>Roberto Perez (Microsoft Corporation)</li><li>Giacomo Petri (UsableNet)</li><li>Noah Praskins (TPGi)</li><li>Daniel Pöll (Fabasoft)</li><li>Paul Rayius (Allyant)</li><li>Adrian Roselli (W3C Invited Experts)</li><li>Marco Sabidussi (UsableNet)</li><li>Trisha Salas (Level Access)</li><li>Stefan Schnabel (SAP SE)</li><li>Harris Schneiderman (Deque Systems, Inc.)</li><li>Raymond Schwartz (Navy Federal Credit Union)</li><li>Cynthia Shelly (Google LLC)</li><li>Tzviya Siegman (W3C)</li><li>Arturo Silva (The Washington Post)</li><li>Avneesh Singh (DAISY Consortium)</li><li>Michael[tm] Smith (sideshowbarker) (W3C)</li><li>Francis Storr (Intel Corporation)</li><li>Jennifer Strickland (MITRE Corporation)</li><li>Melanie Sumner (W3C Invited Experts)</li><li>Alexander Surkov (Igalia)</li><li>James Teh (Mozilla Foundation)</li><li>Jocelyn Tran (Google LLC)</li><li>Léonie Watson (TetraLogical Services Ltd)</li><li>Jan Williams (TPGi)</li><li>Valerie Young (Igalia)</li><li>Kate Zhao (Thomson Reuters Corp.)</li><li>Xiao (Helen) Zhou (University of Illinois)</li><li>Filippo Zorzi (UsableNet)</li></ul>
+          <li>Rahim Abdi (Apple Inc.)</li><li>NAVYA AGARWAL (Adobe)</li><li>Mario Batušić (Fabasoft)</li><li>Benjamin Beaudry (Microsoft Corporation)</li><li>Curt Bellew (Oracle Corporation)</li><li>Zoë Bijl (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Experts)</li><li>Aleksandar Cindrikj (Netcetera)</li><li>Keith Cirkel (Microsoft Corporation)</li><li>Daniel Clark (Microsoft Corporation)</li><li>James Craig (Apple Inc.)</li><li>Chris Cuellar (Bocoup)</li><li>Hidde de Vries (Logius)</li><li>Joanmarie Diggs (Igalia)</li><li>Howard Edwards (Bocoup)</li><li>James Edwards (TPGi)</li><li>Mayuri Faldu (Navy Federal Credit Union)</li><li>Betsy Fanning (PDF Association)</li><li>Steve Faulkner (TetraLogical Services Ltd)</li><li>Jaunita Flessas (Navy Federal Credit Union)</li><li>Jane Fulton (Cisco)</li><li>Bryan Garaventa (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Experts)</li><li>Rashmi Garimella (Google LLC)</li><li>Matt Garrish (DAISY Consortium)</li><li>Doug Geoffray (Microsoft Corporation)</li><li>Ariella Gilmore (IBM Corporation)</li><li>Glen Gordon (TPGi)</li><li>Shirisha Gubba (Google LLC)</li><li>Eloisa Guerrero (Rakuten Group, Inc.)</li><li>Jon Gunderson (University of Illinois)</li><li>Oliver Habersetzer (SAP SE)</li><li>Theo Hale (Microsoft Corporation)</li><li>Sunny Hardasani (Adobe)</li><li>Matthew Hardy (Adobe)</li><li>Peter Heumader (Fabasoft)</li><li>Sarah Higley (Microsoft Corporation)</li><li>Hans Hillen (TPGi)</li><li>Isabel Holdsworth (TPGi)</li><li>Stanley Hon (Microsoft Corporation)</li><li>Michael Jackson (Microsoft Corporation)</li><li>Duff Johnson (PDF Association)</li><li>Summer Jones (Thomson Reuters Corp.)</li><li>William Kilian (TargetStream Technologies)</li><li>Matthew King (Meta)</li><li>Zachary Kinsey (TargetStream Technologies)</li><li>Greta Krafsig (The Washington Post)</li><li>Peter Krautzberger (krautzource UG)</li><li>Nina Krauß (SAP SE)</li><li>JaEun Jemma Ku (University of Illinois)</li><li>Joe Lamyman (TetraLogical Services Ltd)</li><li>Charles LaPierre (Benetech)</li><li>Philip Lazarevic (Level Access)</li><li>Aaron Leventhal (Google LLC)</li><li>Brett Lewis (TPGi)</li><li>Andy Luhrs (Microsoft Corporation)</li><li>Sazzad Mahamud (Google LLC)</li><li>Alison Maher (Microsoft Corporation)</li><li>Mark McCarthy (University of Illinois)</li><li>Eduardo Meza Etienne (Navy Federal Credit Union)</li><li>Clay Miller (Microsoft Corporation)</li><li>Daniel Montalvo (<abbr title="World Wide Web Consortium">W3C</abbr>)</li><li>James Nurthen (Adobe)</li><li>Scott O'Hara (Microsoft Corporation)</li><li>Lola Odelola (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Experts)</li><li>Adam Page (Hilton)</li><li>Michael Pennisi (Bocoup)</li><li>Roberto Perez (Microsoft Corporation)</li><li>Giacomo Petri (UsableNet)</li><li>Noah Praskins (TPGi)</li><li>Daniel Pöll (Fabasoft)</li><li>Paul Rayius (Allyant)</li><li>Adrian Roselli (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Experts)</li><li>Marco Sabidussi (UsableNet)</li><li>Trisha Salas (Level Access)</li><li>Stefan Schnabel (SAP SE)</li><li>Harris Schneiderman (Deque Systems, Inc.)</li><li>Raymond Schwartz (Navy Federal Credit Union)</li><li>Cynthia Shelly (Google LLC)</li><li>Tzviya Siegman (<abbr title="World Wide Web Consortium">W3C</abbr>)</li><li>Arturo Silva (The Washington Post)</li><li>Avneesh Singh (DAISY Consortium)</li><li>Michael[tm] Smith (sideshowbarker) (<abbr title="World Wide Web Consortium">W3C</abbr>)</li><li>Francis Storr (Intel Corporation)</li><li>Jennifer Strickland (MITRE Corporation)</li><li>Melanie Sumner (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Experts)</li><li>Alexander Surkov (Igalia)</li><li>James Teh (Mozilla Foundation)</li><li>Jocelyn Tran (Google LLC)</li><li>Léonie Watson (TetraLogical Services Ltd)</li><li>Jan Williams (TPGi)</li><li>Valerie Young (Igalia)</li><li>Kate Zhao (Thomson Reuters Corp.)</li><li>Xiao (Helen) Zhou (University of Illinois)</li><li>Filippo Zorzi (UsableNet)</li></ul>
         </section>
         
         <section class="section" id="ack_funders"><div class="header-wrapper"><h4 id="a-2-2-enabling-funders"><bdi class="secno">A.2.2 </bdi>Enabling funders</h4><a class="self-link" href="#ack_funders" aria-label="Permalink for Appendix A.2.2"></a></div>
@@ -16869,9 +17067,9 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 <section id="references" class="appendix"><div class="header-wrapper"><h2 id="b-references"><bdi class="secno">B. </bdi>References</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix B."></a></div><section id="normative-references"><div class="header-wrapper"><h3 id="b-1-normative-references"><bdi class="secno">B.1 </bdi>Normative references</h3><a class="self-link" href="#normative-references" aria-label="Permalink for Appendix B.1"></a></div>
     
     <dl class="bibliography"><dt id="bib-accname-1.2">[accname-1.2]</dt><dd>
-      <a href="https://www.w3.org/TR/accname-1.2/"><cite>Accessible Name and Description Computation 1.2</cite></a>. Bryan Garaventa; Melanie Sumner.  W3C. 20 March 2025. W3C Working Draft. URL: <a href="https://www.w3.org/TR/accname-1.2/">https://www.w3.org/TR/accname-1.2/</a>
+      <a href="https://www.w3.org/TR/accname-1.2/"><cite>Accessible Name and Description Computation 1.2</cite></a>. Bryan Garaventa; Melanie Sumner.  W3C. 28 March 2025. W3C Working Draft. URL: <a href="https://www.w3.org/TR/accname-1.2/">https://www.w3.org/TR/accname-1.2/</a>
     </dd><dt id="bib-core-aam-1.2">[core-aam-1.2]</dt><dd>
-      <a href="https://www.w3.org/TR/core-aam-1.2/"><cite>Core Accessibility API Mappings 1.2</cite></a>. Valerie Young; Alexander Surkov.  W3C. 20 March 2025. CRD. URL: <a href="https://www.w3.org/TR/core-aam-1.2/">https://www.w3.org/TR/core-aam-1.2/</a>
+      <a href="https://www.w3.org/TR/core-aam-1.2/"><cite>Core Accessibility API Mappings 1.2</cite></a>. Valerie Young; Alexander Surkov.  W3C. 27 March 2025. CRD. URL: <a href="https://www.w3.org/TR/core-aam-1.2/">https://www.w3.org/TR/core-aam-1.2/</a>
     </dd><dt id="bib-html">[HTML]</dt><dd>
       <a href="https://html.spec.whatwg.org/multipage/"><cite>HTML Standard</cite></a>. Anne van Kesteren; Domenic Denicola; Dominic Farolino; Ian Hickson; Philip Jägenstedt; Simon Pieters.  WHATWG. Living Standard. URL: <a href="https://html.spec.whatwg.org/multipage/">https://html.spec.whatwg.org/multipage/</a>
     </dd><dt id="bib-rfc2119">[RFC2119]</dt><dd>
