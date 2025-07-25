@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en-US"><head>
 <meta charset="utf-8">
-<meta name="generator" content="ReSpec 35.4.1">
+<meta name="generator" content="ReSpec 35.4.3">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <style>
 .issue-label{text-transform:initial}
@@ -91,7 +91,7 @@ dd{margin-left:0}
 }
 </style>
 <meta name="color-scheme" content="light">
-<meta name="revision" content="df5d60a81dd9d3dcf046298b8d7419e19db04efc">
+<meta name="revision" content="8194ea6ae63a23953bf7a0f49e475de885a53296">
 <meta name="description" content="HTML Accessibility API Mappings (HTML-AAM) defines how user agents map HTML [HTML] elements and attributes to platform
         accessibility application programming interfaces (APIs). It leverages and extends the
         Core Accessibility API Mappings 1.2 and the Accessible Name and Description Computation 1.2 for use with the HTML host language. Documenting these mappings promotes interoperable exposure of roles, states, properties, and events
@@ -250,16 +250,16 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     null
   ],
   "a11y": false,
-  "gitRevision": "df5d60a81dd9d3dcf046298b8d7419e19db04efc",
-  "publishISODate": "2025-06-27T00:00:00.000Z",
-  "generatedSubtitle": "W3C Editor's Draft 27 June 2025"
+  "gitRevision": "8194ea6ae63a23953bf7a0f49e475de885a53296",
+  "publishISODate": "2025-07-25T00:00:00.000Z",
+  "generatedSubtitle": "W3C Editor's Draft 25 July 2025"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-ED"></head>
   <body class="h-entry" data-cite="HTML core-aam accname wai-aria dom infra"><div class="head">
     <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
   </a></p>
     <h1 id="title" class="title">HTML Accessibility API Mappings 1.0</h1> 
-    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2025-06-27">27 June 2025</time></p>
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2025-07-25">25 July 2025</time></p>
     <details open="">
       <summary>More details about this document</summary>
       <dl>
@@ -340,8 +340,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       document at the time of its publication. A list of current <abbr title="World Wide Web Consortium">W3C</abbr>
       publications and the latest revision of this technical report can be found
       in the
-      <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> standards and drafts index</a> at
-      https://www.w3.org/TR/.</em></p>
+      <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> standards and drafts index</a>.</em></p>
       <div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="3"><span>Note</span></div><p class="">
         <strong>This document is subject to change without notice.</strong>
       </p></div>
@@ -358,7 +357,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   imply endorsement by <abbr title="World Wide Web Consortium">W3C</abbr> and its Members. </p><p>
     This is a draft document and may be updated, replaced, or obsoleted by other
     documents at any time. It is inappropriate to cite this document as other
-    than work in progress.
+    than a work in progress.
     
   </p><p>
     
@@ -373,7 +372,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
           made in connection with the deliverables of
           the group; that page also includes
           instructions for disclosing a patent. An individual who has actual
-          knowledge of a patent which the individual believes contains
+          knowledge of a patent that the individual believes contains
           <a href="https://www.w3.org/policies/patent-policy/#def-essential">Essential Claim(s)</a>
           must disclose the information in accordance with
           <a href="https://www.w3.org/policies/patent-policy/#sec-Disclosure">section 6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
@@ -2607,7 +2606,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
             <tr>
               <th>[<cite><a class="bibref" data-link-type="biblio" href="#bib-wai-aria-1.2" title="Accessible Rich Internet Applications (WAI-ARIA) 1.2">wai-aria-1.2</a></cite>]</th>
-              <td><a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-group"><code>caption</code></a> role</td>
+              <td><a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-caption"><code>caption</code></a> role</td>
             </tr>
             <tr>
               <th><a href="https://www.w3.org/TR/core-aam-1.2/#roleMappingComputedRole">Computed Role</a></th>
@@ -2618,32 +2617,25 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
                 <a href="https://msdn.microsoft.com/en-us/library/dd373608%28v=VS.85%29.aspx"><abbr title="Microsoft Active Accessibility">MSAA</abbr></a> + <a href="http://accessibility.linuxfoundation.org/a11yspecs/ia2/docs/html/">IAccessible2</a>
               </th>
               <td>
-                <div class="role"><span class="type">Roles:</span> <code>ROLE_SYSTEM_TEXT</code>; <code>IA2_ROLE_CAPTION</code></div>
-                <div class="relations"><span class="type">Relations:</span> <code>IA2_RELATION_LABEL_FOR</code> with parent <a href="#el-figure"><code>figure</code></a> element</div>
+                <div class="role"><span class="type">Role:</span> Use <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> mapping</div>
               </td>
             </tr>
             <tr>
               <th><a href="https://msdn.microsoft.com/en-us/library/ms726297%28v=VS.85%29.aspx">UIA</a></th>
               <td>
-                <div class="ctrltype"><span class="type">Control Type:</span> <code>Text</code></div>
+                <div class="ctrltype"><span class="type">Role:</span> Use <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> mapping</div>
               </td>
             </tr>
             <tr>
               <th><a href="https://gnome.pages.gitlab.gnome.org/atk/">ATK</a></th>
               <td>
-                <div class="role"><span class="type">Role:</span> <code>ATK_ROLE_CAPTION</code></div>
-                <div class="relations">
-                  <span class="type">Relations:</span>
-                  <code>ATK_RELATION_LABEL_FOR</code> with parent <a href="#el-figure"><code>figure</code></a> element
-                </div>
+                <div class="role"><span class="type">Role:</span> Use <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> mapping</div>
               </td>
             </tr>
             <tr>
               <th><a href="https://developer.apple.com/reference/appkit/nsaccessibility">AX</a></th>
               <td>
-                <div class="role"><span class="type">AXRole:</span> <code>AXGroup</code></div>
-                <div class="subrole"><span class="type">AXSubrole:</span> <code>(nil)</code></div>
-                <div class="roledesc"><span class="type">AXRoleDescription:</span> <code>"group"</code></div>
+                <div class="role"><span class="type">Role:</span> Use <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> mapping</div>
               </td>
             </tr>
             
@@ -2676,24 +2668,18 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               </th>
               <td>
                 <div class="role"><span class="type">Role:</span> Use <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> mapping</div>
-                <div class="relations"><span class="type">Relations:</span> <code>IA2_RELATION_LABELLED_BY</code> with child <a href="#el-figcaption"><code>figcaption</code></a> element</div>
               </td>
             </tr>
             <tr>
               <th><a href="https://msdn.microsoft.com/en-us/library/ms726297%28v=VS.85%29.aspx">UIA</a></th>
               <td>
                 <div class="role"><span class="type">Role:</span> Use <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> mapping</div>
-                <div class="general">
-                  Accessible name derived from <code>figcaption</code> according to the <a href="#figure-element-accessible-name-computation"><code>figure</code> Element Accessible Name Computation</a>
-                </div>
               </td>
             </tr>
             <tr>
               <th><a href="https://gnome.pages.gitlab.gnome.org/atk/">ATK</a></th>
               <td>
                 <div class="role"><span class="type">Role:</span> Use <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> mapping</div>
-                <div class="name"><span class="type">Name:</span> related <a href="#el-figcaption"><code>figcaption</code></a> content</div>
-                <div class="relations"><span class="type">Relations:</span> <code>ATK_RELATION_LABELLED_BY</code> with child <a href="#el-figcaption"><code>figcaption</code></a> element</div>
               </td>
             </tr>
             <tr>
@@ -16740,18 +16726,19 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
         </section>
         <section id="figure-element-accessible-name-computation"><div class="header-wrapper"><h4 id="x4-1-9-figure-element-accessible-name-computation"><bdi class="secno">4.1.9 </bdi><code>figure</code> Element Accessible Name Computation</h4><a class="self-link" href="#figure-element-accessible-name-computation" aria-label="Permalink for Section 4.1.9"></a></div>
           
+          <p>
+            A <a href="#el-figcaption"><code>figcaption</code></a> provides additional information related to its parent <a href="#el-figure"><code>figure</code></a> element. A <code>figcaption</code> does not take part in the
+            <a href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-name">accessible name</a> or <a href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-description">accessible description</a>
+            computation, unless explicitly referenced by an author.
+          </p>
           <ol>
             <li>
               If the <code>figure</code> element has an <a href="https://www.w3.org/TR/wai-aria-1.2/#aria-label"><code>aria-label</code></a> or an <a href="https://www.w3.org/TR/wai-aria-1.2/#aria-labelledby"><code>aria-labelledby</code></a> attribute the
               <a href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-name">accessible name</a> is to be calculated using the algorithm defined in
               <a href="https://w3c.github.io/accname/" class="accname">Accessible Name and Description: Computation and <abbr title="application programming interface">API</abbr> Mappings</a>.
             </li>
-            <li>
-              If the <a href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-name">accessible name</a> is still empty, then: if the <code>figure</code> element has a
-              <a href="https://dom.spec.whatwg.org/#concept-tree-child">child</a> that is a <code>figcaption</code> element, then use the subtree of the first such element.
-            </li>
-            <li>If the <a href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-name">accessible name</a> is still empty, then: if the <code>figure</code> element has a <code>title</code> attribute, then use that attribute.</li>
-            <li>Otherwise, there is no <a href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-name">accessible name</a>.</li>
+            <li>Otherwise, use the <code>title</code> attribute.</li>
+            <li>If none of the above yield a usable text string there is no <a href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-name">accessible name</a>.</li>
           </ol>
         </section>
         <section id="img-element-accessible-name-computation"><div class="header-wrapper"><h4 id="el-img-name"><bdi class="secno">4.1.10 </bdi><code>img</code> Element Accessible Name Computation</h4><a class="self-link" href="#el-img-name" aria-label="Permalink for Section 4.1.10"></a></div>
@@ -16763,13 +16750,18 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <a href="https://w3c.github.io/accname/" class="accname">Accessible Name and Description: Computation and <abbr title="application programming interface">API</abbr> Mappings</a>.
             </li>
             <li>
-              Otherwise use <code>alt</code> attribute, even if its value is the empty string.
+              If the <a href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-name">accessible name</a> is still empty: use <code>alt</code> attribute, even if its value is the empty string.
               <div class="note" role="note" id="issue-container-generatedID-18"><div role="heading" class="note-title marker" id="h-note-18" aria-level="5"><span>Note</span></div><div class="">
                 An <code>img</code> with an <code>alt</code> attribute whose value is the empty string is mapped to the
                 <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-presentation"><code>presentation</code></a> role. It has no accessible name.
               </div></div>
             </li>
-            <li>Otherwise, if there is no <code>alt</code> attribute use the <code>title</code> attribute.</li>
+            <li>If the <a href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-name">accessible name</a> is still empty and there is no <code>alt</code> attribute, use the <code>title</code> attribute.</li>
+            <li>
+              If the <a href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-name">accessible name</a> is still empty and there are no <code>alt</code> or <code>title</code> attributes, and the <code>img</code> is a descendant of a <code>figure</code>
+              element with a child <code>figcaption</code> but no other non-<a href="https://html.spec.whatwg.org/multipage/dom.html#inter-element-whitespace">whitespace</a> <a href="https://html.spec.whatwg.org/multipage/dom.html#flow-content-2">flow content</a> descendants, then use the <a href="https://www.w3.org/TR/accname-1.2/#mapping_additional_nd_te">text equivalent computation</a> of the
+              <code>figcaption</code> element's subtree.
+            </li>
             <li>Otherwise there is no <a href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-name">accessible name</a>.</li>
           </ol>
         </section>
@@ -17091,7 +17083,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
           
           <ul>
             
-          <li>Rahim Abdi (Apple Inc.)</li><li>NAVYA AGARWAL (Adobe)</li><li>Mario Batušić (Fabasoft)</li><li>Benjamin Beaudry (Microsoft Corporation)</li><li>Curt Bellew (Oracle Corporation)</li><li>Zoë Bijl (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Experts)</li><li>Aleksandar Cindrikj (Netcetera)</li><li>Keith Cirkel (Mozilla Foundation)</li><li>Daniel Clark (Microsoft Corporation)</li><li>James Craig (Apple Inc.)</li><li>Chris Cuellar (Bocoup)</li><li>Hidde de Vries (Logius)</li><li>Joanmarie Diggs (Igalia)</li><li>Howard Edwards (Bocoup)</li><li>James Edwards (TPGi)</li><li>Mayuri Faldu (Navy Federal Credit Union)</li><li>Betsy Fanning (PDF Association)</li><li>Steve Faulkner (TetraLogical Services Ltd)</li><li>Jaunita Flessas (Navy Federal Credit Union)</li><li>Jane Fulton (Cisco)</li><li>Bryan Garaventa (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Experts)</li><li>Rashmi Garimella (Google LLC)</li><li>Matt Garrish (DAISY Consortium)</li><li>Doug Geoffray (Microsoft Corporation)</li><li>Ariella Gilmore (IBM Corporation)</li><li>Shirisha Gubba (Google LLC)</li><li>Jon Gunderson (University of Illinois)</li><li>Oliver Habersetzer (SAP SE)</li><li>Theo Hale (Microsoft Corporation)</li><li>Sunny Hardasani (Adobe)</li><li>Matthew Hardy (Adobe)</li><li>Chris Harrelson (Google LLC)</li><li>Peter Heumader (Fabasoft)</li><li>Sarah Higley (Microsoft Corporation)</li><li>Hans Hillen (TPGi)</li><li>Isabel Holdsworth (TPGi)</li><li>Stanley Hon (Microsoft Corporation)</li><li>Michael Jackson (Microsoft Corporation)</li><li>Duff Johnson (PDF Association)</li><li>Summer Jones (Thomson Reuters Corp.)</li><li>William Kilian (TargetStream Technologies)</li><li>Matthew King (Meta)</li><li>Zachary Kinsey (TargetStream Technologies)</li><li>Greta Krafsig (The Washington Post)</li><li>Peter Krautzberger (krautzource UG)</li><li>Nina Krauß (SAP SE)</li><li>JaEun Jemma Ku (University of Illinois)</li><li>Joe Lamyman (TetraLogical Services Ltd)</li><li>Charles LaPierre (Benetech)</li><li>Philip Lazarevic (Level Access)</li><li>Leo Lee (Microsoft Corporation)</li><li>Aaron Leventhal (Google LLC)</li><li>Brett Lewis (TPGi)</li><li>Andy Luhrs (Microsoft Corporation)</li><li>Sazzad Mahamud (Google LLC)</li><li>Alison Maher (Microsoft Corporation)</li><li>Mark McCarthy (University of Illinois)</li><li>Eduardo Meza Etienne (Navy Federal Credit Union)</li><li>Clay Miller (Microsoft Corporation)</li><li>Daniel Montalvo (<abbr title="World Wide Web Consortium">W3C</abbr>)</li><li>Jacques Newman (Microsoft Corporation)</li><li>James Nurthen (Adobe)</li><li>Scott O'Hara (Microsoft Corporation)</li><li>Lola Odelola (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Experts)</li><li>Neil Osman (Evinced Inc.)</li><li>Adam Page (Hilton)</li><li>Michael Pennisi (Bocoup)</li><li>Roberto Perez (Microsoft Corporation)</li><li>Giacomo Petri (UsableNet)</li><li>Noah Praskins (TPGi)</li><li>Daniel Pöll (Fabasoft)</li><li>Paul Rayius (Allyant)</li><li>Adrian Roselli (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Experts)</li><li>Marco Sabidussi (UsableNet)</li><li>Trisha Salas (Level Access)</li><li>Stefan Schnabel (SAP SE)</li><li>Harris Schneiderman (Deque Systems, Inc.)</li><li>Raymond Schwartz (Navy Federal Credit Union)</li><li>Cynthia Shelly (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Experts)</li><li>Tzviya Siegman (<abbr title="World Wide Web Consortium">W3C</abbr>)</li><li>Arturo Silva (The Washington Post)</li><li>Avneesh Singh (DAISY Consortium)</li><li>Michael[tm] Smith (sideshowbarker) (<abbr title="World Wide Web Consortium">W3C</abbr>)</li><li>Francis Storr (Intel Corporation)</li><li>Jennifer Strickland (MITRE Corporation)</li><li>Melanie Sumner (IBM Corporation)</li><li>Alexander Surkov (Igalia)</li><li>James Teh (Mozilla Foundation)</li><li>Jocelyn Tran (Google LLC)</li><li>Léonie Watson (TetraLogical Services Ltd)</li><li>Jan Williams (TPGi)</li><li>Valerie Young (Igalia)</li><li>Kate Zhao (Thomson Reuters Corp.)</li><li>Xiao (Helen) Zhou (University of Illinois)</li><li>Filippo Zorzi (UsableNet)</li></ul>
+          <li>Rahim Abdi (Apple Inc.)</li><li>NAVYA AGARWAL (Adobe)</li><li>Mario Batušić (Fabasoft)</li><li>Benjamin Beaudry (Microsoft Corporation)</li><li>Curt Bellew (Oracle Corporation)</li><li>Zoë Bijl (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Experts)</li><li>Aleksandar Cindrikj (Netcetera)</li><li>Keith Cirkel (Mozilla Foundation)</li><li>Daniel Clark (Microsoft Corporation)</li><li>James Craig (Apple Inc.)</li><li>Chris Cuellar (Bocoup)</li><li>Hidde de Vries (Logius)</li><li>Joanmarie Diggs (Igalia)</li><li>Howard Edwards (Bocoup)</li><li>James Edwards (TPGi)</li><li>Tamsin Ewing (<abbr title="World Wide Web Consortium">W3C</abbr>)</li><li>Mayuri Faldu (Navy Federal Credit Union)</li><li>Betsy Fanning (PDF Association)</li><li>Steve Faulkner (TetraLogical Services Ltd)</li><li>Jaunita Flessas (Navy Federal Credit Union)</li><li>Jane Fulton (Cisco)</li><li>Bryan Garaventa (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Experts)</li><li>Rashmi Garimella (Google LLC)</li><li>Matt Garrish (DAISY Consortium)</li><li>Doug Geoffray (Microsoft Corporation)</li><li>Ariella Gilmore (IBM Corporation)</li><li>Taylore Givens (Microsoft Corporation)</li><li>Shirisha Gubba (Google LLC)</li><li>Eloisa Guerrero (Rakuten Group, Inc.)</li><li>Jon Gunderson (University of Illinois)</li><li>Oliver Habersetzer (SAP SE)</li><li>Theo Hale (Microsoft Corporation)</li><li>Sunny Hardasani (Adobe)</li><li>Matthew Hardy (Adobe)</li><li>Chris Harrelson (Google LLC)</li><li>Peter Heumader (Fabasoft)</li><li>Sarah Higley (Microsoft Corporation)</li><li>Hans Hillen (TPGi)</li><li>Isabel Holdsworth (TPGi)</li><li>Stanley Hon (Microsoft Corporation)</li><li>Michael Jackson (Microsoft Corporation)</li><li>Jilin Jiang (Ant Group Co., Ltd.)</li><li>Duff Johnson (PDF Association)</li><li>Summer Jones (Thomson Reuters Corp.)</li><li>William Kilian (TargetStream Technologies)</li><li>Matthew King (Meta)</li><li>Zachary Kinsey (TargetStream Technologies)</li><li>Greta Krafsig (The Washington Post)</li><li>Peter Krautzberger (krautzource UG)</li><li>Nina Krauß (SAP SE)</li><li>JaEun Jemma Ku (University of Illinois)</li><li>Joe Lamyman (TetraLogical Services Ltd)</li><li>Charles LaPierre (Benetech)</li><li>Philip Lazarevic (Level Access)</li><li>Leo Lee (Microsoft Corporation)</li><li>Aaron Leventhal (Google LLC)</li><li>Brett Lewis (TPGi)</li><li>Andy Luhrs (Microsoft Corporation)</li><li>Sazzad Mahamud (Google LLC)</li><li>Alison Maher (Microsoft Corporation)</li><li>Gurpreet Kaur Mangera (Rakuten Group, Inc.)</li><li>Mark McCarthy (University of Illinois)</li><li>Eduardo Meza Etienne (Navy Federal Credit Union)</li><li>Clay Miller (Microsoft Corporation)</li><li>Daniel Montalvo (<abbr title="World Wide Web Consortium">W3C</abbr>)</li><li>Jacques Newman (Microsoft Corporation)</li><li>James Nurthen (Adobe)</li><li>Scott O'Hara (Microsoft Corporation)</li><li>Lola Odelola (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Experts)</li><li>Neil Osman (Evinced Inc.)</li><li>Adam Page (Hilton)</li><li>Michael Pennisi (Bocoup)</li><li>Roberto Perez (Microsoft Corporation)</li><li>Giacomo Petri (UsableNet)</li><li>Noah Praskins (TPGi)</li><li>Daniel Pöll (Fabasoft)</li><li>Paul Rayius (Allyant)</li><li>Adrian Roselli (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Experts)</li><li>Marco Sabidussi (UsableNet)</li><li>Trisha Salas (Level Access)</li><li>Stefan Schnabel (SAP SE)</li><li>Harris Schneiderman (Deque Systems, Inc.)</li><li>Raymond Schwartz (Navy Federal Credit Union)</li><li>Cynthia Shelly (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Experts)</li><li>Tzviya Siegman (<abbr title="World Wide Web Consortium">W3C</abbr>)</li><li>Arturo Silva (The Washington Post)</li><li>Avneesh Singh (DAISY Consortium)</li><li>Michael[tm] Smith (sideshowbarker) (<abbr title="World Wide Web Consortium">W3C</abbr>)</li><li>Francis Storr (Intel Corporation)</li><li>Jennifer Strickland (MITRE Corporation)</li><li>Melanie Sumner (IBM Corporation)</li><li>Alexander Surkov (Igalia)</li><li>James Teh (Mozilla Foundation)</li><li>Jocelyn Tran (Google LLC)</li><li>Léonie Watson (TetraLogical Services Ltd)</li><li>Jan Williams (TPGi)</li><li>Valerie Young (Igalia)</li><li>Kate Zhao (Thomson Reuters Corp.)</li><li>Xiao (Helen) Zhou (University of Illinois)</li><li>Filippo Zorzi (UsableNet)</li></ul>
         </section>
         
         <section class="section" id="ack_funders"><div class="header-wrapper"><h4 id="a-2-2-enabling-funders"><bdi class="secno">A.2.2 </bdi>Enabling funders</h4><a class="self-link" href="#ack_funders" aria-label="Permalink for Appendix A.2.2"></a></div>
@@ -17108,7 +17100,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     <dl class="bibliography"><dt id="bib-accname-1.2">[accname-1.2]</dt><dd>
       <a href="https://www.w3.org/TR/accname-1.2/"><cite>Accessible Name and Description Computation 1.2</cite></a>. Bryan Garaventa; Melanie Sumner.  W3C. 17 June 2025. W3C Working Draft. URL: <a href="https://www.w3.org/TR/accname-1.2/">https://www.w3.org/TR/accname-1.2/</a>
     </dd><dt id="bib-core-aam-1.2">[core-aam-1.2]</dt><dd>
-      <a href="https://www.w3.org/TR/core-aam-1.2/"><cite>Core Accessibility API Mappings 1.2</cite></a>. Valerie Young; Alexander Surkov.  W3C. 17 June 2025. CRD. URL: <a href="https://www.w3.org/TR/core-aam-1.2/">https://www.w3.org/TR/core-aam-1.2/</a>
+      <a href="https://www.w3.org/TR/core-aam-1.2/"><cite>Core Accessibility API Mappings 1.2</cite></a>. Valerie Young; Alexander Surkov.  W3C. 15 July 2025. CRD. URL: <a href="https://www.w3.org/TR/core-aam-1.2/">https://www.w3.org/TR/core-aam-1.2/</a>
     </dd><dt id="bib-html">[HTML]</dt><dd>
       <a href="https://html.spec.whatwg.org/multipage/"><cite>HTML Standard</cite></a>. Anne van Kesteren; Domenic Denicola; Dominic Farolino; Ian Hickson; Philip Jägenstedt; Simon Pieters.  WHATWG. Living Standard. URL: <a href="https://html.spec.whatwg.org/multipage/">https://html.spec.whatwg.org/multipage/</a>
     </dd><dt id="bib-rfc2119">[RFC2119]</dt><dd>
