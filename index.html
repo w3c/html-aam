@@ -90,7 +90,7 @@ dd{margin-left:0}
 }
 </style>
 <meta name="color-scheme" content="light">
-<meta name="revision" content="d6b92b96478704d00c865021331f57b04970a9d4">
+<meta name="revision" content="d01a1cb1aa74dc75ba13b945bd7fc701b9048143">
 <meta name="description" content="HTML Accessibility API Mappings (HTML-AAM) defines how user agents map HTML [HTML] elements and attributes to platform
         accessibility application programming interfaces (APIs). It leverages and extends the
         Core Accessibility API Mappings 1.2 and the Accessible Name and Description Computation 1.2 for use with the HTML host language. Documenting these mappings promotes interoperable exposure of roles, states, properties, and events
@@ -249,16 +249,16 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     null
   ],
   "a11y": false,
-  "gitRevision": "d6b92b96478704d00c865021331f57b04970a9d4",
-  "publishISODate": "2025-09-03T00:00:00.000Z",
-  "generatedSubtitle": "W3C Editor's Draft 03 September 2025"
+  "gitRevision": "d01a1cb1aa74dc75ba13b945bd7fc701b9048143",
+  "publishISODate": "2025-09-17T00:00:00.000Z",
+  "generatedSubtitle": "W3C Editor's Draft 17 September 2025"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-ED"></head>
   <body class="h-entry" data-cite="HTML core-aam accname wai-aria dom infra"><div class="head">
     <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
   </a></p>
     <h1 id="title" class="title">HTML Accessibility API Mappings 1.0</h1> 
-    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2025-09-03">03 September 2025</time></p>
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2025-09-17">17 September 2025</time></p>
     <details open="">
       <summary>More details about this document</summary>
       <dl>
@@ -501,8 +501,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
         
         <ul>
           <li>
-            User agents <em class="rfc2119">MUST</em> map <abbr title="HyperText Markup Language">HTML</abbr> elements with implicit <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> role semantics to platform <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-api">accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a> according to the identified <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> role mapping as defined in the
-            [<cite><a class="bibref" data-link-type="biblio" href="#bib-core-aam-1.2" title="Core Accessibility API Mappings 1.2">core-aam-1.2</a></cite>] specification.
+            User agents <em class="rfc2119">MUST</em> map <abbr title="HyperText Markup Language">HTML</abbr> elements with implicit <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> role semantics to platform <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-api">accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a> according to the identified <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> role mapping as defined
+            in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-core-aam-1.2" title="Core Accessibility API Mappings 1.2">core-aam-1.2</a></cite>] specification.
           </li>
           <li>
             "Not mapped" means the element does not need to be exposed via an <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-api">accessibility <abbr title="application programming interface">API</abbr></a>. This is usually because the element is not displayed as part of the user
@@ -527,8 +527,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
         <ul>
           <li>
             When <abbr title="HyperText Markup Language">HTML</abbr> elements do not have an exact or equivalent mapping to a valid, non-abstract <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> role, a unique <code>computedrole</code>
-            string has been specified to serve as the return value for interoperability testing purposes. For instance, user agents <em class="rfc2119">MAY</em> expose the <code>video</code> element with a <code>computedrole</code> of "<code>html-video</code>".
-            Authors <em class="rfc2119">MUST NOT</em> use any <code>html-</code>prefixed computed role string in the role attribute (such as <code>html-video</code>). User Agents <em class="rfc2119">MUST</em> ignore any abstract or invalid role token.
+            string has been specified to serve as the return value for interoperability testing purposes. For instance, user agents <em class="rfc2119">MAY</em> expose the <code>video</code> element with a <code>computedrole</code> of
+            "<code>html-video</code>". Authors <em class="rfc2119">MUST NOT</em> use any <code>html-</code>prefixed computed role string in the role attribute (such as <code>html-video</code>). User Agents <em class="rfc2119">MUST</em> ignore any abstract or invalid role token.
             <div class="example">
               <code> &lt;video&gt; &lt;!-- computedrole returns 'html-video' --&gt; &lt;main role="html-video"&gt; &lt;!-- Author error. computed role returns 'main' --&gt; </code>
             </div>
@@ -676,7 +676,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
             <tr>
               <th><a href="https://www.w3.org/TR/core-aam-1.2/#roleMappingComputedRole">Computed Role</a></th>
-              <td class="role-computed"><div class="general">html-abbr</div></td>
+              <td class="role-computed"><div class="general"><code>html-abbr</code></div></td>
             </tr>
             <tr>
               <th>
@@ -1037,7 +1037,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
             <tr>
               <th><a href="https://www.w3.org/TR/core-aam-1.2/#roleMappingComputedRole">Computed Role</a></th>
-              <td class="role-computed"><div class="general">html-audio</div></td>
+              <td class="role-computed"><div class="general"><code>html-audio</code></div></td>
             </tr>
             <tr>
               <th>
@@ -1058,8 +1058,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
                   <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-button"><code>button</code></a> or <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-slider"><code>slider</code></a>).
                 </div>
                 <div class="general">
-                  User agents <em class="rfc2119">MAY</em> include the following in the <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-tree">accessibility tree</a> and mark them as
-                  hidden or off-screen:
+                  User agents <em class="rfc2119">MAY</em> include the following in the <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-tree">accessibility tree</a> and mark them as hidden or off-screen:
                   <ul>
                     <li>Loading messages or error messages</li>
                     <li>UI controls that are not currently displayed</li>
@@ -1561,7 +1560,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
             <tr>
               <th><a href="https://www.w3.org/TR/core-aam-1.2/#roleMappingComputedRole">Computed Role</a></th>
-              <td class="role-computed"><div class="general">html-canvas</div></td>
+              <td class="role-computed"><div class="general"><code>html-canvas</code></div></td>
             </tr>
             <tr>
               <th>
@@ -1679,7 +1678,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
             <tr>
               <th><a href="https://www.w3.org/TR/core-aam-1.2/#roleMappingComputedRole">Computed Role</a></th>
-              <td class="role-computed"><div class="general">html-cite</div></td>
+              <td class="role-computed"><div class="general"><code>html-cite</code></div></td>
             </tr>
             <tr>
               <th>
@@ -2506,7 +2505,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
             <tr>
               <th><a href="https://www.w3.org/TR/core-aam-1.2/#roleMappingComputedRole">Computed Role</a></th>
-              <td class="role-computed"><div class="general">html-embed</div></td>
+              <td class="role-computed"><div class="general"><code>html-embed</code></div></td>
             </tr>
             <tr>
               <th>
@@ -3150,8 +3149,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th>Comments</th>
               <td>
-                If an <code>hgroup</code> contains multiple heading elements, then the user agent <em class="rfc2119">MAY</em> treat the heading element with the highest priority level as the sole heading of the <code>hgroup</code>. The user agent <em class="rfc2119">MAY</em> expose all other heading
-                elements as if they were <a href="#el-p"><code>p</code></a> elements. See <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-paragraph"><code>paragraph</code> role on Core AAM</a>.
+                If an <code>hgroup</code> contains multiple heading elements, then the user agent <em class="rfc2119">MAY</em> treat the heading element with the highest priority level as the sole heading of the <code>hgroup</code>. The user agent
+                <em class="rfc2119">MAY</em> expose all other heading elements as if they were <a href="#el-p"><code>p</code></a> elements. See <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-paragraph"><code>paragraph</code> role on Core AAM</a>.
               </td>
             </tr>
           </tbody>
@@ -3326,7 +3325,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
             <tr>
               <th><a href="https://www.w3.org/TR/core-aam-1.2/#roleMappingComputedRole">Computed Role</a></th>
-              <td class="role-computed"><div class="general">html-iframe</div></td>
+              <td class="role-computed"><div class="general"><code>html-iframe</code></div></td>
             </tr>
             <tr>
               <th>
@@ -3599,7 +3598,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
             <tr>
               <th><a href="https://www.w3.org/TR/core-aam-1.2/#roleMappingComputedRole">Computed Role</a></th>
-              <td class="role-computed"><div class="general">html-input-color</div></td>
+              <td class="role-computed"><div class="general"><code>html-input-color</code></div></td>
             </tr>
             <tr>
               <th>
@@ -3671,7 +3670,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
             <tr>
               <th><a href="https://www.w3.org/TR/core-aam-1.2/#roleMappingComputedRole">Computed Role</a></th>
-              <td class="role-computed"><div class="general">html-input-date</div></td>
+              <td class="role-computed"><div class="general"><code>html-input-date</code></div></td>
             </tr>
             <tr>
               <th>
@@ -3729,7 +3728,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
             <tr>
               <th><a href="https://www.w3.org/TR/core-aam-1.2/#roleMappingComputedRole">Computed Role</a></th>
-              <td class="role-computed"><div class="general">html-input-datetime-local</div></td>
+              <td class="role-computed"><div class="general"><code>html-input-datetime-local</code></div></td>
             </tr>
             <tr>
               <th>
@@ -3835,7 +3834,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
             <tr>
               <th><a href="https://www.w3.org/TR/core-aam-1.2/#roleMappingComputedRole">Computed Role</a></th>
-              <td class="role-computed"><div class="general">html-input-file</div></td>
+              <td class="role-computed"><div class="general"><code>html-input-file</code></div></td>
             </tr>
             <tr>
               <th>
@@ -4001,7 +4000,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
             <tr>
               <th><a href="https://www.w3.org/TR/core-aam-1.2/#roleMappingComputedRole">Computed Role</a></th>
-              <td class="role-computed"><div class="general">html-input-month</div></td>
+              <td class="role-computed"><div class="general"><code>html-input-month</code></div></td>
             </tr>
             <tr>
               <th>
@@ -4115,7 +4114,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
             <tr>
               <th><a href="https://www.w3.org/TR/core-aam-1.2/#roleMappingComputedRole">Computed Role</a></th>
-              <td class="role-computed"><div class="general">html-input-password</div></td>
+              <td class="role-computed"><div class="general"><code>html-input-password</code></div></td>
             </tr>
             <tr>
               <th>
@@ -4606,7 +4605,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
             <tr>
               <th><a href="https://www.w3.org/TR/core-aam-1.2/#roleMappingComputedRole">Computed Role</a></th>
-              <td class="role-computed"><div class="general">html-input-time</div></td>
+              <td class="role-computed"><div class="general"><code>html-input-time</code></div></td>
             </tr>
             <tr>
               <th>
@@ -4722,7 +4721,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
             <tr>
               <th><a href="https://www.w3.org/TR/core-aam-1.2/#roleMappingComputedRole">Computed Role</a></th>
-              <td class="role-computed"><div class="general">html-input-week</div></td>
+              <td class="role-computed"><div class="general"><code>html-input-week</code></div></td>
             </tr>
             <tr>
               <th>
@@ -4825,7 +4824,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
             <tr>
               <th><a href="https://www.w3.org/TR/core-aam-1.2/#roleMappingComputedRole">Computed Role</a></th>
-              <td class="role-computed"><div class="general">html-kbd</div></td>
+              <td class="role-computed"><div class="general"><code>html-kbd</code></div></td>
             </tr>
             <tr>
               <th>
@@ -4878,7 +4877,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
             <tr>
               <th><a href="https://www.w3.org/TR/core-aam-1.2/#roleMappingComputedRole">Computed Role</a></th>
-              <td class="role-computed"><div class="general">html-label</div></td>
+              <td class="role-computed"><div class="general"><code>html-label</code></div></td>
             </tr>
             <tr>
               <th>
@@ -4951,7 +4950,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
             <tr>
               <th><a href="https://www.w3.org/TR/core-aam-1.2/#roleMappingComputedRole">Computed Role</a></th>
-              <td class="role-computed"><div class="general">html-legend</div></td>
+              <td class="role-computed"><div class="general"><code>html-legend</code></div></td>
             </tr>
             <tr>
               <th>
@@ -5170,7 +5169,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
             <tr>
               <th><a href="https://www.w3.org/TR/core-aam-1.2/#roleMappingComputedRole">Computed Role</a></th>
-              <td class="role-computed"><div class="general">html-map</div></td>
+              <td class="role-computed"><div class="general"><code>html-map</code></div></td>
             </tr>
             <tr>
               <th>
@@ -5576,7 +5575,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
             <tr>
               <th><a href="https://www.w3.org/TR/core-aam-1.2/#roleMappingComputedRole">Computed Role</a></th>
-              <td class="role-computed"><div class="general">html-object</div></td>
+              <td class="role-computed"><div class="general"><code>html-object</code></div></td>
             </tr>
             <tr>
               <th>
@@ -8085,7 +8084,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
             <tr>
               <th><a href="https://www.w3.org/TR/core-aam-1.2/#roleMappingComputedRole">Computed Role</a></th>
-              <td class="role-computed"><div class="general">html-var</div></td>
+              <td class="role-computed"><div class="general"><code>html-var</code></div></td>
             </tr>
             <tr>
               <th>
@@ -8137,7 +8136,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
             <tr>
               <th><a href="https://www.w3.org/TR/core-aam-1.2/#roleMappingComputedRole">Computed Role</a></th>
-              <td class="role-computed"><div class="general">html-video</div></td>
+              <td class="role-computed"><div class="general"><code>html-video</code></div></td>
             </tr>
             <tr>
               <th>
@@ -8158,8 +8157,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
                   <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-button"><code>button</code></a> or <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-slider"><code>slider</code></a>).
                 </div>
                 <div class="general">
-                  User agents <em class="rfc2119">MAY</em> include the following in the <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-tree">accessibility tree</a> and mark them as
-                  hidden or off-screen:
+                  User agents <em class="rfc2119">MAY</em> include the following in the <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-tree">accessibility tree</a> and mark them as hidden or off-screen:
                   <ul>
                     <li>Loading messages or error messages</li>
                     <li>UI controls that are not currently displayed</li>
@@ -8250,8 +8248,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
         
         <ul>
           <li>
-            User agents <em class="rfc2119">MUST</em> map <abbr title="HyperText Markup Language">HTML</abbr> attributes with default <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> state and property semantics to platform <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-api">accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a> according to the identified <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> state and property mapping as defined in the
-            [<cite><a class="bibref" data-link-type="biblio" href="#bib-core-aam-1.2" title="Core Accessibility API Mappings 1.2">core-aam-1.2</a></cite>] specification.
+            User agents <em class="rfc2119">MUST</em> map <abbr title="HyperText Markup Language">HTML</abbr> attributes with default <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> state and property semantics to platform <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-api">accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a> according to the identified <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> state and
+            property mapping as defined in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-core-aam-1.2" title="Core Accessibility API Mappings 1.2">core-aam-1.2</a></cite>] specification.
           </li>
           <li>A '?' in a cell indicates the data has yet to be provided.</li>
           <li>
@@ -8264,7 +8262,9 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
           </li>
           <li>All elements having an accessible object in IAccessible2 mapping are supposed to implement IAccessible, IAccessible2 and IAccessible2_2 interfaces.</li>
           <li>
-            User interaction with certain <abbr title="HyperText Markup Language">HTML</abbr> elements will set an element's <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#concept-fe-dirty">dirty value flag</a>. These elements, as identified in [<abbr title="HyperText Markup Language">HTML</abbr>], could have attributes that represent the default value or state of the element. When the dirty flag is set, that default value or state does not necessarily determine the value or state of the element or corresponding accessible node.
+            User interaction with certain <abbr title="HyperText Markup Language">HTML</abbr> elements will set an element's <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#concept-fe-dirty">dirty value flag</a>. These elements, as identified
+            in [<abbr title="HyperText Markup Language">HTML</abbr>], could have attributes that represent the default value or state of the element. When the dirty flag is set, that default value or state does not necessarily determine the value
+            or state of the element or corresponding accessible node.
           </li>
         </ul>
         <section id="abbr-0"><div class="header-wrapper"><h4 id="att-abbr"><bdi class="secno">3.6.1 </bdi><code>abbr</code></h4><a class="self-link" href="#att-abbr" aria-label="Permalink for Section 3.6.1"></a></div>
@@ -16381,8 +16381,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <th>Comments</th>
               <td>
                 If specified, the value of the attribute will be the <a href="https://www.w3.org/TR/accname-1.2/#comp_host_language_label">host language label</a> used in the
-                <a href="#input-type-button-input-type-submit-and-input-type-reset-elements-accessible-name-computation">accessible name computation</a> for <code>input</code> elements in the <code>button</code>, <code>reset</code> and
-                <code>submit</code> states.
+                <a href="#input-type-button-input-type-submit-and-input-type-reset-elements-accessible-name-computation">accessible name computation</a> for <code>input</code> elements in the <code>button</code>, <code>reset</code>
+                and <code>submit</code> states.
               </td>
             </tr>
           </tbody>
@@ -16515,8 +16515,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <td>
                 If specified, and the <code>input</code> in the <code>image</code> state has no <code>alt</code> attribute specified, then the value of the attribute will be the
                 <a href="https://www.w3.org/TR/accname-1.2/#comp_host_language_label">host language label</a> used in the
-                <a href="#input-type-button-input-type-submit-and-input-type-reset-elements-accessible-name-computation">accessible name computation</a>, and will render as text if the image source is broken.
-                Otherwise, the attribute is ignored.
+                <a href="#input-type-button-input-type-submit-and-input-type-reset-elements-accessible-name-computation">accessible name computation</a>, and will render as text if the image source is
+                broken. Otherwise, the attribute is ignored.
               </td>
             </tr>
           </tbody>
@@ -16963,7 +16963,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <li>If the <a href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-name">accessible name</a> is still empty and there is no <code>alt</code> attribute, use the <code>title</code> attribute.</li>
             <li>
               If the <a href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-name">accessible name</a> is still empty and there are no <code>alt</code> or <code>title</code> attributes, and the <code>img</code> is a descendant of a <code>figure</code>
-              element with a child <code>figcaption</code> but no other non-<a href="https://html.spec.whatwg.org/multipage/dom.html#inter-element-whitespace">whitespace</a> <a href="https://html.spec.whatwg.org/multipage/dom.html#flow-content-2">flow content</a> descendants, then use the <a href="https://www.w3.org/TR/accname-1.2/#mapping_additional_nd_te">text equivalent computation</a> of the
+              element with a child <code>figcaption</code> but no other non-<a href="https://html.spec.whatwg.org/multipage/dom.html#inter-element-whitespace">whitespace</a>
+              <a href="https://html.spec.whatwg.org/multipage/dom.html#flow-content-2">flow content</a> descendants, then use the <a href="https://www.w3.org/TR/accname-1.2/#mapping_additional_nd_te">text equivalent computation</a> of the
               <code>figcaption</code> element's subtree.
             </li>
             <li>Otherwise there is no <a href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-name">accessible name</a>.</li>
@@ -17287,7 +17288,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
           
           <ul>
             
-          </ul>
+          <li>Rahim Abdi (Apple Inc.)</li><li>NAVYA AGARWAL (Adobe)</li><li>Mario Batušić (Fabasoft)</li><li>Benjamin Beaudry (Microsoft Corporation)</li><li>Curt Bellew (Oracle Corporation)</li><li>Zoë Bijl (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Experts)</li><li>Gautier Chomel (EDRLab)</li><li>Aleksandar Cindrikj (Netcetera)</li><li>Keith Cirkel (Mozilla Foundation)</li><li>Daniel Clark (Microsoft Corporation)</li><li>James Craig (Apple Inc.)</li><li>Chris Cuellar (Bocoup)</li><li>Hidde de Vries (Logius)</li><li>Joanmarie Diggs (Igalia)</li><li>Howard Edwards (Bocoup)</li><li>James Edwards (TPGi)</li><li>Tamsin Ewing (<abbr title="World Wide Web Consortium">W3C</abbr>)</li><li>Mayuri Faldu (Navy Federal Credit Union)</li><li>Betsy Fanning (PDF Association)</li><li>Steve Faulkner (TetraLogical Services Ltd)</li><li>Jaunita Flessas (Navy Federal Credit Union)</li><li>Jane Fulton (Cisco)</li><li>Bryan Garaventa (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Experts)</li><li>Rashmi Garimella (Google LLC)</li><li>Matt Garrish (DAISY Consortium)</li><li>Doug Geoffray (Microsoft Corporation)</li><li>Ariella Gilmore (IBM Corporation)</li><li>Taylore Givens (Microsoft Corporation)</li><li>Shirisha Gubba (Google LLC)</li><li>Eloisa Guerrero (Rakuten Group, Inc.)</li><li>Jon Gunderson (University of Illinois)</li><li>Oliver Habersetzer (SAP SE)</li><li>Theo Hale (Microsoft Corporation)</li><li>Sunny Hardasani (Adobe)</li><li>Matthew Hardy (Adobe)</li><li>Chris Harrelson (Google LLC)</li><li>Peter Heumader (Fabasoft)</li><li>Sarah Higley (Microsoft Corporation)</li><li>Hans Hillen (TPGi)</li><li>Isabel Holdsworth (TPGi)</li><li>Stanley Hon (Microsoft Corporation)</li><li>Michael Jackson (Microsoft Corporation)</li><li>Jilin Jiang (Ant Group Co., Ltd.)</li><li>Duff Johnson (PDF Association)</li><li>Summer Jones (Thomson Reuters Corp.)</li><li>Yuki Kamahori (Cybozu)</li><li>William Kilian (TargetStream Technologies)</li><li>Matthew King (Meta)</li><li>Zachary Kinsey (TargetStream Technologies)</li><li>Daisuke Kobayashi (Cybozu)</li><li>Greta Krafsig (The Washington Post)</li><li>Peter Krautzberger (krautzource UG)</li><li>Nina Krauß (SAP SE)</li><li>JaEun Jemma Ku (University of Illinois)</li><li>Joe Lamyman (TetraLogical Services Ltd)</li><li>Charles LaPierre (Benetech)</li><li>Philip Lazarevic (Level Access)</li><li>Leo Lee (Microsoft Corporation)</li><li>Aaron Leventhal (Google LLC)</li><li>Brett Lewis (TPGi)</li><li>Andy Luhrs (Microsoft Corporation)</li><li>Sazzad Mahamud (Google LLC)</li><li>Alison Maher (Microsoft Corporation)</li><li>Gurpreet Kaur Mangera (Rakuten Group, Inc.)</li><li>Mark McCarthy (University of Illinois)</li><li>Eduardo Meza Etienne (Navy Federal Credit Union)</li><li>Clay Miller (Microsoft Corporation)</li><li>Hirotaka Minamida (Cybozu)</li><li>Daniel Montalvo (<abbr title="World Wide Web Consortium">W3C</abbr>)</li><li>Baldino Morelli (UsableNet)</li><li>Jacques Newman (Microsoft Corporation)</li><li>James Nurthen (Adobe)</li><li>Scott O'Hara (Microsoft Corporation)</li><li>Lola Odelola (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Experts)</li><li>Neil Osman (Evinced Inc.)</li><li>Yusuke Oyama (Cybozu)</li><li>Adam Page (Hilton)</li><li>Michael Pennisi (Bocoup)</li><li>Giacomo Petri (UsableNet)</li><li>Noah Praskins (TPGi)</li><li>Daniel Pöll (Fabasoft)</li><li>Paul Rayius (Allyant)</li><li>Adrian Roselli (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Experts)</li><li>Marco Sabidussi (UsableNet)</li><li>Trisha Salas (Level Access)</li><li>Stefan Schnabel (SAP SE)</li><li>Harris Schneiderman (Deque Systems, Inc.)</li><li>Raymond Schwartz (Navy Federal Credit Union)</li><li>Cynthia Shelly (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Experts)</li><li>Tzviya Siegman (<abbr title="World Wide Web Consortium">W3C</abbr>)</li><li>Arturo Silva (The Washington Post)</li><li>Avneesh Singh (DAISY Consortium)</li><li>Michael[tm] Smith (sideshowbarker) (<abbr title="World Wide Web Consortium">W3C</abbr>)</li><li>Francis Storr (Intel Corporation)</li><li>Jennifer Strickland (MITRE Corporation)</li><li>Nobukiyo Sugisaki (Cybozu)</li><li>Melanie Sumner (IBM Corporation)</li><li>Alexander Surkov (Igalia)</li><li>James Teh (Mozilla Foundation)</li><li>Jocelyn Tran (Google LLC)</li></ul>
         </section>
         
         <section class="section" id="ack_funders"><div class="header-wrapper"><h4 id="a-2-2-enabling-funders"><bdi class="secno">A.2.2 </bdi>Enabling funders</h4><a class="self-link" href="#ack_funders" aria-label="Permalink for Appendix A.2.2"></a></div>
@@ -17302,7 +17303,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 <section id="references" class="appendix"><div class="header-wrapper"><h2 id="b-references"><bdi class="secno">B. </bdi>References</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix B."></a></div><section id="normative-references"><div class="header-wrapper"><h3 id="b-1-normative-references"><bdi class="secno">B.1 </bdi>Normative references</h3><a class="self-link" href="#normative-references" aria-label="Permalink for Appendix B.1"></a></div>
     
     <dl class="bibliography"><dt id="bib-accname-1.2">[accname-1.2]</dt><dd>
-      <a href="https://www.w3.org/TR/accname-1.2/"><cite>Accessible Name and Description Computation 1.2</cite></a>. Bryan Garaventa; Melanie Sumner.  W3C. 17 June 2025. W3C Working Draft. URL: <a href="https://www.w3.org/TR/accname-1.2/">https://www.w3.org/TR/accname-1.2/</a>
+      <a href="https://www.w3.org/TR/accname-1.2/"><cite>Accessible Name and Description Computation 1.2</cite></a>. Bryan Garaventa; Melanie Sumner.  W3C. 5 September 2025. W3C Working Draft. URL: <a href="https://www.w3.org/TR/accname-1.2/">https://www.w3.org/TR/accname-1.2/</a>
     </dd><dt id="bib-core-aam-1.2">[core-aam-1.2]</dt><dd>
       <a href="https://www.w3.org/TR/core-aam-1.2/"><cite>Core Accessibility API Mappings 1.2</cite></a>. Valerie Young; Cynthia Shelly.  W3C. 3 September 2025. CRD. URL: <a href="https://www.w3.org/TR/core-aam-1.2/">https://www.w3.org/TR/core-aam-1.2/</a>
     </dd><dt id="bib-html">[HTML]</dt><dd>
