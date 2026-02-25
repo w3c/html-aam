@@ -90,7 +90,7 @@ dd{margin-left:0}
 }
 </style>
 <meta name="color-scheme" content="light">
-<meta name="revision" content="27b1f2bf2229ccd754dc7f33513d9add35b9bb66">
+<meta name="revision" content="c218ffd87a313c276f9877c97be5830c1768d337">
 <meta name="description" content="HTML Accessibility API Mappings (HTML-AAM) defines how user agents map HTML [HTML] elements and attributes to platform
         accessibility application programming interfaces (APIs). It leverages and extends the
         Core Accessibility API Mappings 1.2 and the Accessible Name and Description Computation 1.2 for use with the HTML host language. Documenting these mappings promotes interoperable exposure of roles, states, properties, and events
@@ -242,16 +242,16 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     null
   ],
   "a11y": false,
-  "gitRevision": "27b1f2bf2229ccd754dc7f33513d9add35b9bb66",
-  "publishISODate": "2026-01-29T00:00:00.000Z",
-  "generatedSubtitle": "W3C Editor's Draft 29 January 2026"
+  "gitRevision": "c218ffd87a313c276f9877c97be5830c1768d337",
+  "publishISODate": "2026-02-25T00:00:00.000Z",
+  "generatedSubtitle": "W3C Editor's Draft 25 February 2026"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-ED"></head>
   <body class="h-entry" data-cite="HTML core-aam accname wai-aria dom infra"><div class="head">
     <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
   </a></p>
     <h1 id="title" class="title">HTML Accessibility API Mappings 1.0</h1> 
-    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2026-01-29">29 January 2026</time></p>
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2026-02-25">25 February 2026</time></p>
     <details open="">
       <summary>More details about this document</summary>
       <dl>
@@ -2751,13 +2751,14 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
             <tr>
               <th>[<cite><a class="bibref" data-link-type="biblio" href="#bib-wai-aria-1.2" title="Accessible Rich Internet Applications (WAI-ARIA) 1.2">wai-aria-1.2</a></cite>]</th>
-              <td><a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-generic"><code>generic</code></a> role</td>
+              <td>
+                <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-sectionfooter"><code>sectionfooter</code></a> role
+              </td>
             </tr>
             <tr>
               <th><a href="https://www.w3.org/TR/core-aam-1.2/#roleMappingComputedRole">Computed Role</a></th>
               <td class="role-computed">
                 <div class="general">Use <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> mapping</div>
-                <div class="note" role="note" id="issue-container-generatedID-6"><div role="heading" class="note-title marker" id="h-note-6" aria-level="4"><span>Note</span></div><div class="">Editorial Note: This value may change upon resolution of <a href="https://github.com/w3c/aria/issues/1915">ARIA #1915</a>.</div></div>
               </td>
             </tr>
             <tr>
@@ -2790,7 +2791,14 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             
             <tr>
               <th>Comments</th>
-              <td>If a <code>footer</code> is not scoped to the <code>body</code> element, do not expose the element as a <code>contentinfo</code> landmark.</td>
+              <td>
+                User agents and assistive technology <em class="rfc2119">MAY</em> not expose the <code>sectionfooter</code> role if the element:
+                <ul>
+                  <li>has no <a href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-name">accessible name</a></li>
+                  <li>is not keyboard focusable</li>
+                  <li>has no other global ARIA attributes or <abbr title="HyperText Markup Language">HTML</abbr> attributes that expose information to user agent's <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-tree">accessibility tree</a></li>
+                </ul> 
+              </td>
             </tr>
           </tbody>
         </table>
@@ -3056,13 +3064,14 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </tr>
             <tr>
               <th>[<cite><a class="bibref" data-link-type="biblio" href="#bib-wai-aria-1.2" title="Accessible Rich Internet Applications (WAI-ARIA) 1.2">wai-aria-1.2</a></cite>]</th>
-              <td><a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-generic"><code>generic</code></a> role</td>
+              <td>
+                <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-sectionheader"><code>sectionheader</code></a> role
+              </td>
             </tr>
             <tr>
               <th><a href="https://www.w3.org/TR/core-aam-1.2/#roleMappingComputedRole">Computed Role</a></th>
               <td class="role-computed">
                 <div class="general">Use <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> mapping</div>
-                <div class="note" role="note" id="issue-container-generatedID-7"><div role="heading" class="note-title marker" id="h-note-7" aria-level="4"><span>Note</span></div><div class="">Editorial Note: This value may change upon resolution of <a href="https://github.com/w3c/aria/issues/1915">ARIA #1915</a>.</div></div>
               </td>
             </tr>
             <tr>
@@ -3095,7 +3104,14 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             
             <tr>
               <th>Comments</th>
-              <td>If a <code>header</code> is not scoped to the <code>body</code> element, do not expose the element as a <code>banner</code> landmark.</td>
+              <td>
+                User agents and assistive technology <em class="rfc2119">MAY</em> not expose the <code>sectionheader</code> role if the element:
+                <ul>
+                  <li>has no <a href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-name">accessible name</a></li>
+                  <li>is not keyboard focusable</li>
+                  <li>has no other global ARIA attributes or <abbr title="HyperText Markup Language">HTML</abbr> attributes that expose information to user agent's <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-tree">accessibility tree</a></li>
+                </ul> 
+              </td>
             </tr>
           </tbody>
         </table>
@@ -3252,7 +3268,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <th>Comments</th>
               <td>
                 <p>User agents <em class="rfc2119">MUST</em> ignore the <code>aria-hidden</code> attribute if specified on the <code>html</code> element.</p>
-                <div class="note" role="note" id="issue-container-generatedID-8"><div role="heading" class="note-title marker" id="h-note-8" aria-level="4"><span>Note</span></div><p class="">The <code>document</code> role of a web page is not exposed by the <code>html</code> element, but rather from a parent <code>document node</code> created by the user agent.</p></div>
+                <div class="note" role="note" id="issue-container-generatedID-6"><div role="heading" class="note-title marker" id="h-note-6" aria-level="4"><span>Note</span></div><p class="">The <code>document</code> role of a web page is not exposed by the <code>html</code> element, but rather from a parent <code>document node</code> created by the user agent.</p></div>
               </td>
             </tr>
           </tbody>
@@ -3407,7 +3423,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th>Comments</th>
               <td>
-                <div class="note" role="note" id="issue-container-generatedID-9"><div role="heading" class="note-title marker" id="h-note-9" aria-level="4"><span>Note</span></div><p class="">ARIA 1.3 adds the <code>image</code> role as the preferred synonym to the ARIA 1.0 <code>img</code> role. The expected computed role for named <code>img</code> elements is now "image".</p></div>
+                <div class="note" role="note" id="issue-container-generatedID-7"><div role="heading" class="note-title marker" id="h-note-7" aria-level="4"><span>Note</span></div><p class="">ARIA 1.3 adds the <code>image</code> role as the preferred synonym to the ARIA 1.0 <code>img</code> role. The expected computed role for named <code>img</code> elements is now "image".</p></div>
               </td>
             </tr>
           </tbody>
@@ -3469,7 +3485,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th>Comments</th>
               <td>
-                <div class="note" role="note" id="issue-container-generatedID-10"><div role="heading" class="note-title marker" id="h-note-10" aria-level="4"><span>Note</span></div><p class="">
+                <div class="note" role="note" id="issue-container-generatedID-8"><div role="heading" class="note-title marker" id="h-note-8" aria-level="4"><span>Note</span></div><p class="">
                   If an <code>img</code> has an empty <code>alt</code>, but has been provided an <a href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-name">accessible name</a> via another valid naming mechanism per the
                   <a href="#el-img-name">naming steps of this specification</a>, user agents will expose the element with its implicit <code>image</code> role.
                 </p></div>
@@ -4933,7 +4949,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th>Comments</th>
               <td>
-                <div class="note" role="note" id="issue-container-generatedID-11"><div role="heading" class="note-title marker" id="h-note-11" aria-level="4"><span>Note</span></div><p class="">
+                <div class="note" role="note" id="issue-container-generatedID-9"><div role="heading" class="note-title marker" id="h-note-9" aria-level="4"><span>Note</span></div><p class="">
                   If a <code>label</code> element is <a data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-hidden">hidden</a> from the accessibility tree, then it will not provide an accessible name to the
                   <a href="https://html.spec.whatwg.org/multipage/forms.html#category-label">labelable element</a> it is associated with.
                 </p></div>
@@ -8272,7 +8288,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
           <li>
             "Not mapped" (Not Applicable) means the attribute does not need to be exposed via an <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-api">accessibility <abbr title="application programming interface">API</abbr></a>. This is usually because the attribute is not displayed as
             part of the user interface.
-            <div class="note" role="note" id="issue-container-generatedID-12"><div role="heading" class="note-title marker" id="h-note-12" aria-level="4"><span>Note</span></div><div class="">
+            <div class="note" role="note" id="issue-container-generatedID-10"><div role="heading" class="note-title marker" id="h-note-10" aria-level="4"><span>Note</span></div><div class="">
               In some cases, while not directly exposed to accessibility <abbr title="Application Programming Interfaces">APIs</abbr>, an attribute can still impact the accessibility of an element. e.g., <a href="#att-autoplay"><code>autoplay</code></a> will
               automatically start playing <a href="#el-video"><code>video</code></a> or <a href="#el-audio"><code>audio</code></a> elements.
             </div></div>
@@ -8902,11 +8918,11 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th>Comments</th>
               <td>
-                <div class="note" role="note" id="issue-container-generatedID-13"><div role="heading" class="note-title marker" id="h-note-13" aria-level="4"><span>Note</span></div><p class="">
+                <div class="note" role="note" id="issue-container-generatedID-11"><div role="heading" class="note-title marker" id="h-note-11" aria-level="4"><span>Note</span></div><p class="">
                   <strong>Note:</strong> the <code>aria-autocomplete</code> attribute and the <abbr title="HyperText Markup Language">HTML</abbr> <code>autocomplete</code> attribute have disparate features. The <code>aria-autocomplete</code> attribute is not supported on the <abbr title="HyperText Markup Language">HTML</abbr>
                   <code>form</code> element or elements with an explicit ARIA <code>form</code> role.
                 </p></div>
-                <div class="note" role="note" id="issue-container-generatedID-14"><div role="heading" class="note-title marker" id="h-note-14" aria-level="4"><span>Note</span></div><p class="">
+                <div class="note" role="note" id="issue-container-generatedID-12"><div role="heading" class="note-title marker" id="h-note-12" aria-level="4"><span>Note</span></div><p class="">
                   When used on a <code>form</code> element, the <code>autocomplete</code> attribute identifies whether form controls owned by the form will have their
                   <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill-field-name">autofill field name</a> set to "<code>on</code>" or "<code>off</code>" by default. See
                   <a href="#att-autocomplete"><code>autocomplete</code> for <code>input</code>, <code>select</code>, <code>textarea</code></a> for control mappings.
@@ -8935,7 +8951,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
                   <p>If specified <code>autocomplete=off</code> or the control is owned by a <code>form</code> with <code>autocomplete=off</code> - <a class="core-mapping" href="https://w3c.github.io/core-aam/#ariaAutocompleteNone"><code>aria-autocomplete=none</code></a></p>
                   <p>Otherwise, <a class="core-mapping" href="https://w3c.github.io/core-aam/#ariaAutocompleteInlineListBoth"><code>aria-autocomplete</code></a></p>
                 </div>
-                <div class="note" role="note" id="issue-container-generatedID-15"><div role="heading" class="note-title marker" id="h-note-15" aria-level="4"><span>Note</span></div><div class="">
+                <div class="note" role="note" id="issue-container-generatedID-13"><div role="heading" class="note-title marker" id="h-note-13" aria-level="4"><span>Note</span></div><div class="">
                   <p>
                     <strong>Note:</strong> the <code>aria-autocomplete</code> attribute and the <abbr title="HyperText Markup Language">HTML</abbr> <code>autocomplete</code> attribute have disparate features, but they overlap as mechanisms for user agents to expose the
                     control's support for autocompletion.
@@ -9609,7 +9625,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
                   <li>The associated popover element is the next immediate accessibility sibling to the invoking element,</li>
                   <li>The element is a descendant of the <code>popover</code> it is associated with.</li>
                 </ul>
-                <div class="note" role="note" id="issue-container-generatedID-16"><div role="heading" class="note-title marker" id="h-note-16" aria-level="4"><span>Note</span></div><p class="">
+                <div class="note" role="note" id="issue-container-generatedID-14"><div role="heading" class="note-title marker" id="h-note-14" aria-level="4"><span>Note</span></div><p class="">
                   A button that represents a <a href="https://html.spec.whatwg.org/multipage/forms.html#concept-submit-button">submit button</a> or is in the
                   <a href="https://html.spec.whatwg.org/multipage/input.html#reset-button-state-(type=reset)">reset state</a> with a <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#form-owner">form owner</a> cannot invoke a command.
                 </p></div>
@@ -9667,7 +9683,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th>Comments</th>
               <td>
-                <div class="note" role="note" id="issue-container-generatedID-17"><div role="heading" class="note-title marker" id="h-note-17" aria-level="4"><span>Note</span></div><p class="">
+                <div class="note" role="note" id="issue-container-generatedID-15"><div role="heading" class="note-title marker" id="h-note-15" aria-level="4"><span>Note</span></div><p class="">
                   A button that represents a <a href="https://html.spec.whatwg.org/multipage/forms.html#concept-submit-button">submit button</a> or is in the
                   <a href="https://html.spec.whatwg.org/multipage/input.html#reset-button-state-(type=reset)">reset state</a> with a <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#form-owner">form owner</a> cannot invoke a command.
                 </p></div>
@@ -11812,7 +11828,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <th>Comments</th>
               <td>
                 <p>Nodes that are <a href="https://html.spec.whatwg.org/multipage/interaction.html#inert">inert</a> are not exposed to an accessibility <abbr title="application programming interface">API</abbr>.</p>
-                <div class="note" role="note" id="issue-container-generatedID-18"><div role="heading" class="note-title marker" id="h-note-18" aria-level="4"><span>Note</span></div><p class="">
+                <div class="note" role="note" id="issue-container-generatedID-16"><div role="heading" class="note-title marker" id="h-note-16" aria-level="4"><span>Note</span></div><p class="">
                   Note: an inert node can have descendants that are not inert. For example, a
                   <a href="https://html.spec.whatwg.org/multipage/interaction.html#modal-dialogs-and-inert-subtrees">modal dialog</a>
                   can escape an inert subtree.
@@ -13917,7 +13933,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
                   If specified on an element with an implicit role of <code>generic</code>, then the element's role instead maps to <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-group"><code>group</code></a> for all
                   <a href="https://html.spec.whatwg.org/multipage/popover.html#the-popover-attribute"><code>popover</code> states</a>.
                 </p>
-                <div class="note" role="note" id="issue-container-generatedID-19"><div role="heading" class="note-title marker" id="h-note-19" aria-level="4"><span>Note</span></div><p class="">
+                <div class="note" role="note" id="issue-container-generatedID-17"><div role="heading" class="note-title marker" id="h-note-17" aria-level="4"><span>Note</span></div><p class="">
                   There are no unique mappings for the different <code>popover</code> states. Any accessibility mapping changes for the popover element would be the responsibility of the author. e.g., using
                   different base <abbr title="HyperText Markup Language">HTML</abbr> elements, attributes, or ARIA attributes to make such changes.
                 </p></div>
@@ -14000,7 +14016,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
                   <li>The element's implicit or explicit <code>popovertargetaction</code> is the "<code>auto</code>" state and the element is a descendant of the <code>popover</code> it is associated with.</li>
                   
                 </ul>
-                <div class="note" role="note" id="issue-container-generatedID-20"><div role="heading" class="note-title marker" id="h-note-20" aria-level="4"><span>Note</span></div><p class="">A button that represents a <a href="https://html.spec.whatwg.org/multipage/forms.html#concept-submit-button">submit button</a> with a <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#form-owner">form owner</a> cannot invoke a popover.</p></div>
+                <div class="note" role="note" id="issue-container-generatedID-18"><div role="heading" class="note-title marker" id="h-note-18" aria-level="4"><span>Note</span></div><p class="">A button that represents a <a href="https://html.spec.whatwg.org/multipage/forms.html#concept-submit-button">submit button</a> with a <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#form-owner">form owner</a> cannot invoke a popover.</p></div>
               </td>
             </tr>
           </tbody>
@@ -16443,7 +16459,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th>Comments</th>
               <td>
-                <div class="note" role="note" id="issue-container-generatedID-21"><div role="heading" class="note-title marker" id="h-note-21" aria-level="4"><span>Note</span></div><p class="">The <code>value</code> attribute of these <code>input</code> states is not directly communicated to users.</p></div>
+                <div class="note" role="note" id="issue-container-generatedID-19"><div role="heading" class="note-title marker" id="h-note-19" aria-level="4"><span>Note</span></div><p class="">The <code>value</code> attribute of these <code>input</code> states is not directly communicated to users.</p></div>
               </td>
             </tr>
           </tbody>
@@ -16767,7 +16783,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
         <a href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-description">accessible description</a>. There are different rules provided for several different types of
         <a class="termref informative" data-lt="element" data-link-type="dfn" href="https://dom.spec.whatwg.org/#concept-element">elements</a>, <a class="termref informative" data-lt="node" data-link-type="dfn" href="https://dom.spec.whatwg.org/#concept-node">nodes</a>, and combinations of markup.
       </p>
-      <div class="note" role="note" id="issue-container-generatedID-22"><div role="heading" class="note-title marker" id="h-note-22" aria-level="3"><span>Note</span></div><p class="">
+      <div class="note" role="note" id="issue-container-generatedID-20"><div role="heading" class="note-title marker" id="h-note-20" aria-level="3"><span>Note</span></div><p class="">
         User Agents notify assistive technology when relevant accessibility information changes, sometimes by destroying and recreating the accessibility object, or sometimes by notifying of changes
         to the object per the specified
         <a href="https://www.w3.org/TR/core-aam-1.2/#event-aria-label">name change event mappings</a> and <a href="https://www.w3.org/TR/core-aam-1.2/#event-aria-describedby">description change event mappings</a>.
@@ -16973,7 +16989,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <li>
               If the <a href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-name">accessible name</a> is still empty: use <code>alt</code> attribute, even if its value, when trimmed of <a data-link-type="dfn" data-lt="ascii whitespace" href="https://infra.spec.whatwg.org/#ascii-whitespace">whitespace</a>, is the
               empty string.
-              <div class="note" role="note" id="issue-container-generatedID-23"><div role="heading" class="note-title marker" id="h-note-23" aria-level="5"><span>Note</span></div><div class="">
+              <div class="note" role="note" id="issue-container-generatedID-21"><div role="heading" class="note-title marker" id="h-note-21" aria-level="5"><span>Note</span></div><div class="">
                 An <code>img</code> with an <code>alt</code> attribute whose value, when trimmed of <a data-link-type="dfn" data-lt="ascii whitespace" href="https://infra.spec.whatwg.org/#ascii-whitespace">whitespace</a>, is the empty string is mapped to the
                 <a class="core-mapping" href="https://w3c.github.io/core-aam/#role-map-presentation"><code>presentation</code></a> role. It has no accessible name.
               </div></div>
@@ -17053,7 +17069,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <li>Otherwise use the <code>title</code> attribute.</li>
             <li>If none of the above yield a usable text string there is no <a href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-name">accessible name</a>.</li>
           </ol>
-          <div class="note" role="note" id="issue-container-generatedID-24"><div role="heading" class="note-title marker" id="h-note-24" aria-level="5"><span>Note</span></div><p class="">
+          <div class="note" role="note" id="issue-container-generatedID-22"><div role="heading" class="note-title marker" id="h-note-22" aria-level="5"><span>Note</span></div><p class="">
             The document referenced by the <code>src</code> of the <code>iframe</code> element gets its name from that document's <code>title</code> element, like any other document. If there is no <code>title</code> provided, there is no
             accessible name.
           </p></div>
@@ -17306,7 +17322,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
           
           <ul>
             
-          <li>Rahim Abdi (Apple Inc.)</li><li>NAVYA AGARWAL (Adobe)</li><li>Joey Arhar (Google LLC)</li><li>Mario Batušić (Fabasoft)</li><li>Benjamin Beaudry (Microsoft Corporation)</li><li>Curt Bellew (Oracle Corporation)</li><li>Zoë Bijl (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Experts)</li><li>Gautier Chomel (EDRLab)</li><li>Aleksandar Cindrikj (Netcetera)</li><li>Keith Cirkel (Mozilla Foundation)</li><li>Daniel Clark (Microsoft Corporation)</li><li>Sydney Coleman (Google LLC)</li><li>James Craig (Apple Inc.)</li><li>Chris Cuellar (Bocoup)</li><li>Hidde de Vries (Logius)</li><li>Joanmarie Diggs (Igalia)</li><li>Howard Edwards (Bocoup)</li><li>Tamsin Ewing (<abbr title="World Wide Web Consortium">W3C</abbr>)</li><li>Mayuri Faldu (Navy Federal Credit Union)</li><li>Betsy Fanning (PDF Association)</li><li>Steve Faulkner (TetraLogical Services Ltd)</li><li>Jaunita Flessas (Navy Federal Credit Union)</li><li>Patrick Foster (axes4 GmbH)</li><li>Jane Fulton (Cisco)</li><li>Bryan Garaventa (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Experts)</li><li>Matt Garrish (DAISY Consortium)</li><li>Doug Geoffray (Microsoft Corporation)</li><li>Ariella Gilmore (IBM Corporation)</li><li>Taylore Givens (Microsoft Corporation)</li><li>David Grogan (Google LLC)</li><li>Shirisha Gubba (Google LLC)</li><li>Jon Gunderson (University of Illinois)</li><li>Oliver Habersetzer (SAP SE)</li><li>Theo Hale (Microsoft Corporation)</li><li>Sunny Hardasani (Adobe)</li><li>Matthew Hardy (Adobe)</li><li>Chris Harrelson (Google LLC)</li><li>Peter Heumader (Fabasoft)</li><li>Sarah Higley (Microsoft Corporation)</li><li>Hans Hillen (TPGi)</li><li>Isabel Holdsworth (TPGi)</li><li>Stanley Hon (Microsoft Corporation)</li><li>Michael Jackson (Microsoft Corporation)</li><li>Jilin Jiang (Ant Group Co., Ltd.)</li><li>Duff Johnson (PDF Association)</li><li>Summer Jones (Thomson Reuters Corp.)</li><li>Yuki Kamahori (Cybozu)</li><li>William Kilian (Kilian Codes LLC)</li><li>Matthew King (Meta)</li><li>Zachary Kinsey (TargetStream Technologies)</li><li>Daisuke Kobayashi (Cybozu)</li><li>Peter Krautzberger (krautzource UG)</li><li>Nina Krauß (SAP SE)</li><li>JaEun Jemma Ku (University of Illinois)</li><li>Joe Lamyman (TetraLogical Services Ltd)</li><li>Charles LaPierre (Benetech)</li><li>Philip Lazarevic (Level Access)</li><li>Leo Lee (Microsoft Corporation)</li><li>Brett Lewis (TPGi)</li><li>Alison Maher (Microsoft Corporation)</li><li>Gurpreet Kaur Mangera (Rakuten Group, Inc.)</li><li>Mark McCarthy (University of Illinois)</li><li>Eduardo Meza Etienne (Navy Federal Credit Union)</li><li>Clay Miller (Microsoft Corporation)</li><li>Hirotaka Minamida (Cybozu)</li><li>Daniel Montalvo (<abbr title="World Wide Web Consortium">W3C</abbr>)</li><li>Baldino Morelli (UsableNet)</li><li>Jacques Newman (Microsoft Corporation)</li><li>James Nurthen (Evinced Inc.)</li><li>Scott O'Hara (Microsoft Corporation)</li><li>Lola Odelola (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Experts)</li><li>Neil Osman (Evinced Inc.)</li><li>Yusuke Oyama (Cybozu)</li><li>Adam Page (Hilton)</li><li>Michael Pennisi (Bocoup)</li><li>Giacomo Petri (UsableNet)</li><li>Noah Praskins (TPGi)</li><li>Daniel Pöll (Fabasoft)</li><li>Lucas Radaelli (Google LLC)</li><li>Paul Rayius (Allyant)</li><li>Mark Rogers (Powermapper Software)</li><li>Priti Rohra (BarrierBreak Solutions Private Limited)</li><li>Adrian Roselli (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Experts)</li><li>Marco Sabidussi (UsableNet)</li><li>Trisha Salas (Level Access)</li><li>Stefan Schnabel (SAP SE)</li><li>Harris Schneiderman (Deque Systems, Inc.)</li><li>Raymond Schwartz (Navy Federal Credit Union)</li><li>Davis Shaver (The Washington Post)</li><li>Cynthia Shelly (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Experts)</li><li>Tzviya Siegman (<abbr title="World Wide Web Consortium">W3C</abbr>)</li><li>Avneesh Singh (DAISY Consortium)</li><li>Michael[tm] Smith (sideshowbarker) (<abbr title="World Wide Web Consortium">W3C</abbr>)</li><li>Francis Storr (Intel Corporation)</li><li>Nobukiyo Sugisaki (Cybozu)</li><li>Melanie Sumner (IBM Corporation)</li><li>Alexander Surkov (Igalia)</li><li>James Teh (Mozilla Foundation)</li><li>Roman Toda (Foxit software)</li><li>David Tseng (Google LLC)</li></ul>
+          </ul>
         </section>
         
         <section class="section" id="ack_funders"><div class="header-wrapper"><h4 id="a-2-2-enabling-funders"><bdi class="secno">A.2.2 </bdi>Enabling funders</h4><a class="self-link" href="#ack_funders" aria-label="Permalink for Appendix A.2.2"></a></div>
@@ -17323,7 +17339,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     <dl class="bibliography"><dt id="bib-accname-1.2">[accname-1.2]</dt><dd>
       <a href="https://www.w3.org/TR/accname-1.2/"><cite>Accessible Name and Description Computation 1.2</cite></a>. Bryan Garaventa; Melanie Sumner.  W3C. 21 January 2026. W3C Working Draft. URL: <a href="https://www.w3.org/TR/accname-1.2/">https://www.w3.org/TR/accname-1.2/</a>
     </dd><dt id="bib-core-aam-1.2">[core-aam-1.2]</dt><dd>
-      <a href="https://www.w3.org/TR/core-aam-1.2/"><cite>Core Accessibility API Mappings 1.2</cite></a>. Valerie Young; Cynthia Shelly.  W3C. 21 January 2026. CRD. URL: <a href="https://www.w3.org/TR/core-aam-1.2/">https://www.w3.org/TR/core-aam-1.2/</a>
+      <a href="https://www.w3.org/TR/core-aam-1.2/"><cite>Core Accessibility API Mappings 1.2</cite></a>. Valerie Young; Cynthia Shelly.  W3C. 11 February 2026. CRD. URL: <a href="https://www.w3.org/TR/core-aam-1.2/">https://www.w3.org/TR/core-aam-1.2/</a>
     </dd><dt id="bib-html">[HTML]</dt><dd>
       <a href="https://html.spec.whatwg.org/multipage/"><cite>HTML Standard</cite></a>. Anne van Kesteren; Domenic Denicola; Dominic Farolino; Ian Hickson; Philip Jägenstedt; Simon Pieters.  WHATWG. Living Standard. URL: <a href="https://html.spec.whatwg.org/multipage/">https://html.spec.whatwg.org/multipage/</a>
     </dd><dt id="bib-infra">[infra]</dt><dd>
@@ -17333,7 +17349,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     </dd><dt id="bib-rfc8174">[RFC8174]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc8174"><cite>Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words</cite></a>. B. Leiba.  IETF. May 2017. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc8174">https://www.rfc-editor.org/rfc/rfc8174</a>
     </dd><dt id="bib-svg-aam-1.0">[svg-aam-1.0]</dt><dd>
-      <a href="https://www.w3.org/TR/svg-aam-1.0/"><cite>SVG Accessibility API Mappings</cite></a>. Amelia Bellamy-Royds; Ian Pouncey.  W3C. 10 May 2018. W3C Working Draft. URL: <a href="https://www.w3.org/TR/svg-aam-1.0/">https://www.w3.org/TR/svg-aam-1.0/</a>
+      <a href="https://www.w3.org/TR/svg-aam-1.0/"><cite>SVG Accessibility API Mappings</cite></a>. Cynthia Shelly; Mark Rogers.  W3C. 17 February 2026. W3C Working Draft. URL: <a href="https://www.w3.org/TR/svg-aam-1.0/">https://www.w3.org/TR/svg-aam-1.0/</a>
     </dd><dt id="bib-wai-aria">[WAI-ARIA]</dt><dd>
       <a href="https://www.w3.org/TR/wai-aria/"><cite>Accessible Rich Internet Applications (WAI-ARIA) 1.0</cite></a>. James Craig; Michael Cooper et al.  W3C. 20 March 2014. W3C Recommendation. URL: <a href="https://www.w3.org/TR/wai-aria/">https://www.w3.org/TR/wai-aria/</a>
     </dd><dt id="bib-wai-aria-1.2">[WAI-ARIA-1.2]</dt><dd>
