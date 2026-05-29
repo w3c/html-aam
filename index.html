@@ -97,7 +97,7 @@ body:has(input[name=color-scheme][value=light]:checked),head:not(:has(meta[name=
 body:has(input[name=color-scheme][value=dark]:checked){color-scheme:dark}
 </style>
 <meta name="color-scheme" content="light">
-<meta name="revision" content="07833035332d9bbc42c68f39ab1f8b68c3f5e4b1">
+<meta name="revision" content="48d694c9dc11abda20ec113a7d57ca4d1e5aa0ea">
 <meta name="description" content="HTML Accessibility API Mappings (HTML-AAM) defines how user agents map HTML [HTML] elements and attributes to platform
         accessibility application programming interfaces (APIs). It leverages and extends the
         Core Accessibility API Mappings 1.2 and the Accessible Name and Description Computation 1.2 for use with the HTML host language. Documenting these mappings promotes interoperable exposure of roles, states, properties, and events
@@ -253,7 +253,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     null
   ],
   "a11y": false,
-  "gitRevision": "07833035332d9bbc42c68f39ab1f8b68c3f5e4b1",
+  "gitRevision": "48d694c9dc11abda20ec113a7d57ca4d1e5aa0ea",
   "publishISODate": "2026-05-29T00:00:00.000Z",
   "generatedSubtitle": "W3C Editor's Draft 29 May 2026"
 }</script>
@@ -5080,8 +5080,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <tr>
               <th>Comments</th>
               <td>
-                If <code>li</code> element is not a child of <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-ol-element"><code>ol</code></a> , <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#menus"><code>menu</code></a> or <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-ul-element"><code>ul</code></a>, or if the containing list element is no longer exposed
-                with a <code>list</code> role, then expose the <code>li</code> element with a <code>generic</code> role.
+                If <code>li</code> element is not an <a data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-child">accessibility child</a> of an <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-ol-element"><code>ol</code></a> , <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#menus"><code>menu</code></a> or <a data-link-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-ul-element"><code>ul</code></a>, or if the containing list element
+                is no longer exposed with a <code>list</code> role, then expose the <code>li</code> element with a <code>generic</code> role.
               </td>
             </tr>
           </tbody>
